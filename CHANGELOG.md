@@ -9,4 +9,10 @@ Notable repository changes are recorded here.
 - Added the README roadmap illustration, article template, research references, and contribution guidance.
 - Added stage indexes and GitHub templates.
 
-Concept articles are intentionally not included yet; placeholders and checklists do not count as completed articles.
+Concept articles are added incrementally; placeholders and checklists do not count as completed articles.
+
+## 2026-10-17
+
+- Published the EVM Opcodes article with its overview diagram.
+- Published the Stack, Memory, and Calldata article with a dedicated data-area diagram.
+- Linked both articles from the Stage 01 index and canonical roadmap.

@@ -20,11 +20,12 @@ The roadmap starts with EVM execution and contract interaction, then moves throu
 
 This repository is designed as both a **learning checklist** and a **growing technical reference**. Every stage has its own index, and the complete roadmap keeps all concepts in one place.
 
-> **Current state:** The repository contains the roadmap, navigation, templates, and project guidelines. The individual concept articles have intentionally **not** been written yet. They will be researched and added one by one by the author.
+> **Current state:** The roadmap, navigation, templates, project guidelines, and the first two Stage 01 concept articles are published. The remaining concept articles will be researched and added one by one by the author.
 
 ## Start here
 
 - **[Full roadmap — all 157 concepts](roadmap/roadmap.md)** — browse the complete checklist.
+- **[EVM Opcodes](concepts/01-evm-execution/01-evm-opcodes.md)** and **[Stack, Memory, and Calldata](concepts/01-evm-execution/02-stack-memory-and-calldata.md)** — the first two published Stage 01 articles.
 - **[Learning priorities](roadmap/learning-priorities.md)** — understand the four-stage groups and suggested order.
 - **[Concept article template](templates/concept-template.md)** — a starting structure for writing each article later.
 - **[Sources and research policy](references/sources.md)** — recommended primary sources and documentation rules.
