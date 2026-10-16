@@ -120,13 +120,6 @@ The roadmap is Ethereum/EVM-centered. Some ideas apply more broadly, but behavio
 
 This is an independent educational project, not official Ethereum documentation, an audit, or a security guarantee.
 
-## Author
-
-Created and maintained by **[0xSix9](https://github.com/0xSix9)**.
-
-- GitHub: [@0xSix9](https://github.com/0xSix9)
-- Related concepts repository: [Blockchain-Concepts](https://github.com/0xSix9/Blockchain-Concepts)
-
 ---
 
 <div align="center"><sub>Learn the mechanism. Trace the execution. Understand the protocol.</sub></div>
