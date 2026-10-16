@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="670" viewBox="0 0 1200 670" role="img" aria-labelledby="title desc">
+<title id="title">EVM Execution Context: CALL and DELEGATECALL</title>
+<desc id="desc">The diagram contrasts a normal call, which changes execution to the target's context, with proxy delegation, where implementation code runs using the proxy's address and storage context while preserving the current sender and value.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#070B16"/><stop offset="1" stop-color="#14213B"/></linearGradient><marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#9CB5D8"/></marker></defs>
+<rect width="1200" height="670" rx="24" fill="url(#bg)"/>
+<g font-family="Arial,sans-serif">
+<text x="42" y="44" font-size="12" font-weight="700" letter-spacing="2.4" fill="#74C0FC">STAGE 01 · EXECUTION CONTEXT</text>
+<text x="42" y="82" font-size="29" font-weight="700" fill="#F8FAFC">The code source and context address can differ</text>
+<rect x="42" y="112" width="1116" height="225" rx="16" fill="#101B2D" stroke="#36506F"/>
+<text x="64" y="143" font-size="16" font-weight="700" fill="#74C0FC">A · Normal CALL — target context becomes active</text>
+<rect x="70" y="169" width="220" height="72" rx="11" fill="#1A2940" stroke="#74C0FC"/><text x="180" y="197" font-size="15" font-weight="700" fill="#F8FAFC" text-anchor="middle">Alice / EOA</text><text x="180" y="219" font-size="12" fill="#C5D3E8" text-anchor="middle">tx.origin = Alice</text>
+<rect x="420" y="169" width="250" height="72" rx="11" fill="#173A38" stroke="#63E6BE"/><text x="545" y="197" font-size="15" font-weight="700" fill="#F8FAFC" text-anchor="middle">Contract A</text><text x="545" y="219" font-size="12" fill="#D8FFF2" text-anchor="middle">address(this) = A</text>
+<rect x="810" y="169" width="280" height="72" rx="11" fill="#302448" stroke="#B197FC"/><text x="950" y="197" font-size="15" font-weight="700" fill="#F8FAFC" text-anchor="middle">Contract B</text><text x="950" y="219" font-size="12" fill="#E9DDFF" text-anchor="middle">address(this) = B · sender = A</text>
+<path d="M290 205 H409" stroke="#9CB5D8" stroke-width="2" marker-end="url(#arrow)"/><path d="M670 205 H799" stroke="#9CB5D8" stroke-width="2" marker-end="url(#arrow)"/><text x="734" y="188" font-size="11" fill="#C4D2E7" text-anchor="middle">CALL</text>
+<text x="70" y="277" font-size="12" fill="#C3D1E5">Target B executes its code and uses B's storage context.</text><text x="70" y="301" font-size="12" fill="#C3D1E5">Inside B: msg.sender = A; tx.origin remains Alice in this example.</text>
+<rect x="42" y="357" width="1116" height="270" rx="16" fill="#101B2D" stroke="#36506F"/>
+<text x="64" y="389" font-size="16" font-weight="700" fill="#B197FC">B · Proxy + DELEGATECALL — implementation code, proxy context</text>
+<rect x="70" y="417" width="205" height="72" rx="11" fill="#1A2940" stroke="#74C0FC"/><text x="172" y="445" font-size="15" font-weight="700" fill="#F8FAFC" text-anchor="middle">Alice / EOA</text><text x="172" y="467" font-size="12" fill="#C5D3E8" text-anchor="middle">tx.origin = Alice</text>
+<rect x="367" y="417" width="246" height="72" rx="11" fill="#173A38" stroke="#63E6BE"/><text x="490" y="445" font-size="15" font-weight="700" fill="#F8FAFC" text-anchor="middle">Proxy</text><text x="490" y="467" font-size="12" fill="#D8FFF2" text-anchor="middle">address(this) = Proxy</text>
+<rect x="712" y="417" width="378" height="72" rx="11" fill="#302448" stroke="#B197FC"/><text x="901" y="445" font-size="15" font-weight="700" fill="#F8FAFC" text-anchor="middle">Implementation bytecode</text><text x="901" y="467" font-size="12" fill="#E9DDFF" text-anchor="middle">Runs in the proxy's execution context</text>
+<path d="M275 453 H356" stroke="#9CB5D8" stroke-width="2" marker-end="url(#arrow)"/><path d="M613 453 H701" stroke="#B197FC" stroke-width="2" marker-end="url(#arrow)"/><text x="658" y="436" font-size="11" fill="#D9C8FF" text-anchor="middle">DELEGATECALL</text>
+<rect x="70" y="522" width="1020" height="77" rx="10" fill="#121F32" stroke="#4B5C78"/>
+<text x="91" y="548" font-size="13" font-weight="700" fill="#F8FAFC">Context seen by delegated implementation code</text><text x="91" y="572" font-size="12" fill="#C8D4E7">address(this) = Proxy</text><text x="326" y="572" font-size="12" fill="#C8D4E7">msg.sender = Alice (preserved)</text><text x="650" y="572" font-size="12" fill="#C8D4E7">Storage reads/writes use Proxy storage</text><text x="91" y="590" font-size="11" fill="#AEBFD7">The implementation provides code; the proxy supplies the address and state context.</text>
+</g>
+</svg>

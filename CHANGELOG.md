@@ -16,3 +16,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the EVM Opcodes article with its overview diagram.
 - Published the Stack, Memory, and Calldata article with a dedicated data-area diagram.
 - Linked both articles from the Stage 01 index and canonical roadmap.
+
+
+## 2026-10-17
+
+- Published the Execution Context article with a custom CALL vs DELEGATECALL diagram.
+- Linked Execution Context from the Stage 01 index, full roadmap, and project README.
