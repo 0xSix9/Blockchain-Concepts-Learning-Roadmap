@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">How the EVM CALL opcode works</title>
+<desc id="desc">The caller prepares a target, value, gas, and input memory range, then CALL enters the callee's independent execution frame. The callee returns a success or failure status and return data, and control resumes in the caller.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#070B16"/><stop offset="1" stop-color="#14213B"/></linearGradient>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#9CB5D8"/></marker>
+</defs>
+<rect width="1200" height="630" rx="24" fill="url(#bg)"/>
+<g font-family="Arial,sans-serif">
+<text x="40" y="45" font-size="12" font-weight="700" letter-spacing="2.5" fill="#74C0FC">STAGE 01 · EVM EXECUTION</text>
+<text x="40" y="84" font-size="30" font-weight="700" fill="#F8FAFC">CALL hands control to another account</text>
+<text x="40" y="111" font-size="15" fill="#C0CDE0">Caller memory supplies input bytes; the callee gets a new message-call frame.</text>
+
+<rect x="42" y="148" width="360" height="260" rx="16" fill="#111E32" stroke="#63E6BE" stroke-width="1.5"/>
+<rect x="42" y="148" width="360" height="55" rx="16" fill="#173A38"/>
+<text x="64" y="182" font-size="20" font-weight="700" fill="#D8FFF2">Caller · Contract A</text>
+<text x="64" y="235" font-size="13" font-weight="700" fill="#63E6BE">PREPARES CALL</text>
+<text x="64" y="263" font-size="13" fill="#D0E4E0">Target address + ETH value</text>
+<text x="64" y="288" font-size="13" fill="#D0E4E0">Gas request + input memory range</text>
+<rect x="64" y="317" width="315" height="62" rx="9" fill="#0D2B2B" stroke="#4D928B"/>
+<text x="80" y="343" font-size="12" font-weight="700" fill="#D8FFF2">CALL instruction</text>
+<text x="80" y="363" font-size="11" fill="#B6D7D0">Consumes 7 stack parameters</text>
+
+<rect x="798" y="148" width="360" height="260" rx="16" fill="#111E32" stroke="#B197FC" stroke-width="1.5"/>
+<rect x="798" y="148" width="360" height="55" rx="16" fill="#302448"/>
+<text x="820" y="182" font-size="20" font-weight="700" fill="#F1E8FF">Callee · Contract B</text>
+<text x="820" y="235" font-size="13" font-weight="700" fill="#B197FC">NEW CALL FRAME</text>
+<text x="820" y="263" font-size="13" fill="#E2D7F2">Own stack and memory</text>
+<text x="820" y="288" font-size="13" fill="#E2D7F2">Target account's storage context</text>
+<rect x="820" y="317" width="315" height="62" rx="9" fill="#241A39" stroke="#8770BB"/>
+<text x="836" y="343" font-size="12" font-weight="700" fill="#F1E8FF">Executes target code</text>
+<text x="836" y="363" font-size="11" fill="#D6C9EF">May return data, revert, or reenter</text>
+
+<path d="M402 268 H786" fill="none" stroke="#9CB5D8" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="497" y="224" width="195" height="65" rx="10" fill="#182943" stroke="#74C0FC"/>
+<text x="594" y="250" text-anchor="middle" font-size="15" font-weight="700" fill="#E3F2FF">CALL</text>
+<text x="594" y="271" text-anchor="middle" font-size="11" fill="#C6D7EC">Control passes to B</text>
+
+<path d="M798 390 C715 448 492 448 402 390" fill="none" stroke="#FFD43B" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="600" y="435" text-anchor="middle" font-size="13" font-weight="700" fill="#FFE8A3">Return status + return data</text>
+
+<rect x="42" y="478" width="1116" height="107" rx="14" fill="#101B2D" stroke="#40516C"/>
+<text x="64" y="508" font-size="15" font-weight="700" fill="#F8FAFC">Back in Contract A</text>
+<rect x="64" y="526" width="230" height="38" rx="8" fill="#173A38" stroke="#63E6BE"/>
+<text x="179" y="550" text-anchor="middle" font-size="12" font-weight="700" fill="#D8FFF2">Stack: success = 1 or 0</text>
+<rect x="312" y="526" width="300" height="38" rx="8" fill="#192944" stroke="#74C0FC"/>
+<text x="462" y="550" text-anchor="middle" font-size="12" font-weight="700" fill="#E3F2FF">Return-data buffer available</text>
+<rect x="630" y="526" width="505" height="38" rx="8" fill="#302448" stroke="#B197FC"/>
+<text x="882" y="550" text-anchor="middle" font-size="12" font-weight="700" fill="#F1E8FF">Caller resumes and must handle the result</text>
+<text x="42" y="610" font-size="12" fill="#9FB0C9">Security note: the callee can call back into the caller. External calls require deliberate failure and reentrancy handling.</text>
+</g>
+</svg>

@@ -2,7 +2,7 @@
 
 **Priority:** 1  
 **Topics:** 12  
-**Article status:** 3 of 12 articles published; use this file as the learning checklist.
+**Article status:** 4 of 12 articles published; use this file as the learning checklist.
 
 ## About this stage
 
@@ -13,7 +13,7 @@ This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the
 - [ ] [EVM Opcodes](./01-evm-opcodes.md) — article published
 - [ ] [Stack, Memory, and Calldata](./02-stack-memory-and-calldata.md) — article published
 - [ ] [Execution Context](./03-execution-context.md) — article published
-- [ ] CALL
+- [ ] [CALL](./04-call.md) — article published
 - [ ] DELEGATECALL
 - [ ] STATICCALL
 - [ ] CREATE

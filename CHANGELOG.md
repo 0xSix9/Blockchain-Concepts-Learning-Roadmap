@@ -22,3 +22,5 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 
 - Published the Execution Context article with a custom CALL vs DELEGATECALL diagram.
 - Linked Execution Context from the Stage 01 index, full roadmap, and project README.
+- Published the CALL opcode article with a custom call-frame diagram.
+- Linked CALL from the Stage 01 index, full roadmap, and project README.

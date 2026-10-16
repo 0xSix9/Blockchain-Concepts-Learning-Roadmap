@@ -16,7 +16,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [EVM Opcodes](../concepts/01-evm-execution/01-evm-opcodes.md) — article published
 - [ ] [Stack, Memory, and Calldata](../concepts/01-evm-execution/02-stack-memory-and-calldata.md) — article published
 - [ ] [Execution Context](../concepts/01-evm-execution/03-execution-context.md) — article published
-- [ ] CALL
+- [ ] [CALL](../concepts/01-evm-execution/04-call.md) — article published
 - [ ] DELEGATECALL
 - [ ] STATICCALL
 - [ ] CREATE
