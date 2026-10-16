@@ -7,13 +7,13 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [Priority 3 — Stages 07–08](learning-priorities.md#priority-3--stages-07-to-08)
 - [Priority 4 — Stages 09–10](learning-priorities.md#priority-4--stages-09-to-10)
 
-> Every item below is a roadmap topic. Its article is intentionally not included yet; create/write articles one by one as you study them.
+> Each item is a learning topic. Published articles are linked from the checklist; topics without an article link are still waiting to be documented.
 
 ## Stage 01 — EVM Execution
 
 **Priority 1** · [Stage index](../concepts/01-evm-execution/README.md)
 
-- [ ] EVM Opcodes
+- [ ] [EVM Opcodes](../concepts/01-evm-execution/01-evm-opcodes.md) — article published
 - [ ] Stack, Memory, and Calldata
 - [ ] Execution Context
 - [ ] CALL

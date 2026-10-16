@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="490" viewBox="0 0 1200 490" role="img" aria-labelledby="title desc">
+<title id="title">How EVM opcodes execute</title>
+<desc id="desc">Source code is compiled into bytecode, then the EVM reads instructions and updates the stack, memory, execution context, persistent storage, and transient storage while accounting for gas.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#080D19"/><stop offset="1" stop-color="#14213B"/></linearGradient>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#8CA8D6"/></marker>
+</defs>
+<rect width="1200" height="490" rx="22" fill="url(#bg)"/>
+<text x="44" y="42" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="2.4" fill="#74C0FC">EVM EXECUTION · CONCEPT MAP</text>
+<text x="44" y="78" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#F8FAFC">From source code to machine operations</text>
+<g font-family="Arial,sans-serif">
+  <rect x="44" y="112" width="245" height="80" rx="12" fill="#18263C" stroke="#6EA8FE"/>
+  <text x="64" y="143" font-size="15" font-weight="700" fill="#F8FAFC">1 · Source code</text>
+  <text x="64" y="168" font-size="12" fill="#C4D2E7">Solidity / Yul</text>
+  <rect x="357" y="112" width="245" height="80" rx="12" fill="#18263C" stroke="#74C0FC"/>
+  <text x="377" y="143" font-size="15" font-weight="700" fill="#F8FAFC">2 · Compiler</text>
+  <text x="377" y="168" font-size="12" fill="#C4D2E7">Optimization + EVM target</text>
+  <rect x="670" y="112" width="245" height="80" rx="12" fill="#18263C" stroke="#B197FC"/>
+  <text x="690" y="143" font-size="15" font-weight="700" fill="#F8FAFC">3 · EVM bytecode</text>
+  <text x="690" y="168" font-size="12" fill="#C4D2E7">Opcode bytes + immediate data</text>
+  <path d="M289 152 H348 M602 152 H661" fill="none" stroke="#8CA8D6" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="982" y="112" width="174" height="80" rx="12" fill="#1D2D45" stroke="#63E6BE"/>
+  <text x="1000" y="143" font-size="15" font-weight="700" fill="#F8FAFC">4 · EVM</text>
+  <text x="1000" y="168" font-size="12" fill="#C4D2E7">Fetch + execute</text>
+  <path d="M915 152 H973" fill="none" stroke="#8CA8D6" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="44" y="235" font-size="12" font-weight="700" letter-spacing="1.5" fill="#74C0FC">AN OPCODE CAN CHANGE ONE OR MORE PARTS OF THE MACHINE STATE</text>
+  <rect x="44" y="260" width="250" height="86" rx="12" fill="#102D3B" stroke="#63E6BE"/>
+  <text x="64" y="290" font-size="15" font-weight="700" fill="#D8FFF2">Stack</text>
+  <text x="64" y="315" font-size="12" fill="#B4D8D0">Operands · 256-bit words</text>
+  <rect x="322" y="260" width="250" height="86" rx="12" fill="#192944" stroke="#74C0FC"/>
+  <text x="342" y="290" font-size="15" font-weight="700" fill="#E3F2FF">Memory / Calldata</text>
+  <text x="342" y="315" font-size="12" fill="#C4D2E7">Temporary bytes / read-only input</text>
+  <rect x="600" y="260" width="250" height="86" rx="12" fill="#302344" stroke="#B197FC"/>
+  <text x="620" y="290" font-size="15" font-weight="700" fill="#F1E8FF">Storage</text>
+  <text x="620" y="315" font-size="12" fill="#D5C8E8">Persistent + transaction-scoped</text>
+  <rect x="878" y="260" width="278" height="86" rx="12" fill="#302B20" stroke="#FFD43B"/>
+  <text x="898" y="290" font-size="15" font-weight="700" fill="#FFF1C2">Context + control flow</text>
+  <text x="898" y="315" font-size="12" fill="#E6DCC4">Caller · block data · program counter</text>
+  <path d="M1068 192 V220 H169 V251 M1068 220 H447 V251 M1068 220 H725 V251 M1068 220 V251" fill="none" stroke="#8CA8D6" stroke-width="1.7" marker-end="url(#arrow)" stroke-linejoin="round"/>
+  <rect x="44" y="381" width="1112" height="65" rx="12" fill="#101A2B" stroke="#50627F"/>
+  <text x="64" y="408" font-size="14" font-weight="700" fill="#F8FAFC">Gas is accounted for throughout execution</text>
+  <text x="64" y="429" font-size="12" fill="#C4D2E7">Instruction cost may depend on state access, memory expansion, data size, call behavior, and the active fork.</text>
+</g>
+</svg>
