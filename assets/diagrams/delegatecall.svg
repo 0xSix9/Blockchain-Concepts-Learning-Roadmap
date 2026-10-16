@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-labelledby="title desc">
+<title id="title">How DELEGATECALL preserves the caller's context</title>
+<desc id="desc">The user calls a proxy. The proxy executes DELEGATECALL to run implementation bytecode. The executed code reads and writes proxy storage; address(this), sender, and value remain associated with the proxy's current call context.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#070B16"/><stop offset="1" stop-color="#14213B"/></linearGradient>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#9CB5D8"/></marker>
+</defs>
+<rect width="1200" height="660" rx="24" fill="url(#bg)"/>
+<g font-family="Arial,sans-serif">
+<text x="42" y="44" font-size="12" font-weight="700" letter-spacing="2.4" fill="#74C0FC">STAGE 01 · EVM EXECUTION</text>
+<text x="42" y="83" font-size="29" font-weight="700" fill="#F8FAFC">Code source ≠ execution context</text>
+<text x="42" y="110" font-size="15" fill="#C0CDE0">DELEGATECALL borrows implementation code while preserving the caller’s context.</text>
+
+<rect x="42" y="145" width="240" height="108" rx="14" fill="#172940" stroke="#74C0FC" stroke-width="1.5"/>
+<text x="162" y="177" font-size="18" font-weight="700" fill="#F8FAFC" text-anchor="middle">User / Alice</text>
+<text x="162" y="202" font-size="13" fill="#D0DEF0" text-anchor="middle">Sends a transaction</text>
+<text x="162" y="224" font-size="12" fill="#B5C8E2" text-anchor="middle">msg.sender = Alice</text>
+
+<rect x="405" y="145" width="290" height="108" rx="14" fill="#173A38" stroke="#63E6BE" stroke-width="1.5"/>
+<text x="550" y="177" font-size="18" font-weight="700" fill="#F8FAFC" text-anchor="middle">Proxy Contract</text>
+<text x="550" y="202" font-size="13" fill="#D8FFF2" text-anchor="middle">Current account context</text>
+<text x="550" y="224" font-size="12" fill="#C0E9E0" text-anchor="middle">address(this) = Proxy</text>
+
+<rect x="822" y="145" width="336" height="108" rx="14" fill="#302448" stroke="#B197FC" stroke-width="1.5"/>
+<text x="990" y="177" font-size="18" font-weight="700" fill="#F8FAFC" text-anchor="middle">Implementation</text>
+<text x="990" y="202" font-size="13" fill="#E9DDFF" text-anchor="middle">Supplies executable bytecode</text>
+<text x="990" y="224" font-size="12" fill="#D8C8F2" text-anchor="middle">Code is read from this address</text>
+
+<path d="M282 198 H394" stroke="#9CB5D8" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="339" y="183" font-size="11" fill="#C4D2E7" text-anchor="middle">CALL</text>
+<path d="M695 198 H811" stroke="#B197FC" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="753" y="181" font-size="11" fill="#D8C8F2" text-anchor="middle">DELEGATECALL</text>
+
+<rect x="42" y="295" width="1116" height="160" rx="14" fill="#101B2D" stroke="#40516C"/>
+<text x="64" y="327" font-size="16" font-weight="700" fill="#F8FAFC">What the delegated code observes</text>
+<rect x="64" y="346" width="250" height="82" rx="10" fill="#173A38" stroke="#63E6BE"/>
+<text x="189" y="374" font-size="13" font-weight="700" fill="#D8FFF2" text-anchor="middle">address(this)</text>
+<text x="189" y="398" font-size="15" fill="#F8FAFC" text-anchor="middle">Proxy</text>
+<rect x="337" y="346" width="250" height="82" rx="10" fill="#173A38" stroke="#63E6BE"/>
+<text x="462" y="374" font-size="13" font-weight="700" fill="#D8FFF2" text-anchor="middle">Storage context</text>
+<text x="462" y="398" font-size="15" fill="#F8FAFC" text-anchor="middle">Proxy storage</text>
+<rect x="610" y="346" width="250" height="82" rx="10" fill="#172940" stroke="#74C0FC"/>
+<text x="735" y="374" font-size="13" font-weight="700" fill="#D9EDFF" text-anchor="middle">msg.sender</text>
+<text x="735" y="398" font-size="15" fill="#F8FAFC" text-anchor="middle">Preserved from parent</text>
+<rect x="883" y="346" width="250" height="82" rx="10" fill="#172940" stroke="#74C0FC"/>
+<text x="1008" y="374" font-size="13" font-weight="700" fill="#D9EDFF" text-anchor="middle">msg.value</text>
+<text x="1008" y="398" font-size="15" fill="#F8FAFC" text-anchor="middle">Preserved from parent</text>
+
+<rect x="42" y="488" width="1116" height="120" rx="14" fill="#1D172A" stroke="#B197FC"/>
+<text x="64" y="520" font-size="16" font-weight="700" fill="#F1E8FF">Why this is powerful — and dangerous</text>
+<text x="64" y="548" font-size="13" fill="#E2D7F2">Power: separate the application's code from its persistent state; upgrades can replace the code implementation.</text>
+<text x="64" y="573" font-size="13" fill="#E2D7F2">Risk: delegated code can overwrite the caller's storage or misuse its authority.</text>
+<text x="64" y="591" font-size="12" fill="#C1B4DD">Trust the target, protect initialization and upgrades, and verify storage layout compatibility.</text>
+</g>
+</svg>
