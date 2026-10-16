@@ -1,0 +1,37 @@
+name: Concept or roadmap suggestion
+description: Suggest a topic, correction, or improvement to the learning roadmap.
+title: "[Roadmap]: "
+labels: ["roadmap"]
+body:
+  - type: dropdown
+    id: stage
+    attributes:
+      label: Related stage
+      description: Choose the closest stage, if applicable.
+      options:
+        - Stage 01 — EVM Execution
+        - Stage 02 — ABI and Contract Interaction
+        - Stage 03 — Storage and Data Layout
+        - Stage 04 — Smart Contract Architecture
+        - Stage 05 — Advanced Transactions and Gas
+        - Stage 06 — Application Connectivity
+        - Stage 07 — Advanced Layer 2 and Cross-Chain
+        - Stage 08 — Mempool and MEV
+        - Stage 09 — Advanced Ethereum Consensus
+        - Stage 10 — Advanced Cryptography and Protocol Developments
+        - Cross-stage / Unsure
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggestion
+      description: What should be corrected, added, clarified, or moved?
+      placeholder: Explain the idea and why it belongs in this roadmap.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Supporting sources
+      description: Link to specifications, EIPs, documentation, or research if available.

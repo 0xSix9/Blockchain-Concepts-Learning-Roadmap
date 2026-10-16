@@ -1,0 +1,24 @@
+name: Documentation issue
+description: Report an unclear, inaccurate, outdated, or broken part of the documentation.
+title: "[Docs]: "
+labels: ["documentation"]
+body:
+  - type: input
+    id: path
+    attributes:
+      label: File or section
+      placeholder: concepts/01-evm-execution/README.md
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: What needs attention?
+      description: Describe the current behavior and what should change.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and references
+      description: Add links that help verify the proposed correction.

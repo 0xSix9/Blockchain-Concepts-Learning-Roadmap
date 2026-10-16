@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Ethereum developer documentation
+    url: https://ethereum.org/en/developers/docs/
+    about: Please check primary documentation before opening a general question.
