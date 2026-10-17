@@ -1,7 +1,7 @@
 # Storage Proofs: Verifying Ethereum Contract Storage
 
 > **Stage:** 03 — Storage and Data Layout  
-> **Priority:** 1  
+> **Priority:** 2  
 > **Status:** Reviewed  
 > **Last reviewed:** 2026-10-17
 
@@ -16,6 +16,8 @@ A storage proof is not verified directly against a block's global `stateRoot`. V
 3. Verify the storage proof against that `storageRoot` to establish the value at the requested storage-trie key.
 
 This chain ties a specific contract storage value to the authenticated state of a particular block. If the account proof, storage proof, or root belongs to a different block or account, the chain of trust is broken.
+
+**Protocol-evolution note (reviewed 2026-10-17):** This article explains storage proofs for Ethereum's current MPT-based state. Verkle Trees are being developed as a potential alternative with smaller state witnesses. The [Ethereum.org Verkle Trees roadmap](https://ethereum.org/roadmap/verkle-trees/) page, last updated 2026-06-24, reported that testnets were running while significant client updates remained. Do not assume MPT storage proofs transfer unchanged to a future tree format; use the specification and client rules active for the target network and block.
 
 Ethereum's execution layer uses a **Modified Merkle-Patricia Trie (MPT)**. For storage, the trie path is derived from the 32-byte storage slot key using Keccak-256. Trie nodes are RLP-encoded, and a proof provides the nodes needed to validate the path. The exact path and value encodings must follow Ethereum's trie rules.
 
@@ -231,5 +233,5 @@ For an implementation, use a reviewed Ethereum MPT proof library or client imple
 - [Ethereum Execution APIs — `eth_getProof`](https://ethereum.github.io/execution-apis/api/methods/eth_getProof/) — request parameters and response fields for account and storage proofs.
 - [EIP-1186 — RPC Method to Get Merkle Proofs](https://eips.ethereum.org/EIPS/eip-1186) — account and storage proof response design.
 - [Account Proofs](12-account-proofs.md) — how the account proof authenticates the account record and its `storageRoot`.
-- [Merkle Proofs](11-merkle-proofs.md) — general verification model for inclusion, non-inclusion, and trusted roots.
+- [Merkle Proofs](11-merkle-proofs.md) — general verification model for inclusion, non-inclusion, trusted roots, and the MPT-to-Verkle roadmap.
 - [Recursive Length Prefix (RLP) Encoding](10-recursive-length-prefix-rlp-encoding.md) — serialization rules used by execution-layer trie nodes.
