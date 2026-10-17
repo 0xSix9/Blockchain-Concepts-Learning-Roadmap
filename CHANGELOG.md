@@ -420,3 +420,11 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Added a dedicated SVG diagram showing the transaction envelope, access-list entries, upfront costs, and warm versus cold access behavior.
 - Linked the article from the Stage 05 index and canonical roadmap, and updated Stage 05 publication progress to 4/14.
 - The JSON-RPC request is an illustrative example and was not executed against a live Ethereum node.
+
+## 2026-10-17 — Set Code Transactions (EIP-7702)
+
+- Published the Set Code Transactions article explaining type 0x04, the outer transaction payload, authorization tuples and signatures, chain scoping, delegation indicators, and delegated execution context.
+- Covered the distinction between outer transaction and authority nonces, authorization processing and skipped invalid tuples, persistent delegation and clearing, gas parameters, and security risks including mutable delegate code and unsafe `tx.origin` assumptions.
+- Added a dedicated SVG diagram separating the outer transaction signature from authorization signatures and illustrating delegation resolution and its security boundary.
+- Linked the article from the Stage 05 index and canonical roadmap, and updated Stage 05 publication progress to 5/14.
+- No transaction was signed or broadcast, and no example was executed against a live network.
