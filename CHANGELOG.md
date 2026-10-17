@@ -242,3 +242,10 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Added a dedicated collision-versus-namespaced-storage diagram and linked the article from the Stage 03 index and canonical roadmap.
 - Included current references for EIP-1967, ERC-7201, ERC-8042, and ERC-2535.
 - Updated Stage 03 publication progress to 9/13; individual learning checkboxes remain unchecked.
+
+
+## 2026-10-17
+
+- Published the Recursive Length Prefix (RLP) Encoding article, covering the five prefix cases, byte-string and list encoding, canonical integer conventions, decoding boundaries, Ethereum execution-layer usage, and security considerations.
+- Added an RLP encoding overview diagram and linked the article from the Stage 03 checklist and canonical roadmap.
+- Updated Stage 03 publication progress to 10/13; the concept checklist remains unchecked for study tracking.
