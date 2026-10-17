@@ -1,4 +1,4 @@
-# Stage 03 — Storage and Data Layout
+# ✅ Stage 03 — Storage and Data Layout
 
 **Priority:** 1  
 **Topics:** 13  
@@ -8,7 +8,9 @@
 
 This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. All 13 concept articles in this stage are published, from Solidity storage layout and data locations to RLP, Merkle proofs, account proofs, and storage proofs.
 
-## Concept checklist
+## Study checklist
+
+All 13 linked articles are published. Leave a box unchecked until you have personally reviewed that concept; these boxes track study progress, not publication status.
 
 - [ ] [Storage Layout](01-storage-layout.md) — article published
 - [ ] [Storage Slots](02-storage-slots.md) — article published
