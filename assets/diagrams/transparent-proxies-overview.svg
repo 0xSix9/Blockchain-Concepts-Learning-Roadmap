@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850" role="img" aria-labelledby="title desc">
+  <title id="title">Transparent Proxy Call Routing</title>
+  <desc id="desc">A transparent proxy checks who is calling. The actual admin's recognized upgrade requests are handled by the proxy, while unrecognized admin calls are rejected. Calls from all non-admin callers are delegated to the implementation, even when selectors overlap.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}
+      .blue{fill:#eff6ff;stroke:#60a5fa;stroke-width:2}.teal{fill:#ecfeff;stroke:#22d3ee;stroke-width:2}
+      .gold{fill:#fffbeb;stroke:#f59e0b;stroke-width:2}.purple{fill:#f5f3ff;stroke:#a78bfa;stroke-width:2}
+      .red{fill:#fef2f2;stroke:#f87171;stroke-width:2}
+      .ink{fill:#0f172a;font-family:Inter,Arial,sans-serif}.muted{fill:#475569;font-family:Inter,Arial,sans-serif}
+      .title{font-size:30px;font-weight:700}.head{font-size:20px;font-weight:700}.body{font-size:16px}.small{font-size:14px}
+      .mono{fill:#0f172a;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:15px;font-weight:600}
+      .arrow{stroke:#2563eb;stroke-width:3;fill:none}.ok{stroke:#0f766e;stroke-width:2.6;fill:none}.bad{stroke:#dc2626;stroke-width:2.6;fill:none}
+    </style>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2563eb"/></marker>
+    <marker id="ok" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#0f766e"/></marker>
+    <marker id="bad" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#dc2626"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="850" rx="24"/>
+  <text class="ink title" x="42" y="54">Transparent Proxy — Caller-Based Routing</text>
+  <text class="muted body" x="44" y="84">The sender determines whether the proxy handles the call or delegates it.</text>
+
+  <rect class="panel" x="35" y="112" width="1130" height="516" rx="20"/>
+  <rect class="purple" x="70" y="170" width="230" height="94" rx="13"/>
+  <text class="ink head" x="185" y="205" text-anchor="middle">Ordinary Caller</text>
+  <text class="muted body" x="185" y="232" text-anchor="middle">user / application</text>
+
+  <rect class="gold" x="70" y="394" width="230" height="104" rx="13"/>
+  <text class="ink head" x="185" y="429" text-anchor="middle">ProxyAdmin</text>
+  <text class="muted body" x="185" y="455" text-anchor="middle">actual proxy admin</text>
+  <text class="muted small" x="185" y="477" text-anchor="middle">upgrade path</text>
+
+  <rect class="blue" x="405" y="236" width="330" height="290" rx="16"/>
+  <text class="ink head" x="570" y="272" text-anchor="middle">Transparent Proxy</text>
+  <text class="muted body" x="570" y="299" text-anchor="middle">Compare caller with admin</text>
+  <path class="arrow" d="M445 325 L695 325" marker-end="url(#arrow)"/>
+  <text class="ink mono" x="570" y="354" text-anchor="middle">Who is calling?</text>
+  <rect class="teal" x="435" y="378" width="270" height="55" rx="10"/>
+  <text class="ink head" x="570" y="411" text-anchor="middle">Admin: recognized upgrade</text>
+  <rect class="red" x="435" y="449" width="270" height="55" rx="10"/>
+  <text class="ink head" x="570" y="482" text-anchor="middle">Admin: other call → revert</text>
+
+  <rect class="teal" x="840" y="170" width="280" height="108" rx="13"/>
+  <text class="ink head" x="980" y="205" text-anchor="middle">Implementation</text>
+  <text class="muted body" x="980" y="232" text-anchor="middle">application logic</text>
+  <text class="muted small" x="980" y="254" text-anchor="middle">runs in proxy context</text>
+
+  <rect class="gold" x="840" y="394" width="280" height="104" rx="13"/>
+  <text class="ink head" x="980" y="426" text-anchor="middle">Upgrade handled</text>
+  <text class="muted body" x="980" y="452" text-anchor="middle">update implementation slot</text>
+  <text class="muted small" x="980" y="475" text-anchor="middle">optionally call initializer</text>
+
+  <path class="arrow" d="M300 214 L397 270" marker-end="url(#arrow)"/>
+  <text class="muted small" x="348" y="224" text-anchor="middle">call</text>
+  <path class="arrow" d="M300 446 L397 454" marker-end="url(#arrow)"/>
+  <text class="muted small" x="348" y="434" text-anchor="middle">admin call</text>
+
+  <path class="ok" d="M735 270 L832 224" marker-end="url(#ok)"/>
+  <text class="muted small" x="780" y="226" text-anchor="middle">non-admin</text>
+  <path class="ok" d="M735 406 L832 446" marker-end="url(#ok)"/>
+  <text class="muted small" x="785" y="414" text-anchor="middle">recognized</text>
+  <path class="bad" d="M735 478 L832 516" marker-end="url(#bad)"/>
+  <text fill="#b91c1c" font-family="Inter,Arial,sans-serif" font-size="14" x="781" y="500" text-anchor="middle">not forwarded</text>
+
+  <text class="muted body" x="70" y="565">All non-admin calls are delegated—even if a selector overlaps with a proxy admin selector.</text>
+  <text class="muted small" x="70" y="594">The implementation executes via DELEGATECALL using the proxy's storage context.</text>
+
+  <rect class="panel" x="35" y="654" width="1130" height="160" rx="20"/>
+  <text class="ink head" x="64" y="691">OpenZeppelin Contracts 5.x: owner is not the proxy admin</text>
+  <rect class="purple" x="66" y="714" width="255" height="72" rx="11"/>
+  <text class="ink head" x="193" y="742" text-anchor="middle">initialOwner</text>
+  <text class="muted small" x="193" y="765" text-anchor="middle">owner of ProxyAdmin</text>
+  <path class="arrow" d="M321 750 L410 750" marker-end="url(#arrow)"/>
+  <rect class="gold" x="418" y="714" width="280" height="72" rx="11"/>
+  <text class="ink head" x="558" y="742" text-anchor="middle">ProxyAdmin contract</text>
+  <text class="muted small" x="558" y="765" text-anchor="middle">actual admin recognized by proxy</text>
+  <path class="arrow" d="M698 750 L788 750" marker-end="url(#arrow)"/>
+  <rect class="teal" x="796" y="714" width="335" height="72" rx="11"/>
+  <text class="ink head" x="963" y="742" text-anchor="middle">Transparent Proxy</text>
+  <text class="muted small" x="963" y="765" text-anchor="middle">handles admin upgrade operation</text>
+</svg>
