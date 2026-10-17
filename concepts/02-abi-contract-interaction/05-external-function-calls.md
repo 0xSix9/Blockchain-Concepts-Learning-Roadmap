@@ -126,7 +126,7 @@ Do not rely on tx.origin as a replacement for msg.sender to establish authorizat
 
 ## 7. Low-Level Calls and Return Data
 
-Solidity exposes low-level functions on address values. They are useful when the caller needs to work directly with arbitrary calldata or handle the result manually.
+Solidity exposes low-level functions on address values. They are useful when the caller needs to work directly with arbitrary calldata or handle the result manually. One important special case is a call to a [precompiled contract](16-precompiled-contracts.md), where the destination address invokes a protocol-defined operation rather than ordinary deployed runtime bytecode.
 
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.24;
