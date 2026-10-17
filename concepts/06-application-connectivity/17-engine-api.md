@@ -72,6 +72,14 @@ An error during the Engine API handshake or payload processing may indicate mism
 - [ ] Monitor payload status and client logs during sync and upgrades.
 - [ ] Use the public Execution API for ordinary dApp requests, not Engine API methods.
 
+## Key Takeaways
+
+- The Engine API coordinates execution payloads and fork-choice-related communication between execution and consensus clients.
+- Its methods and schemas are versioned alongside protocol upgrades.
+- It uses JWT authentication and an endpoint separate from ordinary public JSON-RPC.
+- Keep the interface protected and configure both connected clients compatibly.
+- dApps should use user-facing Execution/Beacon APIs rather than calling Engine methods directly.
+
 ## References
 
 - 1. [Ethereum Execution APIs — Engine API](https://github.com/ethereum/execution-apis/tree/main/src/engine) — current Engine API specification and versioned methods.
