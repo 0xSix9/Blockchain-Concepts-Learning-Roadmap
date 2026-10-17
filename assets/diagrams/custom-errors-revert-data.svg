@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="810" viewBox="0 0 1200 810" role="img" aria-labelledby="title desc">
+  <title id="title">Custom error revert data</title>
+  <desc id="desc">A failed condition triggers a Solidity custom error. The EVM returns data beginning with a four-byte selector followed by ABI-encoded parameters. The data bubbles through external calls and an off-chain client decodes it with the expected ABI, while the diagram warns that revert data can be forged.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#14243a"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1d4ed8"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f766e"/>
+      <stop offset="1" stop-color="#0d9488"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6d28d9"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b45309"/>
+      <stop offset="1" stop-color="#d97706"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#020617" flood-opacity=".34"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#7dd3fc"/>
+    </marker>
+    <style>
+      .h1{font:700 34px system-ui,-apple-system,Segoe UI,sans-serif;fill:#f8fafc}
+      .sub{font:400 16px system-ui,-apple-system,Segoe UI,sans-serif;fill:#b6c4d8}
+      .ct{font:700 21px system-ui,-apple-system,Segoe UI,sans-serif;fill:#fff}
+      .body{font:400 15px system-ui,-apple-system,Segoe UI,sans-serif;fill:#d7e0ec}
+      .mono{font:700 14px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#fff}
+      .small{font:400 13px system-ui,-apple-system,Segoe UI,sans-serif;fill:#bfccdd}
+      .yes{font:700 15px system-ui,-apple-system,Segoe UI,sans-serif;fill:#86efac}
+      .warn{font:700 15px system-ui,-apple-system,Segoe UI,sans-serif;fill:#fcd34d}
+      .line{fill:none;stroke:#7dd3fc;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="810" rx="26" fill="url(#bg)"/>
+  <circle cx="1080" cy="88" r="160" fill="#2563eb" opacity=".08"/>
+  <circle cx="80" cy="720" r="170" fill="#14b8a6" opacity=".06"/>
+  <text x="60" y="68" class="h1">Custom Errors and Revert Data</text>
+  <text x="60" y="101" class="sub">A typed failure is encoded as bytes, returned to the caller, then decoded off-chain.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="60" y="145" width="245" height="160" rx="18" fill="#17263d" stroke="#334155"/>
+    <rect x="60" y="145" width="245" height="7" rx="3" fill="url(#blue)"/>
+    <text x="84" y="185" class="ct">Failed check</text>
+    <text x="84" y="216" class="mono">amount &gt; balance</text>
+    <text x="84" y="246" class="body">Execution reverts</text>
+    <text x="84" y="277" class="small">State changes roll back</text>
+
+    <rect x="345" y="145" width="245" height="160" rx="18" fill="#17263d" stroke="#334155"/>
+    <rect x="345" y="145" width="245" height="7" rx="3" fill="url(#teal)"/>
+    <text x="369" y="185" class="ct">Custom error</text>
+    <text x="369" y="216" class="mono">revert NotEnough(...)</text>
+    <text x="369" y="246" class="body">Named failure + args</text>
+    <text x="369" y="277" class="small">Declared via error keyword</text>
+
+    <rect x="630" y="145" width="245" height="160" rx="18" fill="#17263d" stroke="#334155"/>
+    <rect x="630" y="145" width="245" height="7" rx="3" fill="url(#purple)"/>
+    <text x="654" y="185" class="ct">Revert payload</text>
+    <text x="654" y="216" class="mono">4-byte selector</text>
+    <text x="654" y="246" class="mono">+ ABI-encoded args</text>
+    <text x="654" y="277" class="small">Returned as error data</text>
+
+    <rect x="915" y="145" width="225" height="160" rx="18" fill="#17263d" stroke="#334155"/>
+    <rect x="915" y="145" width="225" height="7" rx="3" fill="url(#amber)"/>
+    <text x="939" y="185" class="ct">Client / caller</text>
+    <text x="939" y="216" class="body">Decode with ABI</text>
+    <text x="939" y="246" class="body">Display or diagnose</text>
+    <text x="939" y="277" class="small">Do not assume provenance</text>
+  </g>
+  <path d="M305 225 L338 225" class="line"/>
+  <path d="M590 225 L623 225" class="line"/>
+  <path d="M875 225 L908 225" class="line"/>
+
+  <text x="60" y="360" class="ct">Example: InsufficientBalance(uint256,uint256)</text>
+  <rect x="60" y="382" width="1080" height="130" rx="18" fill="#0f1b2d" stroke="#334155"/>
+  <rect x="84" y="407" width="220" height="57" rx="12" fill="url(#blue)"/>
+  <text x="105" y="430" class="mono">0xcf479181</text>
+  <text x="105" y="452" class="small">4-byte selector</text>
+  <rect x="330" y="407" width="350" height="57" rx="12" fill="url(#teal)"/>
+  <text x="352" y="430" class="mono">uint256 available</text>
+  <text x="352" y="452" class="small">ABI argument word</text>
+  <rect x="705" y="407" width="410" height="57" rx="12" fill="url(#purple)"/>
+  <text x="727" y="430" class="mono">uint256 required</text>
+  <text x="727" y="452" class="small">ABI argument word</text>
+  <text x="84" y="490" class="body">Parameterless errors need only the selector; each parameter adds its ABI-encoded payload.</text>
+
+  <rect x="60" y="546" width="515" height="120" rx="18" fill="#17263d" stroke="#334155"/>
+  <text x="84" y="580" class="ct">Why use custom errors?</text>
+  <text x="84" y="610" class="body">Structured names and typed data for clients and tests</text>
+  <text x="84" y="638" class="body">Often less bytecode than long revert strings</text>
+
+  <rect x="605" y="546" width="535" height="120" rx="18" fill="#17263d" stroke="#334155"/>
+  <text x="629" y="580" class="ct">Security warning</text>
+  <text x="629" y="610" class="body">Nested calls can bubble up another contract's error.</text>
+  <text x="629" y="638" class="body">A malicious contract can fabricate matching revert bytes.</text>
+
+  <rect x="60" y="700" width="1080" height="75" rx="16" fill="#1e293b" stroke="#475569"/>
+  <text x="84" y="730" class="warn">Do not trust revert data as proof of who caused the failure.</text>
+  <text x="84" y="755" class="body">Solidity 0.8.37 fixed a reported named-argument bug in require with custom errors under via-IR.</text>
+</svg>
