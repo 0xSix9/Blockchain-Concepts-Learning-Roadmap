@@ -324,3 +324,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the UUPS Proxies article, covering implementation-resident upgrade logic, `_authorizeUpgrade`, `onlyProxy`, `proxiableUUID`, ERC-1967 implementation slots, initialization, storage compatibility, and security concerns.
 - Added a custom SVG diagram showing delegated execution and the UUPS upgrade sequence.
 - Linked the article from the Stage 04 index and canonical roadmap; updated repository publication progress to 7/17. The study checkbox remains unchecked until the learner reviews the topic.
+
+## 2026-10-17 — Beacon Proxies
+
+- Published the Beacon Proxies article, covering the proxy/beacon/implementation roles, ERC-1967 beacon slot, OpenZeppelin Contracts 5.x immutable beacon behavior, per-proxy initialization and storage, and fleet-wide upgrade/security trade-offs.
+- Added a custom SVG architecture diagram showing multiple independent proxy storage contexts sharing an implementation through a single beacon and upgrade path.
+- Linked the article from the Stage 04 index and canonical roadmap, and updated publication progress to 8/17. The study checkbox remains unchecked until the learner reviews the topic.
