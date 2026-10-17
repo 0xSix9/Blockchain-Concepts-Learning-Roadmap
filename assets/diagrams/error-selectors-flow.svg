@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="810" viewBox="0 0 1200 810" role="img" aria-labelledby="title desc">
+  <title id="title">Error selector derivation and revert data</title>
+  <desc id="desc">A canonical error signature is hashed with Keccak-256, the first four bytes become the error selector, then ABI-encoded arguments are appended to create revert data. The result is returned to the caller for decoding.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#14243a"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1d4ed8"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f766e"/>
+      <stop offset="1" stop-color="#0d9488"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6d28d9"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b45309"/>
+      <stop offset="1" stop-color="#d97706"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#020617" flood-opacity=".34"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#7dd3fc"/>
+    </marker>
+    <style>
+      .h1{font:700 34px system-ui,-apple-system,Segoe UI,sans-serif;fill:#f8fafc}
+      .sub{font:400 16px system-ui,-apple-system,Segoe UI,sans-serif;fill:#b6c4d8}
+      .ct{font:700 21px system-ui,-apple-system,Segoe UI,sans-serif;fill:#fff}
+      .body{font:400 15px system-ui,-apple-system,Segoe UI,sans-serif;fill:#d7e0ec}
+      .mono{font:700 14px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#fff}
+      .small{font:400 13px system-ui,-apple-system,Segoe UI,sans-serif;fill:#bfccdd}
+      .yes{font:700 15px system-ui,-apple-system,Segoe UI,sans-serif;fill:#86efac}
+      .warn{font:700 15px system-ui,-apple-system,Segoe UI,sans-serif;fill:#fcd34d}
+      .line{fill:none;stroke:#7dd3fc;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="810" rx="26" fill="url(#bg)"/>
+  <circle cx="1080" cy="88" r="160" fill="#2563eb" opacity=".08"/>
+  <circle cx="80" cy="720" r="170" fill="#14b8a6" opacity=".06"/>
+  <text x="60" y="68" class="h1">Error Selectors</text>
+  <text x="60" y="101" class="sub">Canonical error signature → Keccak-256 → 4-byte selector → revert payload</text>
+
+  <g filter="url(#shadow)">
+    <rect x="60" y="145" width="250" height="160" rx="18" fill="#17263d" stroke="#334155"/>
+    <rect x="60" y="145" width="250" height="7" rx="3" fill="url(#blue)"/>
+    <text x="84" y="185" class="ct">1. Signature</text>
+    <text x="84" y="217" class="mono">InsufficientBalance</text>
+    <text x="84" y="242" class="mono">(uint256,uint256)</text>
+    <text x="84" y="277" class="small">Names and spaces omitted</text>
+
+    <rect x="345" y="145" width="230" height="160" rx="18" fill="#17263d" stroke="#334155"/>
+    <rect x="345" y="145" width="230" height="7" rx="3" fill="url(#teal)"/>
+    <text x="369" y="185" class="ct">2. Hash</text>
+    <text x="369" y="217" class="mono">Keccak-256</text>
+    <text x="369" y="246" class="body">Hash full signature</text>
+    <text x="369" y="277" class="small">Not standardized SHA3-256</text>
+
+    <rect x="610" y="145" width="230" height="160" rx="18" fill="#17263d" stroke="#334155"/>
+    <rect x="610" y="145" width="230" height="7" rx="3" fill="url(#purple)"/>
+    <text x="634" y="185" class="ct">3. Selector</text>
+    <text x="634" y="217" class="mono">0xcf479181</text>
+    <text x="634" y="246" class="body">First 4 bytes</text>
+    <text x="634" y="277" class="small">32-bit identifier</text>
+
+    <rect x="875" y="145" width="265" height="160" rx="18" fill="#17263d" stroke="#334155"/>
+    <rect x="875" y="145" width="265" height="7" rx="3" fill="url(#amber)"/>
+    <text x="899" y="185" class="ct">4. Revert data</text>
+    <text x="899" y="217" class="mono">selector + ABI args</text>
+    <text x="899" y="246" class="body">Returned on failure</text>
+    <text x="899" y="277" class="small">Decoded with the expected ABI</text>
+  </g>
+  <path d="M310 225 L338 225" class="line"/>
+  <path d="M575 225 L603 225" class="line"/>
+  <path d="M840 225 L868 225" class="line"/>
+
+  <text x="60" y="355" class="ct">The revert payload layout</text>
+  <rect x="60" y="378" width="1080" height="118" rx="18" fill="#0f1b2d" stroke="#334155"/>
+  <rect x="84" y="404" width="240" height="52" rx="12" fill="url(#purple)"/>
+  <text x="105" y="426" class="mono">0xcf479181</text>
+  <text x="105" y="446" class="small">4 bytes: selector</text>
+  <rect x="350" y="404" width="350" height="52" rx="12" fill="url(#blue)"/>
+  <text x="372" y="426" class="mono">uint256 available</text>
+  <text x="372" y="446" class="small">32-byte ABI word</text>
+  <rect x="726" y="404" width="389" height="52" rx="12" fill="url(#teal)"/>
+  <text x="748" y="426" class="mono">uint256 required</text>
+  <text x="748" y="446" class="small">32-byte ABI word</text>
+  <text x="84" y="476" class="body">A selector identifies a format; the remaining data carries the argument values.</text>
+
+  <rect x="60" y="533" width="515" height="122" rx="18" fill="#17263d" stroke="#334155"/>
+  <text x="84" y="567" class="ct">Built-in error selectors</text>
+  <text x="84" y="597" class="mono">Error(string)     0x08c379a0</text>
+  <text x="84" y="625" class="mono">Panic(uint256)   0x4e487b71</text>
+
+  <rect x="605" y="533" width="535" height="122" rx="18" fill="#17263d" stroke="#334155"/>
+  <text x="629" y="567" class="ct">Important limitations</text>
+  <text x="629" y="597" class="body">Four bytes means selector collisions are possible.</text>
+  <text x="629" y="625" class="body">Nested callees can bubble up or forge matching error data.</text>
+
+  <rect x="60" y="692" width="1080" height="84" rx="16" fill="#1e293b" stroke="#475569"/>
+  <text x="84" y="722" class="warn">Error selector is not function selector</text>
+  <text x="84" y="749" class="body">Function selectors appear in calldata; error selectors appear at the start of revert data.</text>
+</svg>
