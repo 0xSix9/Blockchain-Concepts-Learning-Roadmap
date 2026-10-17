@@ -63,6 +63,22 @@ A client binary is not itself synonymous with a full or archive node: those term
 6. Ignoring client diversity and upgrade compatibility.
 7. Treating a successful execution result as equivalent to consensus finality.
 
+## Developer Review Checklist
+
+- [ ] Explain the execution client's responsibilities for EVM execution, transaction validation, state, receipts, and execution RPC.
+- [ ] Distinguish execution-client duties from consensus-client fork choice and finality.
+- [ ] Describe how the clients communicate through the authenticated Engine API.
+- [ ] Distinguish public Execution JSON-RPC from Engine API and privileged/debug endpoints.
+- [ ] Explain why a client binary alone does not determine full/archive data retention.
+- [ ] Identify operational needs: fork upgrades, sync monitoring, endpoint security, and client diversity.
+
+## Key Takeaways
+
+- Execution clients execute transactions and maintain execution-layer state.
+- Consensus clients track proof-of-stake fork choice and finality; they cooperate through the Engine API.
+- Client implementations and configurations can differ.
+- The Engine API is a protected client-to-client interface, not a public dApp API.
+
 ## References
 
 - 1. [Ethereum.org — Nodes and Clients](https://ethereum.org/developers/docs/nodes-and-clients) — Ethereum node roles and client architecture.
