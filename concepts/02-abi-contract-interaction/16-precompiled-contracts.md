@@ -35,7 +35,7 @@ A precompile usually has no ordinary Solidity source or deployed runtime bytecod
 
 ## 3. Common Ethereum Precompile Addresses
 
-The following table describes the standard precompile set represented by the post-Prague execution configuration. Address assignments and gas schedules are fork-dependent, so check the target chain's activated rules before relying on any entry.
+The table below lists Ethereum mainnet's standard precompiles after the Osaka execution-layer upgrade, activated as part of Fusaka on 3 December 2025. It includes the BLS12-381 operations from Prague and the P-256 signature-verification precompile introduced for Osaka. Other EVM-compatible networks may expose a different set or gas schedule, so verify the rules for the exact chain and fork. See the [Ethereum fork timeline](https://ethereum.org/ethereum-forks) and the [Fusaka mainnet announcement](https://blog.ethereum.org/2025/11/06/fusaka-mainnet-announcement).
 
 | Address | Common name | Main operation |
 |---|---|---|
@@ -56,12 +56,13 @@ The following table describes the standard precompile set represented by the pos
 | `0x0f` | BLS12-381 pairing check | Evaluate a pairing equation across input pairs |
 | `0x10` | BLS12-381 map to G1 | Map a base-field element to a G1 curve point |
 | `0x11` | BLS12-381 map to G2 | Map an extension-field element to a G2 curve point |
+| `0x0100` | P256VERIFY | Verify a secp256r1/P-256 signature using the specified input format |
 
 The first entries include general-purpose hash and signature operations; the later entries support elliptic-curve arithmetic, pairings, and KZG/BLS-related cryptography. A smart-contract developer does not need to reimplement these algorithms in Solidity to use them, but should understand what the operation verifies and what its input bytes mean.
 
-### Additional precompiles can be fork-specific
+### Chain and fork differences
 
-The list above is not a promise that every EVM-compatible chain has exactly the same precompile set. EIP-7910's `eth_config` configuration model lists `P256VERIFY` at `0x0100` as a precompile added for the Osaka fork; the operation itself is specified by [EIP-7951](https://eips.ethereum.org/EIPS/eip-7951). Its availability depends on whether the target chain has activated the relevant fork. Never assume that an address is a precompile just because it is one on another network.
+The mainnet precompile set is versioned by execution-layer forks. EIP-7910 defines the `eth_config` JSON-RPC method and enumerates the precompile sets associated with each fork; it is a configuration/discovery method, not the EIP that defines P-256 verification. The `P256VERIFY` operation at `0x0100` is specified by [EIP-7951](https://eips.ethereum.org/EIPS/eip-7951) and appears in the Osaka set. Do not assume another EVM-compatible chain has activated the same fork, uses the same implementation rules, or charges the same gas.
 
 ## 4. How a Call to a Precompile Works
 
