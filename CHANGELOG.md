@@ -517,3 +517,11 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Added a custom SVG diagram showing an application sending a JSON-RPC request through a transport to an Ethereum execution client and receiving a result or error.
 - Linked the article from the Stage 06 index and canonical roadmap, and updated Stage 06 publication progress to 1/17.
 - Examples are illustrative; the placeholder endpoint was not contacted and no live RPC request or transaction was submitted.
+
+## 2026-10-17 — Stage 06 Application Connectivity Complete
+
+- Published the remaining 16 Stage 06 concept articles: Ethereum RPC Methods, Reading Blockchain State, Sending Transactions, Transaction Signing, `eth_call`, `eth_estimateGas`, `eth_sendRawTransaction`, Log and Event Filtering, WebSocket Subscriptions, Execution Clients, Archive Nodes, Full Nodes, Light Clients, Execution API, Consensus API, and Engine API.
+- Added a dedicated SVG diagram for each new concept and linked the articles throughout the Stage 06 index and canonical roadmap.
+- Covered standard Ethereum RPC method families, read and simulation semantics, transaction signing/submission workflows, log querying and reorg handling, node storage modes, light-client verification, and the separation between Execution, Consensus/Beacon, and Engine APIs.
+- Updated the Stage 06 index, roadmap status, and root README to show all 17/17 articles published.
+- Examples are educational illustrations; no live RPC endpoint or transaction was used during article preparation.
