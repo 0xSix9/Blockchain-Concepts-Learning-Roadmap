@@ -312,3 +312,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the Proxy Contracts article, explaining proxy forwarding, DELEGATECALL execution context, implementation address resolution, initialization, upgradeability distinctions, and security concerns.
 - Added a dedicated proxy architecture SVG diagram and linked the article from the Stage 04 index and canonical roadmap.
 - Updated the root README and Stage 04 publication progress to 5/17; unchecked topic boxes remain personal study checklists.
+
+## 2026-10-17 — Transparent Proxies
+
+- Published the Transparent Proxies article, covering caller-based proxy routing, selector-clash mitigation, the OpenZeppelin Contracts 5.x `ProxyAdmin` relationship, the ERC-1967 upgrade path, and security considerations including UUPS interaction.
+- Added a custom SVG diagram showing admin versus non-admin call routing and the `initialOwner` / `ProxyAdmin` distinction in OpenZeppelin 5.x.
+- Linked the article from the Stage 04 index and full roadmap, and updated repository publication counters to 6/17. The study checkbox remains unchecked until the learner reviews the topic.
