@@ -175,7 +175,11 @@ If different clients computed different state roots for the same valid block inp
 
 The Ethereum Execution Layer Specifications (EELS) are an executable reference specification intended to help client developers and protocol researchers study block processing. The Yellow Paper is another formal reference, but the current fork's specifications and EIPs should be checked for up-to-date protocol details.
 
-## 10. A practical mental model
+## 10. Visual overview
+
+![Ethereum state transition function: validation, execution, rollback, fee settlement, and resulting state](../../assets/diagrams/state-transition-function.svg)
+
+## 11. A practical mental model
 
 Think of the Ethereum state transition function as a deterministic state-update pipeline:
 
@@ -203,7 +207,7 @@ For block processing, repeat the transaction transition in order and apply all o
 
 This model is intentionally simplified: the official fork-specific execution specifications define the exact transition ordering, failure semantics, and all additional operations. Use it to orient yourself before investigating a concrete client trace or protocol rule.
 
-## 11. Developer checklist
+## 12. Developer checklist
 
 When reasoning about a transaction or protocol mechanism, ask:
 
