@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="740" viewBox="0 0 1200 740" role="img" aria-labelledby="title desc">
+  <title id="title">Storage Context: CALL vs DELEGATECALL</title>
+  <desc id="desc">Two side-by-side flows compare CALL, which executes target code in target storage context, with DELEGATECALL, which executes target code in the caller's storage context. Both contracts have their own slot zero; the active context determines which slot is read or written.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f6f8fc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}
+      .ink{fill:#182236;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}
+      .muted{fill:#5b6880;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}
+      .h1{font-size:30px;font-weight:800;letter-spacing:1px}.h2{font-size:19px;font-weight:750}
+      .body{font-size:16px}.small{font-size:13px}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px}
+      .blue{fill:#dbeafe;stroke:#2563eb;stroke-width:2}.teal{fill:#ccfbf1;stroke:#0f766e;stroke-width:2}
+      .amber{fill:#fef3c7;stroke:#b45309;stroke-width:2}.violet{fill:#ede9fe;stroke:#6d28d9;stroke-width:2}
+      .red{fill:#fee2e2;stroke:#b91c1c;stroke-width:2}.line{stroke:#64748b;stroke-width:2;fill:none}
+      .arrowblue{stroke:#2563eb;stroke-width:2.5;fill:none;marker-end:url(#bluearrow)}
+      .arrowteal{stroke:#0f766e;stroke-width:2.5;fill:none;marker-end:url(#tealarrow)}
+    </style>
+    <marker id="bluearrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#2563eb"/></marker>
+    <marker id="tealarrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0f766e"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="740" rx="24"/>
+  <text class="ink h1" x="48" y="54">STORAGE CONTEXT</text>
+  <text class="muted body" x="50" y="82">The active account context determines which storage a slot key belongs to</text>
+  <rect class="panel" x="40" y="108" width="548" height="476" rx="16"/>
+  <rect class="panel" x="612" y="108" width="548" height="476" rx="16"/>
+  <rect class="blue" x="64" y="132" width="500" height="50" rx="10"/>
+  <text class="ink h2" x="314" y="162" text-anchor="middle">CALL · Switch to target context</text>
+  <rect class="teal" x="636" y="132" width="500" height="50" rx="10"/>
+  <text class="ink h2" x="886" y="162" text-anchor="middle">DELEGATECALL · Keep caller context</text>
+  <text class="muted small" x="64" y="211">Code and storage context normally refer to target</text>
+  <text class="muted small" x="636" y="211">Code comes from target; context stays with caller</text>
+  <rect class="violet" x="74" y="234" width="206" height="82" rx="10"/>
+  <text class="ink h2" x="177" y="263" text-anchor="middle">Caller A</text>
+  <text class="muted body" x="177" y="289" text-anchor="middle">its own storage</text>
+  <rect class="blue" x="348" y="234" width="206" height="82" rx="10"/>
+  <text class="ink h2" x="451" y="263" text-anchor="middle">Target B</text>
+  <text class="muted body" x="451" y="289" text-anchor="middle">code + B storage</text>
+  <path class="arrowblue" d="M280 274 H338"/>
+  <text class="muted small" x="309" y="257" text-anchor="middle">CALL</text>
+  <rect class="panel" x="74" y="356" width="206" height="144" rx="10"/>
+  <text class="ink h2" x="177" y="385" text-anchor="middle">Storage A</text>
+  <rect x="100" y="401" width="154" height="52" rx="7" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+  <text class="ink mono" x="177" y="423" text-anchor="middle">slot 0</text>
+  <text class="muted small" x="177" y="442" text-anchor="middle">A's value</text>
+  <rect class="teal" x="348" y="356" width="206" height="144" rx="10"/>
+  <text class="ink h2" x="451" y="385" text-anchor="middle">Storage B</text>
+  <rect x="374" y="401" width="154" height="52" rx="7" fill="#fff" stroke="#0f766e" stroke-width="1.5"/>
+  <text class="ink mono" x="451" y="423" text-anchor="middle">slot 0</text>
+  <text class="muted small" x="451" y="442" text-anchor="middle">B's value</text>
+  <path class="arrowblue" d="M451 316 V346"/>
+  <text class="ink body" x="314" y="536" text-anchor="middle">SLOAD / SSTORE affect B</text>
+  <text class="muted small" x="314" y="559" text-anchor="middle">slot 0 in A and slot 0 in B are different state</text>
+  <rect class="violet" x="646" y="234" width="206" height="82" rx="10"/>
+  <text class="ink h2" x="749" y="263" text-anchor="middle">Caller / Proxy A</text>
+  <text class="muted body" x="749" y="289" text-anchor="middle">active storage context</text>
+  <rect class="blue" x="920" y="234" width="206" height="82" rx="10"/>
+  <text class="ink h2" x="1023" y="263" text-anchor="middle">Target B</text>
+  <text class="muted body" x="1023" y="289" text-anchor="middle">code source only</text>
+  <path class="arrowteal" d="M852 274 H910"/>
+  <text class="muted small" x="881" y="257" text-anchor="middle">DELEGATE</text>
+  <rect class="teal" x="646" y="356" width="206" height="144" rx="10"/>
+  <text class="ink h2" x="749" y="385" text-anchor="middle">Storage A</text>
+  <rect x="672" y="401" width="154" height="52" rx="7" fill="#fff" stroke="#0f766e" stroke-width="1.5"/>
+  <text class="ink mono" x="749" y="423" text-anchor="middle">slot 0</text>
+  <text class="muted small" x="749" y="442" text-anchor="middle">A's value</text>
+  <rect class="panel" x="920" y="356" width="206" height="144" rx="10"/>
+  <text class="ink h2" x="1023" y="385" text-anchor="middle">Storage B</text>
+  <rect x="946" y="401" width="154" height="52" rx="7" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+  <text class="ink mono" x="1023" y="423" text-anchor="middle">slot 0</text>
+  <text class="muted small" x="1023" y="442" text-anchor="middle">not used here</text>
+  <path class="arrowteal" d="M749 316 V346"/>
+  <text class="ink body" x="886" y="536" text-anchor="middle">SLOAD / SSTORE affect A</text>
+  <text class="muted small" x="886" y="559" text-anchor="middle">Target bytecode writes to the proxy's state</text>
+  <rect class="amber" x="40" y="606" width="1120" height="94" rx="14"/>
+  <text class="ink h2" x="64" y="639">Remember</text>
+  <text class="ink body" x="64" y="666">Code address ≠ storage context. With DELEGATECALL, address(this), storage, and balance refer to the caller's active account context.</text>
+  <text class="muted small" x="64" y="687">Check the account address and slot key together when inspecting on-chain state.</text>
+</svg>
