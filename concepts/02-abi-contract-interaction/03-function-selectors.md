@@ -234,6 +234,8 @@ These are not interchangeable. Function calls, custom errors, and events use rel
 
 ## References
 
+- [Error Selectors](15-error-selectors.md) — error selectors share the four-byte hashing idea, but occur in revert data rather than calldata.
+
 1. **[Solidity Contract ABI Specification — Function Selector](https://docs.solidity.org/en/latest/abi-spec.html#function-selector)** — primary source for selector length, Keccak-256 derivation, and canonical signatures.
 2. **[Solidity Contracts — Function Signatures and Selectors](https://docs.solidity.org/en/latest/contracts.html#function-signatures-and-selectors-in-libraries)** — reference for Solidity selector access and library-specific calling conventions.
 3. **[Ethereum.org — Transactions: The Data Field](https://ethereum.org/en/developers/docs/transactions/#the-data-field)** — explains how the first four calldata bytes identify a function and how the arguments follow.
