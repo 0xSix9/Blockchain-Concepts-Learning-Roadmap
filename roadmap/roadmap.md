@@ -34,7 +34,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [ABI Encoding and Decoding](../concepts/02-abi-contract-interaction/02-abi-encoding-and-decoding.md) — article published
 - [ ] [Function Selectors](../concepts/02-abi-contract-interaction/03-function-selectors.md) — article published
 - [ ] [Function Dispatch](../concepts/02-abi-contract-interaction/04-function-dispatch.md) — article published
-- [ ] External Function Calls
+- [ ] [External Function Calls](../concepts/02-abi-contract-interaction/05-external-function-calls.md) — article published
 - [ ] Constructors
 - [ ] Fallback Functions
 - [ ] Receive Functions
