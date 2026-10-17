@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">EIP-7702 Set Code Transaction</title>
+  <desc id="desc">A type 0x04 outer transaction contains a separately signed authorization list. Valid authorizations make an EOA store a delegation indicator pointing to already deployed code. The code then executes in the EOA's account context, with security cautions.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.title{font:700 29px Arial,sans-serif;fill:#0f172a}.subtitle{font:16px Arial,sans-serif;fill:#475569}.label{font:700 18px Arial,sans-serif;fill:#0f172a}.body{font:15px Arial,sans-serif;fill:#334155}.small{font:13px Arial,sans-serif;fill:#475569}.mono{font:700 15px ui-monospace,Menlo,monospace;fill:#0f172a}.blue{fill:#dbeafe;stroke:#60a5fa;stroke-width:2}.teal{fill:#ccfbf1;stroke:#2dd4bf;stroke-width:2}.purple{fill:#ede9fe;stroke:#a78bfa;stroke-width:2}.amber{fill:#fef3c7;stroke:#f59e0b;stroke-width:2}.red{fill:#fee2e2;stroke:#f87171;stroke-width:2}.line{stroke:#64748b;stroke-width:2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="900" rx="22"/>
+  <text class="title" x="600" y="47" text-anchor="middle">Set Code Transactions — EIP-7702</text>
+  <text class="subtitle" x="600" y="75" text-anchor="middle">Type 0x04 · EOA delegation to already-deployed code</text>
+
+  <rect class="panel" x="45" y="100" width="1110" height="125" rx="16"/>
+  <text class="label" x="72" y="133">Outer transaction (signed by transaction sender)</text>
+  <rect class="purple" x="73" y="151" width="1060" height="53" rx="10"/>
+  <text class="mono" x="603" y="174" text-anchor="middle">0x04 || RLP([chain_id, nonce, maxPriorityFee, maxFee, gasLimit, to, value, data,</text>
+  <text class="mono" x="603" y="192" text-anchor="middle">access_list, authorization_list, signature_y_parity, r, s])</text>
+
+  <path class="line" d="M600 225 L600 254"/>
+  <rect class="panel" x="45" y="260" width="520" height="190" rx="16"/>
+  <text class="label" x="72" y="294">Authorization tuple</text>
+  <rect class="blue" x="73" y="313" width="465" height="55" rx="10"/>
+  <text class="mono" x="305" y="337" text-anchor="middle">[chain_id, address, nonce,</text>
+  <text class="mono" x="305" y="356" text-anchor="middle">y_parity, r, s]</text>
+  <text class="body" x="73" y="395">Signed by the EOA being delegated (authority).</text>
+  <text class="small" x="73" y="420">Outer sender can be a different account / relayer.</text>
+
+  <rect class="panel" x="635" y="260" width="520" height="190" rx="16"/>
+  <text class="label" x="662" y="294">Validation</text>
+  <text class="body" x="662" y="326">• Chain ID: current chain or 0</text>
+  <text class="body" x="662" y="354">• Signature recovers the authority</text>
+  <text class="body" x="662" y="382">• Authority nonce must match</text>
+  <text class="body" x="662" y="410">• Eligible code state and valid signature</text>
+  <text class="small" x="662" y="433">Invalid tuple is skipped; processing continues.</text>
+  <path class="line" d="M305 450 L305 485"/>
+  <path class="line" d="M895 450 L895 485"/>
+
+  <rect class="teal" x="45" y="492" width="520" height="138" rx="16"/>
+  <text class="label" x="72" y="526">Delegation indicator written to EOA</text>
+  <text class="mono" x="72" y="559">0xef0100 || delegate_address</text>
+  <text class="body" x="72" y="586">Persists until replaced or cleared.</text>
+  <text class="small" x="72" y="609">Zero address authorization clears the indicator.</text>
+
+  <rect class="blue" x="635" y="492" width="520" height="138" rx="16"/>
+  <text class="label" x="662" y="526">Code loaded from delegate address</text>
+  <text class="body" x="662" y="558">The EOA does not receive a code copy.</text>
+  <text class="body" x="662" y="584">The existing deployed code is fetched for execution.</text>
+  <text class="small" x="662" y="609">No constructor/initcode is run by this transaction.</text>
+
+  <path class="line" d="M305 630 L305 661"/>
+  <path class="line" d="M895 630 L895 661"/>
+  <rect class="panel" x="45" y="668" width="520" height="125" rx="16"/>
+  <text class="label" x="72" y="702">Execution context = the EOA</text>
+  <text class="body" x="72" y="733">Account address, balance, and storage remain A's.</text>
+  <text class="body" x="72" y="760">Delegated code can act with A's authority.</text>
+
+  <rect class="red" x="635" y="668" width="520" height="125" rx="16"/>
+  <text class="label" x="662" y="702">Security boundary</text>
+  <text class="body" x="662" y="733">Malicious or mutable delegate code can steal assets.</text>
+  <text class="body" x="662" y="760">Audit target; beware chain_id = 0 and tx.origin checks.</text>
+
+  <rect x="45" y="817" width="1110" height="55" rx="12" fill="#0f172a"/>
+  <text x="600" y="840" text-anchor="middle" style="font:700 17px Arial,sans-serif;fill:#fff">Two signatures · Two nonce roles</text>
+  <text x="600" y="861" text-anchor="middle" style="font:14px Arial,sans-serif;fill:#cbd5e1">Outer transaction signature ≠ authorization signature · sender nonce ≠ authority nonce</text>
+</svg>
