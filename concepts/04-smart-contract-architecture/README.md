@@ -2,17 +2,16 @@
 
 **Priority:** 1  
 **Topics:** 17  
-**Article status:** In progress — 1/17 concept articles published.
+**Article status:** In progress — 2/17 concept articles published.
 
 ## About this stage
 
-This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The Contract Composition article is published; the remaining articles will be added one by one as the concepts are researched. The checkboxes track personal study progress, not publication status.
+This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The Contract Composition and Inheritance articles are published; the remaining articles will be added one by one as the concepts are researched. The checkboxes track personal study progress, not publication status.
 
 ## Study checklist
 
-
 - [ ] [Contract Composition](01-contract-composition.md) — article published
-- [ ] Inheritance
+- [ ] [Inheritance](02-inheritance.md) — article published
 - [ ] Interfaces and Libraries
 - [ ] Internal and External Calls
 - [ ] Proxy Contracts
