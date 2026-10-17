@@ -2,15 +2,15 @@
 
 **Priority:** 1  
 **Topics:** 13  
-**Article status:** Not started — this stage contains a checklist only.
+**Article status:** In progress — 1/13 concept articles published.
 
 ## About this stage
 
-This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The individual articles are intentionally not created yet; they will be added one by one as the concepts are researched.
+This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The Storage Layout article is published; the remaining concept articles will be added one by one as they are researched.
 
 ## Concept checklist
 
-- [ ] Storage Layout
+- [ ] [Storage Layout](01-storage-layout.md) — article published
 - [ ] Storage Slots
 - [ ] Storage Packing
 - [ ] Mappings and Dynamic Arrays in Storage
