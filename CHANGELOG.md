@@ -199,3 +199,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the Storage Slots article for Stage 03, explaining the slot-key/value distinction, 32-byte storage words, SLOAD/SSTORE, JSON-RPC inspection, account storage context, and common non-sequential locations.
 - Added a dedicated Storage Slots diagram and linked the article from the Stage 03 index and canonical roadmap.
 - Updated Stage 03 publication progress to 2/13; individual learning checkboxes remain unchecked.
+
+## 2026-10-17
+
+- Published the Storage Packing article for Stage 03, explaining Solidity packing rules, byte offsets, declaration-order examples, struct packing, gas trade-offs, and upgrade/assembly hazards.
+- Added a dedicated Storage Packing overview diagram and linked the article from the Stage 03 index and canonical roadmap.
+- Updated Stage 03 publication progress to 3/13; individual learning checkboxes remain unchecked.
