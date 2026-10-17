@@ -252,17 +252,18 @@ With <code>call</code>, the sender must inspect and handle the returned success 
 The <code>payable</code> keyword on a function and the <code>address payable</code> type are related but not identical:
 
 - A **payable function** can receive Ether when that function is called.
-- An **address payable** is an address value that Solidity permits to be used for Ether-transfer operations such as <code>call{value: amount}("")</code>.
+- An <code>address payable</code> is a distinct address type that provides the legacy <code>transfer</code> and <code>send</code> members. Solidity's documentation marks both as deprecated and scheduled for removal.
+- The low-level <code>call</code> member is available on an ordinary <code>address</code> too. Therefore, an <code>address payable</code> variable is **not required solely to use** <code>call{value: amount}("")</code>.
 
 For example:
 
-    address payable recipient = payable(msg.sender);
+    address recipient = msg.sender;
     (bool success, ) = recipient.call{value: 0.01 ether}("");
     require(success, "Payment failed");
 
 This example is an outgoing payment from the current contract. It is not proof that the recipient will keep the funds or perform a particular action; if the recipient is a contract, its receive or fallback behavior may execute, or the transfer may fail.
 
-Converting an address to <code>address payable</code> does not grant permission to spend funds that belong to another account, and it does not provide access control. It only expresses a type accepted by Solidity's Ether-transfer operations.
+Converting an address to <code>address payable</code> does not grant permission to spend funds that belong to another account, and it does not provide access control. The type is not a substitute for validation, authorization, or checking the result of an Ether transfer.
 
 ## 8. Common Mistakes and Security Considerations
 
