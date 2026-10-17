@@ -2,15 +2,15 @@
 
 **Priority:** 2  
 **Topics:** 14  
-**Article status:** Not started — this stage contains a checklist only.
+**Article status:** In progress — 1/14 concept articles published.
 
 ## About this stage
 
-This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The individual articles are intentionally not created yet; they will be added one by one as the concepts are researched.
+This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The Transaction Lifecycle article is published; the remaining concepts will be added one by one as they are researched. The checkboxes track personal study progress, not publication status.
 
 ## Concept checklist
 
-- [ ] Transaction Lifecycle
+- [ ] [Transaction Lifecycle](01-transaction-lifecycle.md) — article published
 - [ ] Transaction Nonce
 - [ ] Transaction Types (EIP-2718)
 - [ ] Access List Transactions (EIP-2930)
