@@ -68,7 +68,7 @@ That response should be interpreted carefully: it confirms that the RPC endpoint
 
 After submission, clients may propagate the transaction to peers. Each node applies local validation and transaction-pool policies before retaining or relaying it. The transaction pool is an operational mechanism used by clients; it is not a single globally identical pool that every network participant sees in precisely the same order.
 
-A transaction might not be retained or propagated if, for example, it has an invalid signature, the wrong nonce for the node's current state, insufficient balance, fee settings that do not meet local policy, or another validity/policy issue. Exact RPC errors and pool behavior can vary by client and endpoint.
+A transaction might not be retained or propagated if, for example, it has an invalid signature, a nonce that is already too low, insufficient balance, fee settings that do not meet local policy, or another validity/policy issue. A transaction with a future nonce may be queued by some clients until earlier nonces are available, while other client or provider policies may differ. Exact RPC errors and pool behavior can vary by client and endpoint.
 
 A useful distinction:
 
@@ -218,5 +218,5 @@ RPC data is supplied by the chosen endpoint. For critical operations, consider t
 4. **[Ethereum.org — Blocks](https://ethereum.org/developers/docs/blocks/)** — transaction ordering within blocks and block production in Ethereum's proof-of-stake system.
 5. **[EIP-1559 — Fee market change for ETH 1.0 chain](https://eips.ethereum.org/EIPS/eip-1559)** — type-2 transaction envelope and dynamic fee fields.
 6. **[Ethereum Execution API specification](https://github.com/ethereum/execution-apis)** — current interface specifications for execution-layer RPC methods.
-7. **[Transaction Nonce](02-transaction-nonce.md)** — companion concept in this stage covering sender sequence numbers in more detail.
-8. **[Transaction Receipts](11-transaction-receipts.md)** — companion concept in this stage for receipt fields and result inspection.
+7. **Transaction Nonce** — companion concept in this stage covering sender sequence numbers in more detail.
+8. **Transaction Receipts** — companion concept in this stage for receipt fields and result inspection.
