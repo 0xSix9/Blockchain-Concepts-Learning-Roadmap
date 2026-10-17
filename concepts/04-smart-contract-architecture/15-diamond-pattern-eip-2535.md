@@ -71,7 +71,7 @@ EIP-2535 defines the interoperable `IDiamondCut` interface for changing selector
 - `action`: whether to add, replace, or remove selectors;
 - `functionSelectors`: the list of selectors affected by the operation.
 
-The three actions are:
+The standard expresses these actions with the `FacetCutAction` enum in `IDiamondCut` (the action values are Add, Replace, and Remove). The three actions are:
 
 - **Add:** associate selectors that are not already mapped with a facet.
 - **Replace:** redirect existing selectors to a different facet, subject to the standard's validation rules.
@@ -89,7 +89,7 @@ Because `diamondCut` can cause arbitrary code to execute with access to diamond 
 
 ## 6. Loupe Functions: Discovering the Diamond's API
 
-A diamond's callable interface can change after deployment, so a verified source file for the diamond alone may not reveal all functions currently exposed. EIP-2535 therefore defines the **Diamond Loupe** interface for introspection.
+A diamond's callable interface can change after deployment, so a verified source file for the diamond alone may not reveal all functions currently exposed. EIP-2535 therefore defines the **`IDiamondLoupe`** interface for introspection.
 
 The standard loupe functions are:
 
