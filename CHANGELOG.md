@@ -436,3 +436,11 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Added a dedicated SVG diagram showing chain-specific signing, rejection on an alternate Chain ID, and separate defenses for same-chain transactions and off-chain signed messages.
 - Linked the article from the Stage 05 index and canonical roadmap, and updated Stage 05 publication progress to 6/14.
 - The signing payloads are conceptual examples; no transaction was signed, submitted, or executed.
+
+## 2026-10-17 — Intrinsic Gas
+
+- Published the Intrinsic Gas article distinguishing pre-execution transaction requirements from runtime EVM execution costs.
+- Covered the base 21,000 gas charge, zero/non-zero calldata bytes, contract-creation overhead and EIP-3860 initcode word cost, EIP-2930 access-list charges, EIP-7702 authorization-list charges, and the EIP-7623 calldata floor.
+- Added a dedicated SVG diagram illustrating the transaction-level cost components, calldata floor, and pre-execution gas-limit validation.
+- Linked the article from the Stage 05 index and canonical roadmap, and updated Stage 05 publication progress to 7/14.
+- Gas formulas are presented as educational summaries; no transaction was simulated or sent to a live node.
