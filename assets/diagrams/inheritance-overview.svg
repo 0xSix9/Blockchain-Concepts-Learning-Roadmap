@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Solidity Inheritance Overview</title>
+  <desc id="desc">A base contract exposes an explicitly virtual function and internal state, a derived contract inherits accessible members and overrides behavior, and the final derived contract compiles into one deployed contract instance. The diagram also notes that multiple inheritance uses C3 linearization.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}
+      .blue{fill:#eff6ff;stroke:#60a5fa;stroke-width:2}.teal{fill:#ecfeff;stroke:#22d3ee;stroke-width:2}
+      .gold{fill:#fffbeb;stroke:#f59e0b;stroke-width:2}.purple{fill:#f5f3ff;stroke:#a78bfa;stroke-width:2}
+      .ink{fill:#0f172a;font-family:Inter,Arial,sans-serif}.muted{fill:#475569;font-family:Inter,Arial,sans-serif}
+      .title{font-size:30px;font-weight:700}.head{font-size:19px;font-weight:700}.body{font-size:15px}.small{font-size:13px}
+      .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;font-weight:600}
+      .line{stroke:#64748b;stroke-width:2.5;fill:none}.arrow{stroke:#2563eb;stroke-width:3;fill:none}
+    </style>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2563eb"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="760" rx="24"/>
+  <text class="ink title" x="44" y="54">Solidity Inheritance: Reuse, Extend, Override</text>
+  <text class="muted body" x="46" y="84">Base behavior is compiled into the derived deployment; it is not automatically a separate contract instance.</text>
+
+  <rect class="panel" x="40" y="112" width="1120" height="390" rx="20"/>
+  <text class="ink head" x="66" y="148">Single inheritance and overriding</text>
+
+  <rect class="blue" x="90" y="186" width="310" height="180" rx="16"/>
+  <text class="ink head" x="245" y="218" text-anchor="middle">Base contract</text>
+  <text class="ink mono" x="114" y="252">function message()</text>
+  <text class="muted body" x="114" y="278">public pure virtual</text>
+  <text class="muted body" x="114" y="308">Shared state / helpers</text>
+  <text class="muted small" x="114" y="340">Defines extension points</text>
+
+  <path class="arrow" d="M404 276 L482 276" marker-end="url(#arrow)"/>
+  <text class="ink mono" x="443" y="252" text-anchor="middle">is</text>
+
+  <rect class="teal" x="492" y="186" width="310" height="180" rx="16"/>
+  <text class="ink head" x="647" y="218" text-anchor="middle">Derived contract</text>
+  <text class="ink mono" x="516" y="252">override message()</text>
+  <text class="muted body" x="516" y="278">Reuses inherited members</text>
+  <text class="muted body" x="516" y="308">May add new behavior</text>
+  <text class="muted small" x="516" y="340">Uses accessible base members</text>
+
+  <path class="arrow" d="M806 276 L884 276" marker-end="url(#arrow)"/>
+  <rect class="purple" x="894" y="186" width="230" height="180" rx="16"/>
+  <text class="ink head" x="1009" y="218" text-anchor="middle">Deployment</text>
+  <text class="ink body" x="1009" y="253" text-anchor="middle">One contract instance</text>
+  <text class="muted body" x="1009" y="282" text-anchor="middle">Combined bytecode</text>
+  <text class="muted small" x="1009" y="316" text-anchor="middle">Inherited state layout</text>
+  <text class="muted small" x="1009" y="338" text-anchor="middle">is part of final layout</text>
+
+  <text class="muted body" x="70" y="414">virtual = may be overridden</text>
+  <text class="muted body" x="410" y="414">override = intentional replacement</text>
+  <text class="muted body" x="70" y="445">super = next implementation in the inheritance order</text>
+  <text class="muted small" x="70" y="472">An inherited function call is normally internal execution—not an external message call.</text>
+
+  <rect class="panel" x="40" y="526" width="540" height="190" rx="18"/>
+  <text class="ink head" x="66" y="562">Multiple inheritance</text>
+  <rect class="blue" x="82" y="586" width="170" height="50" rx="10"/>
+  <text class="ink body" x="167" y="616" text-anchor="middle">Base A</text>
+  <rect class="teal" x="352" y="586" width="170" height="50" rx="10"/>
+  <text class="ink body" x="437" y="616" text-anchor="middle">Base B</text>
+  <path class="line" d="M167 636 L167 654 L302 654 M437 636 L437 654 L302 654 L302 669"/>
+  <rect class="gold" x="216" y="669" width="172" height="35" rx="8"/>
+  <text class="ink body" x="302" y="692" text-anchor="middle">Combined</text>
+  <text class="muted small" x="66" y="699">C3 linearization fixes resolution order.</text>
+
+  <rect class="panel" x="600" y="526" width="560" height="190" rx="18"/>
+  <text class="ink head" x="626" y="562">Safety checks</text>
+  <text class="ink body" x="630" y="596">• Keep the hierarchy shallow and understandable.</text>
+  <text class="ink body" x="630" y="626">• Supply every required base constructor argument.</text>
+  <text class="ink body" x="630" y="656">• Resolve conflicting overrides explicitly.</text>
+  <text class="ink body" x="630" y="686">• Review inherited storage layout before upgrades.</text>
+</svg>
