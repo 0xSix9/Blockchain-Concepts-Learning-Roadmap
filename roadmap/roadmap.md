@@ -19,7 +19,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [CALL](../concepts/01-evm-execution/04-call.md) — article published
 - [ ] [DELEGATECALL](../concepts/01-evm-execution/05-delegatecall.md) — article published
 - [ ] [STATICCALL](../concepts/01-evm-execution/06-staticcall.md) — article published
-- [ ] CREATE
+- [ ] [CREATE](../concepts/01-evm-execution/07-create.md) — article published
 - [ ] CREATE2
 - [ ] Call Stack and Call Depth
 - [ ] Return Data and Revert Data

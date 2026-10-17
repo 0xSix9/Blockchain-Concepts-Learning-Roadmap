@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1030" viewBox="0 0 1200 1030" role="img" aria-labelledby="title desc">
+  <title id="title">EVM CREATE opcode deployment flow</title>
+  <desc id="desc">A factory prepares initcode in memory, CREATE derives a new address and starts initcode execution. Successful initcode returns runtime bytecode, which is charged for and installed. Failure returns zero to the creator.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#4b5563"/></marker>
+    <marker id="blueArrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/></marker>
+    <style>
+      .bg{fill:#f8fafc}.title{font:700 30px Arial,sans-serif;fill:#0f172a}.sub{font:16px Arial,sans-serif;fill:#475569}
+      .box{fill:#fff;stroke:#94a3b8;stroke-width:2;rx:16}.blue{fill:#eff6ff;stroke:#2563eb;stroke-width:2;rx:16}
+      .green{fill:#ecfdf5;stroke:#059669;stroke-width:2;rx:16}.red{fill:#fff1f2;stroke:#e11d48;stroke-width:2;rx:16}
+      .label{font:700 19px Arial,sans-serif;fill:#0f172a}.body{font:15px Arial,sans-serif;fill:#334155}.small{font:13px Arial,sans-serif;fill:#475569}
+      .line{stroke:#4b5563;stroke-width:2.5;fill:none;marker-end:url(#arrow)}.blueline{stroke:#2563eb;stroke-width:2.5;fill:none;marker-end:url(#blueArrow)}
+      .num{font:700 16px Arial,sans-serif;fill:#fff}
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1200" height="1030" rx="22"/>
+  <text class="title" x="600" y="52" text-anchor="middle">How CREATE deploys a contract</text>
+  <text class="sub" x="600" y="82" text-anchor="middle">Initcode executes first; the bytes it returns become runtime code</text>
+
+  <rect class="blue" x="80" y="120" width="455" height="130" rx="16"/>
+  <circle cx="112" cy="150" r="18" fill="#2563eb"/><text class="num" x="112" y="156" text-anchor="middle">1</text>
+  <text class="label" x="145" y="156">Creator contract</text>
+  <text class="body" x="108" y="190">Prepare initcode in EVM memory</text>
+  <text class="body" x="108" y="215">Supply value, offset, and size</text>
+  <text class="small" x="108" y="237">The memory slice must contain creation bytecode</text>
+
+  <rect class="blue" x="665" y="120" width="455" height="130" rx="16"/>
+  <circle cx="697" cy="150" r="18" fill="#2563eb"/><text class="num" x="697" y="156" text-anchor="middle">2</text>
+  <text class="label" x="730" y="156">CREATE (0xF0)</text>
+  <text class="body" x="693" y="190">Consumes value, offset, size</text>
+  <text class="body" x="693" y="215">Uses creator address + creator nonce</text>
+  <text class="small" x="693" y="237">Address = last20(keccak256(RLP([creator, nonce])))</text>
+  <path class="blueline" d="M535 185 L655 185"/>
+
+  <path class="line" d="M892 250 L892 292"/>
+  <rect class="box" x="665" y="300" width="455" height="105" rx="16"/>
+  <circle cx="697" cy="330" r="18" fill="#475569"/><text class="num" x="697" y="336" text-anchor="middle">3</text>
+  <text class="label" x="730" y="336">Creation execution frame</text>
+  <text class="body" x="693" y="368">Create account and execute initcode</text>
+  <text class="small" x="693" y="390">Constructor logic runs in the new address context</text>
+
+  <path class="line" d="M892 405 L892 446"/>
+  <rect class="green" x="665" y="454" width="455" height="125" rx="16"/>
+  <circle cx="697" cy="484" r="18" fill="#059669"/><text class="num" x="697" y="490" text-anchor="middle">4</text>
+  <text class="label" x="730" y="490">Initcode succeeds</text>
+  <text class="body" x="693" y="524">Returns runtime bytecode</text>
+  <text class="body" x="693" y="548">Code-deposit gas is charged</text>
+  <text class="small" x="693" y="568">Size and code-validation rules still apply</text>
+
+  <path class="line" d="M892 579 L892 620"/>
+  <rect class="green" x="665" y="628" width="455" height="105" rx="16"/>
+  <circle cx="697" cy="658" r="18" fill="#059669"/><text class="num" x="697" y="664" text-anchor="middle">5</text>
+  <text class="label" x="730" y="664">Runtime code installed</text>
+  <text class="body" x="693" y="696">Contract now exists at the derived address</text>
+  <text class="small" x="693" y="718">Later calls execute this code, not initcode</text>
+
+  <path class="line" d="M665 355 L590 355 L590 790 L535 790"/>
+  <rect class="red" x="80" y="735" width="455" height="125" rx="16"/>
+  <circle cx="112" cy="765" r="18" fill="#e11d48"/><text class="num" x="112" y="771" text-anchor="middle">!</text>
+  <text class="label" x="145" y="771">Creation failure</text>
+  <text class="body" x="108" y="805">Revert, exceptional halt, collision,</text>
+  <text class="body" x="108" y="829">or an applicable validation/limit failure</text>
+  <text class="small" x="108" y="849">No runtime code is installed by this attempt</text>
+
+  <path class="blueline" d="M665 682 L600 682 L600 912 L535 912"/>
+  <rect class="blue" x="80" y="882" width="455" height="82" rx="16"/>
+  <text class="label" x="307" y="913" text-anchor="middle">Return to the creator frame</text>
+  <text class="body" x="307" y="940" text-anchor="middle">Success: address  |  Failure: zero</text>
+
+  <text class="small" x="600" y="1000" text-anchor="middle">Protocol rules and gas costs are fork-dependent; verify against the target chain.</text>
+</svg>
