@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="690" viewBox="0 0 1200 690" role="img" aria-labelledby="title desc">
+<title id="title">ABI encoding and decoding: head and tail</title>
+<desc id="desc">The tuple (uint256 42, string cat) is encoded in four 32-byte words. The first word contains 42, the second gives the offset 0x40, the third word contains the string byte length 3, and the fourth contains UTF-8 bytes for cat right-padded with zeros.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#080D19"/><stop offset="1" stop-color="#14213B"/></linearGradient>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#8CA8D6"/></marker>
+</defs>
+<rect width="1200" height="690" rx="22" fill="url(#bg)"/>
+<text x="44" y="42" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="2.4" fill="#74C0FC">ABI ENCODING · HEAD / TAIL</text>
+<text x="44" y="82" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#F8FAFC">Encoding the tuple (uint256(42), string("cat"))</text>
+<text x="44" y="113" font-family="Arial,sans-serif" font-size="14" fill="#C4D2E7">Each word is 32 bytes. The dynamic string is referenced by an offset, not stored inline in the head.</text>
+<g font-family="Arial,sans-serif">
+  <text x="52" y="160" font-size="13" font-weight="700" fill="#AFC2E4">HEAD · 64 BYTES</text>
+  <rect x="52" y="180" width="520" height="105" rx="12" fill="#18263C" stroke="#6EA8FE" stroke-width="1.5"/>
+  <text x="74" y="210" font-size="12" font-weight="700" fill="#93C5FD">WORD 0 · STATIC VALUE</text>
+  <text x="74" y="244" font-size="18" font-weight="700" fill="#F8FAFC">uint256 id = 42</text>
+  <text x="74" y="267" font-size="12" fill="#C4D2E7">31 leading zero bytes + 0x2a</text>
+  <rect x="628" y="180" width="520" height="105" rx="12" fill="#1D2C40" stroke="#B197FC" stroke-width="1.5"/>
+  <text x="650" y="210" font-size="12" font-weight="700" fill="#D4C5FF">WORD 1 · OFFSET</text>
+  <text x="650" y="244" font-size="18" font-weight="700" fill="#F8FAFC">0x40 = 64 bytes</text>
+  <text x="650" y="267" font-size="12" fill="#C4D2E7">Points to the start of the string tail</text>
+  <text x="52" y="328" font-size="13" font-weight="700" fill="#A7F3D0">TAIL · STARTS AT BYTE OFFSET 0x40</text>
+  <rect x="52" y="348" width="520" height="105" rx="12" fill="#182F36" stroke="#34D399" stroke-width="1.5"/>
+  <text x="74" y="378" font-size="12" font-weight="700" fill="#A7F3D0">WORD 2 · LENGTH</text>
+  <text x="74" y="412" font-size="18" font-weight="700" fill="#F8FAFC">3 bytes</text>
+  <text x="74" y="435" font-size="12" fill="#C4D2E7">The length word comes before the payload</text>
+  <rect x="628" y="348" width="520" height="105" rx="12" fill="#182F36" stroke="#34D399" stroke-width="1.5"/>
+  <text x="650" y="378" font-size="12" font-weight="700" fill="#A7F3D0">WORD 3 · UTF-8 DATA + PADDING</text>
+  <text x="650" y="412" font-size="18" font-weight="700" fill="#F8FAFC">63 61 74 00 00 … 00</text>
+  <text x="650" y="435" font-size="12" fill="#C4D2E7">"cat" occupies 3 bytes; 29 zero bytes complete the word</text>
+  <path d="M888 285 V318 H312 V341" stroke="#8CA8D6" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <rect x="52" y="490" width="1096" height="78" rx="12" fill="#101B2D" stroke="#405775"/>
+  <text x="76" y="520" font-size="14" font-weight="700" fill="#F8FAFC">Total standard encoding: 128 bytes (4 × 32-byte words)</text>
+  <text x="76" y="545" font-size="12" fill="#C4D2E7">The offset is measured from the start of this encoded tuple. For function calldata, the four-byte selector is outside this argument block.</text>
+  <rect x="52" y="596" width="1096" height="52" rx="10" fill="#17233A" stroke="#405775"/>
+  <text x="76" y="627" font-size="13" fill="#AFC2E4">Decoder: read word 0 → read offset in word 1 → follow it to length word 2 → extract and decode the bytes in word 3.</text>
+</g>
+</svg>
