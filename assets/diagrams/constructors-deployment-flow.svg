@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="690" viewBox="0 0 1200 690" role="img" aria-labelledby="title desc">
+<title id="title">Solidity constructor and contract deployment flow</title>
+<desc id="desc">Creation bytecode and ABI-encoded constructor arguments form initcode. The EVM executes initialization and constructor logic, which can validate parameters, set state and immutables, and call dependencies. If successful, initcode returns runtime bytecode that the EVM installs at the contract address. A failed constructor deploys no runtime code.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#080D19"/><stop offset="1" stop-color="#14213B"/></linearGradient>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#8CA8D6"/></marker>
+</defs>
+<rect width="1200" height="690" rx="22" fill="url(#bg)"/>
+<text x="44" y="42" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="2.4" fill="#74C0FC">SOLIDITY · CONSTRUCTORS</text>
+<text x="44" y="82" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#F8FAFC">One-time initialization during deployment</text>
+<g font-family="Arial,sans-serif">
+  <rect x="44" y="120" width="310" height="96" rx="14" fill="#18263C" stroke="#6EA8FE" stroke-width="1.5"/>
+  <text x="66" y="151" font-size="15" font-weight="700" fill="#F8FAFC">1 · Deployment input</text>
+  <text x="66" y="176" font-size="12" fill="#C4D2E7">Creation bytecode</text>
+  <text x="66" y="198" font-size="12" fill="#C4D2E7">+ ABI-encoded constructor arguments</text>
+  <path d="M354 168 H405" stroke="#8CA8D6" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="415" y="120" width="340" height="96" rx="14" fill="#1D2C40" stroke="#B197FC" stroke-width="1.5"/>
+  <text x="437" y="151" font-size="15" font-weight="700" fill="#F8FAFC">2 · Initcode executes</text>
+  <text x="437" y="176" font-size="12" fill="#D4C5FF">State initializers + constructors</text>
+  <text x="437" y="198" font-size="12" fill="#C4D2E7">Base constructors run before derived</text>
+  <path d="M755 168 H806" stroke="#8CA8D6" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="816" y="120" width="340" height="96" rx="14" fill="#182F36" stroke="#34D399" stroke-width="1.5"/>
+  <text x="838" y="151" font-size="15" font-weight="700" fill="#F8FAFC">3 · Initialization</text>
+  <text x="838" y="176" font-size="12" fill="#A7F3D0">Validate config and initialize state</text>
+  <text x="838" y="198" font-size="12" fill="#C4D2E7">Assign immutable values; may revert</text>
+  <path d="M986 216 V257" stroke="#8CA8D6" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M986 259 L1087 303 L986 347 L885 303 Z" fill="#202B40" stroke="#FBBF24" stroke-width="1.5"/>
+  <text x="986" y="299" text-anchor="middle" font-size="14" font-weight="700" fill="#F8FAFC">Constructor</text>
+  <text x="986" y="318" text-anchor="middle" font-size="12" fill="#FDE68A">succeeds?</text>
+  <path d="M885 303 H600 V370" stroke="#8CA8D6" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="750" y="291" text-anchor="middle" font-size="12" font-weight="700" fill="#FCA5A5">NO</text>
+  <rect x="420" y="378" width="360" height="83" rx="12" fill="#301F28" stroke="#F87171" stroke-width="1.5"/>
+  <text x="442" y="408" font-size="15" font-weight="700" fill="#FCA5A5">Creation fails</text>
+  <text x="442" y="431" font-size="12" fill="#C4D2E7">Revert / failed deployment; no runtime code installed</text>
+  <path d="M986 347 V376" stroke="#8CA8D6" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="1003" y="365" font-size="12" font-weight="700" fill="#A7F3D0">YES</text>
+  <rect x="816" y="386" width="340" height="83" rx="12" fill="#182F36" stroke="#34D399" stroke-width="1.5"/>
+  <text x="838" y="416" font-size="15" font-weight="700" fill="#A7F3D0">4 · Return runtime bytecode</text>
+  <text x="838" y="440" font-size="12" fill="#C4D2E7">EVM validates and installs deployed code</text>
+  <path d="M986 469 V505" stroke="#8CA8D6" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="816" y="514" width="340" height="74" rx="12" fill="#18263C" stroke="#6EA8FE" stroke-width="1.5"/>
+  <text x="838" y="543" font-size="15" font-weight="700" fill="#F8FAFC">5 · Contract is deployed</text>
+  <text x="838" y="566" font-size="12" fill="#C4D2E7">Future calls run runtime bytecode</text>
+  <rect x="44" y="514" width="690" height="74" rx="12" fill="#101B2D" stroke="#405775"/>
+  <text x="66" y="543" font-size="14" font-weight="700" fill="#F8FAFC">Remember</text>
+  <text x="66" y="566" font-size="12" fill="#C4D2E7">Constructor arguments are ABI-encoded, but there is no four-byte function selector.</text>
+  <rect x="44" y="610" width="1112" height="48" rx="10" fill="#17233A" stroke="#405775"/>
+  <text x="66" y="639" font-size="12" fill="#AFC2E4">For a proxy: the implementation constructor initializes implementation storage, not proxy storage; proxy systems require protected initializer logic.</text>
+  <text x="44" y="678" font-size="11" fill="#91A8C7">Diagram is conceptual; initcode includes compiler-generated construction logic and returns the final runtime code.</text>
+</g>
+</svg>
