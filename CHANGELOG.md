@@ -94,3 +94,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 
 - Published the Application Binary Interface (ABI) article with a custom diagram explaining the compiler ABI artifact, calldata encoding, contract dispatch, return data, logs, and revert data.
 - Linked the article from the Stage 02 index, the canonical roadmap, and the root README; updated Stage 02 publication progress to 1/16.
+
+
+## 2026-10-17
+
+- Published the ABI Encoding and Decoding article covering 32-byte words, static and dynamic types, head/tail layout, relative offsets, padding, Solidity ABI helpers, ethers v6 coding, and packed-encoding ambiguity.
+- Added a custom head/tail diagram and linked the article from the Stage 02 index, canonical roadmap, and root README; updated Stage 02 publication progress to 2/16.
