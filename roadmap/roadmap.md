@@ -89,7 +89,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 
 ## Stage 05 — Advanced Transactions and Gas
 
-**Priority 2** · 🔄 **Article progress: 9/14 published** · [Stage index](../concepts/05-advanced-transactions-gas/README.md)
+**Priority 2** · 🔄 **Article progress: 10/14 published** · [Stage index](../concepts/05-advanced-transactions-gas/README.md)
 
 - [ ] [Transaction Lifecycle](../concepts/05-advanced-transactions-gas/01-transaction-lifecycle.md) — article published
 - [ ] [Transaction Nonce](../concepts/05-advanced-transactions-gas/02-transaction-nonce.md) — article published
@@ -100,7 +100,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [Intrinsic Gas](../concepts/05-advanced-transactions-gas/07-intrinsic-gas.md) — article published
 - [ ] [Gas Accounting](../concepts/05-advanced-transactions-gas/08-gas-accounting.md) — article published
 - [ ] [Gas Limit and Gas Used](../concepts/05-advanced-transactions-gas/09-gas-limit-and-gas-used.md) — article published
-- [ ] Out-of-Gas
+- [ ] [Out-of-Gas](../concepts/05-advanced-transactions-gas/10-out-of-gas.md) — article published
 - [ ] Transaction Receipts
 - [ ] Transaction Reverts
 - [ ] Transaction Replacement
