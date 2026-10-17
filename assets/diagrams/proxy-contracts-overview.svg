@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">Proxy Contract Architecture</title>
+  <desc id="desc">A user calls a stable proxy address. The proxy forwards calldata to an implementation using delegatecall. Implementation bytecode runs in the proxy storage context, and return or revert data flows back through the proxy to the user.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}
+      .blue{fill:#eff6ff;stroke:#60a5fa;stroke-width:2}.teal{fill:#ecfeff;stroke:#22d3ee;stroke-width:2}
+      .gold{fill:#fffbeb;stroke:#f59e0b;stroke-width:2}.purple{fill:#f5f3ff;stroke:#a78bfa;stroke-width:2}
+      .ink{fill:#0f172a;font-family:Inter,Arial,sans-serif}.muted{fill:#475569;font-family:Inter,Arial,sans-serif}
+      .title{font-size:30px;font-weight:700}.head{font-size:20px;font-weight:700}.body{font-size:16px}.small{font-size:14px}
+      .mono{fill:#0f172a;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:15px;font-weight:600}
+      .arrow{stroke:#2563eb;stroke-width:3;fill:none}.return{stroke:#0f766e;stroke-width:2.5;fill:none}
+      .dash{stroke:#64748b;stroke-width:2;stroke-dasharray:7 6;fill:none}
+    </style>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2563eb"/></marker>
+    <marker id="tealarrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#0f766e"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="820" rx="24"/>
+  <text class="ink title" x="42" y="54">Proxy Contracts — Stable Address, Delegated Logic</text>
+  <text class="muted body" x="44" y="84">The code comes from the implementation; application state remains at the proxy.</text>
+
+  <rect class="panel" x="36" y="112" width="1128" height="440" rx="20"/>
+  <rect class="purple" x="70" y="208" width="220" height="108" rx="14"/>
+  <text class="ink head" x="180" y="244" text-anchor="middle">User / Caller</text>
+  <text class="muted body" x="180" y="272" text-anchor="middle">Calls proxy address</text>
+  <text class="muted small" x="180" y="294" text-anchor="middle">calldata + optional value</text>
+
+  <rect class="blue" x="405" y="170" width="300" height="214" rx="16"/>
+  <text class="ink head" x="555" y="205" text-anchor="middle">Proxy Contract</text>
+  <text class="muted body" x="555" y="235" text-anchor="middle">Stable public address</text>
+  <rect class="gold" x="438" y="255" width="234" height="50" rx="9"/>
+  <text class="ink mono" x="555" y="285" text-anchor="middle">fallback / receive</text>
+  <text class="muted small" x="555" y="332" text-anchor="middle">resolve implementation</text>
+  <text class="muted small" x="555" y="353" text-anchor="middle">forward bytes and result</text>
+
+  <rect class="teal" x="825" y="170" width="300" height="214" rx="16"/>
+  <text class="ink head" x="975" y="205" text-anchor="middle">Implementation</text>
+  <text class="muted body" x="975" y="235" text-anchor="middle">Contains application logic</text>
+  <rect class="panel" x="857" y="255" width="236" height="50" rx="9"/>
+  <text class="ink mono" x="975" y="285" text-anchor="middle">business functions</text>
+  <text class="muted small" x="975" y="332" text-anchor="middle">bytecode target</text>
+  <text class="muted small" x="975" y="353" text-anchor="middle">not the state owner here</text>
+
+  <path class="arrow" d="M290 260 L397 260" marker-end="url(#arrow)"/>
+  <text class="muted small" x="343" y="240" text-anchor="middle">call</text>
+  <path class="arrow" d="M705 280 L817 280" marker-end="url(#arrow)"/>
+  <text class="ink mono" x="760" y="253" text-anchor="middle">DELEGATECALL</text>
+  <path class="return" d="M817 326 L705 326" marker-end="url(#tealarrow)"/>
+  <text class="muted small" x="761" y="350" text-anchor="middle">return / revert data</text>
+
+  <rect class="gold" x="435" y="414" width="615" height="105" rx="14"/>
+  <text class="ink head" x="742" y="446" text-anchor="middle">Execution context = Proxy</text>
+  <text class="muted body" x="742" y="474" text-anchor="middle">address(this) = proxy · storage writes go to proxy</text>
+  <text class="muted small" x="742" y="498" text-anchor="middle">msg.sender / msg.value follow DELEGATECALL semantics</text>
+  <path class="dash" d="M555 384 L555 405"/>
+  <path class="dash" d="M975 384 L975 405"/>
+
+  <rect class="panel" x="36" y="576" width="1128" height="202" rx="20"/>
+  <text class="ink head" x="64" y="614">What this separation means</text>
+  <rect class="blue" x="64" y="638" width="320" height="104" rx="12"/>
+  <text class="ink head" x="224" y="670" text-anchor="middle">Stable address</text>
+  <text class="muted body" x="224" y="698" text-anchor="middle">Integrations keep calling</text>
+  <text class="muted body" x="224" y="719" text-anchor="middle">the proxy</text>
+
+  <rect class="teal" x="440" y="638" width="320" height="104" rx="12"/>
+  <text class="ink head" x="600" y="670" text-anchor="middle">Separate code</text>
+  <text class="muted body" x="600" y="698" text-anchor="middle">Logic lives in an</text>
+  <text class="muted body" x="600" y="719" text-anchor="middle">implementation contract</text>
+
+  <rect class="gold" x="816" y="638" width="320" height="104" rx="12"/>
+  <text class="ink head" x="976" y="670" text-anchor="middle">Not automatically upgradeable</text>
+  <text class="muted body" x="976" y="698" text-anchor="middle">Changing the target requires</text>
+  <text class="muted body" x="976" y="719" text-anchor="middle">an explicit mechanism and controls</text>
+</svg>
