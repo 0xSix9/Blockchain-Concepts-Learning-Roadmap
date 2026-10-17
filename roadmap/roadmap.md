@@ -67,7 +67,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 
 ## Stage 04 — Smart Contract Architecture
 
-**Priority 1** · 🔄 **Article progress: 11/17 published** · [Stage index](../concepts/04-smart-contract-architecture/README.md)
+**Priority 1** · 🔄 **Article progress: 12/17 published** · [Stage index](../concepts/04-smart-contract-architecture/README.md)
 
 - [ ] [Contract Composition](../concepts/04-smart-contract-architecture/01-contract-composition.md) — article published
 - [ ] [Inheritance](../concepts/04-smart-contract-architecture/02-inheritance.md) — article published
@@ -80,7 +80,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [Minimal Proxies (Clones)](../concepts/04-smart-contract-architecture/09-minimal-proxies-clones.md) — article published
 - [ ] [Delegatecall-Based Proxy Architecture](../concepts/04-smart-contract-architecture/10-delegatecall-based-proxy-architecture.md) — article published
 - [ ] [Contract Upgradeability](../concepts/04-smart-contract-architecture/11-contract-upgradeability.md) — article published
-- [ ] Storage Compatibility
+- [ ] [Storage Compatibility](../concepts/04-smart-contract-architecture/12-storage-compatibility.md) — article published
 - [ ] Initializers
 - [ ] Storage Collisions in Proxies
 - [ ] Diamond Pattern (EIP-2535)
