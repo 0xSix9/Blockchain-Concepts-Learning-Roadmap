@@ -299,3 +299,10 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the Interfaces and Libraries article, covering interface declarations and runtime boundaries, ABI compatibility, ERC-165 discovery, internal versus public/external library functions, `using for`, library linking, and delegate-call context.
 - Added a dedicated interface/library architecture diagram and linked the article from the Stage 04 checklist and canonical roadmap.
 - Updated Stage 04 publication progress to 3/17. The study checkbox remains unchecked until the learner reviews the concept.
+
+
+## 2026-10-17 — Internal and External Calls
+
+- Published the Internal and External Calls article, covering internal function dispatch, external message-call frames, `this.function()`, call context, static calls, revert handling, `try/catch`, gas considerations, and reentrancy.
+- Added a dedicated call-flow diagram and linked the article from the Stage 04 checklist and canonical roadmap.
+- Updated Stage 04 publication progress to 4/17. The study checkbox remains unchecked until the learner reviews the concept.
