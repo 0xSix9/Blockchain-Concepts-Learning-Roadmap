@@ -49,9 +49,9 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 
 ## Stage 03 — Storage and Data Layout
 
-**Priority 1** · [Stage index](../concepts/03-storage-data-layout/README.md)
+**Priority 1** · 🔄 **Article progress: 1/13 published** · [Stage index](../concepts/03-storage-data-layout/README.md)
 
-- [ ] Storage Layout
+- [ ] [Storage Layout](../concepts/03-storage-data-layout/01-storage-layout.md) — article published
 - [ ] Storage Slots
 - [ ] Storage Packing
 - [ ] Mappings and Dynamic Arrays in Storage
