@@ -2,11 +2,11 @@
 
 **Priority:** 1  
 **Topics:** 17  
-**Article status:** In progress — 12/17 concept articles published.
+**Article status:** In progress — 13/17 concept articles published.
 
 ## About this stage
 
-This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The Contract Composition, Inheritance, Interfaces and Libraries, Internal and External Calls, Proxy Contracts, Transparent Proxies, UUPS Proxies, Beacon Proxies, Minimal Proxies (Clones), Delegatecall-Based Proxy Architecture, Contract Upgradeability, and Storage Compatibility articles are published; the remaining articles will be added one by one as the concepts are researched. The checkboxes track personal study progress, not publication status.
+This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The Contract Composition, Inheritance, Interfaces and Libraries, Internal and External Calls, Proxy Contracts, Transparent Proxies, UUPS Proxies, Beacon Proxies, Minimal Proxies (Clones), Delegatecall-Based Proxy Architecture, Contract Upgradeability, Storage Compatibility, and Initializers articles are published; the remaining articles will be added one by one as the concepts are researched. The checkboxes track personal study progress, not publication status.
 
 ## Study checklist
 
@@ -22,7 +22,7 @@ This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the
 - [ ] [Delegatecall-Based Proxy Architecture](10-delegatecall-based-proxy-architecture.md) — article published
 - [ ] [Contract Upgradeability](11-contract-upgradeability.md) — article published
 - [ ] [Storage Compatibility](12-storage-compatibility.md) — article published
-- [ ] Initializers
+- [ ] [Initializers](13-initializers.md) — article published
 - [ ] Storage Collisions in Proxies
 - [ ] Diamond Pattern (EIP-2535)
 - [ ] Deterministic Contract Deployment
