@@ -501,3 +501,10 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Added a dedicated SVG diagram showing execution-time counter adjustments and end-of-transaction settlement.
 - Linked the article from the Stage 05 index and canonical roadmap; Stage 05 is now content-complete at 14/14 published articles.
 - Examples are explanatory only; no contract was compiled, and no live transaction or gas profiler was used.
+
+## 2026-10-17 — Stage 05 Technical Review
+
+- Audited the 14 Stage 05 concept articles and verified that all local Markdown references and linked SVG diagrams resolve to files in the repository.
+- Corrected the hexadecimal `cumulativeGasUsed` example in Gas Limit and Gas Used and Transaction Receipts so `0x1dc90` matches 122,000 gas.
+- Clarified the EIP-7623 calldata-floor formula in Gas Refunds and distinguished the still-proposed EIP-7976 parameter change from active protocol rules.
+- Removed a duplicated sentence from the Stage 05 index. Stage 05 remains content-complete at 14/14 published articles.
