@@ -152,6 +152,8 @@ For a non-creation transaction, `creationCost` is zero. The applied refund is st
 
 This matters for transactions with substantial calldata: the refund counter may be nonzero, but the final gas charge can still be bounded by the calldata floor. See [Intrinsic Gas](07-intrinsic-gas.md) and [Gas Accounting](08-gas-accounting.md).
 
+**Protocol-change note (reviewed 2026-10-17):** [EIP-7976](https://eips.ethereum.org/EIPS/eip-7976) proposes raising the calldata floor from EIP-7623's 10/40 model to a 64-gas-per-byte floor. As of this review date, the proposal is in Draft / Last Call and should not be treated as an active mainnet rule. If it is accepted and scheduled in a future fork, the parameters and applicable network rules may change; always check the target chain's activated fork specifications.
+
 ## 8. Refunds and ETH Fees
 
 A refund changes the amount of gas charged; it does not change the transaction's effective gas price formula.
