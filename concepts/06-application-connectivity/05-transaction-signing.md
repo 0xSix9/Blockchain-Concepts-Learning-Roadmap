@@ -73,7 +73,7 @@ A valid signature is necessary but not sufficient for inclusion. A node or block
 
 If submission times out, retain the exact raw bytes and transaction hash if available. Query the hash before creating another transaction with a different nonce. Do not assume that a network timeout means the signature or transaction was discarded.
 
-## Developer Review Checklist
+## 9. Developer Review Checklist
 
 - [ ] Identify the exact type-specific signing payload before computing a signature.
 - [ ] Distinguish signing hash, raw signed transaction, transaction hash, and receipt.
@@ -82,7 +82,7 @@ If submission times out, retain the exact raw bytes and transaction hash if avai
 - [ ] Distinguish the outer transaction signature from EIP-7702 authorization signatures.
 - [ ] Remember that a valid signature does not guarantee node acceptance or inclusion.
 
-## Key Takeaways
+## 10. Key Takeaways
 
 - A transaction signature authorizes a specific payload; it does not encrypt transaction data.
 - Typed and legacy transaction formats have different signing/serialization rules.
