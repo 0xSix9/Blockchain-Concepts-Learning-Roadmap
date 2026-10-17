@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="920" viewBox="0 0 1200 920" role="img" aria-labelledby="title desc">
+  <title id="title">Transaction Reverts in the EVM</title>
+  <desc id="desc">Shows a Solidity error leading to REVERT, rollback of the failing frame's state and logs, revert data passed to caller, and the difference between a caught child failure, propagated top-level revert, and out-of-gas.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.title{font:700 29px Arial,sans-serif;fill:#0f172a}.subtitle{font:16px Arial,sans-serif;fill:#475569}.label{font:700 19px Arial,sans-serif;fill:#0f172a}.body{font:15px Arial,sans-serif;fill:#334155}.small{font:13px Arial,sans-serif;fill:#475569}.mono{font:700 15px ui-monospace,Menlo,monospace;fill:#0f172a}.blue{fill:#dbeafe;stroke:#60a5fa;stroke-width:2}.teal{fill:#ccfbf1;stroke:#2dd4bf;stroke-width:2}.purple{fill:#ede9fe;stroke:#a78bfa;stroke-width:2}.amber{fill:#fef3c7;stroke:#f59e0b;stroke-width:2}.red{fill:#fee2e2;stroke:#f87171;stroke-width:2}.line{stroke:#64748b;stroke-width:2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="920" rx="22"/>
+  <text class="title" x="600" y="46" text-anchor="middle">Transaction Reverts — Rollback with Failure Data</text>
+  <text class="subtitle" x="600" y="75" text-anchor="middle">A failing execution frame rolls back state while returning any remaining gas and revert bytes</text>
+
+  <rect class="panel" x="45" y="103" width="1110" height="112" rx="16"/>
+  <rect class="blue" x="72" y="130" width="285" height="58" rx="10"/>
+  <text class="label" x="214" y="155" text-anchor="middle">Solidity failure path</text>
+  <text class="small" x="214" y="175" text-anchor="middle">require / revert / custom error</text>
+  <path class="line" d="M357 159 L432 159"/>
+  <rect class="red" x="442" y="130" width="285" height="58" rx="10"/>
+  <text class="mono" x="584" y="155" text-anchor="middle">REVERT (0xfd)</text>
+  <text class="small" x="584" y="175" text-anchor="middle">stop current frame</text>
+  <path class="line" d="M727 159 L802 159"/>
+  <rect class="purple" x="812" y="130" width="314" height="58" rx="10"/>
+  <text class="label" x="969" y="155" text-anchor="middle">Rollback + return data</text>
+  <text class="small" x="969" y="175" text-anchor="middle">state/logs revert in this frame</text>
+
+  <path class="line" d="M600 215 L600 244"/>
+  <rect class="teal" x="45" y="252" width="535" height="190" rx="16"/>
+  <text class="label" x="72" y="287">Failure is caught by parent</text>
+  <text class="body" x="72" y="319">• Child state changes and logs roll back.</text>
+  <text class="body" x="72" y="345">• Remaining child-frame gas returns.</text>
+  <text class="body" x="72" y="371">• Parent checks the failure and continues.</text>
+  <text class="body" x="72" y="397">• Parent may finish the whole transaction successfully.</text>
+  <text class="small" x="72" y="423">Receipt status depends on the top-level result.</text>
+
+  <rect class="red" x="620" y="252" width="535" height="190" rx="16"/>
+  <text class="label" x="647" y="287">Failure reaches transaction top level</text>
+  <text class="body" x="647" y="319">• Top-level execution fails.</text>
+  <text class="body" x="647" y="345">• Transaction execution state and logs roll back.</text>
+  <text class="body" x="647" y="371">• Included transaction still consumes sender nonce.</text>
+  <text class="body" x="647" y="397">• Gas already consumed is still charged.</text>
+  <text class="small" x="647" y="423">Receipt status normally equals 0x0.</text>
+
+  <path class="line" d="M312 442 L312 472"/>
+  <path class="line" d="M887 442 L887 472"/>
+  <rect class="panel" x="45" y="480" width="535" height="187" rx="16"/>
+  <text class="label" x="72" y="515">Revert data can contain</text>
+  <text class="mono" x="72" y="547">Error(string)</text>
+  <text class="mono" x="72" y="573">Panic(uint256)</text>
+  <text class="mono" x="72" y="599">CustomError(args) or arbitrary bytes</text>
+  <text class="body" x="72" y="628">A bare revert can return no data.</text>
+  <text class="small" x="72" y="650">Payload may be forged by an inner contract.</text>
+
+  <rect class="amber" x="620" y="480" width="535" height="187" rx="16"/>
+  <text class="label" x="647" y="515">Normal REVERT ≠ Out-of-Gas</text>
+  <text class="body" x="647" y="547">REVERT returns unused frame gas to caller.</text>
+  <text class="body" x="647" y="573">Out-of-gas does not return remaining frame gas.</text>
+  <text class="body" x="647" y="599">Both roll back state changes in the failing frame.</text>
+  <text class="small" x="647" y="628">Insufficient intrinsic gas is a pre-execution validity failure.</text>
+
+  <rect x="45" y="707" width="1110" height="150" rx="16" fill="#0f172a"/>
+  <text x="600" y="741" text-anchor="middle" style="font:700 19px Arial,sans-serif;fill:#fff">How to debug a revert</text>
+  <text x="600" y="773" text-anchor="middle" style="font:15px Arial,sans-serif;fill:#cbd5e1">Check transaction input + receipt status → inspect available revert bytes → decode with the correct ABI</text>
+  <text x="600" y="801" text-anchor="middle" style="font:15px Arial,sans-serif;fill:#cbd5e1">Use a trace/debug API or simulation when the receipt alone does not reveal the cause.</text>
+  <text x="600" y="829" text-anchor="middle" style="font:14px Arial,sans-serif;fill:#cbd5e1">Treat revert data as diagnostic data, not proof of which contract originated the failure.</text>
+</svg>
