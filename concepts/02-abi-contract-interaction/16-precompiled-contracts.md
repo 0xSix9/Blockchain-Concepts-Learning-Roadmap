@@ -61,7 +61,7 @@ The first entries include general-purpose hash and signature operations; the lat
 
 ### Additional precompiles can be fork-specific
 
-The list above is not a promise that every EVM-compatible chain has exactly the same precompile set. For example, the Osaka configuration described by EIP-7910 adds `P256VERIFY` at `0x0100` for secp256r1/P-256 signature verification (EIP-7951). Its availability depends on the target chain and the fork it has activated. Never assume that an address is a precompile just because it is one on another network.
+The list above is not a promise that every EVM-compatible chain has exactly the same precompile set. EIP-7910's `eth_config` configuration model lists `P256VERIFY` at `0x0100` as a precompile added for the Osaka fork; the operation itself is specified by [EIP-7951](https://eips.ethereum.org/EIPS/eip-7951). Its availability depends on whether the target chain has activated the relevant fork. Never assume that an address is a precompile just because it is one on another network.
 
 ## 4. How a Call to a Precompile Works
 
