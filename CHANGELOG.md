@@ -167,3 +167,8 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the Custom Errors article, covering structured revert data, selectors and ABI-encoded arguments, string comparison, try/catch decoding, ERC-6093, and error-spoofing risks.
 - Added a dedicated custom-error revert-data diagram, linked the article throughout Stage 02 navigation, and updated Stage 02 publication progress to 14/16.
 - Documented Solidity compiler-version behavior for custom errors in require, including the 0.8.37 fix for the reported named-argument code-generation bug.
+
+## 2026-10-17
+
+- Published the Error Selectors article, covering canonical error signatures, Keccak-256 derivation, built-in Error(string)/Panic(uint256) selectors, reserved values, selector collisions, and decoding/security considerations.
+- Added a custom error-selector flow diagram, linked Error Selectors throughout Stage 02 navigation, and updated publication progress to 15/16.
