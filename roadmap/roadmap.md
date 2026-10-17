@@ -38,7 +38,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [Constructors](../concepts/02-abi-contract-interaction/06-constructors.md) — article published
 - [ ] [Fallback Functions](../concepts/02-abi-contract-interaction/07-fallback-functions.md) — article published
 - [ ] [Receive Functions](../concepts/02-abi-contract-interaction/08-receive-functions.md) — article published
-- [ ] Visibility
+- [ ] [Visibility](../concepts/02-abi-contract-interaction/09-visibility.md) — article published
 - [ ] Mutability
 - [ ] Payable Functions
 - [ ] Events and Event Logs
