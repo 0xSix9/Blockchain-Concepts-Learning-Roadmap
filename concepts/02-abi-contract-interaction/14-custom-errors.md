@@ -294,6 +294,7 @@ For reusable libraries and protocol interfaces, choose error names and argument 
 - [Solidity Security Alert — Named parameters in require with custom errors](https://www.soliditylang.org/blog/2026/09/10/misordered-named-parameters-in-require-with-custom-errors-bug/)
 - [ERC-6093 — Custom Errors for Commonly-Used Tokens](https://eips.ethereum.org/EIPS/eip-6093)
 - [Return Data and Revert Data](../01-evm-execution/10-return-data-and-revert-data.md)
+- [Error Selectors](15-error-selectors.md)
 
 ## Review Checklist
 
