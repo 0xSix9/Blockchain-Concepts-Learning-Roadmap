@@ -452,3 +452,11 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Added a dedicated SVG diagram showing the three layers of gas accounting: EVM work, final transaction gas usage, and ETH fee calculation.
 - Linked the article from the Stage 05 index and canonical roadmap, and updated Stage 05 publication progress to 8/14.
 - Gas examples are educational summaries; no code was profiled and no transaction was simulated or sent to a live node.
+
+## 2026-10-17 — Gas Limit and Gas Used
+
+- Published the Gas Limit and Gas Used article distinguishing the transaction's declared gas budget from final gas charged in the receipt, including `gasUsed` versus `cumulativeGasUsed`.
+- Covered fee calculation, sender affordability checks, the distinction between transaction and block gas limits, success/revert/out-of-gas behavior, gas estimation caveats, and the EIP-7623 calldata floor.
+- Added a dedicated SVG diagram comparing declared budget, actual gas used, unused gas, cumulative block usage, and block-level limits.
+- Linked the article from the Stage 05 index and canonical roadmap, and updated Stage 05 publication progress to 9/14.
+- Receipt values are illustrative; no live transaction was queried or submitted.
