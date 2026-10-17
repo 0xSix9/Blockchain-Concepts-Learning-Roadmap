@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+<title id="title">External function call from one contract to another</title>
+<desc id="desc">Contract A uses an ABI to encode a call to Contract B. The EVM creates a new message-call frame, Contract B executes with its own storage and context for CALL, and returns data or revert data to A. A warning highlights reentrancy when the callee calls back into A.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#080D19"/><stop offset="1" stop-color="#14213B"/></linearGradient>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#8CA8D6"/></marker>
+</defs>
+<rect width="1200" height="760" rx="22" fill="url(#bg)"/>
+<text x="44" y="42" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="2.4" fill="#74C0FC">EVM · EXTERNAL FUNCTION CALLS</text>
+<text x="44" y="82" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#F8FAFC">Contract A calls Contract B</text>
+<g font-family="Arial,sans-serif">
+  <rect x="44" y="126" width="280" height="145" rx="14" fill="#18263C" stroke="#6EA8FE" stroke-width="1.5"/>
+  <text x="66" y="157" font-size="16" font-weight="700" fill="#F8FAFC">Contract A · Caller</text>
+  <text x="66" y="186" font-size="13" fill="#C4D2E7">1. Call interface method</text>
+  <text x="66" y="208" font-size="13" fill="#C4D2E7">2. ABI-encode arguments</text>
+  <text x="66" y="230" font-size="13" fill="#C4D2E7">3. Pay call costs / forward gas</text>
+  <text x="66" y="252" font-size="11" fill="#91A8C7">State must be consistent before callback</text>
+  <rect x="442" y="126" width="316" height="145" rx="14" fill="#202B40" stroke="#B197FC" stroke-width="1.5"/>
+  <text x="464" y="157" font-size="16" font-weight="700" fill="#F8FAFC">EVM message-call frame</text>
+  <text x="464" y="186" font-size="13" fill="#D4C5FF">CALL / STATICCALL / DELEGATECALL</text>
+  <text x="464" y="208" font-size="12" fill="#C4D2E7">Select call semantics and context</text>
+  <text x="464" y="230" font-size="12" fill="#C4D2E7">Nested execution; metered gas</text>
+  <text x="464" y="252" font-size="11" fill="#91A8C7">Calldata and return bytes cross boundary</text>
+  <rect x="876" y="126" width="280" height="145" rx="14" fill="#182F36" stroke="#34D399" stroke-width="1.5"/>
+  <text x="898" y="157" font-size="16" font-weight="700" fill="#F8FAFC">Contract B · Callee</text>
+  <text x="898" y="186" font-size="13" fill="#A7F3D0">4. Dispatch selector</text>
+  <text x="898" y="208" font-size="13" fill="#C4D2E7">5. Decode and run logic</text>
+  <text x="898" y="230" font-size="13" fill="#C4D2E7">6. Return bytes or revert</text>
+  <text x="898" y="252" font-size="11" fill="#91A8C7">For CALL: its own address and storage</text>
+  <path d="M324 195 H434" stroke="#8CA8D6" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="379" y="180" text-anchor="middle" font-size="11" fill="#AFC2E4">encoded call</text>
+  <path d="M758 195 H868" stroke="#8CA8D6" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="813" y="180" text-anchor="middle" font-size="11" fill="#AFC2E4">calldata</text>
+  <path d="M876 285 V316 H600 V285" stroke="#8CA8D6" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="740" y="308" font-size="11" fill="#AFC2E4">return data / revert data</text>
+  <rect x="44" y="342" width="1112" height="92" rx="14" fill="#101B2D" stroke="#405775"/>
+  <text x="68" y="373" font-size="15" font-weight="700" fill="#F8FAFC">Back in Contract A</text>
+  <text x="68" y="398" font-size="13" fill="#C4D2E7">High-level call: decode expected outputs or propagate failure (unless handled)</text>
+  <text x="68" y="419" font-size="13" fill="#C4D2E7">Low-level call: inspect success boolean and handle raw return/revert bytes explicitly</text>
+  <rect x="44" y="470" width="344" height="166" rx="14" fill="#18263C" stroke="#6EA8FE" stroke-width="1.5"/>
+  <text x="66" y="501" font-size="15" font-weight="700" fill="#93C5FD">CALL</text>
+  <text x="66" y="529" font-size="13" fill="#C4D2E7">Callee address + storage context</text>
+  <text x="66" y="551" font-size="13" fill="#C4D2E7">Callee sees caller as msg.sender</text>
+  <text x="66" y="573" font-size="13" fill="#C4D2E7">Can transfer value if specified</text>
+  <text x="66" y="606" font-size="11" fill="#91A8C7">Normal contract-to-contract interaction</text>
+  <rect x="428" y="470" width="344" height="166" rx="14" fill="#1D2C40" stroke="#B197FC" stroke-width="1.5"/>
+  <text x="450" y="501" font-size="15" font-weight="700" fill="#D4C5FF">STATICCALL</text>
+  <text x="450" y="529" font-size="13" fill="#C4D2E7">Read-only call context</text>
+  <text x="450" y="551" font-size="13" fill="#C4D2E7">State-changing opcodes are forbidden</text>
+  <text x="450" y="573" font-size="13" fill="#C4D2E7">No Ether value passed</text>
+  <text x="450" y="606" font-size="11" fill="#91A8C7">Useful for external view/pure queries</text>
+  <rect x="812" y="470" width="344" height="166" rx="14" fill="#302523" stroke="#FBBF24" stroke-width="1.5"/>
+  <text x="834" y="501" font-size="15" font-weight="700" fill="#FDE68A">DELEGATECALL</text>
+  <text x="834" y="529" font-size="13" fill="#C4D2E7">Executes another address's code</text>
+  <text x="834" y="551" font-size="13" fill="#C4D2E7">Uses caller's address and storage</text>
+  <text x="834" y="573" font-size="13" fill="#C4D2E7">Preserves msg.sender and msg.value</text>
+  <text x="834" y="606" font-size="11" fill="#FDE68A">Special semantics, common in proxies</text>
+  <rect x="44" y="658" width="1112" height="62" rx="12" fill="#301F28" stroke="#F87171" stroke-width="1.5"/>
+  <text x="68" y="684" font-size="14" font-weight="700" fill="#FCA5A5">Security boundary: the callee may call back before the original call returns.</text>
+  <text x="68" y="705" font-size="12" fill="#C4D2E7">Update accounting before external interactions (CEI), check the call result, and do not rely on a fixed gas stipend as a reentrancy defense.</text>
+  <text x="44" y="744" font-size="11" fill="#91A8C7">Conceptual model: exact compiler output and call-gas behavior depend on the compiler and active EVM rules.</text>
+</g>
+</svg>
