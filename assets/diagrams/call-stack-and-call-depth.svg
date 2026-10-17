@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1020" viewBox="0 0 1200 1020" role="img" aria-labelledby="title desc">
+  <title id="title">EVM Call Stack and Call Depth</title>
+  <desc id="desc">Nested message calls create suspended parent frames and an active child frame. This call stack is distinct from the 256-bit EVM operand stack. The call-create depth has a 1024 hard limit, while EIP-150 limits forwarded gas.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker>
+    <marker id="blueArrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/></marker>
+    <style>
+      .bg{fill:#f8fafc}.title{font:700 30px Arial,sans-serif;fill:#0f172a}.sub{font:16px Arial,sans-serif;fill:#475569}
+      .box{fill:#fff;stroke:#94a3b8;stroke-width:2;rx:14}.blue{fill:#eff6ff;stroke:#2563eb;stroke-width:2;rx:14}
+      .green{fill:#ecfdf5;stroke:#059669;stroke-width:2;rx:14}.red{fill:#fff1f2;stroke:#e11d48;stroke-width:2;rx:14}
+      .purple{fill:#f5f3ff;stroke:#7c3aed;stroke-width:2;rx:14}.label{font:700 18px Arial,sans-serif;fill:#0f172a}
+      .body{font:15px Arial,sans-serif;fill:#334155}.small{font:13px Arial,sans-serif;fill:#475569}
+      .line{stroke:#475569;stroke-width:2.5;fill:none;marker-end:url(#arrow)}.blueLine{stroke:#2563eb;stroke-width:2.5;fill:none;marker-end:url(#blueArrow)}
+      .num{font:700 15px Arial,sans-serif;fill:#fff}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="1020" rx="22"/>
+  <text class="title" x="600" y="47" text-anchor="middle">Call stack ≠ operand stack</text>
+  <text class="sub" x="600" y="76" text-anchor="middle">Nested calls create frames; opcodes use a separate stack of 256-bit values</text>
+
+  <rect class="blue" x="55" y="112" width="670" height="565" rx="18"/>
+  <text class="label" x="390" y="145" text-anchor="middle">A · Nested call stack (execution frames)</text>
+  <rect class="box" x="100" y="177" width="580" height="86" rx="12"/>
+  <circle cx="130" cy="207" r="17" fill="#475569"/><text class="num" x="130" y="212" text-anchor="middle">1</text>
+  <text class="label" x="160" y="207">Frame A — parent suspended</text>
+  <text class="body" x="130" y="237">A calls B and waits for the child result</text>
+  <path class="line" d="M390 263 L390 293"/>
+  <rect class="box" x="100" y="301" width="580" height="86" rx="12"/>
+  <circle cx="130" cy="331" r="17" fill="#475569"/><text class="num" x="130" y="336" text-anchor="middle">2</text>
+  <text class="label" x="160" y="331">Frame B — parent suspended</text>
+  <text class="body" x="130" y="361">B calls C before B has returned to A</text>
+  <path class="line" d="M390 387 L390 417"/>
+  <rect class="green" x="100" y="425" width="580" height="86" rx="12"/>
+  <circle cx="130" cy="455" r="17" fill="#059669"/><text class="num" x="130" y="460" text-anchor="middle">3</text>
+  <text class="label" x="160" y="455">Frame C — currently executing</text>
+  <text class="body" x="130" y="485">If C calls again, another frame is nested</text>
+  <path class="blueLine" d="M390 511 L390 542"/>
+  <rect class="red" x="100" y="550" width="580" height="82" rx="12"/>
+  <text class="label" x="390" y="582" text-anchor="middle">Call/create depth hard limit: 1024</text>
+  <text class="small" x="390" y="608" text-anchor="middle">Gas may prevent further nesting before the hard limit</text>
+
+  <rect class="purple" x="765" y="112" width="380" height="565" rx="18"/>
+  <text class="label" x="955" y="145" text-anchor="middle">B · Operand stack</text>
+  <text class="body" x="955" y="176" text-anchor="middle">Values used by EVM opcodes</text>
+  <rect class="box" x="845" y="204" width="220" height="54" rx="9"/><text class="body" x="955" y="236" text-anchor="middle">word 1 (256-bit)</text>
+  <rect class="box" x="845" y="269" width="220" height="54" rx="9"/><text class="body" x="955" y="301" text-anchor="middle">word 2 (256-bit)</text>
+  <rect class="box" x="845" y="334" width="220" height="54" rx="9"/><text class="body" x="955" y="366" text-anchor="middle">word 3 (256-bit)</text>
+  <rect class="box" x="845" y="399" width="220" height="54" rx="9"/><text class="body" x="955" y="431" text-anchor="middle">...</text>
+  <rect class="blue" x="825" y="480" width="260" height="69" rx="12"/>
+  <text class="label" x="955" y="508" text-anchor="middle">Operand stack limit</text>
+  <text class="body" x="955" y="532" text-anchor="middle">1024 words per frame</text>
+  <text class="small" x="955" y="588" text-anchor="middle">Different limit, different purpose</text>
+  <text class="small" x="955" y="612" text-anchor="middle">Not the message-call depth counter</text>
+
+  <rect class="box" x="55" y="712" width="1090" height="118" rx="16"/>
+  <text class="label" x="85" y="746">EIP-150: gas constrains deep calls</text>
+  <text class="body" x="85" y="777">A call cannot forward all remaining gas; the 63/64 rule limits gas passed to each nested frame.</text>
+  <text class="small" x="85" y="804">Reachable depth depends on the gas budget and work at every level; no single practical depth fits all transactions.</text>
+
+  <rect class="green" x="55" y="858" width="525" height="104" rx="16"/>
+  <text class="label" x="80" y="893">Child succeeds</text>
+  <text class="body" x="80" y="921">Control returns to the parent frame</text>
+  <text class="small" x="80" y="944">The parent resumes after the call</text>
+
+  <rect class="red" x="615" y="858" width="530" height="104" rx="16"/>
+  <text class="label" x="640" y="893">Child fails</text>
+  <text class="body" x="640" y="921">Check the result or propagate/catch failure</text>
+  <text class="small" x="640" y="944">Low-level calls commonly return success = false</text>
+
+  <text class="small" x="600" y="990" text-anchor="middle">Contract calls are synchronous: child frames finish or fail before their parents resume.</text>
+</svg>

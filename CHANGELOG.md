@@ -48,3 +48,10 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 
 - Published the CREATE2 opcode article, covering EIP-1014 address derivation, initcode hashing, deterministic deployment, gas costs, failure behavior, and security considerations.
 - Added a custom CREATE2 deployment-flow diagram and linked the article from the Stage 01 index, full roadmap, and project README.
+
+
+## 2026-10-17
+
+- Published the Call Stack and Call Depth article, distinguishing nested execution frames from the EVM operand stack and Solidity's “Stack too deep” compiler error.
+- Added a custom diagram showing nested message-call frames, the separate operand stack, the 1024 depth limit, and EIP-150's gas-forwarding rule.
+- Linked the article from the Stage 01 index, full roadmap, and project README.
