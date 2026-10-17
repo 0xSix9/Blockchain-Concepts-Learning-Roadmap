@@ -367,3 +367,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Covered ERC-1967 unstructured metadata slots, storage-layout validation, namespaced storage, mapping and packed-slot risks, and realistic proxy testing.
 - Added a dedicated SVG showing three collision types and their corresponding mitigation strategies.
 - Linked the article from the Stage 04 index and canonical roadmap, and updated publication progress to 14/17. The study checkbox remains unchecked until the learner reviews the topic.
+
+## 2026-10-17 — Diamond Pattern (EIP-2535)
+
+- Published the Diamond Pattern article covering facets, selector-to-facet routing, `diamondCut` actions, `DiamondCut` events, loupe introspection, shared diamond storage, and security considerations.
+- Added a dedicated SVG architecture diagram showing the single diamond address, multiple facets using `DELEGATECALL`, shared storage, and the cut/loupe interfaces.
+- Linked the article from the Stage 04 index and canonical roadmap, and updated publication progress to 15/17. The study checkbox remains unchecked until the learner reviews the topic.
