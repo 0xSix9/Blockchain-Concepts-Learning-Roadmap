@@ -10,7 +10,6 @@ This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the
 
 ## Study checklist
 
-- [ ] means the concept has not yet been marked as studied. Article publication is shown separately in each item's label.
 
 - [ ] [Contract Composition](01-contract-composition.md) — article published
 - [ ] Inheritance
