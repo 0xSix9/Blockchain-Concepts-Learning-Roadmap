@@ -130,3 +130,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 
 - Published the Fallback Functions article covering unmatched calldata, fallback versus receive, payability, the special raw-bytes return form, proxy routing, and related security pitfalls.
 - Added a custom fallback/receive dispatch diagram and linked the article from the Stage 02 index, canonical roadmap, and root README; updated Stage 02 publication progress to 7/16.
+
+
+## 2026-10-17
+
+- Published the Receive Functions article covering empty-calldata routing, receive versus fallback and payable functions, the legacy 2,300-gas stipend, ETH accounting caveats, forced Ether transfers, and reentrancy considerations.
+- Added a custom receive routing diagram and linked the article from the Stage 02 index, canonical roadmap, and root README; updated Stage 02 publication progress to 8/16.
