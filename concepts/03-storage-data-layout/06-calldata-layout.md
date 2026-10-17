@@ -166,13 +166,13 @@ For empty payloads, the length is zero; code should not treat a loaded word as m
 A raw selector read is commonly written as:
 
 ```solidity
-bytes4 selector;
+uint32 selector;
 assembly {
-    selector := calldataload(0)
+    selector := shr(224, calldataload(0))
 }
 ```
 
-A 32-byte word is loaded, but assigning it to `bytes4` keeps the high-order four bytes. When inspecting selector values and packed data, be mindful of the EVM's big-endian interpretation of loaded words and Solidity's fixed-bytes type conversions.
+`CALLDATALOAD(0)` places the first calldata byte in the high-order byte of the loaded word. Shifting right by 224 bits moves the first four bytes into the low 32 bits of the numeric `uint32` selector. This snippet assumes the intended input is a standard selector-bearing call; check the calldata length before relying on it in a custom decoder. When inspecting selector values and packed data, be mindful of the EVM's big-endian interpretation of loaded words and Solidity's fixed-bytes type conversions.
 
 ## 8. Calldata, Memory, and Return Data
 
