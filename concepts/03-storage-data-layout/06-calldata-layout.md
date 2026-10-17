@@ -34,9 +34,11 @@ For a nested message call, the calling contract specifies an input range from it
 
 This distinction is useful when tracing a proxy: the proxy receives input bytes, then commonly forwards those bytes in a new call frame. Calldata is not simply one unchanging transaction buffer automatically shared by every nested call.
 
-### Contract creation
+### Contract creation and constructor arguments
 
-For a contract-creation transaction, the transaction data is initcode, which includes the constructor code and may include ABI-encoded constructor arguments appended to it by Solidity tooling. During creation, that data is interpreted as code and constructor input according to the creation convention; it is not a normal deployed-contract function call beginning with a function selector.
+A contract-creation transaction does not call an already deployed contract's external function, so its input is not arranged as a function selector followed by a normal function-argument tuple. In the standard Solidity deployment format, the creation bytecode (**initcode**) is followed by constructor arguments encoded as an ABI tuple. The EVM executes the initcode, and the constructor code uses those appended bytes as its parameters. When creation succeeds, the initcode returns the deployed runtime bytecode.
+
+This is the usual Solidity toolchain convention; custom creation code can define a different format. For the constructor-argument convention, see [Solidity — Contracts](https://docs.solidity.org/en/latest/contracts.html#constructors).
 
 ## 3. The Typical External Function Calldata Format
 
