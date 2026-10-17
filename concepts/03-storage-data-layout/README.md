@@ -2,11 +2,11 @@
 
 **Priority:** 1  
 **Topics:** 13  
-**Article status:** In progress — 4/13 concept articles published.
+**Article status:** In progress — 5/13 concept articles published.
 
 ## About this stage
 
-This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The Storage Layout, Storage Slots, Storage Packing, and Mappings and Dynamic Arrays in Storage articles are published; the remaining concept articles will be added one by one as they are researched.
+This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The Storage Layout, Storage Slots, Storage Packing, Mappings and Dynamic Arrays in Storage, and Memory Layout articles are published; the remaining concept articles will be added one by one as they are researched.
 
 ## Concept checklist
 
@@ -14,7 +14,7 @@ This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the
 - [ ] [Storage Slots](02-storage-slots.md) — article published
 - [ ] [Storage Packing](03-storage-packing.md) — article published
 - [ ] [Mappings and Dynamic Arrays in Storage](04-mappings-and-dynamic-arrays-in-storage.md) — article published
-- [ ] Memory Layout
+- [ ] [Memory Layout](05-memory-layout.md) — article published
 - [ ] Calldata Layout
 - [ ] Transient Storage (EIP-1153)
 - [ ] Storage Context
