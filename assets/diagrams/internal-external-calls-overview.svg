@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Internal versus External Solidity Function Calls</title>
+  <desc id="desc">The top path shows a direct internal function call remaining in the same EVM message-call frame and preserving msg.sender. The lower path shows an external call to another contract creating a new frame where the callee has its own storage context and sees the caller contract as msg.sender, with possible reentrancy.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}
+      .blue{fill:#eff6ff;stroke:#60a5fa;stroke-width:2}.teal{fill:#ecfeff;stroke:#22d3ee;stroke-width:2}
+      .gold{fill:#fffbeb;stroke:#f59e0b;stroke-width:2}.purple{fill:#f5f3ff;stroke:#a78bfa;stroke-width:2}
+      .ink{fill:#0f172a;font-family:Inter,Arial,sans-serif}.muted{fill:#475569;font-family:Inter,Arial,sans-serif}
+      .title{font-size:29px;font-weight:700}.head{font-size:19px;font-weight:700}.body{font-size:15px}.small{font-size:13px}
+      .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;font-weight:600}
+      .line{stroke:#64748b;stroke-width:2.4;fill:none}.arrow{stroke:#2563eb;stroke-width:3;fill:none}.danger{stroke:#dc2626;stroke-width:2.5;fill:none}
+    </style>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2563eb"/></marker>
+    <marker id="redarrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#dc2626"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="800" rx="24"/>
+  <text class="ink title" x="42" y="52">Internal vs External Calls</text>
+  <text class="muted body" x="44" y="82">The call syntax changes the EVM execution path and the message context.</text>
+
+  <rect class="panel" x="36" y="110" width="1128" height="264" rx="18"/>
+  <text class="ink head" x="60" y="146">1. Internal call — same message-call frame</text>
+  <rect class="purple" x="66" y="178" width="260" height="90" rx="12"/>
+  <text class="ink head" x="196" y="210" text-anchor="middle">External entry</text>
+  <text class="muted body" x="196" y="236" text-anchor="middle">msg.sender = user</text>
+  <rect class="blue" x="466" y="178" width="260" height="90" rx="12"/>
+  <text class="ink head" x="596" y="210" text-anchor="middle">Internal helper</text>
+  <text class="mono" x="596" y="236" text-anchor="middle">_updateState()</text>
+  <path class="arrow" d="M326 223 L458 223" marker-end="url(#arrow)"/>
+  <text class="muted small" x="392" y="205" text-anchor="middle">direct call</text>
+  <rect class="teal" x="820" y="178" width="300" height="90" rx="12"/>
+  <text class="ink head" x="970" y="210" text-anchor="middle">Same execution context</text>
+  <text class="muted body" x="970" y="236" text-anchor="middle">sender and storage context unchanged</text>
+  <path class="arrow" d="M726 223 L812 223" marker-end="url(#arrow)"/>
+  <text class="muted body" x="66" y="311">No new EVM message-call frame; no external ABI boundary for this helper call.</text>
+  <text class="muted small" x="66" y="340">Internal calls still consume gas and stack resources.</text>
+
+  <rect class="panel" x="36" y="396" width="1128" height="266" rx="18"/>
+  <text class="ink head" x="60" y="432">2. External call — new message-call frame</text>
+  <rect class="purple" x="66" y="464" width="260" height="90" rx="12"/>
+  <text class="ink head" x="196" y="496" text-anchor="middle">Contract A</text>
+  <text class="muted body" x="196" y="522" text-anchor="middle">initiates call to B</text>
+  <rect class="blue" x="466" y="464" width="260" height="90" rx="12"/>
+  <text class="ink head" x="596" y="496" text-anchor="middle">Contract B</text>
+  <text class="muted body" x="596" y="522" text-anchor="middle">new message-call frame</text>
+  <path class="arrow" d="M326 509 L458 509" marker-end="url(#arrow)"/>
+  <text class="muted small" x="392" y="491" text-anchor="middle">ABI + call</text>
+  <rect class="teal" x="820" y="464" width="300" height="90" rx="12"/>
+  <text class="ink head" x="970" y="496" text-anchor="middle">B's execution context</text>
+  <text class="muted body" x="970" y="522" text-anchor="middle">B storage; msg.sender = A</text>
+  <path class="arrow" d="M726 509 L812 509" marker-end="url(#arrow)"/>
+  <text class="muted body" x="66" y="592">B can revert, consume gas, return unexpected data, or call back into A.</text>
+  <path class="danger" d="M970 554 L970 576 L196 576 L196 554" marker-end="url(#redarrow)"/>
+  <text class="muted small" x="582" y="572" text-anchor="middle">possible callback / reentrancy</text>
+
+  <rect class="gold" x="36" y="684" width="1128" height="82" rx="16"/>
+  <text class="ink head" x="60" y="715">Key distinction: this.foo() is external</text>
+  <text class="muted body" x="60" y="742">A self-call enters a new frame; inside foo(), msg.sender is address(this), not the original user.</text>
+</svg>
