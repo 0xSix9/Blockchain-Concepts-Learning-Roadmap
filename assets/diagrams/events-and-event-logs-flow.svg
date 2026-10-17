@@ -76,7 +76,7 @@
     <text x="939" y="185" class="ct">Off-chain app</text>
     <text x="939" y="216" class="body">Decode using the ABI</text>
     <text x="939" y="244" class="body">Update index / UI</text>
-    <text x="939" y="277" class="body">Deduplicate & reconcile</text>
+    <text x="939" y="277" class="body">Deduplicate &amp; reconcile</text>
     <text x="939" y="298" class="small">Handle chain reorganizations</text>
   </g>
   <path d="M290 230 L338 230" class="line"/>
