@@ -484,3 +484,11 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Added a dedicated SVG diagram contrasting caught versus propagated failures, revert payloads, and the distinct gas behavior of `REVERT` and out-of-gas.
 - Linked the article from the Stage 05 index and canonical roadmap, and updated Stage 05 publication progress to 12/14.
 - Solidity examples are explanatory snippets and were not compiled or executed as part of this article's preparation.
+
+## 2026-10-17 — Transaction Replacement
+
+- Published the Transaction Replacement article explaining same-sender/same-nonce replacement for pending transactions and why replacement is governed by local txpool policy rather than a universal consensus rule.
+- Covered fee-field requirements for legacy/type-1, EIP-1559 type-2, and blob transactions; speed-up versus cancel; and why cancellation is a race rather than a guaranteed deletion.
+- Added a dedicated SVG diagram showing the original and replacement competing for the same nonce, txpool price-bump checks, and canonical inclusion consequences.
+- Linked the article from the Stage 05 index and canonical roadmap, and updated Stage 05 publication progress to 13/14.
+- Replacement behavior is explained from official client policy documentation; no transaction was broadcast or tested on a live node.
