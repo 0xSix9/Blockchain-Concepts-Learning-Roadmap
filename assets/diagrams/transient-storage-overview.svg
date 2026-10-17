@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Transient Storage — EIP-1153</title>
+  <desc id="desc">Transient storage slots are shared across execution frames with the same contract storage context during one transaction, accessed through TSTORE and TLOAD, rolled back with reverted execution, and discarded at transaction end. Other contract contexts have separate transient storage.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f6f8fc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}
+      .ink{fill:#182236;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}
+      .muted{fill:#5d6b82;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}
+      .h1{font-size:30px;font-weight:800;letter-spacing:1px}.h2{font-size:19px;font-weight:750}
+      .body{font-size:16px}.small{font-size:13px}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px}
+      .blue{fill:#dbeafe;stroke:#2563eb;stroke-width:2}.teal{fill:#ccfbf1;stroke:#0f766e;stroke-width:2}
+      .amber{fill:#fef3c7;stroke:#b45309;stroke-width:2}.violet{fill:#ede9fe;stroke:#6d28d9;stroke-width:2}
+      .red{fill:#fee2e2;stroke:#b91c1c;stroke-width:2}.line{stroke:#64748b;stroke-width:2;fill:none}
+      .arrow{stroke:#2563eb;stroke-width:2.5;fill:none;marker-end:url(#arrow)}
+      .dash{stroke:#0f766e;stroke-width:2;fill:none;stroke-dasharray:6 5}
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#2563eb"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="720" rx="24"/>
+  <text class="ink h1" x="48" y="54">TRANSIENT STORAGE · EIP-1153</text>
+  <text class="muted body" x="50" y="82">Storage-like state shared during one transaction — then discarded</text>
+  <rect class="panel" x="40" y="108" width="1120" height="360" rx="16"/>
+  <text class="ink h2" x="66" y="145">One transaction · shared contract context</text>
+  <rect class="blue" x="68" y="176" width="250" height="108" rx="12"/>
+  <text class="ink h2" x="193" y="208" text-anchor="middle">Frame A</text>
+  <text class="muted body" x="193" y="233" text-anchor="middle">Sets temporary lock</text>
+  <text class="ink mono" x="193" y="258" text-anchor="middle">TSTORE(slot, 1)</text>
+  <rect class="teal" x="440" y="176" width="320" height="108" rx="12"/>
+  <text class="ink h2" x="600" y="207" text-anchor="middle">Transient store for A</text>
+  <rect x="474" y="222" width="120" height="42" rx="7" fill="#fff" stroke="#0f766e" stroke-width="1.5"/>
+  <text class="ink mono" x="534" y="248" text-anchor="middle">slot: 1</text>
+  <rect x="606" y="222" width="120" height="42" rx="7" fill="#fff" stroke="#0f766e" stroke-width="1.5"/>
+  <text class="muted mono" x="666" y="248" text-anchor="middle">other slots</text>
+  <rect class="violet" x="882" y="176" width="250" height="108" rx="12"/>
+  <text class="ink h2" x="1007" y="208" text-anchor="middle">Frame A (nested)</text>
+  <text class="muted body" x="1007" y="233" text-anchor="middle">Same context reads lock</text>
+  <text class="ink mono" x="1007" y="258" text-anchor="middle">TLOAD(slot) → 1</text>
+  <path class="arrow" d="M318 229 H430"/>
+  <path class="arrow" d="M770 229 H872"/>
+  <text class="muted small" x="372" y="213" text-anchor="middle">write</text>
+  <text class="muted small" x="820" y="213" text-anchor="middle">read</text>
+  <rect class="amber" x="68" y="312" width="478" height="83" rx="10"/>
+  <text class="ink h2" x="90" y="341">Different contract context B</text>
+  <text class="muted body" x="90" y="369">Has its own transient store — A's slot is not shared</text>
+  <rect class="red" x="568" y="312" width="564" height="83" rx="10"/>
+  <text class="ink h2" x="590" y="341">Revert boundary</text>
+  <text class="muted body" x="590" y="369">Writes made within a reverted frame are rolled back</text>
+  <text class="muted small" x="68" y="435">CALL / STATICCALL use the callee context; DELEGATECALL / CALLCODE use the caller context.</text>
+  <rect class="panel" x="40" y="488" width="1120" height="184" rx="16"/>
+  <text class="ink h2" x="66" y="525">The lifetime rule</text>
+  <rect class="teal" x="68" y="546" width="305" height="72" rx="10"/>
+  <text class="ink h2" x="220" y="575" text-anchor="middle">TLOAD · 0x5c</text>
+  <text class="muted body" x="220" y="599" text-anchor="middle">Read a transient slot</text>
+  <rect class="blue" x="447" y="546" width="305" height="72" rx="10"/>
+  <text class="ink h2" x="599" y="575" text-anchor="middle">TSTORE · 0x5d</text>
+  <text class="muted body" x="599" y="599" text-anchor="middle">Write a transient slot</text>
+  <rect class="red" x="826" y="546" width="306" height="72" rx="10"/>
+  <text class="ink h2" x="979" y="575" text-anchor="middle">Transaction ends</text>
+  <text class="muted body" x="979" y="599" text-anchor="middle">Transient values discarded</text>
+  <path class="arrow" d="M373 582 H437"/>
+  <path class="arrow" d="M752 582 H816"/>
+  <text class="muted small" x="68" y="646">Useful for temporary cross-call coordination; not a replacement for persistent application state.</text>
+</svg>
