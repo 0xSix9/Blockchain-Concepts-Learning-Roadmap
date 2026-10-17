@@ -13,7 +13,7 @@ The EVM memory model is simpler than Solidity's storage model, but it still has 
 
 Memory is useful for computations, ABI encoding and decoding, temporary buffers, return data, and intermediate values. Understanding its layout helps developers inspect assembly, debug memory corruption, reason about gas costs, and avoid unsafe assumptions when writing low-level code.
 
-This article focuses on memory itself and Solidity's conventions for using it. [Storage Layout](01-storage-layout.md) and [Storage Slots](02-storage-slots.md) explain persistent state; The separate Calldata Layout topic will cover the read-only input area in detail.
+This article focuses on memory itself and Solidity's conventions for using it. [Storage Layout](01-storage-layout.md) and [Storage Slots](02-storage-slots.md) explain persistent state; [Calldata Layout](06-calldata-layout.md) covers the read-only input area in detail.
 
 ![Diagram of the Solidity memory map showing scratch space, the free memory pointer, the zero slot, allocatable memory, and a dynamic bytes object](../../assets/diagrams/memory-layout-overview.svg)
 
