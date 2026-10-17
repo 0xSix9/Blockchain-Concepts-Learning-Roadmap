@@ -250,9 +250,9 @@ Mutability is one part of a function's contract. Review it together with visibil
 
 ## Review Checklist
 
-- [x] Explains pure, view, nonpayable, and payable.
-- [x] Distinguishes state reads, state modifications, and Ether acceptance.
-- [x] Covers ABI stateMutability metadata and the implicit nonpayable default.
-- [x] Explains STATICCALL and distinguishes EVM static enforcement from Solidity's pure checks.
-- [x] Covers constructors, receive functions, fallback functions, and common security mistakes.
-- [x] Links official Solidity documentation and related Stage 02 concepts.
+- [ ] Explain the differences among `pure`, `view`, nonpayable, and `payable`.
+- [ ] Distinguish state reads, state modifications, and Ether acceptance.
+- [ ] Explain ABI `stateMutability` metadata and the implicit nonpayable default.
+- [ ] Explain what `STATICCALL` enforces and how that differs from Solidity's `pure` checks.
+- [ ] Describe how mutability rules apply to constructors, receive functions, and fallback functions.
+- [ ] Review the common security mistakes and official Solidity references.
