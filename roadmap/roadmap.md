@@ -7,7 +7,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [Priority 3 — Stages 07–08](learning-priorities.md#priority-3--stages-07-to-08)
 - [Priority 4 — Stages 09–10](learning-priorities.md#priority-4--stages-09-to-10)
 
-> **Stage status:** ✅ Stage 01 content is complete — all 12 articles are published and reviewed. ✅ Stage 02 content is complete — all 16 articles are published. ✅ Stage 03 content is complete — all 13 articles are published. ✅ Stage 04 — Smart Contract Architecture content is complete — all 17 articles are published. ✅ Stage 05 — Advanced Transactions and Gas content is complete — all 14 articles are published. A check beside a stage tracks publication progress; the individual unchecked boxes track study progress and are not automatically checked when an article is published.
+> **Stage status:** ✅ Stage 01 content is complete — all 12 articles are published and reviewed. ✅ Stage 02 content is complete — all 16 articles are published. ✅ Stage 03 content is complete — all 13 articles are published. ✅ Stage 04 — Smart Contract Architecture content is complete — all 17 articles are published. ✅ Stage 05 — Advanced Transactions and Gas content is complete — all 14 articles are published. 🔄 Stage 06 — Application Connectivity is underway — JSON-RPC is the first of 17 concept articles to be published. A check beside a stage tracks publication progress; the individual unchecked boxes track study progress and are not automatically checked when an article is published.
 
 ## ✅ Stage 01 — EVM Execution
 
@@ -108,9 +108,9 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 
 ## Stage 06 — Application Connectivity
 
-**Priority 2** · [Stage index](../concepts/06-application-connectivity/README.md)
+**Priority 2** · 🔄 **Article progress: 1/17 published** · [Stage index](../concepts/06-application-connectivity/README.md)
 
-- [ ] JSON-RPC
+- [ ] [JSON-RPC](../concepts/06-application-connectivity/01-json-rpc.md) — article published
 - [ ] Ethereum RPC Methods
 - [ ] Reading Blockchain State
 - [ ] Sending Transactions
