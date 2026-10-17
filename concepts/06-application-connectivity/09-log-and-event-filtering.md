@@ -83,7 +83,7 @@ For long-running services, use a documented subscription/polling architecture an
 7. Assuming subscription delivery is a durable event queue.
 8. Decoding logs with the wrong ABI or with an ABI for a different contract version.
 
-## Developer Review Checklist
+## 8. Developer Review Checklist
 
 - [ ] Explain the relationship between event declarations, topics, and log data.
 - [ ] Build filters using full topic hashes and valid block ranges.
@@ -92,7 +92,7 @@ For long-running services, use a documented subscription/polling architecture an
 - [ ] Design historical log queries around provider range/response limits.
 - [ ] Deduplicate logs and handle reorgs or removed-log notifications.
 
-## Key Takeaways
+## 9. Key Takeaways
 
 - Logs are execution records, not a complete representation of contract state.
 - Topic positions use AND semantics, while alternatives within a topic position use OR semantics.
