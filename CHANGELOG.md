@@ -444,3 +444,11 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Added a dedicated SVG diagram illustrating the transaction-level cost components, calldata floor, and pre-execution gas-limit validation.
 - Linked the article from the Stage 05 index and canonical roadmap, and updated Stage 05 publication progress to 7/14.
 - Gas formulas are presented as educational summaries; no transaction was simulated or sent to a live node.
+
+## 2026-10-17 — Gas Accounting
+
+- Published the Gas Accounting article explaining EVM execution metering, intrinsic versus execution gas, final transaction gas accounting, refunds, revert/out-of-gas behavior, and EIP-1559 fee calculation.
+- Covered memory expansion, state-dependent storage costs, warm/cold access pricing, the EIP-3529 refund cap, EIP-7623 calldata-floor interaction, and the separation between execution gas fees and blob fees.
+- Added a dedicated SVG diagram showing the three layers of gas accounting: EVM work, final transaction gas usage, and ETH fee calculation.
+- Linked the article from the Stage 05 index and canonical roadmap, and updated Stage 05 publication progress to 8/14.
+- Gas examples are educational summaries; no code was profiled and no transaction was simulated or sent to a live node.
