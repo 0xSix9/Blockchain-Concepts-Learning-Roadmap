@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850" role="img" aria-labelledby="title desc">
+  <title id="title">How Ethereum precompiled contracts work</title>
+  <desc id="desc">A Solidity caller sends input bytes through CALL or STATICCALL to a protocol-reserved address. The execution client recognizes the precompile, runs its native implementation with the specified gas rules, and returns output bytes or failure to the caller.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1220"/><stop offset="1" stop-color="#14243a"/></linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1d4ed8"/><stop offset="1" stop-color="#2563eb"/></linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f766e"/><stop offset="1" stop-color="#0d9488"/></linearGradient>
+    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6d28d9"/><stop offset="1" stop-color="#7c3aed"/></linearGradient>
+    <linearGradient id="amber" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b45309"/><stop offset="1" stop-color="#d97706"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#020617" flood-opacity=".34"/></filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#7dd3fc"/></marker>
+    <style>
+      .h1{font:700 34px system-ui,-apple-system,Segoe UI,sans-serif;fill:#f8fafc}
+      .sub{font:400 16px system-ui,-apple-system,Segoe UI,sans-serif;fill:#b6c4d8}
+      .ct{font:700 20px system-ui,-apple-system,Segoe UI,sans-serif;fill:#fff}
+      .body{font:400 15px system-ui,-apple-system,Segoe UI,sans-serif;fill:#d7e0ec}
+      .mono{font:700 14px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#fff}
+      .small{font:400 13px system-ui,-apple-system,Segoe UI,sans-serif;fill:#bfccdd}
+      .accent{font:700 14px system-ui,-apple-system,Segoe UI,sans-serif;fill:#86efac}
+      .warn{font:700 14px system-ui,-apple-system,Segoe UI,sans-serif;fill:#fcd34d}
+      .line{fill:none;stroke:#7dd3fc;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="850" rx="26" fill="url(#bg)"/>
+  <circle cx="1090" cy="88" r="160" fill="#2563eb" opacity=".08"/>
+  <circle cx="80" cy="770" r="170" fill="#14b8a6" opacity=".06"/>
+  <text x="58" y="65" class="h1">Precompiled Contracts</text>
+  <text x="58" y="98" class="sub">A special address invokes a protocol-defined operation inside the execution client</text>
+
+  <g filter="url(#shadow)">
+    <rect x="58" y="140" width="238" height="156" rx="18" fill="#17263d" stroke="#334155"/>
+    <rect x="58" y="140" width="238" height="7" rx="3" fill="url(#blue)"/>
+    <text x="80" y="180" class="ct">1. Caller</text>
+    <text x="80" y="210" class="body">Solidity contract</text>
+    <text x="80" y="237" class="mono">input bytes</text>
+    <text x="80" y="270" class="small">Usually CALL or STATICCALL</text>
+
+    <rect x="342" y="140" width="238" height="156" rx="18" fill="#17263d" stroke="#334155"/>
+    <rect x="342" y="140" width="238" height="7" rx="3" fill="url(#teal)"/>
+    <text x="364" y="180" class="ct">2. Special address</text>
+    <text x="364" y="211" class="mono">0x02 · SHA-256</text>
+    <text x="364" y="239" class="body">Recognized by protocol</text>
+    <text x="364" y="270" class="small">Not deployed Solidity bytecode</text>
+
+    <rect x="626" y="140" width="238" height="156" rx="18" fill="#17263d" stroke="#334155"/>
+    <rect x="626" y="140" width="238" height="7" rx="3" fill="url(#purple)"/>
+    <text x="648" y="180" class="ct">3. Native operation</text>
+    <text x="648" y="211" class="body">Execution client runs</text>
+    <text x="648" y="235" class="body">the specified algorithm</text>
+    <text x="648" y="270" class="small">Defined input and gas rules</text>
+
+    <rect x="910" y="140" width="232" height="156" rx="18" fill="#17263d" stroke="#334155"/>
+    <rect x="910" y="140" width="232" height="7" rx="3" fill="url(#amber)"/>
+    <text x="932" y="180" class="ct">4. Result</text>
+    <text x="932" y="211" class="mono">output bytes</text>
+    <text x="932" y="239" class="body">or call failure</text>
+    <text x="932" y="270" class="small">Caller validates the result</text>
+  </g>
+  <path d="M296 218 L334 218" class="line"/>
+  <path d="M580 218 L618 218" class="line"/>
+  <path d="M864 218 L902 218" class="line"/>
+
+  <text x="58" y="350" class="ct">Examples of standardized precompile operations</text>
+  <g>
+    <rect x="58" y="375" width="345" height="104" rx="15" fill="#101d30" stroke="#334155"/>
+    <rect x="58" y="375" width="7" height="104" rx="3" fill="url(#blue)"/>
+    <text x="82" y="406" class="ct">Hashing and signature recovery</text>
+    <text x="82" y="434" class="mono">0x01 ECRECOVER</text>
+    <text x="82" y="457" class="mono">0x02 SHA-256 · 0x03 RIPEMD-160</text>
+
+    <rect x="427" y="375" width="345" height="104" rx="15" fill="#101d30" stroke="#334155"/>
+    <rect x="427" y="375" width="7" height="104" rx="3" fill="url(#teal)"/>
+    <text x="451" y="406" class="ct">Curve arithmetic and pairings</text>
+    <text x="451" y="434" class="mono">0x06–0x08 BN254</text>
+    <text x="451" y="457" class="mono">0x0b–0x11 BLS12-381</text>
+
+    <rect x="796" y="375" width="346" height="104" rx="15" fill="#101d30" stroke="#334155"/>
+    <rect x="796" y="375" width="7" height="104" rx="3" fill="url(#amber)"/>
+    <text x="820" y="406" class="ct">Proof and data operations</text>
+    <text x="820" y="434" class="mono">0x05 MODEXP · 0x09 BLAKE2F</text>
+    <text x="820" y="457" class="mono">0x0a KZG point evaluation</text>
+  </g>
+
+  <rect x="58" y="518" width="1084" height="116" rx="18" fill="#17263d" stroke="#334155"/>
+  <text x="82" y="553" class="ct">A direct call sends operation-specific bytes</text>
+  <text x="82" y="581" class="body">Unlike a normal Solidity method call, the input usually has no 4-byte function selector.</text>
+  <text x="82" y="607" class="body">The callee must use the exact input layout and interpret the returned bytes correctly.</text>
+
+  <rect x="58" y="663" width="1084" height="119" rx="18" fill="#1e293b" stroke="#475569"/>
+  <text x="82" y="698" class="warn">Chain and fork compatibility is essential</text>
+  <text x="82" y="727" class="body">Address sets and gas schedules can change between forks and EVM-compatible networks.</text>
+  <text x="82" y="753" class="body">Check the target chain, validate call success and output, and never assume an address is active everywhere.</text>
+  <text x="58" y="818" class="small">Learn the address mapping. Respect the byte format. Verify the result.</text>
+</svg>
