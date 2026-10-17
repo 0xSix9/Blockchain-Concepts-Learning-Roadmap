@@ -294,9 +294,9 @@ Logs consume gas, and indexing changes the shape and usefulness of the log. Emit
 
 ## Review Checklist
 
-- [x] Explains event declarations, emit, and the event-log abstraction.
-- [x] Describes log address, topics, data, ABI decoding, and the signature topic.
-- [x] Explains the role of indexed parameters without duplicating the later deep-dive topic.
-- [x] Covers log filtering, receipts, reorgs, and reverted execution.
-- [x] Distinguishes events from state storage, return values, and access control.
-- [x] Links official Solidity documentation, ABI specification, and EIP-140.
+- [ ] Explain the difference between an event declaration and an event log.
+- [ ] Describe a log's emitting address, topics, data, ABI decoding, and signature topic.
+- [ ] Explain the role of indexed parameters and the trade-offs for dynamic values.
+- [ ] Explain how logs are filtered, retrieved from receipts, and affected by reverts or reorganizations.
+- [ ] Distinguish events from state storage, return values, and access control.
+- [ ] Review the official Solidity documentation, ABI specification, and EIP-140.
