@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850" role="img" aria-labelledby="title desc">
   <title id="title">How Ethereum precompiled contracts work</title>
-  <desc id="desc">A Solidity caller sends input bytes through CALL or STATICCALL to a protocol-reserved address. The execution client recognizes the precompile, runs its native implementation with the specified gas rules, and returns output bytes or failure to the caller.</desc>
+  <desc id="desc">A Solidity caller sends input bytes through CALL or STATICCALL to a protocol-reserved address. The execution client recognizes the precompile, runs its native implementation with specified gas rules, and returns output bytes or failure. The Ethereum mainnet Osaka set includes P256VERIFY at address 0x0100.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1220"/><stop offset="1" stop-color="#14243a"/></linearGradient>
     <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1d4ed8"/><stop offset="1" stop-color="#2563eb"/></linearGradient>
@@ -62,20 +62,21 @@
 
   <text x="58" y="350" class="ct">Examples of standardized precompile operations</text>
   <g>
-    <rect x="58" y="375" width="345" height="104" rx="15" fill="#101d30" stroke="#334155"/>
-    <rect x="58" y="375" width="7" height="104" rx="3" fill="url(#blue)"/>
+    <rect x="58" y="375" width="345" height="124" rx="15" fill="#101d30" stroke="#334155"/>
+    <rect x="58" y="375" width="7" height="124" rx="3" fill="url(#blue)"/>
     <text x="82" y="406" class="ct">Hashing and signature recovery</text>
     <text x="82" y="434" class="mono">0x01 ECRECOVER</text>
     <text x="82" y="457" class="mono">0x02 SHA-256 · 0x03 RIPEMD-160</text>
+    <text x="82" y="480" class="mono">0x0100 P256VERIFY (Osaka)</text>
 
-    <rect x="427" y="375" width="345" height="104" rx="15" fill="#101d30" stroke="#334155"/>
-    <rect x="427" y="375" width="7" height="104" rx="3" fill="url(#teal)"/>
+    <rect x="427" y="375" width="345" height="124" rx="15" fill="#101d30" stroke="#334155"/>
+    <rect x="427" y="375" width="7" height="124" rx="3" fill="url(#teal)"/>
     <text x="451" y="406" class="ct">Curve arithmetic and pairings</text>
     <text x="451" y="434" class="mono">0x06–0x08 BN254</text>
     <text x="451" y="457" class="mono">0x0b–0x11 BLS12-381</text>
 
-    <rect x="796" y="375" width="346" height="104" rx="15" fill="#101d30" stroke="#334155"/>
-    <rect x="796" y="375" width="7" height="104" rx="3" fill="url(#amber)"/>
+    <rect x="796" y="375" width="346" height="124" rx="15" fill="#101d30" stroke="#334155"/>
+    <rect x="796" y="375" width="7" height="124" rx="3" fill="url(#amber)"/>
     <text x="820" y="406" class="ct">Proof and data operations</text>
     <text x="820" y="434" class="mono">0x05 MODEXP · 0x09 BLAKE2F</text>
     <text x="820" y="457" class="mono">0x0a KZG point evaluation</text>
