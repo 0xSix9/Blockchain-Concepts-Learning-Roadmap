@@ -20,7 +20,7 @@ The roadmap starts with EVM execution and contract interaction, then moves throu
 
 This repository is designed as both a **learning checklist** and a **growing technical reference**. Every stage has its own index, and the complete roadmap keeps all concepts in one place.
 
-> **Publication progress:** ✅ **Stage 01 — EVM Execution is content-complete:** all 12 concept articles are published and reviewed. **Stage 02 — ABI and Contract Interaction is in progress:** the Application Binary Interface (ABI), ABI Encoding and Decoding, Function Selectors, Function Dispatch, External Function Calls, Constructors, Fallback Functions, Receive Functions, Visibility, Mutability, Payable Functions, and Events and Event Logs articles are published, and the remaining topics will be documented incrementally.
+> **Publication progress:** ✅ **Stage 01 — EVM Execution is content-complete:** all 12 concept articles are published and reviewed. **Stage 02 — ABI and Contract Interaction is in progress:** the Application Binary Interface (ABI), ABI Encoding and Decoding, Function Selectors, Function Dispatch, External Function Calls, Constructors, Fallback Functions, Receive Functions, Visibility, Mutability, Payable Functions, Events and Event Logs, and Topics and Indexed Parameters articles are published, and the remaining topics will be documented incrementally.
 
 ## Start here
 
@@ -38,6 +38,7 @@ This repository is designed as both a **learning checklist** and a **growing tec
 - **[Mutability](concepts/02-abi-contract-interaction/10-mutability.md)** — pure, view, nonpayable, and payable behavior; state reads and writes; Ether acceptance; and STATICCALL.
 - **[Payable Functions](concepts/02-abi-contract-interaction/11-payable-functions.md)** — receiving ETH, validating `msg.value`, accounting, receive/fallback paths, and safe outgoing transfers.
 - **[Events and Event Logs](concepts/02-abi-contract-interaction/12-events-and-event-logs.md)** — event declarations, log structure, topics and data, ABI decoding, RPC filtering, and reorg-aware indexing.
+- **[Topics and Indexed Parameters](concepts/02-abi-contract-interaction/13-topics-and-indexed-parameters.md)** — topic layout, indexed argument encoding, dynamic-value hashes, `eth_getLogs` filters, wildcards, and OR/AND logic.
 - **[Learning priorities](roadmap/learning-priorities.md)** — understand the four-stage groups and suggested order.
 - **[Concept article template](templates/concept-template.md)** — a starting structure for writing each article later.
 - **[Sources and research policy](references/sources.md)** — recommended primary sources and documentation rules.
@@ -49,7 +50,7 @@ This repository is designed as both a **learning checklist** and a **growing tec
 | Stage | Focus | Concepts | Priority | Article publication |
 |---|---|---:|:---:|---|
 | [✅ Stage 01 — EVM Execution](concepts/01-evm-execution/README.md) | EVM execution fundamentals | 12 | P1 | ✅ Complete — 12/12 published |
-| [Stage 02 — ABI and Contract Interaction](concepts/02-abi-contract-interaction/README.md) | ABI, selectors, calls, events, errors | 16 | P1 | In progress — 12/16 published |
+| [Stage 02 — ABI and Contract Interaction](concepts/02-abi-contract-interaction/README.md) | ABI, selectors, calls, events, errors | 16 | P1 | In progress — 13/16 published |
 | [Stage 03 — Storage and Data Layout](concepts/03-storage-data-layout/README.md) | Storage slots, packing, mappings, proofs | 13 | P1 | Checklist only |
 | [Stage 04 — Smart Contract Architecture](concepts/04-smart-contract-architecture/README.md) | Composition, proxies, upgradeability | 17 | P1 | Checklist only |
 | [Stage 05 — Advanced Transactions and Gas](concepts/05-advanced-transactions-gas/README.md) | Transaction mechanics and gas accounting | 14 | P2 | Checklist only |
