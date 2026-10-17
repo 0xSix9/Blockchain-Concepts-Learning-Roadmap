@@ -89,7 +89,7 @@ A mined transaction receipt commonly contains fields such as:
 {
   "status": "0x1",
   "gasUsed": "0xa410",
-  "cumulativeGasUsed": "0x1dcb0",
+  "cumulativeGasUsed": "0x1dc90",
   "effectiveGasPrice": "0x4a817c800"
 }
 ```
