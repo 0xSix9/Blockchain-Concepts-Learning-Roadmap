@@ -318,3 +318,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the Transparent Proxies article, covering caller-based proxy routing, selector-clash mitigation, the OpenZeppelin Contracts 5.x `ProxyAdmin` relationship, the ERC-1967 upgrade path, and security considerations including UUPS interaction.
 - Added a custom SVG diagram showing admin versus non-admin call routing and the `initialOwner` / `ProxyAdmin` distinction in OpenZeppelin 5.x.
 - Linked the article from the Stage 04 index and full roadmap, and updated repository publication counters to 6/17. The study checkbox remains unchecked until the learner reviews the topic.
+
+## 2026-10-17 — UUPS Proxies
+
+- Published the UUPS Proxies article, covering implementation-resident upgrade logic, `_authorizeUpgrade`, `onlyProxy`, `proxiableUUID`, ERC-1967 implementation slots, initialization, storage compatibility, and security concerns.
+- Added a custom SVG diagram showing delegated execution and the UUPS upgrade sequence.
+- Linked the article from the Stage 04 index and canonical roadmap; updated repository publication progress to 7/17. The study checkbox remains unchecked until the learner reviews the topic.
