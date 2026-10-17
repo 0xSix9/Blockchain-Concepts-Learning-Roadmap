@@ -6,7 +6,7 @@
 
 ## About this stage
 
-This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. Concept articles are being added incrementally as each topic is researched and reviewed. The study checklist is separate from publication status: an unchecked box means the concept has not been marked as studied.
+This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. All 16 concept articles are now published. Use the checklist below to track study progress; an unchecked box means the concept has not been marked as studied. Publication status and personal study progress are tracked separately.
 
 ## Concept checklist
 
