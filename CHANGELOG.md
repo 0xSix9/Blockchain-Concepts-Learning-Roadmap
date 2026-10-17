@@ -187,3 +187,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Corrected the Precompiled Contracts article and diagram to include Ethereum mainnet's Osaka `P256VERIFY` precompile at `0x0100`, and clarified the roles of EIP-7910 and EIP-7951.
 - Clarified that low-level `call{value: ...}("")` is available on `address` and is not exclusive to `address payable`; tightened the Solidity 0.8.37 custom-error compiler-bug note to its actual trigger conditions.
 - Standardized all 16 article self-review checklists as unchecked learner progress items; stage/article publication status remains distinct from personal study progress.
+
+## 2026-10-17
+
+- Published the Storage Layout article for Stage 03, explaining slot and byte-offset assignments, inheritance, special state-variable categories, compiler layout output, custom storage bases, and upgrade compatibility.
+- Added a dedicated Storage Layout overview diagram and linked the article from the Stage 03 index and canonical roadmap.
+- Updated Stage 03 publication progress to 1/13; the individual learning checklist remains unchecked.
