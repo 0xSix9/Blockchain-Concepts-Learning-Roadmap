@@ -49,7 +49,7 @@ Light-client approaches can be useful for mobile applications, browser wallets, 
 
 Do not assume every light-client project is production-ready or provides complete execution-layer coverage. Verify the current project's release status and security model before using it for security-critical decisions.
 
-## Developer Review Checklist
+## 8. Developer Review Checklist
 
 - [ ] Explain what data a light client verifies locally and what it requests from providers.
 - [ ] Describe the role of authenticated headers, sync-committee updates, and trusted bootstrap data.
@@ -58,7 +58,7 @@ Do not assume every light-client project is production-ready or provides complet
 - [ ] Identify limitations involving data availability, query coverage, bootstrap trust, and implementation maturity.
 - [ ] Evaluate whether the selected light-client implementation is suitable for the required threat model.
 
-## Key Takeaways
+## 9. Key Takeaways
 
 - Light clients lower local resource costs by verifying selected data rather than processing everything.
 - Security depends on authenticated updates, proofs, bootstrap trust, and correct implementation.
