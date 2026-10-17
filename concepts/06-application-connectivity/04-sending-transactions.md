@@ -81,6 +81,22 @@ After inclusion, inspect the receipt's status, gas usage, and logs. If a reorgan
 6. Storing private keys in app logs, environment dumps, source code, or RPC payloads.
 7. Reporting success before checking receipt status and the application's confirmation policy.
 
+## Developer Review Checklist
+
+- [ ] Separate building, simulation, signing, submission, inclusion, execution outcome, and finality.
+- [ ] Verify Chain ID, sender nonce, destination, value, calldata, transaction type, and fee fields before signing.
+- [ ] Understand that gas estimation is contextual and may differ from actual execution.
+- [ ] Submit serialized signed bytes only through the intended endpoint; never include a private key in an RPC payload.
+- [ ] Handle timeouts by tracking the same raw transaction/hash before creating a replacement.
+- [ ] Inspect receipt status, logs, and the application's confirmation/finality policy before reporting success.
+
+## Key Takeaways
+
+- Sending a transaction is a multi-step workflow; RPC acceptance is not on-chain success.
+- The exact signed fields are immutable: changing a field requires a new signature.
+- A timeout does not prove the node rejected the submitted transaction.
+- Replacement, inclusion, and finality are separate states that applications must track.
+
 ## References
 
 - 1. [Ethereum.org — JSON-RPC API](https://ethereum.org/developers/docs/apis/json-rpc/) — transaction submission and related RPC methods.
