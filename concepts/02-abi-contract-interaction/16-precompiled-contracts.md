@@ -165,6 +165,14 @@ Before relying on a precompile in an application, ask:
 - Does the gas estimate reflect the relevant fork and the actual input?
 - Is the cryptographic result being used for the correct purpose, with all required authorization and domain checks?
 
+## Review Checklist
+
+- [ ] Explain why a precompile is a protocol-defined operation at a special address rather than ordinary deployed runtime bytecode.
+- [ ] Recognize the common Ethereum mainnet precompile addresses, including the Osaka `P256VERIFY` entry.
+- [ ] Trace a low-level call's input bytes, success flag, output validation, and gas assumptions.
+- [ ] Explain why a precompile result still needs correct authorization, domain checks, and application-level validation.
+- [ ] Check the target chain's fork and official specification before relying on availability or gas costs.
+
 ## 10. References
 
 - [Ethereum Execution Layer Specifications](https://github.com/ethereum/execution-specs) — reference specification and fork-specific execution behavior.
