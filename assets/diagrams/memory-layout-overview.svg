@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="790" viewBox="0 0 1100 790" role="img" aria-labelledby="title desc">
+  <title id="title">Solidity Memory Layout</title>
+  <desc id="desc">Solidity's reserved first 128 bytes, the free memory pointer initially set to 0x80, a dynamic bytes object in allocated memory, and a comparison between memory arrays and packed storage.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .panel { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .blue { fill: #eff6ff; stroke: #60a5fa; stroke-width: 1.5; }
+      .teal { fill: #ecfeff; stroke: #22d3ee; stroke-width: 1.5; }
+      .gold { fill: #fffbeb; stroke: #fbbf24; stroke-width: 1.5; }
+      .rose { fill: #fff1f2; stroke: #fb7185; stroke-width: 1.5; }
+      .ink { fill: #0f172a; font-family: Inter, Arial, sans-serif; }
+      .muted { fill: #475569; font-family: Inter, Arial, sans-serif; }
+      .heading { font-size: 23px; font-weight: 700; }
+      .label { font-size: 16px; font-weight: 700; }
+      .body { font-size: 14px; }
+      .small { font-size: 12px; }
+      .mono { font-size: 13px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+      .line { fill: none; stroke: #64748b; stroke-width: 2; }
+      .dash { fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-dasharray: 5 5; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1100" height="790" rx="24"/>
+  <text class="ink heading" x="48" y="50">Solidity Memory Layout</text>
+  <text class="muted body" x="48" y="78">Temporary memory is byte-addressable; Solidity reserves the first 128 bytes for well-known conventions.</text>
+
+  <rect class="panel" x="40" y="108" width="1020" height="292" rx="16"/>
+  <text class="ink label" x="64" y="143">1. Reserved memory regions</text>
+  <text class="muted small" x="64" y="164">Addresses increase downward in this conceptual map.</text>
+
+  <rect class="blue" x="64" y="183" width="485" height="52" rx="8"/>
+  <text class="ink label" x="82" y="205">0x00–0x3f · 64 bytes</text>
+  <text class="muted small" x="82" y="224">Scratch space for short-lived temporary values</text>
+
+  <rect class="teal" x="64" y="243" width="485" height="52" rx="8"/>
+  <text class="ink label" x="82" y="265">0x40–0x5f · 32 bytes</text>
+  <text class="muted small" x="82" y="284">Free memory pointer is stored at address 0x40</text>
+
+  <rect class="gold" x="64" y="303" width="485" height="52" rx="8"/>
+  <text class="ink label" x="82" y="325">0x60–0x7f · 32 bytes</text>
+  <text class="muted small" x="82" y="344">Zero slot; keep it untouched</text>
+
+  <rect class="rose" x="64" y="363" width="485" height="25" rx="7"/>
+  <text class="ink small" x="82" y="380">0x80 onward · normal allocations</text>
+
+  <rect class="panel" x="580" y="183" width="450" height="205" rx="12"/>
+  <text class="ink label" x="604" y="214">Pointer versus pointer value</text>
+  <rect class="teal" x="604" y="230" width="170" height="55" rx="8"/>
+  <text class="ink mono" x="620" y="252">address 0x40</text>
+  <text class="muted small" x="620" y="272">where pointer is stored</text>
+  <path class="line" d="M774 257 L808 257" marker-end="url(#arrow)"/>
+  <rect class="gold" x="820" y="230" width="184" height="55" rx="8"/>
+  <text class="ink mono" x="838" y="252">mload(0x40)</text>
+  <text class="muted small" x="838" y="272">initial value: 0x80</text>
+  <text class="muted body" x="604" y="318">The pointer is allocation bookkeeping.</text>
+  <text class="muted body" x="604" y="341">It does not guarantee later bytes are zero.</text>
+  <text class="muted body" x="604" y="364">MSIZE and the free memory pointer differ.</text>
+
+  <rect class="panel" x="40" y="420" width="1020" height="196" rx="16"/>
+  <text class="ink label" x="64" y="455">2. Example: bytes memory data = bytes("cat")</text>
+  <text class="muted body" x="64" y="480">The reference points to the length word; the data follows at pointer + 0x20.</text>
+
+  <rect class="blue" x="64" y="498" width="250" height="76" rx="10"/>
+  <text class="ink label" x="84" y="525">At pointer p</text>
+  <text class="ink mono" x="84" y="550">length = 3</text>
+  <path class="line" d="M314 536 L354 536" marker-end="url(#arrow)"/>
+  <rect class="teal" x="366" y="498" width="430" height="76" rx="10"/>
+  <text class="ink label" x="386" y="525">At p + 0x20 · one data word</text>
+  <rect x="386" y="538" width="386" height="24" rx="4" fill="#ffffff" stroke="#94a3b8"/>
+  <rect x="386" y="538" width="37" height="24" rx="4" fill="#93c5fd" stroke="#3b82f6"/>
+  <rect x="423" y="538" width="37" height="24" fill="#93c5fd" stroke="#3b82f6"/>
+  <rect x="460" y="538" width="37" height="24" fill="#93c5fd" stroke="#3b82f6"/>
+  <text class="ink small" x="398" y="555">c</text>
+  <text class="ink small" x="435" y="555">a</text>
+  <text class="ink small" x="472" y="555">t</text>
+  <text class="muted small" x="514" y="555">remaining bytes padded</text>
+  <rect class="gold" x="820" y="498" width="210" height="76" rx="10"/>
+  <text class="ink label" x="840" y="525">mload(data)</text>
+  <text class="muted small" x="840" y="550">returns 3</text>
+  <text class="muted small" x="64" y="599">A bytes1[] array differs: each array element occupies a 32-byte position in memory.</text>
+
+  <rect class="panel" x="40" y="636" width="1020" height="112" rx="16"/>
+  <text class="ink label" x="64" y="670">3. Memory is not storage</text>
+  <rect class="blue" x="64" y="686" width="435" height="44" rx="8"/>
+  <text class="ink body" x="82" y="713">uint8[4] in storage: may pack into one slot</text>
+  <rect class="teal" x="520" y="686" width="510" height="44" rx="8"/>
+  <text class="ink body" x="538" y="713">uint8[4] in memory: 4 × 32-byte element positions</text>
+
+  <text class="muted small" x="48" y="776">Conceptual illustration. Follow the Solidity memory-layout rules when using inline assembly.</text>
+</svg>
