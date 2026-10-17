@@ -59,7 +59,7 @@ The official Beacon API documentation warns that endpoints should not be exposed
 
 Keep validator signing keys in the appropriate secure validator/signing setup. A Beacon API response is data from a node, not automatically a cryptographic proof of every field; high-value systems should define a trust and verification model.
 
-## Developer Review Checklist
+## 9. Developer Review Checklist
 
 - [ ] Explain what the Beacon API exposes and which component serves it.
 - [ ] Distinguish consensus data such as validators/finality from execution data such as transactions/logs.
@@ -68,7 +68,7 @@ Keep validator signing keys in the appropriate secure validator/signing setup. A
 - [ ] Check sync status and distinguish chain head from safe/finalized state.
 - [ ] Protect endpoints against excessive requests and keep validator keys in the appropriate signing setup.
 
-## Key Takeaways
+## 10. Key Takeaways
 
 - The Beacon API is an HTTP REST interface for selected consensus-layer data and operations.
 - It is separate from execution JSON-RPC and the authenticated Engine API.
