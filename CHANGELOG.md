@@ -62,3 +62,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the Return Data and Revert Data article, covering EIP-211's return-data buffer, RETURNDATASIZE, RETURNDATACOPY, REVERT payloads, Solidity error encodings, and safe low-level call handling.
 - Added a custom diagram showing successful return bytes and failure data flowing through call-like operations.
 - Linked the article from the Stage 01 index, full roadmap, and project README.
+
+
+## 2026-10-17
+
+- Published the Contract Creation and Initialization article, covering creation transactions, initcode versus runtime bytecode, constructor context, storage and immutable initialization, failure behavior, and protocol size limits.
+- Added a custom contract-creation lifecycle diagram and linked the article from the Stage 01 index, full roadmap, and project README.

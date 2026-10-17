@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1130" viewBox="0 0 1200 1130" role="img" aria-labelledby="title desc">
+  <title id="title">Contract Creation and Initialization Lifecycle</title>
+  <desc id="desc">A top-level transaction or factory starts contract creation. Initcode runs constructor logic, initializes state and immutables, and returns runtime bytecode. Runtime code is validated and deposited. If initcode reverts or fails validation, creation rolls back and no code is installed.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker>
+    <marker id="blueArrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/></marker>
+    <style>
+      .bg{fill:#f8fafc}.title{font:700 30px Arial,sans-serif;fill:#0f172a}.sub{font:16px Arial,sans-serif;fill:#475569}
+      .box{fill:#fff;stroke:#94a3b8;stroke-width:2;rx:15}.blue{fill:#eff6ff;stroke:#2563eb;stroke-width:2;rx:15}
+      .green{fill:#ecfdf5;stroke:#059669;stroke-width:2;rx:15}.red{fill:#fff1f2;stroke:#e11d48;stroke-width:2;rx:15}
+      .purple{fill:#f5f3ff;stroke:#7c3aed;stroke-width:2;rx:15}.label{font:700 18px Arial,sans-serif;fill:#0f172a}
+      .body{font:15px Arial,sans-serif;fill:#334155}.small{font:13px Arial,sans-serif;fill:#475569}
+      .line{stroke:#475569;stroke-width:2.5;fill:none;marker-end:url(#arrow)}.blueLine{stroke:#2563eb;stroke-width:2.5;fill:none;marker-end:url(#blueArrow)}
+      .num{font:700 15px Arial,sans-serif;fill:#fff}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="1130" rx="22"/>
+  <text class="title" x="600" y="48" text-anchor="middle">Contract creation and initialization</text>
+  <text class="sub" x="600" y="78" text-anchor="middle">Initcode executes once and returns the runtime bytecode that stays deployed</text>
+
+  <rect class="blue" x="70" y="112" width="500" height="110" rx="15"/>
+  <circle cx="103" cy="144" r="18" fill="#2563eb"/><text class="num" x="103" y="150" text-anchor="middle">1</text>
+  <text class="label" x="137" y="150">Top-level creation transaction</text>
+  <text class="body" x="100" y="180">Initcode is the transaction data</text>
+  <text class="small" x="100" y="204">Address derived from sender + nonce</text>
+
+  <rect class="blue" x="630" y="112" width="500" height="110" rx="15"/>
+  <circle cx="663" cy="144" r="18" fill="#2563eb"/><text class="num" x="663" y="150" text-anchor="middle">2</text>
+  <text class="label" x="697" y="150">Factory contract</text>
+  <text class="body" x="660" y="180">CREATE or CREATE2 executes initcode</text>
+  <text class="small" x="660" y="204">Factory is the direct creator</text>
+
+  <path class="line" d="M320 222 L320 255 L600 255 L600 280"/>
+  <path class="line" d="M880 222 L880 255 L600 255"/>
+  <rect class="purple" x="220" y="288" width="760" height="115" rx="15"/>
+  <text class="label" x="600" y="322" text-anchor="middle">3 · Initcode / creation bytecode</text>
+  <text class="body" x="600" y="352" text-anchor="middle">Compiler creation code + ABI-encoded constructor arguments</text>
+  <text class="small" x="600" y="380" text-anchor="middle">Destination account is in creation context; runtime code is not installed yet</text>
+
+  <path class="blueLine" d="M600 403 L600 434"/>
+  <rect class="box" x="220" y="442" width="760" height="137" rx="15"/>
+  <circle cx="255" cy="473" r="18" fill="#475569"/><text class="num" x="255" y="479" text-anchor="middle">4</text>
+  <text class="label" x="289" y="479">Run initialization logic</text>
+  <text class="body" x="255" y="511">Initialize state variables and run constructor</text>
+  <text class="body" x="255" y="536">Validate arguments · assign owner/dependencies · set immutables</text>
+  <text class="small" x="255" y="562">msg.sender is the direct creator; address(this).code is still empty</text>
+
+  <path class="line" d="M600 579 L600 608"/>
+  <rect class="green" x="220" y="616" width="760" height="105" rx="15"/>
+  <circle cx="255" cy="646" r="18" fill="#059669"/><text class="num" x="255" y="652" text-anchor="middle">5</text>
+  <text class="label" x="289" y="652">Initcode returns runtime bytecode</text>
+  <text class="body" x="255" y="682">Compiler-generated runtime template may be patched with immutable values</text>
+  <text class="small" x="255" y="704">Constructor logic is not installed as a normal external function</text>
+
+  <path class="line" d="M600 721 L600 750"/>
+  <rect class="green" x="220" y="758" width="760" height="104" rx="15"/>
+  <circle cx="255" cy="788" r="18" fill="#059669"/><text class="num" x="255" y="794" text-anchor="middle">6</text>
+  <text class="label" x="289" y="794">Validate and deposit code</text>
+  <text class="body" x="255" y="824">Check gas and active protocol limits, then install runtime code</text>
+  <text class="small" x="255" y="846">Successful creation makes the deployed address/code available</text>
+
+  <path class="line" d="M600 862 L600 892"/>
+  <rect class="blue" x="220" y="900" width="760" height="88" rx="15"/>
+  <text class="label" x="600" y="935" text-anchor="middle">7 · Deployed contract</text>
+  <text class="body" x="600" y="963" text-anchor="middle">Future calls execute runtime bytecode; constructor does not run again</text>
+
+  <path class="line" d="M220 510 L135 510 L135 795 L210 795"/>
+  <rect class="red" x="70" y="1007" width="1060" height="82" rx="15"/>
+  <text class="label" x="600" y="1038" text-anchor="middle">Failure path: revert · out-of-gas · collision · invalid/oversized code</text>
+  <text class="body" x="600" y="1066" text-anchor="middle">Creation state rolls back; runtime code is not installed by the failed attempt</text>
+
+  <text class="small" x="600" y="1110" text-anchor="middle">Always validate constructor inputs and estimate the full deployment cost.</text>
+</svg>
