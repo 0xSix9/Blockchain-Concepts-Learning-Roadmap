@@ -25,7 +25,7 @@ This repository is designed as both a **learning checklist** and a **growing tec
 ## Start here
 
 - **[Full roadmap — all 157 concepts](roadmap/roadmap.md)** — browse the complete checklist.
-- **[EVM Opcodes](concepts/01-evm-execution/01-evm-opcodes.md)**, **[Stack, Memory, and Calldata](concepts/01-evm-execution/02-stack-memory-and-calldata.md)**, **[Execution Context](concepts/01-evm-execution/03-execution-context.md)**, **[CALL](concepts/01-evm-execution/04-call.md)**, **[DELEGATECALL](concepts/01-evm-execution/05-delegatecall.md)**, and **[STATICCALL](concepts/01-evm-execution/06-staticcall.md)**, and **[CREATE](concepts/01-evm-execution/07-create.md)** — the first seven published Stage 01 articles.
+- **[EVM Opcodes](concepts/01-evm-execution/01-evm-opcodes.md)**, **[Stack, Memory, and Calldata](concepts/01-evm-execution/02-stack-memory-and-calldata.md)**, **[Execution Context](concepts/01-evm-execution/03-execution-context.md)**, **[CALL](concepts/01-evm-execution/04-call.md)**, **[DELEGATECALL](concepts/01-evm-execution/05-delegatecall.md)**, **[STATICCALL](concepts/01-evm-execution/06-staticcall.md)**, and **[CREATE](concepts/01-evm-execution/07-create.md)** — the first seven published Stage 01 articles.
 - **[Learning priorities](roadmap/learning-priorities.md)** — understand the four-stage groups and suggested order.
 - **[Concept article template](templates/concept-template.md)** — a starting structure for writing each article later.
 - **[Sources and research policy](references/sources.md)** — recommended primary sources and documentation rules.
