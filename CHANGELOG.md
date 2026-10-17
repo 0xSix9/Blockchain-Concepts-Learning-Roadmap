@@ -405,3 +405,10 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the Transaction Nonce article covering sender transaction sequencing, nonce gaps, `latest` versus `pending` RPC views, same-nonce replacement behavior, included reverts, and the distinction between transaction nonces and EIP-7702 authorization nonces.
 - Added a dedicated SVG diagram showing the account nonce sequence, a missing nonce blocking later transactions, and same-nonce replacement.
 - Linked the article from the Stage 05 index and canonical roadmap, and updated Stage 05 publication progress to 2/14.
+
+## 2026-10-17 — Transaction Types (EIP-2718)
+
+- Published the Transaction Types article explaining the typed transaction envelope, legacy transaction encoding, type-specific payloads, signing-domain considerations, typed receipts, and major Ethereum transaction types.
+- Covered type 1 (EIP-2930), type 2 (EIP-1559), type 3 (EIP-4844), and type 4 (EIP-7702), and explicitly distinguished a draft proposal for type 0x05 from active network support.
+- Added a dedicated SVG diagram comparing the legacy format with the typed envelope and mapping major type identifiers to their defining features.
+- Linked the article from the Stage 05 index and canonical roadmap, and updated Stage 05 publication progress to 3/14.
