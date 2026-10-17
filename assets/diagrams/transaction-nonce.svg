@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Ethereum Transaction Nonce</title>
+  <desc id="desc">Diagram showing a sender's sequential nonce values, how a missing nonce blocks later transactions from canonical inclusion, and how a same-nonce replacement competes for the same account sequence position.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.title{font:700 27px Arial,sans-serif;fill:#0f172a}.subtitle{font:16px Arial,sans-serif;fill:#475569}.label{font:700 17px Arial,sans-serif;fill:#0f172a}.body{font:15px Arial,sans-serif;fill:#334155}.small{font:13px Arial,sans-serif;fill:#475569}.mono{font:700 18px ui-monospace,Menlo,monospace;fill:#0f172a}.blue{fill:#dbeafe;stroke:#60a5fa;stroke-width:2}.teal{fill:#ccfbf1;stroke:#2dd4bf;stroke-width:2}.purple{fill:#ede9fe;stroke:#a78bfa;stroke-width:2}.amber{fill:#fef3c7;stroke:#fbbf24;stroke-width:2}.green{fill:#dcfce7;stroke:#4ade80;stroke-width:2}.red{fill:#fee2e2;stroke:#f87171;stroke-width:2}.line{fill:none;stroke:#64748b;stroke-width:2.5;marker-end:url(#arrow)}.dash{fill:none;stroke:#94a3b8;stroke-width:2;stroke-dasharray:7 6;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="720" rx="20"/>
+  <text x="44" y="48" class="title">Ethereum Transaction Nonce</text>
+  <text x="44" y="77" class="subtitle">One account · Sequential transaction slots · Pending pool behavior is node-local</text>
+
+  <rect x="32" y="103" width="1136" height="263" rx="18" class="panel"/>
+  <text x="58" y="138" class="label">1 · Expected nonce sequence</text>
+  <text x="60" y="172" class="body">Current account nonce = 7</text>
+
+  <rect x="62" y="195" width="210" height="102" rx="13" class="green"/>
+  <text x="167" y="226" text-anchor="middle" class="small">NEXT IN SEQUENCE</text>
+  <text x="167" y="256" text-anchor="middle" class="mono">nonce 7</text>
+  <text x="167" y="278" text-anchor="middle" class="small">Eligible if valid</text>
+
+  <path d="M273 246 H309" class="line"/>
+  <rect x="315" y="195" width="210" height="102" rx="13" class="blue"/>
+  <text x="420" y="226" text-anchor="middle" class="small">AFTER 7 PROCESSES</text>
+  <text x="420" y="256" text-anchor="middle" class="mono">nonce 8</text>
+  <text x="420" y="278" text-anchor="middle" class="small">Next expected nonce</text>
+
+  <path d="M526 246 H562" class="line"/>
+  <rect x="568" y="195" width="210" height="102" rx="13" class="blue"/>
+  <text x="673" y="226" text-anchor="middle" class="small">THEN</text>
+  <text x="673" y="256" text-anchor="middle" class="mono">nonce 9</text>
+  <text x="673" y="278" text-anchor="middle" class="small">Follows nonce 8</text>
+
+  <rect x="824" y="191" width="310" height="110" rx="13" class="amber"/>
+  <text x="979" y="222" text-anchor="middle" class="label">Nonce 6 = stale</text>
+  <text x="979" y="247" text-anchor="middle" class="body">Too low for a new canonical tx</text>
+  <text x="979" y="272" text-anchor="middle" class="small">Nonce 10 is a future sequence slot</text>
+
+  <rect x="32" y="388" width="1136" height="185" rx="18" class="panel"/>
+  <text x="58" y="423" class="label">2 · A missing nonce can hold back later transactions</text>
+  <rect x="64" y="445" width="220" height="82" rx="12" class="red"/>
+  <text x="174" y="474" text-anchor="middle" class="label">nonce 12 missing</text>
+  <text x="174" y="499" text-anchor="middle" class="small">Not included / unresolved</text>
+  <path d="M285 486 H326" class="line"/>
+  <rect x="332" y="445" width="220" height="82" rx="12" class="amber"/>
+  <text x="442" y="474" text-anchor="middle" class="label">nonce 13 queued</text>
+  <text x="442" y="499" text-anchor="middle" class="small">May wait in a node's pool</text>
+  <path d="M553 486 H594" class="line"/>
+  <rect x="600" y="445" width="220" height="82" rx="12" class="amber"/>
+  <text x="710" y="474" text-anchor="middle" class="label">nonce 14 queued</text>
+  <text x="710" y="499" text-anchor="middle" class="small">Cannot execute first</text>
+  <rect x="858" y="445" width="276" height="82" rx="12" class="purple"/>
+  <text x="996" y="474" text-anchor="middle" class="label">Resolve nonce 12</text>
+  <text x="996" y="499" text-anchor="middle" class="small">Then later nonces can proceed</text>
+  <path d="M821 486 H852" class="dash"/>
+
+  <rect x="32" y="595" width="1136" height="95" rx="18" class="panel"/>
+  <text x="58" y="628" class="label">3 · Same nonce replacement</text>
+  <rect x="60" y="641" width="300" height="36" rx="8" class="blue"/>
+  <text x="210" y="664" text-anchor="middle" class="body">Original: nonce 15, lower fee</text>
+  <rect x="402" y="641" width="300" height="36" rx="8" class="teal"/>
+  <text x="552" y="664" text-anchor="middle" class="body">Replacement: nonce 15, new signed tx</text>
+  <path d="M704 659 H748" class="line"/>
+  <rect x="754" y="635" width="380" height="48" rx="9" class="amber"/>
+  <text x="944" y="655" text-anchor="middle" class="label">Compete for one sequence slot</text>
+  <text x="944" y="673" text-anchor="middle" class="small">Client/provider replacement policies differ</text>
+</svg>
