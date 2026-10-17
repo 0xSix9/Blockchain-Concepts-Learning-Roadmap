@@ -57,7 +57,6 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [Mappings and Dynamic Arrays in Storage](../concepts/03-storage-data-layout/04-mappings-and-dynamic-arrays-in-storage.md) — article published
 - [ ] [Memory Layout](../concepts/03-storage-data-layout/05-memory-layout.md) — article published
 - [ ] [Calldata Layout](../concepts/03-storage-data-layout/06-calldata-layout.md) — article published
-- [ ] Calldata Layout
 - [ ] Transient Storage (EIP-1153)
 - [ ] Storage Context
 - [ ] Storage Collisions
