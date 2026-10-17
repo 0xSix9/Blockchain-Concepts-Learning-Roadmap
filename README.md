@@ -20,7 +20,7 @@ The roadmap starts with EVM execution and contract interaction, then moves throu
 
 This repository is designed as both a **learning checklist** and a **growing technical reference**. Every stage has its own index, and the complete roadmap keeps all concepts in one place.
 
-> **Publication progress:** ✅ **Stage 01 — EVM Execution is content-complete:** all 12 concept articles are published and reviewed. **Stage 02 — ABI and Contract Interaction is in progress:** the Application Binary Interface (ABI), ABI Encoding and Decoding, Function Selectors, Function Dispatch, External Function Calls, Constructors, Fallback Functions, Receive Functions, Visibility, Mutability, Payable Functions, Events and Event Logs, Topics and Indexed Parameters, Custom Errors, and Error Selectors articles are published, and the remaining topics will be documented incrementally.
+> **Publication progress:** ✅ **Stage 01 — EVM Execution is content-complete:** all 12 concept articles are published and reviewed. ✅ **Stage 02 — ABI and Contract Interaction is content-complete:** all 16 concept articles are published, including Precompiled Contracts. The individual unchecked concept boxes remain study checklists and are not automatically checked when articles are published.
 
 ## Start here
 
@@ -41,6 +41,7 @@ This repository is designed as both a **learning checklist** and a **growing tec
 - **[Topics and Indexed Parameters](concepts/02-abi-contract-interaction/13-topics-and-indexed-parameters.md)** — topic layout, indexed argument encoding, dynamic-value hashes, `eth_getLogs` filters, wildcards, and OR/AND logic.
 - **[Custom Errors](concepts/02-abi-contract-interaction/14-custom-errors.md)** — structured reverts, error selectors, ABI-encoded arguments, decoding, compiler-version notes, and revert-data security.
 - **[Error Selectors](concepts/02-abi-contract-interaction/15-error-selectors.md)** — selector derivation, canonical signatures, built-in Error/Panic formats, selector collisions, and revert-data decoding.
+- **[Precompiled Contracts](concepts/02-abi-contract-interaction/16-precompiled-contracts.md)** — special EVM addresses, built-in cryptographic operations, input/output formats, gas behavior, and fork compatibility.
 - **[Learning priorities](roadmap/learning-priorities.md)** — understand the four-stage groups and suggested order.
 - **[Concept article template](templates/concept-template.md)** — a starting structure for writing each article later.
 - **[Sources and research policy](references/sources.md)** — recommended primary sources and documentation rules.
@@ -52,7 +53,7 @@ This repository is designed as both a **learning checklist** and a **growing tec
 | Stage | Focus | Concepts | Priority | Article publication |
 |---|---|---:|:---:|---|
 | [✅ Stage 01 — EVM Execution](concepts/01-evm-execution/README.md) | EVM execution fundamentals | 12 | P1 | ✅ Complete — 12/12 published |
-| [Stage 02 — ABI and Contract Interaction](concepts/02-abi-contract-interaction/README.md) | ABI, selectors, calls, events, errors | 16 | P1 | In progress — 15/16 published |
+| [✅ Stage 02 — ABI and Contract Interaction](concepts/02-abi-contract-interaction/README.md) | ABI, selectors, calls, events, errors, precompiles | 16 | P1 | ✅ Complete — 16/16 published |
 | [Stage 03 — Storage and Data Layout](concepts/03-storage-data-layout/README.md) | Storage slots, packing, mappings, proofs | 13 | P1 | Checklist only |
 | [Stage 04 — Smart Contract Architecture](concepts/04-smart-contract-architecture/README.md) | Composition, proxies, upgradeability | 17 | P1 | Checklist only |
 | [Stage 05 — Advanced Transactions and Gas](concepts/05-advanced-transactions-gas/README.md) | Transaction mechanics and gas accounting | 14 | P2 | Checklist only |
