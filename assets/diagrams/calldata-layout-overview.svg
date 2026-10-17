@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Calldata Layout</title>
+  <desc id="desc">A conceptual ABI-encoded calldata example showing a four-byte selector, a static argument, a dynamic offset, a length word, and dynamic bytes. The lower panel shows CALLDATASIZE, CALLDATALOAD, and CALLDATACOPY.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f9fc; }
+      .panel { fill: #ffffff; stroke: #cbd5e1; stroke-width: 2; }
+      .ink { fill: #172033; font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; }
+      .muted { fill: #5c6880; font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; }
+      .h1 { font-size: 30px; font-weight: 800; letter-spacing: 1.1px; }
+      .h2 { font-size: 19px; font-weight: 750; }
+      .body { font-size: 16px; }
+      .small { font-size: 13px; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 14px; }
+      .blue { fill: #dbeafe; stroke: #2563eb; stroke-width: 2; }
+      .teal { fill: #ccfbf1; stroke: #0f766e; stroke-width: 2; }
+      .amber { fill: #fef3c7; stroke: #b45309; stroke-width: 2; }
+      .violet { fill: #ede9fe; stroke: #6d28d9; stroke-width: 2; }
+      .line { stroke: #64748b; stroke-width: 2; fill: none; }
+      .arrow { stroke: #2563eb; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1200" height="700" rx="24"/>
+  <text class="ink h1" x="52" y="55">CALLDATA LAYOUT</text>
+  <text class="muted body" x="54" y="83">Read-only input bytes available to the current EVM execution frame</text>
+  <rect class="panel" x="42" y="108" width="1116" height="308" rx="16"/>
+  <text class="ink h2" x="68" y="145">Example: f(uint256 id, bytes payload)</text>
+  <text class="muted small" x="68" y="168">Conceptual widths for readability — not drawn to byte scale</text>
+  <rect class="blue" x="68" y="190" width="177" height="92" rx="9"/>
+  <text class="ink h2" x="156.5" y="220" text-anchor="middle">Selector</text>
+  <text class="ink mono" x="156.5" y="245" text-anchor="middle">4 bytes</text>
+  <text class="muted small" x="156.5" y="265" text-anchor="middle">0x00–0x03</text>
+  <rect class="teal" x="255" y="190" width="177" height="92" rx="9"/>
+  <text class="ink h2" x="343.5" y="220" text-anchor="middle">id</text>
+  <text class="ink mono" x="343.5" y="245" text-anchor="middle">32-byte word</text>
+  <text class="muted small" x="343.5" y="265" text-anchor="middle">0x04–0x23</text>
+  <rect class="amber" x="442" y="190" width="204" height="92" rx="9"/>
+  <text class="ink h2" x="544" y="220" text-anchor="middle">payload offset</text>
+  <text class="ink mono" x="544" y="245" text-anchor="middle">0x40 (example)</text>
+  <text class="muted small" x="544" y="265" text-anchor="middle">0x24–0x43</text>
+  <rect class="violet" x="656" y="190" width="186" height="92" rx="9"/>
+  <text class="ink h2" x="749" y="220" text-anchor="middle">Length word</text>
+  <text class="ink mono" x="749" y="245" text-anchor="middle">32 bytes</text>
+  <text class="muted small" x="749" y="265" text-anchor="middle">0x44–0x63</text>
+  <rect class="blue" x="852" y="190" width="278" height="92" rx="9"/>
+  <text class="ink h2" x="991" y="220" text-anchor="middle">payload bytes</text>
+  <text class="ink mono" x="991" y="245" text-anchor="middle">data + zero padding</text>
+  <text class="muted small" x="991" y="265" text-anchor="middle">starts at 0x64</text>
+  <path class="line" d="M544 286 V314 H749 V286"/>
+  <text class="ink body" x="68" y="340">ABI head</text>
+  <text class="muted body" x="68" y="363">Static value + offset</text>
+  <path class="arrow" d="M395 348 H634"/>
+  <text class="ink body" x="660" y="340">ABI tail</text>
+  <text class="muted body" x="660" y="363">Length + dynamic data</text>
+  <text class="muted small" x="68" y="394">Dynamic offsets are relative to the start of the encoded argument tuple (byte 0x04 here), not the selector.</text>
+  <rect class="panel" x="42" y="436" width="1116" height="220" rx="16"/>
+  <text class="ink h2" x="68" y="474">EVM calldata access</text>
+  <rect class="blue" x="68" y="498" width="310" height="82" rx="10"/>
+  <text class="ink h2" x="90" y="526">CALLDATASIZE</text>
+  <text class="muted body" x="90" y="552">Returns input length in bytes</text>
+  <rect class="teal" x="445" y="498" width="310" height="82" rx="10"/>
+  <text class="ink h2" x="467" y="526">CALLDATALOAD</text>
+  <text class="muted body" x="467" y="552">Loads 32 bytes at a byte offset</text>
+  <rect class="amber" x="822" y="498" width="308" height="82" rx="10"/>
+  <text class="ink h2" x="844" y="526">CALLDATACOPY</text>
+  <text class="muted body" x="844" y="552">Copies bytes into writable memory</text>
+  <text class="muted body" x="68" y="618">Calldata is read-only and frame-local; memory is separate and writable; storage is persistent state.</text>
+  <text class="muted small" x="68" y="640">ABI is the encoding convention—not the calldata byte area itself.</text>
+</svg>
