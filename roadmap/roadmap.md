@@ -7,11 +7,11 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [Priority 3 — Stages 07–08](learning-priorities.md#priority-3--stages-07-to-08)
 - [Priority 4 — Stages 09–10](learning-priorities.md#priority-4--stages-09-to-10)
 
-> Each item is a learning topic. Published articles are linked from the checklist; topics without an article link are still waiting to be documented.
+> **Stage status:** ✅ Stage 01 content is complete — all 12 articles are published and reviewed. A check beside a stage tracks publication progress; the individual unchecked boxes track study progress and are not automatically checked when an article is published.
 
-## Stage 01 — EVM Execution
+## ✅ Stage 01 — EVM Execution
 
-**Priority 1** · [Stage index](../concepts/01-evm-execution/README.md)
+**Priority 1** · ✅ **Content complete: 12/12 articles published** · [Stage index](../concepts/01-evm-execution/README.md)
 
 - [ ] [EVM Opcodes](../concepts/01-evm-execution/01-evm-opcodes.md) — article published
 - [ ] [Stack, Memory, and Calldata](../concepts/01-evm-execution/02-stack-memory-and-calldata.md) — article published
