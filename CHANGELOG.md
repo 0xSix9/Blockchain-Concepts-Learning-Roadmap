@@ -373,3 +373,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the Diamond Pattern article covering facets, selector-to-facet routing, `diamondCut` actions, `DiamondCut` events, loupe introspection, shared diamond storage, and security considerations.
 - Added a dedicated SVG architecture diagram showing the single diamond address, multiple facets using `DELEGATECALL`, shared storage, and the cut/loupe interfaces.
 - Linked the article from the Stage 04 index and canonical roadmap, and updated publication progress to 15/17. The study checkbox remains unchecked until the learner reviews the topic.
+
+## 2026-10-17 — Deterministic Contract Deployment
+
+- Published the Deterministic Contract Deployment article, distinguishing `CREATE` address derivation from `CREATE2` and explaining predictable addresses, factory patterns, cross-chain matching, failure cases, and authorization considerations.
+- Added a dedicated SVG diagram for prediction, deployment, verification, and cross-chain address matching.
+- Linked the article from the Stage 04 index and canonical roadmap, and updated publication progress to 16/17. The study checkbox remains unchecked until the learner reviews the topic.
