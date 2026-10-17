@@ -2,7 +2,7 @@
 
 **Priority:** 1  
 **Topics:** 16  
-**Article status:** In progress — 4 of 16 concept articles published.
+**Article status:** In progress — 5 of 16 concept articles published.
 
 ## About this stage
 
@@ -14,7 +14,7 @@ This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the
 - [ ] [ABI Encoding and Decoding](02-abi-encoding-and-decoding.md) — article published
 - [ ] [Function Selectors](03-function-selectors.md) — article published
 - [ ] [Function Dispatch](04-function-dispatch.md) — article published
-- [ ] External Function Calls
+- [ ] [External Function Calls](05-external-function-calls.md) — article published
 - [ ] Constructors
 - [ ] Fallback Functions
 - [ ] Receive Functions
