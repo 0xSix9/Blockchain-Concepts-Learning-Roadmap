@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Ethereum Transaction Receipts</title>
+  <desc id="desc">A transaction is included and executed, producing a receipt containing status, gas used, cumulative gas used, logs, block metadata, and fee details. The diagram distinguishes inclusion from finality.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.title{font:700 29px Arial,sans-serif;fill:#0f172a}.subtitle{font:16px Arial,sans-serif;fill:#475569}.label{font:700 19px Arial,sans-serif;fill:#0f172a}.body{font:15px Arial,sans-serif;fill:#334155}.small{font:13px Arial,sans-serif;fill:#475569}.mono{font:700 15px ui-monospace,Menlo,monospace;fill:#0f172a}.blue{fill:#dbeafe;stroke:#60a5fa;stroke-width:2}.teal{fill:#ccfbf1;stroke:#2dd4bf;stroke-width:2}.purple{fill:#ede9fe;stroke:#a78bfa;stroke-width:2}.amber{fill:#fef3c7;stroke:#f59e0b;stroke-width:2}.red{fill:#fee2e2;stroke:#f87171;stroke-width:2}.line{stroke:#64748b;stroke-width:2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="900" rx="22"/>
+  <text class="title" x="600" y="46" text-anchor="middle">Transaction Receipt — What Happened?</text>
+  <text class="subtitle" x="600" y="75" text-anchor="middle">The receipt records the outcome after a transaction is included and processed</text>
+
+  <rect class="panel" x="45" y="103" width="1110" height="120" rx="16"/>
+  <rect class="blue" x="72" y="132" width="290" height="62" rx="10"/>
+  <text class="label" x="217" y="158" text-anchor="middle">Signed transaction</text>
+  <text class="small" x="217" y="180" text-anchor="middle">input, sender, gas budget</text>
+  <path class="line" d="M362 163 L439 163"/>
+  <rect class="purple" x="449" y="132" width="290" height="62" rx="10"/>
+  <text class="label" x="594" y="158" text-anchor="middle">Included in block</text>
+  <text class="small" x="594" y="180" text-anchor="middle">EVM execution</text>
+  <path class="line" d="M739 163 L816 163"/>
+  <rect class="teal" x="826" y="132" width="300" height="62" rx="10"/>
+  <text class="label" x="976" y="158" text-anchor="middle">Transaction receipt</text>
+  <text class="small" x="976" y="180" text-anchor="middle">status + gas + logs + metadata</text>
+
+  <path class="line" d="M600 223 L600 252"/>
+  <rect class="panel" x="45" y="260" width="535" height="250" rx="16"/>
+  <text class="label" x="72" y="295">Execution outcome</text>
+  <rect class="teal" x="72" y="314" width="480" height="62" rx="10"/>
+  <text class="mono" x="312" y="340" text-anchor="middle">status = 0x1</text>
+  <text class="small" x="312" y="360" text-anchor="middle">top-level execution succeeded</text>
+  <rect class="red" x="72" y="391" width="480" height="62" rx="10"/>
+  <text class="mono" x="312" y="417" text-anchor="middle">status = 0x0</text>
+  <text class="small" x="312" y="437" text-anchor="middle">top-level execution failed</text>
+  <text class="small" x="72" y="480">Status does not include the full revert reason or trace.</text>
+
+  <rect class="panel" x="620" y="260" width="535" height="250" rx="16"/>
+  <text class="label" x="647" y="295">Gas and fee fields</text>
+  <text class="mono" x="647" y="331">gasUsed</text>
+  <text class="body" x="790" y="331">this transaction only</text>
+  <text class="mono" x="647" y="363">cumulativeGasUsed</text>
+  <text class="body" x="850" y="363">block running total</text>
+  <text class="mono" x="647" y="395">effectiveGasPrice</text>
+  <text class="body" x="840" y="395">actual execution price</text>
+  <text class="mono" x="647" y="427">blobGasUsed / Price</text>
+  <text class="body" x="850" y="427">separate blob fee</text>
+  <text class="small" x="647" y="475">Gas limit is in the transaction, not the receipt's gasUsed field.</text>
+
+  <path class="line" d="M312 510 L312 541"/>
+  <path class="line" d="M887 510 L887 541"/>
+  <rect class="blue" x="45" y="549" width="535" height="150" rx="16"/>
+  <text class="label" x="72" y="584">Logs and contract creation</text>
+  <text class="body" x="72" y="615">logs: address, topics, data</text>
+  <text class="body" x="72" y="642">logsBloom: bloom filter for matching</text>
+  <text class="body" x="72" y="669">contractAddress: created address if applicable</text>
+
+  <rect class="amber" x="620" y="549" width="535" height="150" rx="16"/>
+  <text class="label" x="647" y="584">RPC and typed format</text>
+  <text class="body" x="647" y="615">eth_getTransactionReceipt returns the RPC object.</text>
+  <text class="body" x="647" y="642">Typed receipts use type || receipt payload.</text>
+  <text class="body" x="647" y="669">The receipt type matches the transaction type.</text>
+
+  <rect x="45" y="731" width="1110" height="124" rx="16" fill="#0f172a"/>
+  <text x="600" y="763" text-anchor="middle" style="font:700 18px Arial,sans-serif;fill:#fff">Receipt ≠ finality</text>
+  <text x="600" y="792" text-anchor="middle" style="font:15px Arial,sans-serif;fill:#cbd5e1">Inclusion and status describe current processing, not irreversible confirmation.</text>
+  <text x="600" y="819" text-anchor="middle" style="font:15px Arial,sans-serif;fill:#cbd5e1">Handle confirmations, safe/finalized status, reorganizations, and removed logs where relevant.</text>
+</svg>
