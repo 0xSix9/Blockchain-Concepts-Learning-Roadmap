@@ -2,6 +2,12 @@
 
 Notable repository changes are recorded here.
 
+## 2026-10-17
+
+- Added the Recursive Length Prefix (RLP) Encoding concept article to Stage 03.
+- Added an SVG overview diagram explaining RLP byte-string and list prefixes.
+- Updated the Stage 03 index and full roadmap to link the published article.
+
 ## 2026-10-16
 
 - Established a 10-stage roadmap and four learning-priority groups.
