@@ -124,3 +124,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 
 - Published the Constructors article covering creation-time execution, ABI-encoded constructor arguments, initcode versus runtime bytecode, state variables and immutables, inheritance order, payable deployment, factory ownership, proxy initialization, and deployment-size/gas risks.
 - Added a custom constructor deployment diagram and linked the article from the Stage 02 index, canonical roadmap, and root README; updated Stage 02 publication progress to 6/16.
+
+
+## 2026-10-17
+
+- Published the Fallback Functions article covering unmatched calldata, fallback versus receive, payability, the special raw-bytes return form, proxy routing, and related security pitfalls.
+- Added a custom fallback/receive dispatch diagram and linked the article from the Stage 02 index, canonical roadmap, and root README; updated Stage 02 publication progress to 7/16.
