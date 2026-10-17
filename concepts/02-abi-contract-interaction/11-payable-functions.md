@@ -303,7 +303,7 @@ Before publishing a payable function, ask:
 - Named payable functions, receive functions, and payable fallback functions are selected through different dispatch conditions.
 - A contract's actual Ether balance can change without its deposit logic running, so balance and user-accounting records are not interchangeable.
 - For outgoing Ether transfers, check the result of <code>call</code>, account for recipient code execution, and use sound state-transition patterns.
-- <code>address payable</code> is an address type used for sending Ether; it is not the same as marking a function payable.
+- <code>address payable</code> provides the legacy <code>send</code> and <code>transfer</code> members; low-level <code>call{value: ...}("")</code> is also available on <code>address</code>, and neither type grants authorization.
 
 ## References
 
