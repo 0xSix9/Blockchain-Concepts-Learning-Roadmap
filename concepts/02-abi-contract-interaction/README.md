@@ -2,7 +2,7 @@
 
 **Priority:** 1  
 **Topics:** 16  
-**Article status:** In progress — 12 of 16 concept articles published.
+**Article status:** In progress — 13 of 16 concept articles published.
 
 ## About this stage
 
@@ -22,7 +22,7 @@ This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the
 - [ ] [Mutability](10-mutability.md) — article published
 - [ ] [Payable Functions](11-payable-functions.md) — article published
 - [ ] [Events and Event Logs](12-events-and-event-logs.md) — article published
-- [ ] Topics and Indexed Parameters
+- [ ] [Topics and Indexed Parameters](13-topics-and-indexed-parameters.md) — article published
 - [ ] Custom Errors
 - [ ] Error Selectors
 - [ ] Precompiled Contracts
