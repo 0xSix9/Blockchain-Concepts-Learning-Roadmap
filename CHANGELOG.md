@@ -136,3 +136,8 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 
 - Published the Receive Functions article covering empty-calldata routing, receive versus fallback and payable functions, the legacy 2,300-gas stipend, ETH accounting caveats, forced Ether transfers, and reentrancy considerations.
 - Added a custom receive routing diagram and linked the article from the Stage 02 index, canonical roadmap, and root README; updated Stage 02 publication progress to 8/16.
+
+## 2026-10-17
+
+- Published the Visibility article, covering Solidity function and state-variable visibility, getters, inheritance, ABI exposure, and why visibility is not privacy or authorization.
+- Added a custom scope diagram and linked Visibility from the Stage 02 index, canonical roadmap, and project README.
