@@ -20,7 +20,7 @@ The roadmap starts with EVM execution and contract interaction, then moves throu
 
 This repository is designed as both a **learning checklist** and a **growing technical reference**. Every stage has its own index, and the complete roadmap keeps all concepts in one place.
 
-> **Publication progress:** ✅ **Stage 01 — EVM Execution is content-complete:** all 12 concept articles are published and reviewed. ✅ **Stage 02 — ABI and Contract Interaction is content-complete:** all 16 concept articles are published, including Precompiled Contracts. ✅ **Stage 03 — Storage and Data Layout is content-complete:** all 13 concept articles are published, including Storage Proofs. The individual unchecked concept boxes remain study checklists and are not automatically checked when articles are published. 🔄 **Stage 04 — Smart Contract Architecture is underway:** Contract Composition, Inheritance, Interfaces and Libraries, Internal and External Calls, Proxy Contracts, Transparent Proxies, UUPS Proxies, Beacon Proxies, and Minimal Proxies (Clones) are published (9/17).
+> **Publication progress:** ✅ **Stage 01 — EVM Execution is content-complete:** all 12 concept articles are published and reviewed. ✅ **Stage 02 — ABI and Contract Interaction is content-complete:** all 16 concept articles are published, including Precompiled Contracts. ✅ **Stage 03 — Storage and Data Layout is content-complete:** all 13 concept articles are published, including Storage Proofs. The individual unchecked concept boxes remain study checklists and are not automatically checked when articles are published. 🔄 **Stage 04 — Smart Contract Architecture is underway:** Contract Composition, Inheritance, Interfaces and Libraries, Internal and External Calls, Proxy Contracts, Transparent Proxies, UUPS Proxies, Beacon Proxies, Minimal Proxies (Clones), and Delegatecall-Based Proxy Architecture are published (10/17).
 
 ## Roadmap at a glance
 
@@ -29,7 +29,7 @@ This repository is designed as both a **learning checklist** and a **growing tec
 | [✅ Stage 01 — EVM Execution](concepts/01-evm-execution/README.md) | EVM execution fundamentals | 12 | P1 | ✅ Complete — 12/12 published |
 | [✅ Stage 02 — ABI and Contract Interaction](concepts/02-abi-contract-interaction/README.md) | ABI, selectors, calls, events, errors, precompiles | 16 | P1 | ✅ Complete — 16/16 published |
 | [✅ Stage 03 — Storage and Data Layout](concepts/03-storage-data-layout/README.md) | Storage slots, packing, mappings, proofs | 13 | P1 | ✅ Complete — 13/13 published |
-| [Stage 04 — Smart Contract Architecture](concepts/04-smart-contract-architecture/README.md) | Composition, proxies, upgradeability | 17 | P1 | In progress — 9/17 published |
+| [Stage 04 — Smart Contract Architecture](concepts/04-smart-contract-architecture/README.md) | Composition, proxies, upgradeability | 17 | P1 | In progress — 10/17 published |
 | [Stage 05 — Advanced Transactions and Gas](concepts/05-advanced-transactions-gas/README.md) | Transaction mechanics and gas accounting | 14 | P2 | Checklist only |
 | [Stage 06 — Application Connectivity](concepts/06-application-connectivity/README.md) | RPC, clients, APIs, event subscriptions | 17 | P2 | Checklist only |
 | [Stage 07 — Advanced Layer 2 and Cross-Chain](concepts/07-layer2-cross-chain/README.md) | Rollups, bridges, data availability | 19 | P3 | Checklist only |
