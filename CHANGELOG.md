@@ -385,3 +385,10 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the CREATE2 Address Derivation article with the exact EIP-1014 formula, 85-byte preimage layout, init-code hashing, Solidity prediction example, deployer-context rules, and common implementation mistakes.
 - Added a dedicated SVG diagram illustrating the four preimage components, Keccak-256 hash, and extraction of the low 20 bytes.
 - Linked the article from the Stage 04 index and canonical roadmap, and marked Stage 04 content complete at 17/17 published articles. Individual study checkboxes remain unchecked until reviewed.
+
+## 2026-10-17 — Stage 04 audit and consistency pass
+
+- Rechecked all 17 Stage 04 articles, their dedicated SVG references, and local Markdown links; no broken internal article or diagram paths were found.
+- Clarified EIP-2535's requirement to include immutable function selectors as additions in the `DiamondCut` event and report them through loupe functions.
+- Connected the Deterministic Contract Deployment and CREATE2 Address Derivation articles and made the full-roadmap status note consistently include Stage 03 completion.
+- Source-code examples were reviewed editorially but were not compiled or executed as part of this pass.
