@@ -36,7 +36,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [Function Dispatch](../concepts/02-abi-contract-interaction/04-function-dispatch.md) — article published
 - [ ] [External Function Calls](../concepts/02-abi-contract-interaction/05-external-function-calls.md) — article published
 - [ ] [Constructors](../concepts/02-abi-contract-interaction/06-constructors.md) — article published
-- [ ] Fallback Functions
+- [ ] [Fallback Functions](../concepts/02-abi-contract-interaction/07-fallback-functions.md) — article published
 - [ ] Receive Functions
 - [ ] Visibility
 - [ ] Mutability
