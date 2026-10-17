@@ -261,5 +261,5 @@ Test success, dependency reverts, incorrect return values, zero-address configur
 2. **[Solidity — Structure of a Contract](https://docs.solidity.org/en/latest/structure-of-a-contract.html)** — overview of contracts, functions, state variables, interfaces, libraries, and inheritance.
 3. **[OpenZeppelin — Developing Smart Contracts](https://docs.openzeppelin.com/contracts/5.x/learn/developing-smart-contracts)** — practical example of separating responsibilities across contracts and comparing that approach with inheritance.
 4. **[Ethereum.org — Smart Contract Composability](https://ethereum.org/developers/docs/smart-contracts/composability/)** — explains the broader practice of building applications by integrating existing deployed protocols.
-5. **[Interfaces and Libraries](../04-smart-contract-architecture/03-interfaces-and-libraries.md)** — related concept in this stage, once that article is published.
-6. **[Internal and External Calls](../04-smart-contract-architecture/04-internal-and-external-calls.md)** — related concept in this stage, once that article is published.
+5. **Interfaces and Libraries** — related concepts in this stage; the dedicated article will cover interface and library details.
+6. **Internal and External Calls** — related concepts in this stage; the dedicated article will cover call semantics in more detail.
