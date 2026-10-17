@@ -72,7 +72,7 @@ An error during the Engine API handshake or payload processing may indicate mism
 - [ ] Monitor payload status and client logs during sync and upgrades.
 - [ ] Use the public Execution API for ordinary dApp requests, not Engine API methods.
 
-## Key Takeaways
+## 9. Key Takeaways
 
 - The Engine API coordinates execution payloads and fork-choice-related communication between execution and consensus clients.
 - Its methods and schemas are versioned alongside protocol upgrades.
