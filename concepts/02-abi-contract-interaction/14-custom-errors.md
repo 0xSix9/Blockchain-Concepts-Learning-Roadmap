@@ -298,9 +298,9 @@ For reusable libraries and protocol interfaces, choose error names and argument 
 
 ## Review Checklist
 
-- [x] Explains declaration, use, parameters, and rollback behavior.
-- [x] Describes custom-error selector and ABI-encoded argument layout.
-- [x] Compares custom errors with revert strings and built-in error formats.
-- [x] Covers version differences for custom errors with require and the 0.8.37 bug fix.
-- [x] Explains external error bubbling, decoding, spoofing risks, and compiler-related considerations.
-- [x] Links official Solidity documentation, version announcements, and ERC-6093.
+- [ ] Explain how custom errors are declared and how reverting rolls back state changes.
+- [ ] Describe the error selector and ABI-encoded argument layout.
+- [ ] Compare custom errors with revert strings and built-in error formats.
+- [ ] Explain compiler-version differences for custom errors in `require`, including the 0.8.37 fix.
+- [ ] Explain external error bubbling, decoding, and why revert bytes can be spoofed.
+- [ ] Consult the official Solidity documentation, compiler notes, and ERC-6093 where relevant.
