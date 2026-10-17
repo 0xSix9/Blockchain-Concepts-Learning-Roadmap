@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="860" viewBox="0 0 1200 860" role="img" aria-labelledby="title desc">
+  <title id="title">Gas Limit and Gas Used</title>
+  <desc id="desc">Compares a transaction gas limit budget to final gas used, shows unused gas, distinguishes gas used from cumulative gas used, and separates transaction gas limit from block gas limit.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.title{font:700 29px Arial,sans-serif;fill:#0f172a}.subtitle{font:16px Arial,sans-serif;fill:#475569}.label{font:700 19px Arial,sans-serif;fill:#0f172a}.body{font:15px Arial,sans-serif;fill:#334155}.small{font:13px Arial,sans-serif;fill:#475569}.mono{font:700 16px ui-monospace,Menlo,monospace;fill:#0f172a}.blue{fill:#dbeafe;stroke:#60a5fa;stroke-width:2}.teal{fill:#ccfbf1;stroke:#2dd4bf;stroke-width:2}.purple{fill:#ede9fe;stroke:#a78bfa;stroke-width:2}.amber{fill:#fef3c7;stroke:#f59e0b;stroke-width:2}.red{fill:#fee2e2;stroke:#f87171;stroke-width:2}.line{stroke:#64748b;stroke-width:2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="860" rx="22"/>
+  <text class="title" x="600" y="46" text-anchor="middle">Gas Limit vs Gas Used</text>
+  <text class="subtitle" x="600" y="75" text-anchor="middle">Budget for one transaction ≠ final gas charged</text>
+
+  <rect class="panel" x="45" y="103" width="1110" height="220" rx="16"/>
+  <text class="label" x="72" y="139">Example: transaction gas budget</text>
+  <text class="mono" x="72" y="172">gasLimit = 100,000</text>
+  <rect x="72" y="194" width="1055" height="44" rx="10" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+  <rect x="72" y="194" width="443" height="44" rx="10" fill="#99f6e4" stroke="#2dd4bf" stroke-width="1"/>
+  <text class="mono" x="293" y="221" text-anchor="middle">gasUsed = 42,000</text>
+  <text class="mono" x="821" y="221" text-anchor="middle">unused = 58,000</text>
+  <text class="body" x="72" y="273">unused budget = gasLimit − gasUsed</text>
+  <text class="small" x="72" y="298">Illustrative successful transaction; exact usage depends on execution and protocol accounting.</text>
+
+  <path class="line" d="M600 323 L600 351"/>
+  <rect class="panel" x="45" y="359" width="535" height="185" rx="16"/>
+  <text class="label" x="72" y="395">Receipt: this transaction</text>
+  <rect class="blue" x="72" y="414" width="480" height="50" rx="10"/>
+  <text class="mono" x="312" y="444" text-anchor="middle">gasUsed = 42,000</text>
+  <text class="body" x="72" y="492">Final gas charged for this transaction.</text>
+  <text class="small" x="72" y="518">Includes applicable final accounting rules.</text>
+
+  <rect class="panel" x="620" y="359" width="535" height="185" rx="16"/>
+  <text class="label" x="647" y="395">Receipt: running block total</text>
+  <rect class="purple" x="647" y="414" width="480" height="50" rx="10"/>
+  <text class="mono" x="887" y="444" text-anchor="middle">cumulativeGasUsed = 122,000</text>
+  <text class="body" x="647" y="492">Previous transactions (80,000) + this one.</text>
+  <text class="small" x="647" y="518">Not the gas limit of this transaction.</text>
+
+  <path class="line" d="M600 544 L600 575"/>
+  <rect class="teal" x="45" y="583" width="535" height="150" rx="16"/>
+  <text class="label" x="72" y="619">Normal success or REVERT</text>
+  <text class="body" x="72" y="650">May finish before consuming the whole limit.</text>
+  <text class="body" x="72" y="677">A revert rolls back execution state, not gas</text>
+  <text class="body" x="72" y="700">already consumed.</text>
+
+  <rect class="red" x="620" y="583" width="535" height="150" rx="16"/>
+  <text class="label" x="647" y="619">Top-level Out of Gas</text>
+  <text class="body" x="647" y="650">Execution cannot pay the next required cost.</text>
+  <text class="body" x="647" y="677">It often consumes the available budget, so</text>
+  <text class="body" x="647" y="700">gasUsed can reach gasLimit.</text>
+
+  <rect x="45" y="763" width="1110" height="63" rx="12" fill="#0f172a"/>
+  <text x="600" y="789" text-anchor="middle" style="font:700 17px Arial,sans-serif;fill:#fff">Do not confuse transaction and block limits</text>
+  <text x="600" y="812" text-anchor="middle" style="font:14px Arial,sans-serif;fill:#cbd5e1">Block gasUsed aggregates transaction gasUsed values; it does not sum the transactions' declared gas limits.</text>
+</svg>
