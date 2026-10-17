@@ -7,7 +7,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [Priority 3 — Stages 07–08](learning-priorities.md#priority-3--stages-07-to-08)
 - [Priority 4 — Stages 09–10](learning-priorities.md#priority-4--stages-09-to-10)
 
-> **Stage status:** ✅ Stage 01 content is complete — all 12 articles are published and reviewed. ✅ Stage 02 content is complete — all 16 articles are published. A check beside a stage tracks publication progress; the individual unchecked boxes track study progress and are not automatically checked when an article is published.
+> **Stage status:** ✅ Stage 01 content is complete — all 12 articles are published and reviewed. ✅ Stage 02 content is complete — all 16 articles are published. ✅ Stage 04 — Smart Contract Architecture content is complete — all 17 articles are published. A check beside a stage tracks publication progress; the individual unchecked boxes track study progress and are not automatically checked when an article is published.
 
 ## ✅ Stage 01 — EVM Execution
 
@@ -65,9 +65,9 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [Account Proofs](../concepts/03-storage-data-layout/12-account-proofs.md) — article published
 - [ ] [Storage Proofs](../concepts/03-storage-data-layout/13-storage-proofs.md) — article published
 
-## Stage 04 — Smart Contract Architecture
+## ✅ Stage 04 — Smart Contract Architecture
 
-**Priority 1** · 🔄 **Article progress: 16/17 published** · [Stage index](../concepts/04-smart-contract-architecture/README.md)
+**Priority 1** · ✅ **Content complete: 17/17 articles published** · [Stage index](../concepts/04-smart-contract-architecture/README.md)
 
 - [ ] [Contract Composition](../concepts/04-smart-contract-architecture/01-contract-composition.md) — article published
 - [ ] [Inheritance](../concepts/04-smart-contract-architecture/02-inheritance.md) — article published
@@ -85,7 +85,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [Storage Collisions in Proxies](../concepts/04-smart-contract-architecture/14-storage-collisions-in-proxies.md) — article published
 - [ ] [Diamond Pattern (EIP-2535)](../concepts/04-smart-contract-architecture/15-diamond-pattern-eip-2535.md) — article published
 - [ ] [Deterministic Contract Deployment](../concepts/04-smart-contract-architecture/16-deterministic-contract-deployment.md) — article published
-- [ ] CREATE2 Address Derivation
+- [ ] [CREATE2 Address Derivation](../concepts/04-smart-contract-architecture/17-create2-address-derivation.md) — article published
 
 ## Stage 05 — Advanced Transactions and Gas
 
