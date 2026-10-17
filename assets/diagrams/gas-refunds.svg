@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Ethereum Gas Refund Settlement</title>
+  <desc id="desc">Storage writes adjust a refund counter during execution. After execution, the protocol applies the one-fifth cap and any applicable calldata floor before calculating final gas used and fees.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#53627a"/></marker>
+    <style>
+      text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;fill:#172033}
+      .title{font-size:30px;font-weight:750}.sub{font-size:16px;fill:#526078}
+      .head{font-size:19px;font-weight:700}.body{font-size:15px}.small{font-size:13px;fill:#526078}
+      .box{stroke-width:2;rx:18}.line{stroke:#53627a;stroke-width:2.5;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="720" fill="#f7f9fc"/>
+  <text x="60" y="62" class="title">Gas Refunds: Execution vs. Settlement</text>
+  <text x="60" y="92" class="sub">A refund counter changes the final gas charge — it does not refill gas during EVM execution.</text>
+
+  <rect x="60" y="145" width="300" height="175" class="box" fill="#eaf2ff" stroke="#7aa5ec"/>
+  <text x="85" y="183" class="head">1. EVM execution</text>
+  <text x="85" y="218" class="body">SSTORE operations compare:</text>
+  <text x="102" y="245" class="body">• original value</text>
+  <text x="102" y="269" class="body">• current value</text>
+  <text x="102" y="293" class="body">• new value</text>
+
+  <path d="M360 232 H420" class="line"/>
+  <rect x="425" y="145" width="300" height="175" class="box" fill="#fff3dc" stroke="#e0ac49"/>
+  <text x="450" y="183" class="head">2. Refund counter</text>
+  <text x="450" y="219" class="body">Eligible writes can add or</text>
+  <text x="450" y="243" class="body">remove refund credit.</text>
+  <text x="450" y="281" class="small">Not spendable gas while running</text>
+
+  <path d="M725 232 H785" class="line"/>
+  <rect x="790" y="145" width="350" height="175" class="box" fill="#f1eafe" stroke="#a88be8"/>
+  <text x="815" y="183" class="head">3. End-of-transaction</text>
+  <text x="815" y="218" class="body">EIP-3529 cap:</text>
+  <text x="815" y="245" class="body" font-weight="700">applied = min(counter, gas / 5)</text>
+  <text x="815" y="281" class="small">SELFDESTRUCT refund removed</text>
+
+  <path d="M965 320 V375" class="line"/>
+  <rect x="635" y="385" width="505" height="150" class="box" fill="#e3f7ee" stroke="#5bbd92"/>
+  <text x="665" y="425" class="head">4. Apply other settlement rules</text>
+  <text x="665" y="460" class="body">Where applicable, the EIP-7623 calldata floor</text>
+  <text x="665" y="484" class="body">can prevent final gas from dropping below it.</text>
+  <text x="665" y="511" class="small">Refunds from reverted frames are rolled back.</text>
+
+  <path d="M635 460 H565 V565" class="line"/>
+  <rect x="60" y="565" width="505" height="100" class="box" fill="#e8eef5" stroke="#92a2b8"/>
+  <text x="88" y="603" class="head">5. Final accounting</text>
+  <text x="88" y="632" class="body">final gasUsed × effectiveGasPrice → execution fee</text>
+
+  <rect x="790" y="580" width="350" height="75" rx="15" fill="#fff" stroke="#d7dee9" stroke-width="1.5"/>
+  <text x="815" y="610" class="body" font-weight="700">Remember</text>
+  <text x="815" y="634" class="small">Refund quantity ≠ ETH returned directly</text>
+</svg>
