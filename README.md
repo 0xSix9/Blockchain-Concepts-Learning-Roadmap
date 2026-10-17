@@ -22,32 +22,6 @@ This repository is designed as both a **learning checklist** and a **growing tec
 
 > **Publication progress:** ✅ **Stage 01 — EVM Execution is content-complete:** all 12 concept articles are published and reviewed. ✅ **Stage 02 — ABI and Contract Interaction is content-complete:** all 16 concept articles are published, including Precompiled Contracts. The individual unchecked concept boxes remain study checklists and are not automatically checked when articles are published.
 
-## Start here
-
-- **[Full roadmap — all 157 concepts](roadmap/roadmap.md)** — browse the complete checklist.
-- **[EVM Opcodes](concepts/01-evm-execution/01-evm-opcodes.md)**, **[Stack, Memory, and Calldata](concepts/01-evm-execution/02-stack-memory-and-calldata.md)**, **[Execution Context](concepts/01-evm-execution/03-execution-context.md)**, **[CALL](concepts/01-evm-execution/04-call.md)**, **[DELEGATECALL](concepts/01-evm-execution/05-delegatecall.md)**, **[STATICCALL](concepts/01-evm-execution/06-staticcall.md)**, **[CREATE](concepts/01-evm-execution/07-create.md)**, **[CREATE2](concepts/01-evm-execution/08-create2.md)**, **[Call Stack and Call Depth](concepts/01-evm-execution/09-call-stack-and-call-depth.md)**, **[Return Data and Revert Data](concepts/01-evm-execution/10-return-data-and-revert-data.md)**, **[Contract Creation and Initialization](concepts/01-evm-execution/11-contract-creation-and-initialization.md)**, and **[State Transition Function](concepts/01-evm-execution/12-state-transition-function.md)** — all 12 published Stage 01 articles.
-- **[Application Binary Interface (ABI)](concepts/02-abi-contract-interaction/01-application-binary-interface-abi.md)** — the interface schema, selectors, and contract-interaction overview.
-- **[ABI Encoding and Decoding](concepts/02-abi-contract-interaction/02-abi-encoding-and-decoding.md)** — static and dynamic types, head/tail, offsets, padding, and packed-encoding pitfalls.
-- **[Function Selectors](concepts/02-abi-contract-interaction/03-function-selectors.md)** — canonical signatures, Keccak-256, calldata dispatch, overloads, and collision risks.
-- **[Function Dispatch](concepts/02-abi-contract-interaction/04-function-dispatch.md)** — how contract bytecode routes calldata, handles unmatched selectors, and distinguishes fallback from receive.
-- **[External Function Calls](concepts/02-abi-contract-interaction/05-external-function-calls.md)** — cross-contract calls, CALL/STATICCALL/DELEGATECALL, return and revert data, gas, and reentrancy.
-- **[Constructors](concepts/02-abi-contract-interaction/06-constructors.md)** — one-time initialization, constructor arguments, inheritance, immutables, proxy initialization, and deployment risks.
-- **[Fallback Functions](concepts/02-abi-contract-interaction/07-fallback-functions.md)** — handling unmatched calldata, empty-calldata rules, payable behavior, raw return bytes, and proxy routing.
-- **[Receive Functions](concepts/02-abi-contract-interaction/08-receive-functions.md)** — empty-calldata ETH reception, gas constraints, accounting caveats, and security considerations.
-- **[Visibility](concepts/02-abi-contract-interaction/09-visibility.md)** — function and state-variable access scope, inheritance, ABI exposure, and the difference between visibility, privacy, and authorization.
-- **[Mutability](concepts/02-abi-contract-interaction/10-mutability.md)** — pure, view, nonpayable, and payable behavior; state reads and writes; Ether acceptance; and STATICCALL.
-- **[Payable Functions](concepts/02-abi-contract-interaction/11-payable-functions.md)** — receiving ETH, validating `msg.value`, accounting, receive/fallback paths, and safe outgoing transfers.
-- **[Events and Event Logs](concepts/02-abi-contract-interaction/12-events-and-event-logs.md)** — event declarations, log structure, topics and data, ABI decoding, RPC filtering, and reorg-aware indexing.
-- **[Topics and Indexed Parameters](concepts/02-abi-contract-interaction/13-topics-and-indexed-parameters.md)** — topic layout, indexed argument encoding, dynamic-value hashes, `eth_getLogs` filters, wildcards, and OR/AND logic.
-- **[Custom Errors](concepts/02-abi-contract-interaction/14-custom-errors.md)** — structured reverts, error selectors, ABI-encoded arguments, decoding, compiler-version notes, and revert-data security.
-- **[Error Selectors](concepts/02-abi-contract-interaction/15-error-selectors.md)** — selector derivation, canonical signatures, built-in Error/Panic formats, selector collisions, and revert-data decoding.
-- **[Precompiled Contracts](concepts/02-abi-contract-interaction/16-precompiled-contracts.md)** — special EVM addresses, built-in cryptographic operations, input/output formats, gas behavior, and fork compatibility.
-- **[Learning priorities](roadmap/learning-priorities.md)** — understand the four-stage groups and suggested order.
-- **[Concept article template](templates/concept-template.md)** — a starting structure for writing each article later.
-- **[Sources and research policy](references/sources.md)** — recommended primary sources and documentation rules.
-- **[Contributing guide](CONTRIBUTING.md)** — naming, quality, and review conventions.
-- **[Changelog](CHANGELOG.md)** — notable repository changes.
-
 ## Roadmap at a glance
 
 | Stage | Focus | Concepts | Priority | Article publication |
