@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">Topics and indexed parameters</title>
+  <desc id="desc">A standard event log has the emitting address, topic zero as the event signature hash, indexed parameter values or hashes in subsequent topic slots, and non-indexed arguments in ABI-encoded data. A second panel explains positional topic filters, wildcard null, OR alternatives within a position, and AND across positions.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#14243a"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1d4ed8"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f766e"/>
+      <stop offset="1" stop-color="#0d9488"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6d28d9"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b45309"/>
+      <stop offset="1" stop-color="#d97706"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#020617" flood-opacity=".34"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#7dd3fc"/>
+    </marker>
+    <style>
+      .h1{font:700 34px system-ui,-apple-system,Segoe UI,sans-serif;fill:#f8fafc}
+      .sub{font:400 16px system-ui,-apple-system,Segoe UI,sans-serif;fill:#b6c4d8}
+      .ct{font:700 21px system-ui,-apple-system,Segoe UI,sans-serif;fill:#fff}
+      .body{font:400 15px system-ui,-apple-system,Segoe UI,sans-serif;fill:#d7e0ec}
+      .mono{font:700 14px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#fff}
+      .small{font:400 13px system-ui,-apple-system,Segoe UI,sans-serif;fill:#bfccdd}
+      .yes{font:700 15px system-ui,-apple-system,Segoe UI,sans-serif;fill:#86efac}
+      .warn{font:700 15px system-ui,-apple-system,Segoe UI,sans-serif;fill:#fcd34d}
+    </style>
+  </defs>
+  <rect width="1200" height="820" rx="26" fill="url(#bg)"/>
+  <circle cx="1080" cy="90" r="165" fill="#2563eb" opacity=".08"/>
+  <circle cx="80" cy="740" r="170" fill="#14b8a6" opacity=".06"/>
+  <text x="60" y="68" class="h1">Topics and Indexed Parameters</text>
+  <text x="60" y="101" class="sub">Topics are ordered 32-byte values used to identify events and filter indexed arguments.</text>
+
+  <text x="60" y="146" class="ct">1. A standard non-anonymous event log</text>
+  <g filter="url(#shadow)">
+    <rect x="60" y="165" width="1080" height="75" rx="15" fill="#17263d" stroke="#334155"/>
+    <rect x="76" y="180" width="160" height="44" rx="10" fill="url(#blue)"/>
+    <text x="93" y="207" class="mono">address</text>
+    <text x="250" y="193" class="small">Emitting contract</text>
+    <text x="250" y="215" class="body">Validate this address as well as the event signature.</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="60" y="263" width="250" height="110" rx="15" fill="#17263d" stroke="#334155"/>
+    <rect x="60" y="263" width="250" height="6" rx="3" fill="url(#blue)"/>
+    <text x="82" y="298" class="ct">topics[0]</text>
+    <text x="82" y="325" class="mono">keccak256(signature)</text>
+    <text x="82" y="351" class="small">Full 32-byte event hash</text>
+
+    <rect x="330" y="263" width="250" height="110" rx="15" fill="#17263d" stroke="#334155"/>
+    <rect x="330" y="263" width="250" height="6" rx="3" fill="url(#teal)"/>
+    <text x="352" y="298" class="ct">topics[1]</text>
+    <text x="352" y="325" class="mono">indexed address</text>
+    <text x="352" y="351" class="small">Value encoded as a topic word</text>
+
+    <rect x="600" y="263" width="250" height="110" rx="15" fill="#17263d" stroke="#334155"/>
+    <rect x="600" y="263" width="250" height="6" rx="3" fill="url(#purple)"/>
+    <text x="622" y="298" class="ct">topics[2]</text>
+    <text x="622" y="325" class="mono">indexed uint256</text>
+    <text x="622" y="351" class="small">Next indexed argument</text>
+
+    <rect x="870" y="263" width="270" height="110" rx="15" fill="#17263d" stroke="#334155"/>
+    <rect x="870" y="263" width="270" height="6" rx="3" fill="url(#amber)"/>
+    <text x="892" y="298" class="ct">data</text>
+    <text x="892" y="325" class="mono">ABI-encoded values</text>
+    <text x="892" y="351" class="small">All non-indexed parameters</text>
+  </g>
+  <text x="60" y="402" class="body">Dynamic indexed values (string, bytes, arrays, structs) use a Keccak hash of special in-place encoding.</text>
+  <text x="60" y="426" class="small">The original dynamic value cannot generally be recovered from that topic hash alone.</text>
+
+  <text x="60" y="472" class="ct">2. How topic filters work</text>
+  <rect x="60" y="492" width="1080" height="183" rx="18" fill="#0f1b2d" stroke="#334155"/>
+  <rect x="82" y="515" width="1036" height="41" rx="10" fill="#23334a"/>
+  <text x="100" y="541" class="mono">topics = [signature, null, [senderA, senderB]]</text>
+  <text x="84" y="584" class="body">Position 0:</text>
+  <text x="205" y="584" class="body">the event-signature hash must match (AND).</text>
+  <text x="84" y="611" class="body">Position 1:</text>
+  <text x="205" y="611" class="body">null is a wildcard for any value at that position.</text>
+  <text x="84" y="638" class="body">Position 2:</text>
+  <text x="205" y="638" class="body">match senderA OR senderB at this position; different positions combine as AND.</text>
+
+  <rect x="60" y="701" width="520" height="75" rx="15" fill="#17263d" stroke="#334155"/>
+  <text x="82" y="731" class="yes">Indexed: easy to search</text>
+  <text x="82" y="755" class="body">Consumes a topic slot; dynamic data becomes a hash.</text>
+
+  <rect x="600" y="701" width="540" height="75" rx="15" fill="#17263d" stroke="#334155"/>
+  <text x="622" y="731" class="warn">Non-indexed: easy to decode</text>
+  <text x="622" y="755" class="body">Stored in data as ABI encoding, not usable as a topic filter.</text>
+</svg>
