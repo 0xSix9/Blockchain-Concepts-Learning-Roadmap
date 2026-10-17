@@ -50,6 +50,14 @@ Ethereum uses **Keccak-256** for selectors. Although Keccak and the later standa
 
 In practice, use an Ethereum-aware library or the selector exposed by the compiled ABI tooling instead of implementing the hash function yourself.
 
+### Reading the selector in Solidity
+
+Solidity exposes the selector of a declared error through its `selector` member:
+
+    bytes4 selector = InsufficientBalance.selector;
+
+The expression gives the same four-byte selector that appears at the beginning of that error's revert payload. It is useful in tests, low-level error inspection, and code that needs to compare a selector explicitly. It does not decode the error arguments or prove that a particular contract produced the revert data.
+
 ## 3. Selector Versus Complete Revert Data
 
 The error selector is only the first four bytes. It is not the entire error and does not contain the argument values.
