@@ -205,3 +205,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the Storage Packing article for Stage 03, explaining Solidity packing rules, byte offsets, declaration-order examples, struct packing, gas trade-offs, and upgrade/assembly hazards.
 - Added a dedicated Storage Packing overview diagram and linked the article from the Stage 03 index and canonical roadmap.
 - Updated Stage 03 publication progress to 3/13; individual learning checkboxes remain unchecked.
+
+## 2026-10-17
+
+- Published the Mappings and Dynamic Arrays in Storage article for Stage 03, covering mapping key hashing, nested mappings, dynamic-array length/data slots, packed array elements, and the special storage encoding of bytes and string.
+- Added a dedicated mapping/array storage diagram and linked the article from the Stage 03 index and canonical roadmap.
+- Updated Stage 03 publication progress to 4/13; individual learning checkboxes remain unchecked.
