@@ -1,7 +1,7 @@
 # Account Proofs: Verifying Ethereum Account State
 
 > **Stage:** 03 — Storage and Data Layout  
-> **Priority:** 1  
+> **Priority:** 2  
 > **Status:** Reviewed  
 > **Last reviewed:** 2026-10-17
 
@@ -14,6 +14,8 @@ Ethereum's execution-layer global state is stored in a **Modified Merkle-Patrici
 An account proof is not the same as a storage proof. An account proof authenticates the account record under the global state root; a storage proof uses the account's `storageRoot` to verify a particular storage slot. Both can be returned by the JSON-RPC method `eth_getProof`.
 
 A proof is only as trustworthy as the root and block header against which it is verified. Receiving `accountProof` from a node does not, by itself, establish that the data is canonical, finalized, recent, or correctly interpreted.
+
+**Protocol-evolution note (reviewed 2026-10-17):** The proof flow in this article applies to Ethereum's current MPT-based execution state. Verkle Trees are being developed as a potential alternative to reduce state-witness sizes. The [Ethereum.org Verkle Trees roadmap](https://ethereum.org/roadmap/verkle-trees/) page, last updated 2026-06-24, described active testnets but outstanding client updates. Do not assume the mainnet account-proof format has changed; verify the current execution specification before building proof tooling.
 
 ![Account proof flow from a trusted block header stateRoot through account-key derivation and trie nodes to the verified account record](../../assets/diagrams/account-proofs-overview.svg)
 
@@ -181,5 +183,5 @@ When implementing verification in Solidity or another language, prefer a reviewe
 - [Ethereum.org — Merkle Patricia Trie](https://ethereum.org/developers/docs/data-structures-and-encoding/patricia-merkle-trie/) — global state trie, account keys and values, RLP-encoded trie nodes, and trie-root commitments.
 - [Ethereum Execution APIs — `eth_getProof`](https://ethereum.github.io/execution-apis/api/methods/eth_getProof/) — current request parameters and response schema for account and storage proof retrieval.
 - [EIP-1186 — RPC Method to Get Merkle Proofs](https://eips.ethereum.org/EIPS/eip-1186) — `accountProof`, account fields, and storage proof response design.
-- [Merkle Proofs](11-merkle-proofs.md) — related article in this repository about proof verification and trusted roots.
+- [Merkle Proofs](11-merkle-proofs.md) — related article about proof verification, trusted roots, and the MPT-to-Verkle roadmap.
 - [Recursive Length Prefix (RLP) Encoding](10-recursive-length-prefix-rlp-encoding.md) — related article in this repository about encoding execution-layer trie nodes.
