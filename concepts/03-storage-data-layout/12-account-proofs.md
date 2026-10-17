@@ -141,7 +141,7 @@ The account record contains a `storageRoot`, which is itself the root of the acc
 
 This hierarchy matters. A storage proof checked against an untrusted or unrelated storage root is not independently meaningful. The root should be tied to the correct account record, which in turn should be tied to the block's authenticated global state root.
 
-The `storageRoot` and Solidity's storage layout are different concepts: storage layout identifies the slot where a Solidity variable is represented, while the storage root commits cryptographically to the account's overall storage trie. See [Storage Layout](01-storage-layout.md) and [Storage Proofs](13-storage-proofs.md) when that article is available.
+The `storageRoot` and Solidity's storage layout are different concepts: storage layout identifies the slot where a Solidity variable is represented, while the storage root commits cryptographically to the account's overall storage trie. See [Storage Layout](01-storage-layout.md); the related Storage Proofs concept will cover validation of individual storage values.
 
 ## 8. What an Account Proof Does—and Does Not—Prove
 
