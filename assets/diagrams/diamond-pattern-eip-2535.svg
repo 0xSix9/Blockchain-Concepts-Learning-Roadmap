@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="870" viewBox="0 0 1200 870" role="img" aria-labelledby="title desc">
+  <title id="title">Diamond Pattern EIP-2535 Architecture</title>
+  <desc id="desc">One diamond contract routes function selectors to several facets using a selector mapping. Facet code executes through delegatecall in diamond storage. DiamondCut manages adding, replacing and removing functions, while loupe functions inspect the active mapping.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}
+      .blue{fill:#eff6ff;stroke:#60a5fa;stroke-width:2}.teal{fill:#ecfeff;stroke:#22d3ee;stroke-width:2}
+      .gold{fill:#fffbeb;stroke:#f59e0b;stroke-width:2}.purple{fill:#f5f3ff;stroke:#a78bfa;stroke-width:2}
+      .red{fill:#fef2f2;stroke:#f87171;stroke-width:2}
+      .ink{fill:#0f172a;font-family:Inter,Arial,sans-serif}.muted{fill:#475569;font-family:Inter,Arial,sans-serif}
+      .title{font-size:30px;font-weight:700}.head{font-size:19px;font-weight:700}.body{font-size:15px}.small{font-size:13px}
+      .mono{fill:#0f172a;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;font-weight:600}
+      .arrow{stroke:#2563eb;stroke-width:2.7;fill:none}.ok{stroke:#0f766e;stroke-width:2.6;fill:none}
+    </style>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2563eb"/></marker>
+    <marker id="ok" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#0f766e"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="870" rx="24"/>
+  <text class="ink title" x="42" y="54">Diamond Pattern — One Address, Many Facets</text>
+  <text class="muted body" x="44" y="84">EIP-2535 routes individual function selectors to separate code modules.</text>
+
+  <rect class="panel" x="35" y="112" width="1130" height="450" rx="20"/>
+  <rect class="purple" x="65" y="256" width="185" height="100" rx="13"/>
+  <text class="ink head" x="157" y="292" text-anchor="middle">Caller</text>
+  <text class="muted body" x="157" y="318" text-anchor="middle">one contract address</text>
+  <text class="muted small" x="157" y="338" text-anchor="middle">selector + arguments</text>
+
+  <rect class="blue" x="315" y="166" width="340" height="295" rx="16"/>
+  <text class="ink head" x="485" y="201" text-anchor="middle">Diamond Contract</text>
+  <rect class="gold" x="344" y="222" width="282" height="62" rx="10"/>
+  <text class="ink mono" x="485" y="247" text-anchor="middle">fallback()</text>
+  <text class="muted small" x="485" y="267" text-anchor="middle">read msg.sig</text>
+  <rect class="panel" x="344" y="300" width="282" height="62" rx="10"/>
+  <text class="ink mono" x="485" y="325" text-anchor="middle">selector → facet mapping</text>
+  <text class="muted small" x="485" y="345" text-anchor="middle">routing table in diamond storage</text>
+  <rect class="teal" x="344" y="378" width="282" height="56" rx="10"/>
+  <text class="ink head" x="485" y="402" text-anchor="middle">Shared storage</text>
+  <text class="muted small" x="485" y="421" text-anchor="middle">state belongs to the diamond</text>
+
+  <rect class="teal" x="810" y="145" width="300" height="84" rx="12"/>
+  <text class="ink head" x="960" y="178" text-anchor="middle">Facet A</text>
+  <text class="muted body" x="960" y="204" text-anchor="middle">token / account functions</text>
+  <rect class="teal" x="810" y="273" width="300" height="84" rx="12"/>
+  <text class="ink head" x="960" y="306" text-anchor="middle">Facet B</text>
+  <text class="muted body" x="960" y="332" text-anchor="middle">vault / business logic</text>
+  <rect class="teal" x="810" y="401" width="300" height="84" rx="12"/>
+  <text class="ink head" x="960" y="434" text-anchor="middle">Facet C</text>
+  <text class="muted body" x="960" y="460" text-anchor="middle">access / other functions</text>
+
+  <path class="arrow" d="M250 306 L307 306" marker-end="url(#arrow)"/>
+  <path class="arrow" d="M655 253 C716 253 740 187 802 187" marker-end="url(#arrow)"/>
+  <path class="arrow" d="M655 316 L802 316" marker-end="url(#arrow)"/>
+  <path class="arrow" d="M655 379 C716 379 740 443 802 443" marker-end="url(#arrow)"/>
+  <text class="muted small" x="728" y="229" text-anchor="middle">DELEGATECALL</text>
+  <text class="muted small" x="728" y="300" text-anchor="middle">DELEGATECALL</text>
+  <text class="muted small" x="728" y="412" text-anchor="middle">DELEGATECALL</text>
+  <text class="muted body" x="65" y="520">Facet code runs with the diamond's storage and address context.</text>
+  <text class="muted small" x="65" y="543">A facet's own deployed storage is separate; delegated writes affect the diamond.</text>
+
+  <rect class="panel" x="35" y="590" width="1130" height="222" rx="20"/>
+  <text class="ink head" x="65" y="629">The standard management and inspection interfaces</text>
+  <rect class="gold" x="65" y="657" width="475" height="112" rx="13"/>
+  <text class="ink head" x="302" y="690" text-anchor="middle">IDiamondCut · diamondCut</text>
+  <text class="muted body" x="302" y="718" text-anchor="middle">Add · Replace · Remove selectors</text>
+  <text class="muted small" x="302" y="743" text-anchor="middle">optional initialization delegatecall</text>
+
+  <rect class="blue" x="660" y="657" width="465" height="112" rx="13"/>
+  <text class="ink head" x="892" y="690" text-anchor="middle">IDiamondLoupe · introspection</text>
+  <text class="muted body" x="892" y="718" text-anchor="middle">facets · facetAddresses · facetAddress</text>
+  <text class="muted small" x="892" y="743" text-anchor="middle">inspect the active selector map</text>
+
+  <text class="muted small" x="65" y="791">Cut authorization and shared storage layout are critical security boundaries; EIP-2535 does not prescribe one universal owner model.</text>
+</svg>
