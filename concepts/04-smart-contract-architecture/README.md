@@ -2,11 +2,11 @@
 
 **Priority:** 1  
 **Topics:** 17  
-**Article status:** In progress — 15/17 concept articles published.
+**Article status:** In progress — 16/17 concept articles published.
 
 ## About this stage
 
-This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The Contract Composition, Inheritance, Interfaces and Libraries, Internal and External Calls, Proxy Contracts, Transparent Proxies, UUPS Proxies, Beacon Proxies, Minimal Proxies (Clones), Delegatecall-Based Proxy Architecture, Contract Upgradeability, Storage Compatibility, Initializers, Storage Collisions in Proxies, and Diamond Pattern (EIP-2535) articles are published; the remaining articles will be added one by one as the concepts are researched. The checkboxes track personal study progress, not publication status.
+This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The Contract Composition, Inheritance, Interfaces and Libraries, Internal and External Calls, Proxy Contracts, Transparent Proxies, UUPS Proxies, Beacon Proxies, Minimal Proxies (Clones), Delegatecall-Based Proxy Architecture, Contract Upgradeability, Storage Compatibility, Initializers, Storage Collisions in Proxies, Diamond Pattern (EIP-2535), and Deterministic Contract Deployment articles are published; the remaining article will be added when reviewed. The checkboxes track personal study progress, not publication status.
 
 ## Study checklist
 
@@ -25,7 +25,7 @@ This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the
 - [ ] [Initializers](13-initializers.md) — article published
 - [ ] [Storage Collisions in Proxies](14-storage-collisions-in-proxies.md) — article published
 - [ ] [Diamond Pattern (EIP-2535)](15-diamond-pattern-eip-2535.md) — article published
-- [ ] Deterministic Contract Deployment
+- [ ] [Deterministic Contract Deployment](16-deterministic-contract-deployment.md) — article published
 - [ ] CREATE2 Address Derivation
 
 ## Suggested workflow
