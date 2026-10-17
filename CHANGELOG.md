@@ -412,3 +412,11 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Covered type 1 (EIP-2930), type 2 (EIP-1559), type 3 (EIP-4844), and type 4 (EIP-7702), and explicitly distinguished a draft proposal for type 0x05 from active network support.
 - Added a dedicated SVG diagram comparing the legacy format with the typed envelope and mapping major type identifiers to their defining features.
 - Linked the article from the Stage 05 index and canonical roadmap, and updated Stage 05 publication progress to 3/14.
+
+## 2026-10-17 — Access List Transactions (EIP-2930)
+
+- Published the Access List Transactions article explaining the type-1 transaction payload, signed access-list structure, and relationship to EIP-2718 and EIP-2929.
+- Documented access-list charges (2,400 gas per address and 1,900 per storage key), warm/cold accounting, potential gas trade-offs, duplicate entries, and why access lists are not permission lists.
+- Added a dedicated SVG diagram showing the transaction envelope, access-list entries, upfront costs, and warm versus cold access behavior.
+- Linked the article from the Stage 05 index and canonical roadmap, and updated Stage 05 publication progress to 4/14.
+- The JSON-RPC request is an illustrative example and was not executed against a live Ethereum node.
