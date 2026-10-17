@@ -250,8 +250,9 @@ For protocols with many errors, keep error definitions in interfaces or a shared
 
 ## Review Checklist
 
-- [x] Defines how an error selector is derived from a canonical error signature.
-- [x] Distinguishes error selectors from function selectors and complete revert payloads.
-- [x] Covers Error(string), Panic(uint256), reserved selectors, and selector collisions.
-- [x] Explains decoding, external error bubbling, and spoofing risks.
-- [x] Links official Solidity ABI and error-handling documentation.
+- [ ] Derive an error selector from its canonical signature using Keccak-256.
+- [ ] Distinguish an error selector from a function selector and from a complete revert payload.
+- [ ] Recognize the built-in `Error(string)` and `Panic(uint256)` selectors.
+- [ ] Explain reserved selectors, selector collisions, revert bubbling, and spoofed error data.
+- [ ] Describe how a client decodes revert data with the expected ABI.
+- [ ] Consult the official Solidity ABI and error-handling documentation for exact behavior.
