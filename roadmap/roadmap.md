@@ -67,11 +67,11 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 
 ## Stage 04 — Smart Contract Architecture
 
-**Priority 1** · 🔄 **Article progress: 2/17 published** · [Stage index](../concepts/04-smart-contract-architecture/README.md)
+**Priority 1** · 🔄 **Article progress: 3/17 published** · [Stage index](../concepts/04-smart-contract-architecture/README.md)
 
 - [ ] [Contract Composition](../concepts/04-smart-contract-architecture/01-contract-composition.md) — article published
 - [ ] [Inheritance](../concepts/04-smart-contract-architecture/02-inheritance.md) — article published
-- [ ] Interfaces and Libraries
+- [ ] [Interfaces and Libraries](../concepts/04-smart-contract-architecture/03-interfaces-and-libraries.md) — article published
 - [ ] Internal and External Calls
 - [ ] Proxy Contracts
 - [ ] Transparent Proxies
