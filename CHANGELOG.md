@@ -330,3 +330,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the Beacon Proxies article, covering the proxy/beacon/implementation roles, ERC-1967 beacon slot, OpenZeppelin Contracts 5.x immutable beacon behavior, per-proxy initialization and storage, and fleet-wide upgrade/security trade-offs.
 - Added a custom SVG architecture diagram showing multiple independent proxy storage contexts sharing an implementation through a single beacon and upgrade path.
 - Linked the article from the Stage 04 index and canonical roadmap, and updated publication progress to 8/17. The study checkbox remains unchecked until the learner reviews the topic.
+
+## 2026-10-17 — Minimal Proxies (Clones)
+
+- Published the Minimal Proxies (Clones) article covering ERC-1167 forwarding bytecode, fixed implementation targets, clone-specific storage and initialization, OpenZeppelin `Clones`, CREATE2 address prediction, and security considerations.
+- Added a dedicated SVG diagram showing one shared implementation serving multiple clones with independent storage, plus the deterministic deployment flow.
+- Linked the article from the Stage 04 index and canonical roadmap, and updated publication progress to 9/17. The study checkbox remains unchecked until the learner reviews the topic.
