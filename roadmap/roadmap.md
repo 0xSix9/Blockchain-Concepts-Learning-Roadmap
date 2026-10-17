@@ -31,7 +31,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 **Priority 1** · [Stage index](../concepts/02-abi-contract-interaction/README.md)
 
 - [ ] [Application Binary Interface (ABI)](../concepts/02-abi-contract-interaction/01-application-binary-interface-abi.md) — article published
-- [ ] ABI Encoding and Decoding
+- [ ] [ABI Encoding and Decoding](../concepts/02-abi-contract-interaction/02-abi-encoding-and-decoding.md) — article published
 - [ ] Function Selectors
 - [ ] Function Dispatch
 - [ ] External Function Calls
