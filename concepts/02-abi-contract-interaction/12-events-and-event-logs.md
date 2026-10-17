@@ -283,8 +283,12 @@ Logs consume gas, and indexing changes the shape and usefulness of the log. Emit
 - [Solidity Documentation — ABI Specification: Events](https://docs.solidity.org/en/latest/abi-spec.html#events)
 - [EIP-140 — REVERT instruction](https://eips.ethereum.org/EIPS/eip-140)
 - Topics and Indexed Parameters (planned companion topic; dedicated article not yet published)
-- [Payable Functions](11-payable-functions.md)
+- [Function Dispatch](04-function-dispatch.md)
 - [External Function Calls](05-external-function-calls.md)
+- [Fallback Functions](07-fallback-functions.md)
+- [Receive Functions](08-receive-functions.md)
+- [State Mutability](10-mutability.md)
+- [Payable Functions](11-payable-functions.md)
 
 ## Review Checklist
 
