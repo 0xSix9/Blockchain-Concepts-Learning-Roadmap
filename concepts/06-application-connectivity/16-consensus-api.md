@@ -31,7 +31,7 @@ Endpoint paths and schemas are versioned by the Beacon API specification. Use th
 
 ## 4. Request and Response Shape
 
-A Beacon API request commonly uses HTTP GET for read methods and returns a JSON object whose data is often wrapped under a `data` field. Some operations use POST or other HTTP verbs and may require SSZ or other supported encodings rather than JSON alone; follow the endpoint schema.
+Beacon API requests and responses use JSON by default. The specification also supports SSZ-encoded request or response bodies for a subset of endpoints: a request carrying SSZ data uses `Content-Type: application/octet-stream`, and a client can request an SSZ response with an appropriate `Accept: application/octet-stream` header. SSZ support is endpoint-specific, so consult that endpoint's current schema instead of assuming every route accepts or returns SSZ. JSON responses commonly wrap the requested object under a top-level `data` field, sometimes with additional metadata.
 
 A path may look like `/eth/v1/beacon/genesis` or `/eth/v1/node/syncing`, depending on the endpoint being queried. Exact schemas, versions, and supported routes should be read from the official Beacon API specification. This article intentionally avoids presenting one response body as universal for every endpoint.
 
