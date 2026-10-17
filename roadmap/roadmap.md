@@ -43,7 +43,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [Payable Functions](../concepts/02-abi-contract-interaction/11-payable-functions.md) — article published
 - [ ] [Events and Event Logs](../concepts/02-abi-contract-interaction/12-events-and-event-logs.md) — article published
 - [ ] [Topics and Indexed Parameters](../concepts/02-abi-contract-interaction/13-topics-and-indexed-parameters.md) — article published
-- [ ] Custom Errors
+- [ ] [Custom Errors](../concepts/02-abi-contract-interaction/14-custom-errors.md) — article published
 - [ ] Error Selectors
 - [ ] Precompiled Contracts
 
