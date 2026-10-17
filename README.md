@@ -20,13 +20,14 @@ The roadmap starts with EVM execution and contract interaction, then moves throu
 
 This repository is designed as both a **learning checklist** and a **growing technical reference**. Every stage has its own index, and the complete roadmap keeps all concepts in one place.
 
-> **Publication progress:** ✅ **Stage 01 — EVM Execution is content-complete:** all 12 concept articles are published and reviewed. **Stage 02 — ABI and Contract Interaction has started:** the Application Binary Interface (ABI) article is published, and the remaining topics will be documented incrementally.
+> **Publication progress:** ✅ **Stage 01 — EVM Execution is content-complete:** all 12 concept articles are published and reviewed. **Stage 02 — ABI and Contract Interaction is in progress:** the Application Binary Interface (ABI) and ABI Encoding and Decoding articles are published, and the remaining topics will be documented incrementally.
 
 ## Start here
 
 - **[Full roadmap — all 157 concepts](roadmap/roadmap.md)** — browse the complete checklist.
 - **[EVM Opcodes](concepts/01-evm-execution/01-evm-opcodes.md)**, **[Stack, Memory, and Calldata](concepts/01-evm-execution/02-stack-memory-and-calldata.md)**, **[Execution Context](concepts/01-evm-execution/03-execution-context.md)**, **[CALL](concepts/01-evm-execution/04-call.md)**, **[DELEGATECALL](concepts/01-evm-execution/05-delegatecall.md)**, **[STATICCALL](concepts/01-evm-execution/06-staticcall.md)**, **[CREATE](concepts/01-evm-execution/07-create.md)**, **[CREATE2](concepts/01-evm-execution/08-create2.md)**, **[Call Stack and Call Depth](concepts/01-evm-execution/09-call-stack-and-call-depth.md)**, **[Return Data and Revert Data](concepts/01-evm-execution/10-return-data-and-revert-data.md)**, **[Contract Creation and Initialization](concepts/01-evm-execution/11-contract-creation-and-initialization.md)**, and **[State Transition Function](concepts/01-evm-execution/12-state-transition-function.md)** — all 12 published Stage 01 articles.
-- **[Application Binary Interface (ABI)](concepts/02-abi-contract-interaction/01-application-binary-interface-abi.md)** — the first published article in Stage 02.
+- **[Application Binary Interface (ABI)](concepts/02-abi-contract-interaction/01-application-binary-interface-abi.md)** — the interface schema, selectors, and contract-interaction overview.
+- **[ABI Encoding and Decoding](concepts/02-abi-contract-interaction/02-abi-encoding-and-decoding.md)** — static and dynamic types, head/tail, offsets, padding, and packed-encoding pitfalls.
 - **[Learning priorities](roadmap/learning-priorities.md)** — understand the four-stage groups and suggested order.
 - **[Concept article template](templates/concept-template.md)** — a starting structure for writing each article later.
 - **[Sources and research policy](references/sources.md)** — recommended primary sources and documentation rules.
@@ -38,7 +39,7 @@ This repository is designed as both a **learning checklist** and a **growing tec
 | Stage | Focus | Concepts | Priority | Article publication |
 |---|---|---:|:---:|---|
 | [✅ Stage 01 — EVM Execution](concepts/01-evm-execution/README.md) | EVM execution fundamentals | 12 | P1 | ✅ Complete — 12/12 published |
-| [Stage 02 — ABI and Contract Interaction](concepts/02-abi-contract-interaction/README.md) | ABI, selectors, calls, events, errors | 16 | P1 | In progress — 1/16 published |
+| [Stage 02 — ABI and Contract Interaction](concepts/02-abi-contract-interaction/README.md) | ABI, selectors, calls, events, errors | 16 | P1 | In progress — 2/16 published |
 | [Stage 03 — Storage and Data Layout](concepts/03-storage-data-layout/README.md) | Storage slots, packing, mappings, proofs | 13 | P1 | Checklist only |
 | [Stage 04 — Smart Contract Architecture](concepts/04-smart-contract-architecture/README.md) | Composition, proxies, upgradeability | 17 | P1 | Checklist only |
 | [Stage 05 — Advanced Transactions and Gas](concepts/05-advanced-transactions-gas/README.md) | Transaction mechanics and gas accounting | 14 | P2 | Checklist only |
