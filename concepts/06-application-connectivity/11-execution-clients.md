@@ -33,7 +33,7 @@ Post-Merge Ethereum node operation generally combines two client processes:
 
 The clients communicate through the authenticated Engine API. The consensus client drives which execution payloads are relevant to the canonical chain and coordinates with the execution client to obtain or validate payloads. The execution client cannot simply invent consensus finality from its own execution state.
 
-![Diagram showing a consensus client and execution client connected by the Engine API, with execution JSON-RPC serving applications and EVM/state duties handled by the execution client](../../assets/diagrams/execution-clients.svg)
+
 
 ## 4. Examples of Execution Clients
 
