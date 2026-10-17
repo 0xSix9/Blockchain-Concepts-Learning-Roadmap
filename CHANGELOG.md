@@ -360,3 +360,10 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the Initializers article covering `initializer`, `reinitializer(version)`, `onlyInitializing`, `_disableInitializers()`, implementation locking, parent initializer order, atomic proxy setup, and versioned migrations.
 - Added a custom SVG showing implementation locking, proxy initialization, and reinitialization during upgrades.
 - Linked the article from the Stage 04 index and canonical roadmap, and updated publication progress to 13/17. The study checkbox remains unchecked until the learner reviews the topic.
+
+## 2026-10-17 — Storage Collisions in Proxies
+
+- Published the Storage Collisions in Proxies article distinguishing collisions between proxy metadata and implementation state, incompatible implementation-version layouts, and overlapping module/facet storage.
+- Covered ERC-1967 unstructured metadata slots, storage-layout validation, namespaced storage, mapping and packed-slot risks, and realistic proxy testing.
+- Added a dedicated SVG showing three collision types and their corresponding mitigation strategies.
+- Linked the article from the Stage 04 index and canonical roadmap, and updated publication progress to 14/17. The study checkbox remains unchecked until the learner reviews the topic.
