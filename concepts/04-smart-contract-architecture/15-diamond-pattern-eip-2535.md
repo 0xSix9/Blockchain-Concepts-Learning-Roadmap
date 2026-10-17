@@ -102,7 +102,7 @@ Loupe functions are useful for frontends, deployment scripts, upgrade tooling, m
 
 EIP-2535 also allows support for ERC-165 interface detection. If implemented, `supportsInterface` should accurately reflect supported interfaces; it is a separate capability from the loupe functions themselves.
 
-Immutable functions that are implemented directly by the diamond must also be represented correctly by the diamond's introspection and cut event behavior according to the standard. They cannot be replaced or removed using `diamondCut`.
+On diamond deployment, every immutable external function must be included in a `DiamondCut` event as an `Add` entry, with the diamond's own address as the `facetAddress`. Loupe functions must report these selectors as implemented by the diamond itself. Immutable functions cannot be replaced or removed using `diamondCut`.
 
 ## 7. Shared Storage Across Facets
 
