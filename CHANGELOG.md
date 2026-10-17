@@ -476,3 +476,11 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Added a dedicated SVG diagram outlining how a processed transaction produces a receipt and which key information it exposes.
 - Linked the article from the Stage 05 index and canonical roadmap, and updated Stage 05 publication progress to 11/14.
 - JSON-RPC data is illustrative; no live transaction receipt was queried as part of the article's preparation.
+
+## 2026-10-17 — Transaction Reverts
+
+- Published the Transaction Reverts article explaining EVM `REVERT`, frame-scoped rollback, revert data, and Solidity failure patterns including `require`, explicit `revert`, custom errors, and `assert` / `Panic`.
+- Covered the difference between caught inner-call failures and propagated top-level reverts, the rollback of state changes and logs, gas/nonce behavior, and why revert data must not be treated as proof of error origin.
+- Added a dedicated SVG diagram contrasting caught versus propagated failures, revert payloads, and the distinct gas behavior of `REVERT` and out-of-gas.
+- Linked the article from the Stage 05 index and canonical roadmap, and updated Stage 05 publication progress to 12/14.
+- Solidity examples are explanatory snippets and were not compiled or executed as part of this article's preparation.
