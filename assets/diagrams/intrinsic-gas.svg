@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850" role="img" aria-labelledby="title desc">
+  <title id="title">Intrinsic Gas Before EVM Execution</title>
+  <desc id="desc">A flow diagram showing the transaction base charge, calldata costs, creation and initcode costs, optional access and authorization list costs, the EIP-7623 calldata floor, and the check that gas limit covers minimum requirements before execution.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.title{font:700 29px Arial,sans-serif;fill:#0f172a}.subtitle{font:16px Arial,sans-serif;fill:#475569}.label{font:700 18px Arial,sans-serif;fill:#0f172a}.body{font:15px Arial,sans-serif;fill:#334155}.small{font:13px Arial,sans-serif;fill:#475569}.mono{font:700 15px ui-monospace,Menlo,monospace;fill:#0f172a}.blue{fill:#dbeafe;stroke:#60a5fa;stroke-width:2}.teal{fill:#ccfbf1;stroke:#2dd4bf;stroke-width:2}.purple{fill:#ede9fe;stroke:#a78bfa;stroke-width:2}.amber{fill:#fef3c7;stroke:#f59e0b;stroke-width:2}.red{fill:#fee2e2;stroke:#f87171;stroke-width:2}.line{stroke:#64748b;stroke-width:2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="850" rx="22"/>
+  <text class="title" x="600" y="46" text-anchor="middle">Intrinsic Gas — Minimum Before Execution</text>
+  <text class="subtitle" x="600" y="75" text-anchor="middle">Transaction-level charges are calculated before the EVM runs the destination code</text>
+
+  <rect class="panel" x="45" y="103" width="1110" height="110" rx="16"/>
+  <text class="label" x="72" y="136">Start with the base transaction charge</text>
+  <rect class="purple" x="73" y="152" width="340" height="45" rx="10"/>
+  <text class="title" x="243" y="182" text-anchor="middle">21,000 gas</text>
+  <text class="body" x="440" y="179">+ other intrinsic components</text>
+
+  <path class="line" d="M600 213 L600 241"/>
+  <rect class="panel" x="45" y="249" width="540" height="222" rx="16"/>
+  <text class="label" x="72" y="283">Common components</text>
+  <rect class="blue" x="73" y="302" width="484" height="42" rx="9"/>
+  <text class="mono" x="315" y="329" text-anchor="middle">Calldata: 4 gas (zero) / 16 (non-zero)</text>
+  <rect class="teal" x="73" y="354" width="484" height="42" rx="9"/>
+  <text class="mono" x="315" y="381" text-anchor="middle">Contract creation: +32,000 gas</text>
+  <rect class="blue" x="73" y="406" width="484" height="42" rx="9"/>
+  <text class="mono" x="315" y="433" text-anchor="middle">Initcode: +2 gas per 32-byte chunk</text>
+
+  <rect class="panel" x="615" y="249" width="540" height="222" rx="16"/>
+  <text class="label" x="642" y="283">Optional transaction fields</text>
+  <rect class="amber" x="643" y="302" width="484" height="42" rx="9"/>
+  <text class="mono" x="885" y="329" text-anchor="middle">Access-list address: 2,400 gas each</text>
+  <rect class="amber" x="643" y="354" width="484" height="42" rx="9"/>
+  <text class="mono" x="885" y="381" text-anchor="middle">Access-list storage key: 1,900 gas each</text>
+  <rect class="purple" x="643" y="406" width="484" height="42" rx="9"/>
+  <text class="mono" x="885" y="433" text-anchor="middle">EIP-7702 authorization: 25,000 each upfront</text>
+
+  <path class="line" d="M315 471 L315 500"/>
+  <path class="line" d="M885 471 L885 500"/>
+  <rect class="amber" x="45" y="508" width="540" height="113" rx="16"/>
+  <text class="label" x="72" y="541">EIP-7623 calldata floor</text>
+  <text class="mono" x="72" y="570">tokens = zero bytes + 4 × non-zero bytes</text>
+  <text class="mono" x="72" y="595">floor component = 10 × tokens</text>
+  <rect class="blue" x="615" y="508" width="540" height="113" rx="16"/>
+  <text class="label" x="642" y="541">Gas-limit validation</text>
+  <text class="body" x="642" y="570">Limit must cover ordinary intrinsic requirements</text>
+  <text class="body" x="642" y="594">and the applicable calldata-floor minimum.</text>
+
+  <path class="line" d="M315 621 L315 653"/>
+  <path class="line" d="M885 621 L885 653"/>
+  <rect class="red" x="45" y="661" width="540" height="105" rx="16"/>
+  <text class="label" x="72" y="695">Insufficient minimum</text>
+  <text class="body" x="72" y="724">Transaction is invalid before EVM execution.</text>
+  <rect class="teal" x="615" y="661" width="540" height="105" rx="16"/>
+  <text class="label" x="642" y="695">Minimum covered</text>
+  <text class="body" x="642" y="724">EVM execution can start; more gas may be used.</text>
+
+  <text class="small" x="600" y="806" text-anchor="middle">Intrinsic gas ≠ total gas used: execution work, refunds, and the calldata floor also affect final accounting.</text>
+</svg>
