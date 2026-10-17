@@ -72,6 +72,22 @@ Simulation remains conditional on the state, endpoint, and call parameters. It i
 6. Confusing an RPC execution error with a mined transaction receipt.
 7. Ignoring provider gas caps, timeouts, and data-access policies.
 
+## Developer Review Checklist
+
+- [ ] Explain why `eth_call` simulates execution without committing on-chain state.
+- [ ] Identify the call fields and block reference that can affect execution.
+- [ ] Decode successful return bytes with the correct ABI.
+- [ ] Distinguish a simulation error from a mined transaction receipt.
+- [ ] Explain why a successful simulation does not guarantee a later transaction will succeed.
+- [ ] Consider provider gas caps, timeouts, and trust assumptions.
+
+## Key Takeaways
+
+- `eth_call` executes code in a simulation context; it does not submit an on-chain transaction.
+- The result depends on call context and the selected state.
+- Successful output is encoded bytes and usually needs ABI decoding.
+- Simulation is useful for preview/debugging, not a guarantee of future inclusion or success.
+
 ## References
 
 - 1. [Ethereum.org — JSON-RPC API](https://ethereum.org/developers/docs/apis/json-rpc/) — `eth_call` request schema and block parameters.
