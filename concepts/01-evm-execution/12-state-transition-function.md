@@ -2,6 +2,7 @@
 
 **Stage:** 01 — EVM Execution  
 **Priority:** 1  
+**Status:** Reviewed  
 **Topic:** How valid transactions transform Ethereum state  
 **Last reviewed:** 2026-10-17
 
@@ -158,7 +159,7 @@ A transaction receipt provides important outputs from execution, but it is not a
 Common receipt information includes:
 
 - the transaction's success/failure status under the current receipt format;
-- cumulative gas used in the block and, through transaction-level interpretation, the gas consumed by a particular transaction;
+- cumulative gas used up through this transaction in the block. Common JSON-RPC receipt responses also expose per-transaction `gasUsed`; in the consensus receipt, `cumulativeGasUsed` is the running total;
 - logs emitted during successful execution;
 - a bloom filter derived from logs;
 - additional fields determined by the transaction and block format.

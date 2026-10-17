@@ -75,3 +75,10 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the State Transition Function article, explaining transaction-level and block-level state transitions, validation versus execution failure, rollback boundaries, gas/fee accounting, receipts, and state roots.
 - Added a custom state-transition diagram and linked the article from the Stage 01 index, full roadmap, and project README.
 - Completed publication of all 12 Stage 01 concept articles; learning checkboxes remain unchecked for the author's personal study progress.
+
+
+## 2026-10-17
+
+- Completed a technical consistency review of all 12 Stage 01 concept articles against official Ethereum/Solidity documentation and selected core EIPs; checked local Markdown/SVG links and basic SVG structure.
+- Standardized review metadata for articles 07–12 and refreshed obsolete “article not published yet” navigation notes.
+- Clarified the CREATE nonce wording, made the DELEGATECALL proxy example's receive path consistent, and improved the explanation of cumulative receipt gas accounting.

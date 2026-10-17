@@ -2,6 +2,7 @@
 
 **Stage:** 01 — EVM Execution  
 **Priority:** 1  
+**Status:** Reviewed  
 **Topic:** Deterministic contract-address derivation  
 **Last reviewed:** 2026-10-17
 
@@ -244,4 +245,4 @@ Before using `CREATE2`, verify that you can answer the following:
 
 ---
 
-**Next concept:** [Call Stack and Call Depth](./09-call-stack-and-call-depth.md) (article not published yet).
+**Next concept:** [Call Stack and Call Depth](./09-call-stack-and-call-depth.md) — article published.

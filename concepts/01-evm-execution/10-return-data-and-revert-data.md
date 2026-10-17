@@ -2,6 +2,7 @@
 
 **Stage:** 01 — EVM Execution  
 **Priority:** 1  
+**Status:** Reviewed  
 **Topic:** Retrieving return bytes and handling failed calls  
 **Last reviewed:** 2026-10-17
 
@@ -264,4 +265,4 @@ When working with low-level calls, proxies, routers, or error handling, verify:
 
 ---
 
-**Next concept:** [Contract Creation and Initialization](./11-contract-creation-and-initialization.md) (article not published yet).
+**Next concept:** [Contract Creation and Initialization](./11-contract-creation-and-initialization.md) — article published.

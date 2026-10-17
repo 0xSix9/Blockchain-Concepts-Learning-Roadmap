@@ -101,6 +101,9 @@ pragma solidity ^0.8.24;
 contract Logic {
     uint256 public count;
 
+    // Allows the example proxy's receive() path to delegate empty calldata successfully.
+    receive() external payable {}
+
     function increment() external payable {
         count += 1;
     }

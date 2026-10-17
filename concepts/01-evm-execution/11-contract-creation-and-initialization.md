@@ -2,6 +2,7 @@
 
 **Stage:** 01 — EVM Execution  
 **Priority:** 1  
+**Status:** Reviewed  
 **Topic:** The full lifecycle from initcode to deployed runtime code  
 **Last reviewed:** 2026-10-17
 
@@ -259,4 +260,4 @@ Before deploying a contract or writing a factory, verify:
 
 ---
 
-**Next concept:** [State Transition Function](./12-state-transition-function.md) (article not published yet).
+**Next concept:** [State Transition Function](./12-state-transition-function.md) — article published.

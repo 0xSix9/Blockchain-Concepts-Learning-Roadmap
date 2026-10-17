@@ -2,6 +2,7 @@
 
 **Stage:** 01 — EVM Execution  
 **Priority:** 1  
+**Status:** Reviewed  
 **Topic:** Nested message calls and contract-creation frames  
 **Last reviewed:** 2026-10-17
 
@@ -214,4 +215,4 @@ Use transaction traces when available. A trace that shows the parent-child call 
 
 ---
 
-**Next concept:** [Return Data and Revert Data](./10-return-data-and-revert-data.md) (article not published yet).
+**Next concept:** [Return Data and Revert Data](./10-return-data-and-revert-data.md) — article published.

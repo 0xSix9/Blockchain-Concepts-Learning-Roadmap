@@ -2,6 +2,7 @@
 
 **Stage:** 01 — EVM Execution  
 **Priority:** 1  
+**Status:** Reviewed  
 **Topic:** Contract creation from an executing contract  
 **Last reviewed:** 2026-10-17
 
@@ -63,7 +64,7 @@ For the traditional `CREATE` opcode, the address is derived from the creating ac
 address = last20Bytes(keccak256(RLP([creator_address, creator_nonce])))
 ~~~
 
-Here, `creator_nonce` is the nonce used for this creation in the address derivation. It is not a salt and it is not a hash of the initcode.
+Here, `creator_nonce` is the creator account's nonce value used for this creation address derivation (the value before the creation attempt increments the creator's nonce). It is not a salt and it is not a hash of the initcode.
 
 This has several consequences:
 
@@ -203,4 +204,4 @@ Before relying on a `CREATE` path, be able to answer these questions:
 
 ---
 
-**Next concept:** [CREATE2](./08-create2.md) (article not published yet).
+**Next concept:** [CREATE2](./08-create2.md) — article published.
