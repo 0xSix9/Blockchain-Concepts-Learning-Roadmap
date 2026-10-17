@@ -67,7 +67,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 
 ## Stage 04 — Smart Contract Architecture
 
-**Priority 1** · 🔄 **Article progress: 8/17 published** · [Stage index](../concepts/04-smart-contract-architecture/README.md)
+**Priority 1** · 🔄 **Article progress: 9/17 published** · [Stage index](../concepts/04-smart-contract-architecture/README.md)
 
 - [ ] [Contract Composition](../concepts/04-smart-contract-architecture/01-contract-composition.md) — article published
 - [ ] [Inheritance](../concepts/04-smart-contract-architecture/02-inheritance.md) — article published
@@ -77,7 +77,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [Transparent Proxies](../concepts/04-smart-contract-architecture/06-transparent-proxies.md) — article published
 - [ ] [UUPS Proxies](../concepts/04-smart-contract-architecture/07-uups-proxies.md) — article published
 - [ ] [Beacon Proxies](../concepts/04-smart-contract-architecture/08-beacon-proxies.md) — article published
-- [ ] Minimal Proxies (Clones)
+- [ ] [Minimal Proxies (Clones)](../concepts/04-smart-contract-architecture/09-minimal-proxies-clones.md) — article published
 - [ ] Delegatecall-Based Proxy Architecture
 - [ ] Contract Upgradeability
 - [ ] Storage Compatibility
