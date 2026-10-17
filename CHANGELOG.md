@@ -278,3 +278,10 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Fixed the inline complexity notation in the Merkle Proofs article and added a dated note linking the current MPT proof model to Ethereum's Verkle Trees roadmap.
 - Added Verkle-roadmap context to the Account Proofs and Storage Proofs articles and adjusted those two specialist topics to Priority 2.
 - Clarified that the Stage 03 checkboxes track personal study progress, while article publication status is recorded separately.
+
+
+## 2026-10-17 — Stage 04 begins
+
+- Published the Contract Composition article, including an interface-based fee-policy example, composition versus inheritance, dependency boundaries, and security/testing considerations.
+- Added a dedicated Contract Composition architecture diagram and linked the article from the Stage 04 checklist and canonical roadmap.
+- Updated Stage 04 publication progress to 1/17. The unchecked item remains a personal study checkbox.
