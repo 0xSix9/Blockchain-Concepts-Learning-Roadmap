@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850" role="img" aria-labelledby="title desc">
+  <title id="title">Minimal Proxies (Clones) Architecture</title>
+  <desc id="desc">A factory deploys one implementation and multiple minimal clones. Each clone forwards calls to the same fixed implementation using delegatecall, while each clone keeps separate storage. A CREATE2 branch shows deterministic address prediction.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}
+      .blue{fill:#eff6ff;stroke:#60a5fa;stroke-width:2}.teal{fill:#ecfeff;stroke:#22d3ee;stroke-width:2}
+      .gold{fill:#fffbeb;stroke:#f59e0b;stroke-width:2}.purple{fill:#f5f3ff;stroke:#a78bfa;stroke-width:2}
+      .red{fill:#fef2f2;stroke:#f87171;stroke-width:2}
+      .ink{fill:#0f172a;font-family:Inter,Arial,sans-serif}.muted{fill:#475569;font-family:Inter,Arial,sans-serif}
+      .title{font-size:30px;font-weight:700}.head{font-size:19px;font-weight:700}.body{font-size:15px}.small{font-size:13px}
+      .mono{fill:#0f172a;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;font-weight:600}
+      .arrow{stroke:#2563eb;stroke-width:2.8;fill:none}.return{stroke:#0f766e;stroke-width:2.4;fill:none}.dash{stroke:#64748b;stroke-width:2;stroke-dasharray:6 6;fill:none}
+    </style>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2563eb"/></marker>
+    <marker id="return" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#0f766e"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="850" rx="24"/>
+  <text class="ink title" x="42" y="54">Minimal Proxies (Clones) — Shared Logic, Separate State</text>
+  <text class="muted body" x="44" y="84">ERC-1167 keeps each clone small and forwards calls to a fixed implementation.</text>
+
+  <rect class="panel" x="35" y="112" width="1130" height="450" rx="20"/>
+  <rect class="purple" x="70" y="180" width="240" height="100" rx="13"/>
+  <text class="ink head" x="190" y="216" text-anchor="middle">Factory</text>
+  <text class="muted body" x="190" y="242" text-anchor="middle">deploys clones</text>
+  <text class="muted small" x="190" y="261" text-anchor="middle">and initializes each one</text>
+
+  <rect class="blue" x="410" y="145" width="280" height="95" rx="13"/>
+  <text class="ink head" x="550" y="178" text-anchor="middle">Clone A</text>
+  <text class="muted body" x="550" y="203" text-anchor="middle">storage A · address A</text>
+  <text class="mono" x="550" y="224" text-anchor="middle">DELEGATECALL</text>
+
+  <rect class="blue" x="410" y="270" width="280" height="95" rx="13"/>
+  <text class="ink head" x="550" y="303" text-anchor="middle">Clone B</text>
+  <text class="muted body" x="550" y="328" text-anchor="middle">storage B · address B</text>
+  <text class="mono" x="550" y="349" text-anchor="middle">DELEGATECALL</text>
+
+  <rect class="blue" x="410" y="395" width="280" height="95" rx="13"/>
+  <text class="ink head" x="550" y="428" text-anchor="middle">Clone C</text>
+  <text class="muted body" x="550" y="453" text-anchor="middle">storage C · address C</text>
+  <text class="mono" x="550" y="474" text-anchor="middle">DELEGATECALL</text>
+
+  <rect class="teal" x="810" y="245" width="300" height="150" rx="15"/>
+  <text class="ink head" x="960" y="281" text-anchor="middle">Implementation</text>
+  <rect class="panel" x="840" y="299" width="240" height="54" rx="10"/>
+  <text class="ink mono" x="960" y="321" text-anchor="middle">shared runtime logic</text>
+  <text class="muted small" x="960" y="341" text-anchor="middle">fixed target in each clone</text>
+  <text class="muted body" x="960" y="376" text-anchor="middle">code reused, state not shared</text>
+
+  <path class="arrow" d="M310 230 C355 230 364 190 402 190" marker-end="url(#arrow)"/>
+  <path class="arrow" d="M310 230 C360 230 366 317 402 317" marker-end="url(#arrow)"/>
+  <path class="arrow" d="M310 230 C355 230 365 442 402 442" marker-end="url(#arrow)"/>
+  <path class="arrow" d="M690 192 C748 192 756 280 802 280" marker-end="url(#arrow)"/>
+  <path class="arrow" d="M690 317 L802 317" marker-end="url(#arrow)"/>
+  <path class="arrow" d="M690 442 C748 442 756 360 802 360" marker-end="url(#arrow)"/>
+  <text class="muted small" x="745" y="222" text-anchor="middle">forward</text>
+  <text class="muted small" x="745" y="301" text-anchor="middle">forward</text>
+  <text class="muted small" x="745" y="426" text-anchor="middle">forward</text>
+
+  <rect class="gold" x="70" y="510" width="1040" height="34" rx="8"/>
+  <text class="ink body" x="590" y="532" text-anchor="middle">Implementation logic executes in each clone's storage and address context.</text>
+
+  <rect class="panel" x="35" y="588" width="1130" height="222" rx="20"/>
+  <text class="ink head" x="65" y="626">Deterministic clones with CREATE2</text>
+  <rect class="purple" x="70" y="653" width="260" height="108" rx="12"/>
+  <text class="ink head" x="200" y="685" text-anchor="middle">Factory + salt</text>
+  <text class="muted small" x="200" y="710" text-anchor="middle">and implementation</text>
+  <text class="muted small" x="200" y="732" text-anchor="middle">define the init-code inputs</text>
+
+  <rect class="gold" x="420" y="653" width="330" height="108" rx="12"/>
+  <text class="ink head" x="585" y="685" text-anchor="middle">Predict address</text>
+  <text class="muted small" x="585" y="710" text-anchor="middle">CREATE2 formula</text>
+  <text class="muted small" x="585" y="732" text-anchor="middle">before deployment</text>
+
+  <rect class="teal" x="840" y="653" width="270" height="108" rx="12"/>
+  <text class="ink head" x="975" y="685" text-anchor="middle">Deploy once</text>
+  <text class="muted small" x="975" y="710" text-anchor="middle">same deployer, salt and</text>
+  <text class="muted small" x="975" y="732" text-anchor="middle">init code cannot repeat</text>
+
+  <path class="arrow" d="M330 707 L412 707" marker-end="url(#arrow)"/>
+  <path class="arrow" d="M750 707 L832 707" marker-end="url(#arrow)"/>
+  <text class="muted body" x="65" y="787">Standard ERC-1167 clones are not upgradeable by default; their implementation target is fixed.</text>
+</svg>
