@@ -146,3 +146,8 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 
 - Published the State Mutability article, explaining pure, view, nonpayable, and payable functions, ABI mutability metadata, STATICCALL, payable entry points, and security considerations.
 - Added a dedicated state-mutability matrix diagram and linked Mutability from the Stage 02 index, canonical roadmap, and project README; updated Stage 02 publication progress to 10/16.
+
+## 2026-10-17
+
+- Published the Payable Functions article, covering msg.value validation, Ether accounting, named payable functions versus receive/fallback, outgoing calls, and reentrancy-aware withdrawal patterns.
+- Added a custom Ether-flow diagram and linked Payable Functions from the Stage 02 index, canonical roadmap, and project README; updated Stage 02 publication progress to 11/16.
