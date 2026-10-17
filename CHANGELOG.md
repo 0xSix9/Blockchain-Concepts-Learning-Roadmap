@@ -354,3 +354,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the Storage Compatibility article covering Solidity storage slot/offset rules, declaration and inheritance changes, structs and mappings, storage gaps, ERC-7201 namespaced storage, ERC-1967 metadata, and upgrade validation workflows.
 - Added a custom SVG contrasting an unsafe inserted variable with a compatible append-only example and illustrating the storage-validation workflow.
 - Linked the article from the Stage 04 index and canonical roadmap, and updated publication progress to 12/17. The study checkbox remains unchecked until the learner reviews the topic.
+
+## 2026-10-17 — Initializers
+
+- Published the Initializers article covering `initializer`, `reinitializer(version)`, `onlyInitializing`, `_disableInitializers()`, implementation locking, parent initializer order, atomic proxy setup, and versioned migrations.
+- Added a custom SVG showing implementation locking, proxy initialization, and reinitialization during upgrades.
+- Linked the article from the Stage 04 index and canonical roadmap, and updated publication progress to 13/17. The study checkbox remains unchecked until the learner reviews the topic.
