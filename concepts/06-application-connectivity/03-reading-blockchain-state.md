@@ -91,7 +91,7 @@ Archive nodes retain historical states for low-latency historical queries; ordin
 - [ ] Explain why historical state availability differs from historical block availability.
 - [ ] Know when `eth_getProof` or a different data source is necessary.
 
-## Key Takeaways
+## 9. Key Takeaways
 
 - Account reads return state in a specific block context; “latest” may change between calls.
 - Balance and nonce values are hexadecimal quantities, while code and storage values are byte data.
