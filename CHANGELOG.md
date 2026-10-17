@@ -379,3 +379,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the Deterministic Contract Deployment article, distinguishing `CREATE` address derivation from `CREATE2` and explaining predictable addresses, factory patterns, cross-chain matching, failure cases, and authorization considerations.
 - Added a dedicated SVG diagram for prediction, deployment, verification, and cross-chain address matching.
 - Linked the article from the Stage 04 index and canonical roadmap, and updated publication progress to 16/17. The study checkbox remains unchecked until the learner reviews the topic.
+
+## 2026-10-17 — CREATE2 Address Derivation
+
+- Published the CREATE2 Address Derivation article with the exact EIP-1014 formula, 85-byte preimage layout, init-code hashing, Solidity prediction example, deployer-context rules, and common implementation mistakes.
+- Added a dedicated SVG diagram illustrating the four preimage components, Keccak-256 hash, and extraction of the low 20 bytes.
+- Linked the article from the Stage 04 index and canonical roadmap, and marked Stage 04 content complete at 17/17 published articles. Individual study checkboxes remain unchecked until reviewed.
