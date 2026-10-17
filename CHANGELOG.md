@@ -193,3 +193,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the Storage Layout article for Stage 03, explaining slot and byte-offset assignments, inheritance, special state-variable categories, compiler layout output, custom storage bases, and upgrade compatibility.
 - Added a dedicated Storage Layout overview diagram and linked the article from the Stage 03 index and canonical roadmap.
 - Updated Stage 03 publication progress to 1/13; the individual learning checklist remains unchecked.
+
+## 2026-10-17
+
+- Published the Storage Slots article for Stage 03, explaining the slot-key/value distinction, 32-byte storage words, SLOAD/SSTORE, JSON-RPC inspection, account storage context, and common non-sequential locations.
+- Added a dedicated Storage Slots diagram and linked the article from the Stage 03 index and canonical roadmap.
+- Updated Stage 03 publication progress to 2/13; individual learning checkboxes remain unchecked.
