@@ -2,7 +2,7 @@
 
 **Priority:** 1  
 **Topics:** 16  
-**Article status:** In progress — 14 of 16 concept articles published.
+**Article status:** In progress — 15 of 16 concept articles published.
 
 ## About this stage
 
@@ -24,7 +24,7 @@ This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the
 - [ ] [Events and Event Logs](12-events-and-event-logs.md) — article published
 - [ ] [Topics and Indexed Parameters](13-topics-and-indexed-parameters.md) — article published
 - [ ] [Custom Errors](14-custom-errors.md) — article published
-- [ ] Error Selectors
+- [ ] [Error Selectors](15-error-selectors.md) — article published
 - [ ] Precompiled Contracts
 
 ## Suggested workflow
