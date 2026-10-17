@@ -525,3 +525,11 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Covered standard Ethereum RPC method families, read and simulation semantics, transaction signing/submission workflows, log querying and reorg handling, node storage modes, light-client verification, and the separation between Execution, Consensus/Beacon, and Engine APIs.
 - Updated the Stage 06 index, roadmap status, and root README to show all 17/17 articles published.
 - Examples are educational illustrations; no live RPC endpoint or transaction was used during article preparation.
+
+## 2026-10-17 — Stage 06 Technical Review
+
+- Reviewed all 17 Stage 06 articles and checked their local Markdown and SVG references against the repository tree.
+- Removed two stale duplicate diagram references in Sending Transactions and Execution Clients; each of the 17 articles now has one valid dedicated SVG reference.
+- Added concept-specific developer review checklists and key takeaways where missing, and aligned the numbered section headings.
+- Clarified Beacon API content negotiation: JSON is the default, while SSZ request/response support is available only on endpoints that specify it.
+- Confirmed Stage 06 publication status remains complete at 17/17; no live RPC calls or transactions were performed as part of this review.
