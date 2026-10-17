@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Smart Contract Composition Overview</title>
+  <desc id="desc">A user calls a Checkout application contract, which uses an IFeePolicy interface and the address of an independently deployed BasisPointFeePolicy contract. The illustration highlights that the components have separate deployment and storage contexts, and a dependency call can fail or return unexpected data.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}
+      .blue{fill:#eff6ff;stroke:#60a5fa;stroke-width:2}.teal{fill:#ecfeff;stroke:#22d3ee;stroke-width:2}
+      .gold{fill:#fffbeb;stroke:#f59e0b;stroke-width:2}.purple{fill:#f5f3ff;stroke:#a78bfa;stroke-width:2}
+      .ink{fill:#0f172a;font-family:Inter,Arial,sans-serif}.muted{fill:#475569;font-family:Inter,Arial,sans-serif}
+      .title{font-size:30px;font-weight:700}.head{font-size:20px;font-weight:700}.body{font-size:16px}.small{font-size:13px}
+      .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:15px;font-weight:600}
+      .line{stroke:#64748b;stroke-width:2.5;fill:none}.arrow{stroke:#2563eb;stroke-width:3;fill:none}
+    </style>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2563eb"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="760" rx="24"/>
+  <text class="ink title" x="44" y="56">Contract Composition: Small Contracts, Clear Boundaries</text>
+  <text class="muted body" x="46" y="86">A coordinator reuses a focused service through an interface and a configured contract address.</text>
+
+  <rect class="panel" x="40" y="120" width="1120" height="370" rx="20"/>
+  <text class="ink head" x="66" y="156">Runtime interaction</text>
+
+  <rect class="purple" x="70" y="218" width="210" height="122" rx="14"/>
+  <text class="ink head" x="175" y="253" text-anchor="middle">User / dApp</text>
+  <text class="muted body" x="175" y="281" text-anchor="middle">Requests a quote</text>
+  <text class="muted small" x="175" y="307" text-anchor="middle">External call</text>
+
+  <rect class="blue" x="390" y="190" width="300" height="178" rx="16"/>
+  <text class="ink head" x="540" y="226" text-anchor="middle">Checkout</text>
+  <text class="muted body" x="540" y="257" text-anchor="middle">Coordinates the workflow</text>
+  <rect class="panel" x="418" y="279" width="244" height="62" rx="10"/>
+  <text class="ink mono" x="540" y="303" text-anchor="middle">IFeePolicy</text>
+  <text class="muted small" x="540" y="325" text-anchor="middle">feePolicy.feeFor(amount)</text>
+
+  <rect class="teal" x="810" y="190" width="300" height="178" rx="16"/>
+  <text class="ink head" x="960" y="226" text-anchor="middle">BasisPointFeePolicy</text>
+  <text class="muted body" x="960" y="257" text-anchor="middle">Calculates a fee</text>
+  <text class="ink mono" x="960" y="300" text-anchor="middle">fee = amount × rate</text>
+  <text class="muted small" x="960" y="327" text-anchor="middle">Independent deployed contract</text>
+
+  <path class="arrow" d="M280 279 L382 279" marker-end="url(#arrow)"/>
+  <text class="muted small" x="331" y="263" text-anchor="middle">1. call</text>
+  <path class="arrow" d="M690 303 L802 303" marker-end="url(#arrow)"/>
+  <text class="muted small" x="746" y="286" text-anchor="middle">2. feeFor</text>
+  <path class="line" d="M802 343 L690 343"/>
+  <path class="line" d="M690 343 L696 338 M690 343 L696 348"/>
+  <text class="muted small" x="746" y="365" text-anchor="middle">3. returns fee</text>
+
+  <text class="muted body" x="70" y="413">Separate code and storage contexts</text>
+  <text class="muted small" x="70" y="439">A normal external call does not merge the contracts' storage.</text>
+  <text class="muted body" x="810" y="413">Dependency is a trust boundary</text>
+  <text class="muted small" x="810" y="439">It may revert or return an unexpected value.</text>
+
+  <rect class="panel" x="40" y="514" width="540" height="200" rx="18"/>
+  <text class="ink head" x="66" y="551">Choose composition when…</text>
+  <text class="ink body" x="72" y="586">• a component has a distinct responsibility</text>
+  <text class="ink body" x="72" y="616">• a dependency has its own lifecycle or address</text>
+  <text class="ink body" x="72" y="646">• you need a clear integration/testing boundary</text>
+  <text class="muted small" x="72" y="682">Examples: token, oracle, registry, fee policy</text>
+
+  <rect class="panel" x="600" y="514" width="560" height="200" rx="18"/>
+  <text class="ink head" x="626" y="551">Remember</text>
+  <text class="ink body" x="626" y="584">Composition ≠ inheritance</text>
+  <text class="muted body" x="626" y="611">Composition: call another deployed contract.</text>
+  <text class="muted body" x="626" y="638">Inheritance: combine base behavior at compile time.</text>
+  <text class="muted body" x="626" y="669">A normal call uses the callee's context;</text>
+  <text class="muted body" x="626" y="691">DELEGATECALL uses the caller's storage context.</text>
+</svg>
