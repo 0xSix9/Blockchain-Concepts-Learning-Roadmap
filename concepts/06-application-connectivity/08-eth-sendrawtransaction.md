@@ -91,7 +91,7 @@ A transaction can be included with a failed status. The sender's nonce and gas f
 - Treat the returned hash as an identifier, not as proof of finality.
 - For high-value operations, define exactly what your system considers “sent,” “included,” “successful,” and “finalized.”
 
-## Developer Review Checklist
+## 9. Developer Review Checklist
 
 - [ ] Explain that the method expects serialized, signed transaction bytes.
 - [ ] Validate transaction type, Chain ID, signature, nonce, fee parameters, and affordability before signing.
@@ -100,7 +100,7 @@ A transaction can be included with a failed status. The sender's nonce and gas f
 - [ ] Treat a timeout as ambiguous and check the existing transaction hash before rebuilding.
 - [ ] Keep private keys, provider credentials, and raw signed bytes out of unsafe logs.
 
-## Key Takeaways
+## 10. Key Takeaways
 
 - `eth_sendRawTransaction` broadcasts signed bytes; it does not sign for the sender.
 - A returned transaction hash is not a receipt or a guarantee of successful execution.
