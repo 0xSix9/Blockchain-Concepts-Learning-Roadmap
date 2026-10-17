@@ -197,7 +197,7 @@ This sample uses illustrative hexadecimal values:
   "to": "0x2222222222222222222222222222222222222222",
   "status": "0x1",
   "gasUsed": "0xa410",
-  "cumulativeGasUsed": "0x1dcb0",
+  "cumulativeGasUsed": "0x1dc90",
   "effectiveGasPrice": "0x4e3b29200",
   "contractAddress": null,
   "logs": [],
@@ -209,7 +209,7 @@ Interpretation:
 
 - `status = 0x1`: the overall transaction execution succeeded.
 - `gasUsed = 0xa410`: hexadecimal for 42,000 gas.
-- `cumulativeGasUsed = 0x1dcb0`: hexadecimal for 121,008 gas used by transactions up through this transaction in the block.
+- `cumulativeGasUsed = 0x1dcb0`: hexadecimal for 122,000 gas used by transactions up through this transaction in the block.
 - `to` is a non-null address, so this example represents a call to an existing destination rather than a top-level contract creation.
 - An empty `logs` array means this receipt reports no persisted EVM logs for the transaction.
 
