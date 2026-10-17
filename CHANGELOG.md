@@ -112,3 +112,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 
 - Published the Function Dispatch article describing Solidity-generated selector routing, argument decoding, unmatched-selector behavior, receive versus fallback paths, internal calls, proxies, and custom routers.
 - Added a custom dispatch-flow diagram and linked the article from the Stage 02 index, canonical roadmap, and root README; updated Stage 02 publication progress to 4/16.
+
+
+## 2026-10-17
+
+- Published the External Function Calls article covering high-level and low-level calls, internal-versus-external boundaries, CALL/STATICCALL/DELEGATECALL semantics, execution context, failure and return data, gas, and reentrancy defenses.
+- Added a custom external-call diagram and linked the article from the Stage 02 index, canonical roadmap, and root README; updated Stage 02 publication progress to 5/16.
