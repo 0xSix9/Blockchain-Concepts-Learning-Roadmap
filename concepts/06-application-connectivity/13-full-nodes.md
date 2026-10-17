@@ -62,7 +62,7 @@ A self-run node is not automatically infallible. It can be misconfigured, behind
 5. Exposing RPC, debug, or Engine API endpoints without appropriate access controls.
 6. Ignoring hardware, updates, synchronization, and monitoring needs.
 
-## Developer Review Checklist
+## 8. Developer Review Checklist
 
 - [ ] Explain the difference between execution and consensus components of a post-Merge node.
 - [ ] Distinguish a full node from a validator, RPC provider, and archive node.
@@ -71,7 +71,7 @@ A self-run node is not automatically infallible. It can be misconfigured, behind
 - [ ] Identify operational tasks: upgrades, sync monitoring, storage, peers, and API protection.
 - [ ] Restrict debug, administrative, and Engine API access appropriately.
 
-## Key Takeaways
+## 9. Key Takeaways
 
 - A full node validates and serves chain data according to its mode and configuration.
 - A full node is not automatically a validator or an archive node.
