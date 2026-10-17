@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1120" viewBox="0 0 1200 1120" role="img" aria-labelledby="title desc">
+  <title id="title">Ethereum State Transition Function</title>
+  <desc id="desc">The state transition function consumes a valid pre-state, a valid transaction, block context, and fork rules. It performs validation and upfront accounting, executes EVM code or initcode, handles success or rollback, settles gas and fees, and produces a new state and receipt outputs. Transactions are applied sequentially to compute block execution state.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker>
+    <marker id="blueArrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/></marker>
+    <style>
+      .bg{fill:#f8fafc}.title{font:700 30px Arial,sans-serif;fill:#0f172a}.sub{font:16px Arial,sans-serif;fill:#475569}
+      .box{fill:#fff;stroke:#94a3b8;stroke-width:2;rx:14}.blue{fill:#eff6ff;stroke:#2563eb;stroke-width:2;rx:14}
+      .green{fill:#ecfdf5;stroke:#059669;stroke-width:2;rx:14}.red{fill:#fff1f2;stroke:#e11d48;stroke-width:2;rx:14}
+      .purple{fill:#f5f3ff;stroke:#7c3aed;stroke-width:2;rx:14}.label{font:700 18px Arial,sans-serif;fill:#0f172a}
+      .body{font:15px Arial,sans-serif;fill:#334155}.small{font:13px Arial,sans-serif;fill:#475569}
+      .line{stroke:#475569;stroke-width:2.5;fill:none;marker-end:url(#arrow)}.blueLine{stroke:#2563eb;stroke-width:2.5;fill:none;marker-end:url(#blueArrow)}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="1120" rx="22"/>
+  <text class="title" x="600" y="46" text-anchor="middle">Ethereum State Transition Function</text>
+  <text class="sub" x="600" y="76" text-anchor="middle">Deterministic execution transforms a valid pre-state into the next state</text>
+
+  <rect class="blue" x="60" y="112" width="1080" height="95" rx="14"/>
+  <text class="label" x="600" y="145" text-anchor="middle">Inputs</text>
+  <text class="body" x="600" y="174" text-anchor="middle">Pre-state S + valid transaction T + block environment + active fork rules</text>
+  <text class="small" x="600" y="194" text-anchor="middle">S' = Υ(S, T) · Transaction-level model, with block context implicit</text>
+
+  <path class="blueLine" d="M600 207 L600 238"/>
+  <rect class="box" x="240" y="246" width="720" height="86" rx="14"/>
+  <text class="label" x="600" y="279" text-anchor="middle">1 · Transaction validity and preparation</text>
+  <text class="body" x="600" y="307" text-anchor="middle">Signature, nonce, fee/balance checks and protocol-defined upfront accounting</text>
+
+  <path class="line" d="M600 332 L600 361"/>
+  <rect class="purple" x="240" y="369" width="720" height="88" rx="14"/>
+  <text class="label" x="600" y="402" text-anchor="middle">2 · Execute transaction</text>
+  <text class="body" x="600" y="430" text-anchor="middle">Message-call bytecode or contract-creation initcode runs in the EVM</text>
+
+  <path class="line" d="M600 457 L600 484 L330 484 L330 511"/>
+  <path class="line" d="M600 484 L870 484 L870 511"/>
+  <rect class="green" x="60" y="519" width="520" height="126" rx="14"/>
+  <text class="label" x="320" y="552" text-anchor="middle">Success path</text>
+  <text class="body" x="320" y="581" text-anchor="middle">Keep valid execution-state changes</text>
+  <text class="small" x="320" y="609" text-anchor="middle">Storage, transfers, logs, or creation result</text>
+  <text class="small" x="320" y="629" text-anchor="middle">subject to the containing frame/transaction result</text>
+
+  <rect class="red" x="620" y="519" width="520" height="126" rx="14"/>
+  <text class="label" x="880" y="552" text-anchor="middle">Revert / execution failure</text>
+  <text class="body" x="880" y="581" text-anchor="middle">Roll back changes in the reverted scope</text>
+  <text class="small" x="880" y="609" text-anchor="middle">Sender nonce and gas fees still follow</text>
+  <text class="small" x="880" y="629" text-anchor="middle">transaction-level protocol rules</text>
+
+  <path class="line" d="M320 645 L320 678 L600 678 L600 705"/>
+  <path class="line" d="M880 645 L880 678 L600 678"/>
+  <rect class="box" x="240" y="713" width="720" height="92" rx="14"/>
+  <text class="label" x="600" y="746" text-anchor="middle">3 · Settle gas and fees; create receipt outputs</text>
+  <text class="body" x="600" y="775" text-anchor="middle">Gas used · status · logs · receipt fields</text>
+
+  <path class="blueLine" d="M600 805 L600 835"/>
+  <rect class="green" x="240" y="843" width="720" height="87" rx="14"/>
+  <text class="label" x="600" y="876" text-anchor="middle">4 · Resulting state S'</text>
+  <text class="body" x="600" y="904" text-anchor="middle">State root commits to the resulting world state</text>
+
+  <path class="line" d="M600 930 L600 960"/>
+  <rect class="blue" x="60" y="968" width="1080" height="91" rx="14"/>
+  <text class="label" x="600" y="1002" text-anchor="middle">Apply transactions in order to process a block</text>
+  <text class="body" x="600" y="1030" text-anchor="middle">S0 → T0 → S1 → T1 → S2 → … → final execution state</text>
+  <text class="small" x="600" y="1049" text-anchor="middle">Fork-defined block-level operations and validation also apply beyond this simplified transaction model.</text>
+
+  <text class="small" x="600" y="1090" text-anchor="middle">Invalid transactions are rejected; valid transactions can still be included and then revert during execution.</text>
+</svg>

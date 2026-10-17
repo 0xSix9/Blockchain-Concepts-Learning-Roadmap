@@ -24,7 +24,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [Call Stack and Call Depth](../concepts/01-evm-execution/09-call-stack-and-call-depth.md) — article published
 - [ ] [Return Data and Revert Data](../concepts/01-evm-execution/10-return-data-and-revert-data.md) — article published
 - [ ] [Contract Creation and Initialization](../concepts/01-evm-execution/11-contract-creation-and-initialization.md) — article published
-- [ ] State Transition Function
+- [ ] [State Transition Function](../concepts/01-evm-execution/12-state-transition-function.md) — article published
 
 ## Stage 02 — ABI and Contract Interaction
 

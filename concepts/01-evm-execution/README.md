@@ -2,7 +2,7 @@
 
 **Priority:** 1  
 **Topics:** 12  
-**Article status:** 11 of 12 articles published; use this file as the learning checklist.
+**Article status:** 12 of 12 articles published; use this file as the learning checklist.
 
 ## About this stage
 
@@ -21,7 +21,7 @@ This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the
 - [ ] [Call Stack and Call Depth](./09-call-stack-and-call-depth.md) — article published
 - [ ] [Return Data and Revert Data](./10-return-data-and-revert-data.md) — article published
 - [ ] [Contract Creation and Initialization](./11-contract-creation-and-initialization.md) — article published
-- [ ] State Transition Function
+- [ ] [State Transition Function](./12-state-transition-function.md) — article published
 
 ## Suggested workflow
 

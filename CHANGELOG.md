@@ -68,3 +68,10 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 
 - Published the Contract Creation and Initialization article, covering creation transactions, initcode versus runtime bytecode, constructor context, storage and immutable initialization, failure behavior, and protocol size limits.
 - Added a custom contract-creation lifecycle diagram and linked the article from the Stage 01 index, full roadmap, and project README.
+
+
+## 2026-10-17
+
+- Published the State Transition Function article, explaining transaction-level and block-level state transitions, validation versus execution failure, rollback boundaries, gas/fee accounting, receipts, and state roots.
+- Added a custom state-transition diagram and linked the article from the Stage 01 index, full roadmap, and project README.
+- Completed publication of all 12 Stage 01 concept articles; learning checkboxes remain unchecked for the author's personal study progress.
