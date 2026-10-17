@@ -211,3 +211,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the Mappings and Dynamic Arrays in Storage article for Stage 03, covering mapping key hashing, nested mappings, dynamic-array length/data slots, packed array elements, and the special storage encoding of bytes and string.
 - Added a dedicated mapping/array storage diagram and linked the article from the Stage 03 index and canonical roadmap.
 - Updated Stage 03 publication progress to 4/13; individual learning checkboxes remain unchecked.
+
+## 2026-10-17
+
+- Published the Memory Layout article for Stage 03, covering Solidity's reserved memory ranges, free memory pointer, zero slot, temporary object layouts, memory expansion gas, and memory-safe assembly conventions.
+- Added a dedicated memory-map diagram and linked the article from the Stage 03 index and canonical roadmap.
+- Updated Stage 03 publication progress to 5/13; individual learning checkboxes remain unchecked.
