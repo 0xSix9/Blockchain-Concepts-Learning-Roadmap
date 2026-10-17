@@ -88,3 +88,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 
 - Marked Stage 01 as content-complete (12/12 concept articles published) in the stage index, canonical roadmap, root README roadmap table, and overview SVG.
 - Clarified that the stage-level checkmark tracks article publication, while individual concept checkboxes remain for personal study progress.
+
+
+## 2026-10-17
+
+- Published the Application Binary Interface (ABI) article with a custom diagram explaining the compiler ABI artifact, calldata encoding, contract dispatch, return data, logs, and revert data.
+- Linked the article from the Stage 02 index, the canonical roadmap, and the root README; updated Stage 02 publication progress to 1/16.
