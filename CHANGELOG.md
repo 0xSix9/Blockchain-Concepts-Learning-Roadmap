@@ -270,3 +270,11 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the Storage Proofs article, explaining storage-slot derivation, the account `storageRoot`, MPT proof verification, `eth_getProof`, inclusion and non-inclusion, and how storage layout relates to the proven storage word.
 - Added a dedicated storage-proof verification diagram and linked the article from the Stage 03 checklist and canonical roadmap.
 - Completed Stage 03 — Storage and Data Layout with all 13/13 concept articles published. Individual checklist boxes remain unchecked for study tracking.
+
+
+## 2026-10-17 — Stage 03 review
+
+- Clarified that Solidity constructor arguments are ABI-encoded after deployment initcode, rather than using the regular external-function selector format.
+- Fixed the inline complexity notation in the Merkle Proofs article and added a dated note linking the current MPT proof model to Ethereum's Verkle Trees roadmap.
+- Added Verkle-roadmap context to the Account Proofs and Storage Proofs articles and adjusted those two specialist topics to Priority 2.
+- Clarified that the Stage 03 checkboxes track personal study progress, while article publication status is recorded separately.
