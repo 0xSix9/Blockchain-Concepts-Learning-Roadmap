@@ -399,3 +399,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Added a dedicated SVG diagram separating RPC submission, inclusion, execution success/revert, and finality.
 - Linked the article from the Stage 05 index and canonical roadmap, and updated publication progress to 1/14 for Stage 05.
 - The transaction lifecycle example is a JSON-RPC receipt request; no Solidity code was compiled or executed as part of this article.
+
+## 2026-10-17 — Transaction Nonce
+
+- Published the Transaction Nonce article covering sender transaction sequencing, nonce gaps, `latest` versus `pending` RPC views, same-nonce replacement behavior, included reverts, and the distinction between transaction nonces and EIP-7702 authorization nonces.
+- Added a dedicated SVG diagram showing the account nonce sequence, a missing nonce blocking later transactions, and same-nonce replacement.
+- Linked the article from the Stage 05 index and canonical roadmap, and updated Stage 05 publication progress to 2/14.
