@@ -342,3 +342,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the Delegatecall-Based Proxy Architecture article covering CALL versus DELEGATECALL context, fallback dispatch, calldata and returndata forwarding, storage and event context, implementation resolution, and security boundaries.
 - Added a custom SVG diagram showing the end-to-end forwarding lifecycle and proxy execution context.
 - Linked the article from the Stage 04 index and canonical roadmap, and updated publication progress to 10/17. The study checkbox remains unchecked until the learner reviews the topic.
+
+## 2026-10-17 — Contract Upgradeability
+
+- Published the Contract Upgradeability article covering upgradeability trade-offs, Transparent/UUPS/Beacon/Diamond/clone patterns, upgrade lifecycle, storage compatibility, initialization, governance, validation, rollback limitations, and security considerations.
+- Added a custom SVG diagram showing the proposed-change review and validation path, authorization, execution, post-upgrade verification, and monitoring.
+- Linked the article from the Stage 04 index and canonical roadmap, and updated publication progress to 11/17. The study checkbox remains unchecked until the learner reviews the topic.
