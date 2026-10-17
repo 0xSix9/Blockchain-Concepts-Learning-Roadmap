@@ -286,9 +286,9 @@ An application interested in all purchases of product ID 42 from this contract c
 
 ## Review Checklist
 
-- [x] Explains standard topics layout and the event-signature hash.
-- [x] Distinguishes direct topic encoding for value types from hashed encoding for dynamic/complex types.
-- [x] Describes topic-position matching, wildcards, OR alternatives, and AND across positions.
-- [x] Includes JSON-RPC filter examples and a Solidity event example.
-- [x] Covers anonymous events, encoding pitfalls, provider limits, and security considerations.
-- [x] Links official Solidity ABI documentation and Ethereum JSON-RPC documentation.
+- [ ] Explain the standard event topic layout and the event-signature hash.
+- [ ] Distinguish direct topic encoding for value types from hashed encoding for dynamic or complex types.
+- [ ] Explain topic-position matching, wildcards, OR alternatives, and AND across positions.
+- [ ] Build or interpret an `eth_getLogs` filter for a Solidity event.
+- [ ] Explain anonymous events, indexed-value encoding pitfalls, provider limits, and security considerations.
+- [ ] Consult the official Solidity ABI and Ethereum JSON-RPC documentation for exact rules.
