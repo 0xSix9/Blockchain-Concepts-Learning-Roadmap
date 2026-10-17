@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850" role="img" aria-labelledby="title desc">
+  <title id="title">Initializers in Proxy-Based Contracts</title>
+  <desc id="desc">The implementation is deployed and locked against direct initialization. A proxy is deployed with encoded initialization data; the initializer runs through delegatecall and writes initial state into the proxy. Later upgrades can use a protected versioned reinitializer.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}
+      .blue{fill:#eff6ff;stroke:#60a5fa;stroke-width:2}.teal{fill:#ecfeff;stroke:#22d3ee;stroke-width:2}
+      .gold{fill:#fffbeb;stroke:#f59e0b;stroke-width:2}.purple{fill:#f5f3ff;stroke:#a78bfa;stroke-width:2}
+      .red{fill:#fef2f2;stroke:#f87171;stroke-width:2}
+      .ink{fill:#0f172a;font-family:Inter,Arial,sans-serif}.muted{fill:#475569;font-family:Inter,Arial,sans-serif}
+      .title{font-size:30px;font-weight:700}.head{font-size:19px;font-weight:700}.body{font-size:15px}.small{font-size:13px}
+      .mono{fill:#0f172a;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;font-weight:600}
+      .arrow{stroke:#2563eb;stroke-width:2.8;fill:none}.ok{stroke:#0f766e;stroke-width:2.7;fill:none}.bad{stroke:#dc2626;stroke-width:2.6;fill:none}
+    </style>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2563eb"/></marker>
+    <marker id="ok" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#0f766e"/></marker>
+    <marker id="bad" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#dc2626"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="850" rx="24"/>
+  <text class="ink title" x="42" y="54">Initializers — Setup in the Correct Storage Context</text>
+  <text class="muted body" x="44" y="84">The implementation is locked; the proxy receives its own one-time initialization.</text>
+
+  <rect class="panel" x="35" y="112" width="1130" height="380" rx="20"/>
+  <rect class="purple" x="65" y="153" width="300" height="112" rx="13"/>
+  <text class="ink head" x="215" y="187" text-anchor="middle">1. Deploy implementation</text>
+  <text class="muted body" x="215" y="213" text-anchor="middle">logic contract</text>
+  <text class="mono" x="215" y="239" text-anchor="middle">_disableInitializers()</text>
+
+  <rect class="blue" x="450" y="153" width="300" height="112" rx="13"/>
+  <text class="ink head" x="600" y="187" text-anchor="middle">2. Deploy proxy</text>
+  <text class="muted body" x="600" y="213" text-anchor="middle">implementation + init calldata</text>
+  <text class="muted small" x="600" y="239" text-anchor="middle">execute in proxy context</text>
+
+  <rect class="teal" x="835" y="153" width="295" height="112" rx="13"/>
+  <text class="ink head" x="982" y="187" text-anchor="middle">3. Initialize proxy state</text>
+  <text class="mono" x="982" y="216" text-anchor="middle">initializer</text>
+  <text class="muted small" x="982" y="239" text-anchor="middle">owner, roles, config, assets</text>
+
+  <path class="arrow" d="M365 209 L442 209" marker-end="url(#arrow)"/>
+  <path class="ok" d="M750 209 L827 209" marker-end="url(#ok)"/>
+
+  <rect class="gold" x="65" y="306" width="1065" height="72" rx="12"/>
+  <text class="ink head" x="597" y="336" text-anchor="middle">Implementation storage ≠ proxy storage</text>
+  <text class="muted body" x="597" y="359" text-anchor="middle">The constructor locks the implementation instance; the initializer writes to the proxy when called through it.</text>
+
+  <rect class="red" x="65" y="397" width="510" height="66" rx="11"/>
+  <text class="ink head" x="320" y="424" text-anchor="middle">Risk: uninitialized proxy</text>
+  <text class="muted small" x="320" y="447" text-anchor="middle">An attacker may claim ownership or set config first.</text>
+
+  <rect class="teal" x="615" y="397" width="515" height="66" rx="11"/>
+  <text class="ink head" x="872" y="424" text-anchor="middle">Safer: atomic deployment + initialization</text>
+  <text class="muted small" x="872" y="447" text-anchor="middle">Supply encoded initializer data with proxy deployment.</text>
+
+  <rect class="panel" x="35" y="518" width="1130" height="290" rx="20"/>
+  <text class="ink head" x="65" y="557">Initialization over the contract lifecycle</text>
+
+  <rect class="purple" x="65" y="588" width="300" height="110" rx="12"/>
+  <text class="ink head" x="215" y="620" text-anchor="middle">First setup</text>
+  <text class="mono" x="215" y="647" text-anchor="middle">initializer</text>
+  <text class="muted small" x="215" y="673" text-anchor="middle">one-time version 1 setup</text>
+
+  <rect class="blue" x="450" y="588" width="300" height="110" rx="12"/>
+  <text class="ink head" x="600" y="620" text-anchor="middle">Internal helpers</text>
+  <text class="mono" x="600" y="647" text-anchor="middle">onlyInitializing</text>
+  <text class="muted small" x="600" y="673" text-anchor="middle">parent and module setup</text>
+
+  <rect class="gold" x="835" y="588" width="295" height="110" rx="12"/>
+  <text class="ink head" x="982" y="620" text-anchor="middle">Later upgrade</text>
+  <text class="mono" x="982" y="647" text-anchor="middle">reinitializer(2)</text>
+  <text class="muted small" x="982" y="673" text-anchor="middle">protected new-state migration</text>
+
+  <path class="arrow" d="M365 643 L442 643" marker-end="url(#arrow)"/>
+  <path class="arrow" d="M750 643 L827 643" marker-end="url(#arrow)"/>
+
+  <text class="muted body" x="65" y="746">Versioning prevents accidental replay; access control and correct sequencing are still required.</text>
+  <text class="muted small" x="65" y="775">A reinitializer does not replace storage-layout validation or migration tests.</text>
+</svg>
