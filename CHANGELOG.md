@@ -172,3 +172,10 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 
 - Published the Error Selectors article, covering canonical error signatures, Keccak-256 derivation, built-in Error(string)/Panic(uint256) selectors, reserved values, selector collisions, and decoding/security considerations.
 - Added a custom error-selector flow diagram, linked Error Selectors throughout Stage 02 navigation, and updated publication progress to 15/16.
+
+
+## 2026-10-17
+
+- Published the Precompiled Contracts article, explaining how special addresses invoke client-implemented operations, the common post-Prague precompile set, fork-specific availability, low-level call handling, gas behavior, and security checks.
+- Added a custom Precompiled Contracts overview diagram and linked the article from the Stage 02 index, canonical roadmap, and project README.
+- Completed Stage 02 publication: all 16 of 16 concept articles are now published; the personal study checkboxes remain unchecked.
