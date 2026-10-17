@@ -73,7 +73,7 @@ Protect WebSocket endpoints and API keys. A publicly exposed endpoint can be abu
 6. Opening subscriptions over a transport that does not support them.
 7. Failing to unsubscribe or enforce connection limits.
 
-## Developer Review Checklist
+## 8. Developer Review Checklist
 
 - [ ] Create subscriptions over a supported persistent transport and store the returned subscription ID.
 - [ ] Explain the differences between `newHeads`, `logs`, and pending-transaction notifications.
@@ -82,7 +82,7 @@ Protect WebSocket endpoints and API keys. A publicly exposed endpoint can be abu
 - [ ] Handle removed logs, reorgs, and a suitable confirmation/finality policy.
 - [ ] Apply connection limits, timeouts, backoff, and endpoint credential protection.
 
-## Key Takeaways
+## 9. Key Takeaways
 
 - WebSocket subscriptions provide live notifications, not a durable exactly-once queue.
 - Provider mempool visibility and subscription behavior can differ.
