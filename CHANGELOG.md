@@ -348,3 +348,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the Contract Upgradeability article covering upgradeability trade-offs, Transparent/UUPS/Beacon/Diamond/clone patterns, upgrade lifecycle, storage compatibility, initialization, governance, validation, rollback limitations, and security considerations.
 - Added a custom SVG diagram showing the proposed-change review and validation path, authorization, execution, post-upgrade verification, and monitoring.
 - Linked the article from the Stage 04 index and canonical roadmap, and updated publication progress to 11/17. The study checkbox remains unchecked until the learner reviews the topic.
+
+## 2026-10-17 — Storage Compatibility
+
+- Published the Storage Compatibility article covering Solidity storage slot/offset rules, declaration and inheritance changes, structs and mappings, storage gaps, ERC-7201 namespaced storage, ERC-1967 metadata, and upgrade validation workflows.
+- Added a custom SVG contrasting an unsafe inserted variable with a compatible append-only example and illustrating the storage-validation workflow.
+- Linked the article from the Stage 04 index and canonical roadmap, and updated publication progress to 12/17. The study checkbox remains unchecked until the learner reviews the topic.
