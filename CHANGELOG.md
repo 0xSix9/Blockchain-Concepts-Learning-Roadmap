@@ -42,3 +42,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 
 - Published the CREATE opcode article, covering initcode, address derivation, deployment execution, runtime-code deposit, failure behavior, and gas/size constraints.
 - Added a custom CREATE deployment-flow diagram and linked the article from the Stage 01 index, full roadmap, and project README.
+
+
+## 2026-10-17
+
+- Published the CREATE2 opcode article, covering EIP-1014 address derivation, initcode hashing, deterministic deployment, gas costs, failure behavior, and security considerations.
+- Added a custom CREATE2 deployment-flow diagram and linked the article from the Stage 01 index, full roadmap, and project README.

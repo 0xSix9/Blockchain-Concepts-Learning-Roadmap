@@ -20,12 +20,12 @@ The roadmap starts with EVM execution and contract interaction, then moves throu
 
 This repository is designed as both a **learning checklist** and a **growing technical reference**. Every stage has its own index, and the complete roadmap keeps all concepts in one place.
 
-> **Current state:** The roadmap, navigation, templates, project guidelines, and the first seven Stage 01 concept articles are published. The remaining concept articles will be researched and added one by one by the author.
+> **Current state:** The roadmap, navigation, templates, project guidelines, and the first eight Stage 01 concept articles are published. The remaining concept articles will be researched and added one by one by the author.
 
 ## Start here
 
 - **[Full roadmap — all 157 concepts](roadmap/roadmap.md)** — browse the complete checklist.
-- **[EVM Opcodes](concepts/01-evm-execution/01-evm-opcodes.md)**, **[Stack, Memory, and Calldata](concepts/01-evm-execution/02-stack-memory-and-calldata.md)**, **[Execution Context](concepts/01-evm-execution/03-execution-context.md)**, **[CALL](concepts/01-evm-execution/04-call.md)**, **[DELEGATECALL](concepts/01-evm-execution/05-delegatecall.md)**, **[STATICCALL](concepts/01-evm-execution/06-staticcall.md)**, and **[CREATE](concepts/01-evm-execution/07-create.md)** — the first seven published Stage 01 articles.
+- **[EVM Opcodes](concepts/01-evm-execution/01-evm-opcodes.md)**, **[Stack, Memory, and Calldata](concepts/01-evm-execution/02-stack-memory-and-calldata.md)**, **[Execution Context](concepts/01-evm-execution/03-execution-context.md)**, **[CALL](concepts/01-evm-execution/04-call.md)**, **[DELEGATECALL](concepts/01-evm-execution/05-delegatecall.md)**, **[STATICCALL](concepts/01-evm-execution/06-staticcall.md)**, **[CREATE](concepts/01-evm-execution/07-create.md)**, and **[CREATE2](concepts/01-evm-execution/08-create2.md)** — the first eight published Stage 01 articles.
 - **[Learning priorities](roadmap/learning-priorities.md)** — understand the four-stage groups and suggested order.
 - **[Concept article template](templates/concept-template.md)** — a starting structure for writing each article later.
 - **[Sources and research policy](references/sources.md)** — recommended primary sources and documentation rules.

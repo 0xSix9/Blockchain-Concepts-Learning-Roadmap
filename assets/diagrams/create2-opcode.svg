@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1120" viewBox="0 0 1200 1120" role="img" aria-labelledby="title desc">
+  <title id="title">EVM CREATE2 deterministic deployment flow</title>
+  <desc id="desc">CREATE2 combines the executing deployer address, a 32-byte salt, and the hash of initcode to predict an address; then it checks collision rules and executes initcode to install runtime bytecode, or returns zero on low-level creation failure.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker>
+    <marker id="blueArrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/></marker>
+    <style>
+      .bg{fill:#f8fafc}.title{font:700 30px Arial,sans-serif;fill:#0f172a}.sub{font:16px Arial,sans-serif;fill:#475569}
+      .box{fill:#fff;stroke:#94a3b8;stroke-width:2;rx:16}.blue{fill:#eff6ff;stroke:#2563eb;stroke-width:2;rx:16}
+      .green{fill:#ecfdf5;stroke:#059669;stroke-width:2;rx:16}.red{fill:#fff1f2;stroke:#e11d48;stroke-width:2;rx:16}
+      .purple{fill:#f5f3ff;stroke:#7c3aed;stroke-width:2;rx:16}.label{font:700 19px Arial,sans-serif;fill:#0f172a}
+      .body{font:15px Arial,sans-serif;fill:#334155}.small{font:13px Arial,sans-serif;fill:#475569}
+      .line{stroke:#475569;stroke-width:2.5;fill:none;marker-end:url(#arrow)}.blueline{stroke:#2563eb;stroke-width:2.5;fill:none;marker-end:url(#blueArrow)}
+      .num{font:700 16px Arial,sans-serif;fill:#fff}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="1120" rx="22"/>
+  <text class="title" x="600" y="48" text-anchor="middle">How CREATE2 predicts and deploys a contract</text>
+  <text class="sub" x="600" y="78" text-anchor="middle">Deterministic address = executing deployer + salt + hash of exact initcode</text>
+
+  <rect class="blue" x="65" y="112" width="320" height="128" rx="16"/>
+  <circle cx="97" cy="142" r="18" fill="#2563eb"/><text class="num" x="97" y="148" text-anchor="middle">1</text>
+  <text class="label" x="128" y="148">Deployer address</text>
+  <text class="body" x="90" y="181">Account executing CREATE2</text>
+  <text class="small" x="90" y="207">Factory address, not automatically</text>
+  <text class="small" x="90" y="225">the external caller's address</text>
+
+  <rect class="purple" x="440" y="112" width="320" height="128" rx="16"/>
+  <circle cx="472" cy="142" r="18" fill="#7c3aed"/><text class="num" x="472" y="148" text-anchor="middle">2</text>
+  <text class="label" x="503" y="148">32-byte salt</text>
+  <text class="body" x="465" y="181">Chosen deployment identifier</text>
+  <text class="small" x="465" y="207">Public value; not authorization</text>
+  <text class="small" x="465" y="225">Domain-separate app/user inputs</text>
+
+  <rect class="blue" x="815" y="112" width="320" height="128" rx="16"/>
+  <circle cx="847" cy="142" r="18" fill="#2563eb"/><text class="num" x="847" y="148" text-anchor="middle">3</text>
+  <text class="label" x="878" y="148">Exact initcode</text>
+  <text class="body" x="840" y="181">Creation bytecode + constructor args</text>
+  <text class="small" x="840" y="207">Hash bytes exactly as passed</text>
+  <text class="small" x="840" y="225">Not just the runtime-code hash</text>
+
+  <path class="line" d="M225 240 L225 276 L480 276 L480 302"/>
+  <path class="line" d="M600 240 L600 302"/>
+  <path class="line" d="M975 240 L975 276 L720 276 L720 302"/>
+  <rect class="purple" x="300" y="310" width="600" height="126" rx="16"/>
+  <text class="label" x="600" y="342" text-anchor="middle">4 · EIP-1014 address formula</text>
+  <text class="body" x="600" y="373" text-anchor="middle">last20Bytes(keccak256(0xff ++ deployer ++ salt ++ keccak256(initcode)))</text>
+  <text class="small" x="600" y="406" text-anchor="middle">Fixed 85-byte outer preimage · creator nonce is not used</text>
+
+  <path class="blueline" d="M600 436 L600 474"/>
+  <rect class="box" x="300" y="482" width="600" height="108" rx="16"/>
+  <circle cx="335" cy="512" r="18" fill="#475569"/><text class="num" x="335" y="518" text-anchor="middle">5</text>
+  <text class="label" x="368" y="518">Check deployability</text>
+  <text class="body" x="335" y="550">Destination must not have nonzero nonce or non-empty code</text>
+  <text class="small" x="335" y="573">Other causes of failure: balance, gas, initcode, code limits</text>
+
+  <path class="line" d="M600 590 L600 628"/>
+  <rect class="green" x="300" y="636" width="600" height="116" rx="16"/>
+  <circle cx="335" cy="666" r="18" fill="#059669"/><text class="num" x="335" y="672" text-anchor="middle">6</text>
+  <text class="label" x="368" y="672">Execute initcode at predicted address</text>
+  <text class="body" x="335" y="705">Constructor runs and returns runtime bytecode</text>
+  <text class="small" x="335" y="730">Hash cost + initcode execution + code-deposit cost apply</text>
+
+  <path class="line" d="M600 752 L600 790"/>
+  <rect class="green" x="300" y="798" width="600" height="106" rx="16"/>
+  <text class="label" x="600" y="831" text-anchor="middle">Success</text>
+  <text class="body" x="600" y="862" text-anchor="middle">Runtime code installed · CREATE2 returns the new address</text>
+  <text class="small" x="600" y="885" text-anchor="middle">The address can be known before deployment, if every input is known</text>
+
+  <path class="line" d="M300 535 L170 535 L170 824 L290 824"/>
+  <rect class="red" x="55" y="920" width="1090" height="116" rx="16"/>
+  <circle cx="90" cy="950" r="18" fill="#e11d48"/><text class="num" x="90" y="956" text-anchor="middle">!</text>
+  <text class="label" x="123" y="956">Failure path</text>
+  <text class="body" x="90" y="989">Collision, insufficient balance, out-of-gas, initcode revert, or invalid/oversized returned code</text>
+  <text class="small" x="90" y="1015">Low-level CREATE2 returns zero; the caller must handle the failure</text>
+
+  <text class="small" x="600" y="1080" text-anchor="middle">Predictable does not mean deployed, authorized, or guaranteed to succeed.</text>
+</svg>
