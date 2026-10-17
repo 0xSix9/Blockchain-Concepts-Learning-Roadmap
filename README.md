@@ -20,7 +20,7 @@ The roadmap starts with EVM execution and contract interaction, then moves throu
 
 This repository is designed as both a **learning checklist** and a **growing technical reference**. Every stage has its own index, and the complete roadmap keeps all concepts in one place.
 
-> **Current state:** The roadmap, navigation, templates, project guidelines, and all 12 Stage 01 concept articles are published. The remaining concept articles will be researched and added one by one by the author.
+> **Publication progress:** ✅ **Stage 01 — EVM Execution is content-complete:** all 12 concept articles are published and reviewed. Stages 02–10 currently have learning checklists and will be documented next.
 
 ## Start here
 
@@ -34,18 +34,18 @@ This repository is designed as both a **learning checklist** and a **growing tec
 
 ## Roadmap at a glance
 
-| Stage | Focus | Concepts | Priority |
-|---|---|---:|:---:|
-| [Stage 01 — EVM Execution](concepts/01-evm-execution/README.md) | 12 | Priority 1 |
-| [Stage 02 — ABI and Contract Interaction](concepts/02-abi-contract-interaction/README.md) | 16 | Priority 1 |
-| [Stage 03 — Storage and Data Layout](concepts/03-storage-data-layout/README.md) | 13 | Priority 1 |
-| [Stage 04 — Smart Contract Architecture](concepts/04-smart-contract-architecture/README.md) | 17 | Priority 1 |
-| [Stage 05 — Advanced Transactions and Gas](concepts/05-advanced-transactions-gas/README.md) | 14 | Priority 2 |
-| [Stage 06 — Application Connectivity](concepts/06-application-connectivity/README.md) | 17 | Priority 2 |
-| [Stage 07 — Advanced Layer 2 and Cross-Chain](concepts/07-layer2-cross-chain/README.md) | 19 | Priority 3 |
-| [Stage 08 — Mempool and MEV](concepts/08-mempool-mev/README.md) | 16 | Priority 3 |
-| [Stage 09 — Advanced Ethereum Consensus](concepts/09-ethereum-consensus/README.md) | 18 | Priority 4 |
-| [Stage 10 — Advanced Cryptography and Protocol Developments](concepts/10-advanced-cryptography-protocol/README.md) | 15 | Priority 4 |
+| Stage | Focus | Concepts | Priority | Article publication |
+|---|---|---:|:---:|---|
+| [✅ Stage 01 — EVM Execution](concepts/01-evm-execution/README.md) | EVM execution fundamentals | 12 | P1 | ✅ Complete — 12/12 published |
+| [Stage 02 — ABI and Contract Interaction](concepts/02-abi-contract-interaction/README.md) | ABI, selectors, calls, events, errors | 16 | P1 | Checklist only |
+| [Stage 03 — Storage and Data Layout](concepts/03-storage-data-layout/README.md) | Storage slots, packing, mappings, proofs | 13 | P1 | Checklist only |
+| [Stage 04 — Smart Contract Architecture](concepts/04-smart-contract-architecture/README.md) | Composition, proxies, upgradeability | 17 | P1 | Checklist only |
+| [Stage 05 — Advanced Transactions and Gas](concepts/05-advanced-transactions-gas/README.md) | Transaction mechanics and gas accounting | 14 | P2 | Checklist only |
+| [Stage 06 — Application Connectivity](concepts/06-application-connectivity/README.md) | RPC, clients, APIs, event subscriptions | 17 | P2 | Checklist only |
+| [Stage 07 — Advanced Layer 2 and Cross-Chain](concepts/07-layer2-cross-chain/README.md) | Rollups, bridges, data availability | 19 | P3 | Checklist only |
+| [Stage 08 — Mempool and MEV](concepts/08-mempool-mev/README.md) | Transaction ordering and MEV | 16 | P3 | Checklist only |
+| [Stage 09 — Advanced Ethereum Consensus](concepts/09-ethereum-consensus/README.md) | Validators, fork choice, finality | 18 | P4 | Checklist only |
+| [Stage 10 — Advanced Cryptography and Protocol Developments](concepts/10-advanced-cryptography-protocol/README.md) | Cryptography and future protocol designs | 15 | P4 | Checklist only |
 
 **157 roadmap entries across 10 stages.** This count represents topics in the learning plan, not completed articles.
 
@@ -70,6 +70,8 @@ Priority describes the suggested learning order, not the overall importance of a
 6. Mark a topic complete only after the article has been checked.
 
 ### Status convention
+
+A ✅ beside a **stage** indicates article-publication progress. The unchecked boxes beside individual concepts are separate study checklists and should be marked only after reviewing those concepts.
 
 - ⬜ **Not started** — checklist only; no article yet.
 - 🟡 **In progress** — research or drafting is underway.
