@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">JSON-RPC between an application and an Ethereum node</title>
+  <desc id="desc">An application creates a JSON-RPC request, sends it through HTTP, WebSocket, or IPC to an Ethereum execution client. The node runs an Ethereum RPC method and returns a response containing either a result or an error.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#53627a"/></marker>
+    <style>
+      text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;fill:#172033}
+      .title{font-size:30px;font-weight:750}.sub{font-size:16px;fill:#526078}
+      .head{font-size:20px;font-weight:700}.body{font-size:15px}.small{font-size:13px;fill:#526078}
+      .box{stroke-width:2;rx:18}.line{stroke:#53627a;stroke-width:2.5;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="720" fill="#f7f9fc"/>
+  <text x="60" y="62" class="title">JSON-RPC: Request → Method → Response</text>
+  <text x="60" y="92" class="sub">A common message envelope for application-to-node communication</text>
+
+  <rect x="55" y="155" width="255" height="190" class="box" fill="#eaf2ff" stroke="#7aa5ec"/>
+  <text x="82" y="194" class="head">1. Application</text>
+  <text x="82" y="228" class="body">dApp · wallet · backend</text>
+  <text x="82" y="265" class="body">Build JSON request</text>
+  <text x="82" y="291" class="body">method + params + id</text>
+  <text x="82" y="320" class="small">No private key in RPC body</text>
+
+  <path d="M310 235 H385" class="line"/>
+  <rect x="390" y="155" width="265" height="190" class="box" fill="#fff3dc" stroke="#e0ac49"/>
+  <text x="415" y="194" class="head">2. Transport</text>
+  <text x="415" y="229" class="body">HTTP · WebSocket · IPC</text>
+  <text x="415" y="267" class="body">Carries the JSON message</text>
+  <text x="415" y="294" class="small">Connection behavior differs</text>
+  <text x="415" y="318" class="small">by transport and client</text>
+
+  <path d="M655 235 H730" class="line"/>
+  <rect x="735" y="155" width="405" height="190" class="box" fill="#e3f7ee" stroke="#5bbd92"/>
+  <text x="763" y="194" class="head">3. Ethereum execution client</text>
+  <text x="763" y="229" class="body">Parse and validate request</text>
+  <text x="763" y="256" class="body">Run the requested RPC method</text>
+  <text x="763" y="283" class="body">Apply client / network rules</text>
+  <text x="763" y="318" class="small">Execution API defines method semantics</text>
+
+  <path d="M935 345 V410" class="line"/>
+  <rect x="735" y="420" width="405" height="195" class="box" fill="#f1eafe" stroke="#a88be8"/>
+  <text x="763" y="459" class="head">4. JSON-RPC response</text>
+  <rect x="765" y="482" width="155" height="83" rx="12" fill="#e3f7ee" stroke="#5bbd92"/>
+  <text x="785" y="512" class="body" font-weight="700">result</text>
+  <text x="785" y="539" class="small">Valid response</text>
+  <rect x="945" y="482" width="165" height="83" rx="12" fill="#fff0f0" stroke="#e49c9c"/>
+  <text x="965" y="512" class="body" font-weight="700">error</text>
+  <text x="965" y="539" class="small">code + message</text>
+  <text x="763" y="590" class="small">Response id matches the request id</text>
+
+  <path d="M735 518 H680 V445 H180 V345" class="line"/>
+  <text x="290" y="431" class="small">Result or error returned to caller</text>
+
+  <rect x="55" y="420" width="540" height="195" class="box" fill="#fff" stroke="#d5dce8"/>
+  <text x="82" y="459" class="head">Example request</text>
+  <text x="82" y="494" class="body" font-family="monospace">{"jsonrpc":"2.0", "method":"eth_chainId",</text>
+  <text x="82" y="521" class="body" font-family="monospace"> "params":[], "id":1}</text>
+  <line x1="82" y1="540" x2="565" y2="540" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="82" y="568" class="body">JSON-RPC = message format</text>
+  <text x="82" y="592" class="body">Execution API = Ethereum method meanings</text>
+</svg>
