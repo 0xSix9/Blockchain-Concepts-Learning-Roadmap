@@ -317,9 +317,9 @@ Before publishing a payable function, ask:
 
 ## Review Checklist
 
-- [x] Explains the purpose of payable functions and the role of <code>msg.value</code>.
-- [x] Includes an example with explicit payment validation and accounting.
-- [x] Distinguishes named payable functions from receive and fallback dispatch.
-- [x] Explains contract balance versus recorded deposits.
-- [x] Covers outgoing ETH, checked call results, and reentrancy-aware state ordering.
-- [x] Links official Solidity documentation and related Stage 02 concepts.
+- [ ] Explain the purpose of payable functions and the role of `msg.value`.
+- [ ] Validate payment amounts and explain the difference between exact and minimum payment policies.
+- [ ] Distinguish a contract's Ether balance from its recorded deposit accounting.
+- [ ] Distinguish named payable functions from receive and fallback dispatch.
+- [ ] Explain outgoing Ether-call failure handling and reentrancy-aware state ordering.
+- [ ] Review the official Solidity documentation and related Stage 02 concepts.
