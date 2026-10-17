@@ -2,11 +2,11 @@
 
 **Priority:** 1  
 **Topics:** 13  
-**Article status:** In progress — 6/13 concept articles published.
+**Article status:** In progress — 7/13 concept articles published.
 
 ## About this stage
 
-This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The Storage Layout, Storage Slots, Storage Packing, Mappings and Dynamic Arrays in Storage, Memory Layout, and Calldata Layout articles are published; the remaining concept articles will be added one by one as they are researched.
+This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The Storage Layout, Storage Slots, Storage Packing, Mappings and Dynamic Arrays in Storage, Memory Layout, Calldata Layout, and Transient Storage (EIP-1153) articles are published; the remaining concept articles will be added one by one as they are researched.
 
 ## Concept checklist
 
@@ -16,7 +16,7 @@ This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the
 - [ ] [Mappings and Dynamic Arrays in Storage](04-mappings-and-dynamic-arrays-in-storage.md) — article published
 - [ ] [Memory Layout](05-memory-layout.md) — article published
 - [ ] [Calldata Layout](06-calldata-layout.md) — article published
-- [ ] Transient Storage (EIP-1153)
+- [ ] [Transient Storage (EIP-1153)](07-transient-storage-eip-1153.md) — article published
 - [ ] Storage Context
 - [ ] Storage Collisions
 - [ ] Recursive Length Prefix (RLP) Encoding
