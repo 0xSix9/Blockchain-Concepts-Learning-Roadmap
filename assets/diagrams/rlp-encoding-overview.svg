@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Recursive Length Prefix Encoding Overview</title>
+  <desc id="desc">The RLP first-byte prefix selects among one byte, short and long byte strings, and short and long lists. Examples show the encoding of dog and the list cat, dog.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}
+      .blue{fill:#eff6ff;stroke:#60a5fa;stroke-width:2}.teal{fill:#ecfeff;stroke:#22d3ee;stroke-width:2}
+      .gold{fill:#fffbeb;stroke:#fbbf24;stroke-width:2}.purple{fill:#f5f3ff;stroke:#a78bfa;stroke-width:2}
+      .ink{fill:#0f172a;font-family:Inter,Arial,sans-serif}.muted{fill:#475569;font-family:Inter,Arial,sans-serif}
+      .title{font-size:30px;font-weight:700}.head{font-size:18px;font-weight:700}.body{font-size:15px}.small{font-size:13px}
+      .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:16px;font-weight:600}
+      .line{stroke:#94a3b8;stroke-width:2;fill:none}
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#94a3b8"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="760" rx="24"/>
+  <text class="ink title" x="48" y="58">RLP Encoding: Prefix → Length → Payload</text>
+  <text class="muted body" x="50" y="88">The first byte determines how a byte string or recursively nested list is parsed.</text>
+
+  <rect class="panel" x="42" y="116" width="1116" height="352" rx="18"/>
+  <text class="ink head" x="66" y="151">The five prefix cases</text>
+
+  <rect class="blue" x="64" y="174" width="340" height="82" rx="12"/>
+  <text class="ink head" x="82" y="201">1. Single byte</text>
+  <text class="muted body" x="82" y="224">0x00–0x7f → the byte itself</text>
+  <text class="ink mono" x="82" y="245">7f → 7f</text>
+
+  <rect class="teal" x="430" y="174" width="340" height="82" rx="12"/>
+  <text class="ink head" x="448" y="201">2. Short byte string</text>
+  <text class="muted body" x="448" y="224">0–55 bytes; prefix = 0x80 + length</text>
+  <text class="ink mono" x="448" y="245">"dog" → 83 64 6f 67</text>
+
+  <rect class="gold" x="796" y="174" width="338" height="82" rx="12"/>
+  <text class="ink head" x="814" y="201">3. Long byte string</text>
+  <text class="muted body" x="814" y="224">More than 55 bytes</text>
+  <text class="ink mono" x="814" y="245">b7 + len-of-len | length | data</text>
+
+  <rect class="purple" x="64" y="278" width="523" height="82" rx="12"/>
+  <text class="ink head" x="82" y="305">4. Short list</text>
+  <text class="muted body" x="82" y="328">Encoded children total 0–55 bytes</text>
+  <text class="ink mono" x="82" y="349">prefix = 0xc0 + payload length</text>
+
+  <rect class="blue" x="613" y="278" width="521" height="82" rx="12"/>
+  <text class="ink head" x="631" y="305">5. Long list</text>
+  <text class="muted body" x="631" y="328">Encoded children total more than 55 bytes</text>
+  <text class="ink mono" x="631" y="349">f7 + len-of-len | length | children</text>
+
+  <text class="muted small" x="66" y="399">For long forms, the payload length is encoded in minimal big-endian bytes; the prefix tells how many length bytes follow.</text>
+  <text class="muted small" x="66" y="423">Exception: a single byte below 0x80 is encoded directly, with no string prefix.</text>
+  <text class="muted small" x="66" y="447">RLP preserves byte/list structure; higher-level protocol rules define semantic types such as integers or addresses.</text>
+
+  <rect class="panel" x="42" y="492" width="1116" height="222" rx="18"/>
+  <text class="ink head" x="66" y="529">Worked example: ["cat", "dog"]</text>
+  <rect class="teal" x="66" y="553" width="482" height="58" rx="10"/>
+  <text class="ink mono" x="86" y="578">"cat" → 83 63 61 74</text>
+  <text class="muted small" x="86" y="598">prefix 83 + three payload bytes</text>
+  <rect class="blue" x="570" y="553" width="482" height="58" rx="10"/>
+  <text class="ink mono" x="590" y="578">"dog" → 83 64 6f 67</text>
+  <text class="muted small" x="590" y="598">prefix 83 + three payload bytes</text>
+  <path class="line" d="M306 612 L306 630 L558 630" marker-end="url(#arrow)"/>
+  <path class="line" d="M810 612 L810 630 L642 630" marker-end="url(#arrow)"/>
+  <text class="muted body" x="66" y="663">8 bytes of encoded children → list prefix 0xc0 + 8 = 0xc8</text>
+  <text class="ink mono" x="66" y="691">c8 83 63 61 74 83 64 6f 67</text>
+</svg>
