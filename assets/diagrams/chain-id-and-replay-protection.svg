@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="830" viewBox="0 0 1200 830" role="img" aria-labelledby="title desc">
+  <title id="title">Chain ID and Replay Protection</title>
+  <desc id="desc">A signed transaction includes Chain ID in its signing context. A chain with a different ID rejects it, while same-chain duplicate use is handled by the sender nonce. The diagram distinguishes transaction nonce from application-level signed-message replay protection.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.title{font:700 29px Arial,sans-serif;fill:#0f172a}.subtitle{font:16px Arial,sans-serif;fill:#475569}.label{font:700 18px Arial,sans-serif;fill:#0f172a}.body{font:15px Arial,sans-serif;fill:#334155}.small{font:13px Arial,sans-serif;fill:#475569}.mono{font:700 15px ui-monospace,Menlo,monospace;fill:#0f172a}.blue{fill:#dbeafe;stroke:#60a5fa;stroke-width:2}.teal{fill:#ccfbf1;stroke:#2dd4bf;stroke-width:2}.purple{fill:#ede9fe;stroke:#a78bfa;stroke-width:2}.amber{fill:#fef3c7;stroke:#f59e0b;stroke-width:2}.red{fill:#fee2e2;stroke:#f87171;stroke-width:2}.line{stroke:#64748b;stroke-width:2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="830" rx="22"/>
+  <text class="title" x="600" y="46" text-anchor="middle">Chain ID &amp; Replay Protection</text>
+  <text class="subtitle" x="600" y="75" text-anchor="middle">Bind signatures to the intended chain — then handle reuse separately</text>
+
+  <rect class="panel" x="45" y="104" width="1110" height="128" rx="16"/>
+  <text class="label" x="72" y="137">Signing a transaction</text>
+  <rect class="purple" x="72" y="155" width="260" height="52" rx="10"/>
+  <text class="mono" x="202" y="177" text-anchor="middle">chainId = 1</text>
+  <text class="small" x="202" y="195" text-anchor="middle">included in signed data</text>
+  <path class="line" d="M332 181 L390 181"/>
+  <rect class="blue" x="400" y="155" width="335" height="52" rx="10"/>
+  <text class="mono" x="568" y="177" text-anchor="middle">Sign(type || payload)</text>
+  <text class="small" x="568" y="195" text-anchor="middle">for the chosen tx format</text>
+  <path class="line" d="M735 181 L793 181"/>
+  <rect class="teal" x="803" y="155" width="320" height="52" rx="10"/>
+  <text class="mono" x="963" y="177" text-anchor="middle">Signed transaction</text>
+  <text class="small" x="963" y="195" text-anchor="middle">signature binds the Chain ID</text>
+
+  <path class="line" d="M600 232 L600 265"/>
+  <rect class="teal" x="45" y="273" width="520" height="150" rx="16"/>
+  <text class="label" x="72" y="308">Chain with matching ID</text>
+  <text class="body" x="72" y="339">Chain ID = 1</text>
+  <text class="body" x="72" y="366">Signature can pass chain-ID checks,</text>
+  <text class="body" x="72" y="390">subject to all other validity rules.</text>
+  <rect class="red" x="635" y="273" width="520" height="150" rx="16"/>
+  <text class="label" x="662" y="308">Chain with different ID</text>
+  <text class="body" x="662" y="339">Chain ID = 61</text>
+  <text class="body" x="662" y="366">The signed chain context differs,</text>
+  <text class="body" x="662" y="390">so the transaction should be rejected.</text>
+
+  <text class="label" x="600" y="464" text-anchor="middle">Chain ID is not the only replay defense</text>
+  <path class="line" d="M305 480 L305 507"/>
+  <path class="line" d="M895 480 L895 507"/>
+  <rect class="blue" x="45" y="515" width="520" height="135" rx="16"/>
+  <text class="label" x="72" y="548">Same-chain transaction replay</text>
+  <text class="body" x="72" y="579">Sender nonce and account state prevent</text>
+  <text class="body" x="72" y="602">an already-consumed nonce from being</text>
+  <text class="body" x="72" y="625">accepted again on the updated state.</text>
+  <rect class="amber" x="635" y="515" width="520" height="135" rx="16"/>
+  <text class="label" x="662" y="548">Off-chain signed message replay</text>
+  <text class="body" x="662" y="579">Use a domain (chain + verifying contract)</text>
+  <text class="body" x="662" y="602">and application nonce / used-message check;</text>
+  <text class="body" x="662" y="625">EIP-712 alone does not prevent replay.</text>
+
+  <rect x="45" y="679" width="1110" height="108" rx="16" fill="#0f172a"/>
+  <text x="600" y="710" text-anchor="middle" style="font:700 18px Arial,sans-serif;fill:#fff">Important caveat</text>
+  <text x="600" y="738" text-anchor="middle" style="font:15px Arial,sans-serif;fill:#cbd5e1">Two networks with the same Chain ID are not distinguished by Chain ID alone.</text>
+  <text x="600" y="764" text-anchor="middle" style="font:15px Arial,sans-serif;fill:#cbd5e1">In EIP-7702, also inspect the authorization tuple's own Chain ID (0 can be cross-chain).</text>
+</svg>
