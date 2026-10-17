@@ -155,7 +155,7 @@ Non-indexed arguments are ABI-encoded together in the log's data field. They can
 
 **Design trade-off:** indexing a parameter can make it more convenient and efficient to filter for a known value, but it uses a limited topic slot. Leaving a parameter non-indexed makes its value directly available in decoded data. Choose indexed fields based on realistic query patterns, not by marking every parameter indexed automatically.
 
-The next Stage 02 topic, [Topics and Indexed Parameters](topics-and-indexed-parameters.md), goes deeper into encoding rules, topic filters, dynamic types, and filtering patterns.
+The next Stage 02 topic, **Topics and Indexed Parameters**, goes deeper into encoding rules, topic filters, dynamic types, and filtering patterns; its dedicated article will be linked here when published.
 
 ## 6. Filtering and Consuming Logs Off-Chain
 
@@ -282,7 +282,7 @@ Logs consume gas, and indexing changes the shape and usefulness of the log. Emit
 - [Solidity Documentation — Contracts: Events](https://docs.solidity.org/en/latest/contracts.html#events)
 - [Solidity Documentation — ABI Specification: Events](https://docs.solidity.org/en/latest/abi-spec.html#events)
 - [EIP-140 — REVERT instruction](https://eips.ethereum.org/EIPS/eip-140)
-- [Topics and Indexed Parameters](topics-and-indexed-parameters.md)
+- Topics and Indexed Parameters (planned companion topic; dedicated article not yet published)
 - [Payable Functions](11-payable-functions.md)
 - [External Function Calls](05-external-function-calls.md)
 
