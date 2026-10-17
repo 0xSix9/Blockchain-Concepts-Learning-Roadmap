@@ -2,7 +2,7 @@
 
 **Priority:** 1  
 **Topics:** 16  
-**Article status:** In progress — 8 of 16 concept articles published.
+**Article status:** In progress — 9 of 16 concept articles published.
 
 ## About this stage
 
@@ -18,7 +18,7 @@ This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the
 - [ ] [Constructors](06-constructors.md) — article published
 - [ ] [Fallback Functions](07-fallback-functions.md) — article published
 - [ ] [Receive Functions](08-receive-functions.md) — article published
-- [ ] Visibility
+- [ ] [Visibility](09-visibility.md) — article published
 - [ ] Mutability
 - [ ] Payable Functions
 - [ ] Events and Event Logs
