@@ -428,3 +428,11 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Added a dedicated SVG diagram separating the outer transaction signature from authorization signatures and illustrating delegation resolution and its security boundary.
 - Linked the article from the Stage 05 index and canonical roadmap, and updated Stage 05 publication progress to 5/14.
 - No transaction was signed or broadcast, and no example was executed against a live network.
+
+## 2026-10-17 — Chain ID and Replay Protection
+
+- Published the Chain ID and Replay Protection article covering EIP-155-protected legacy transactions, typed transaction signing payloads, Chain ID versus network ID, and the distinction between chain scope and nonce-based replay prevention.
+- Added developer guidance for EIP-712 domain separation, the CHAINID opcode / Solidity `block.chainid`, and EIP-7702 authorization tuples whose `chain_id` may be zero.
+- Added a dedicated SVG diagram showing chain-specific signing, rejection on an alternate Chain ID, and separate defenses for same-chain transactions and off-chain signed messages.
+- Linked the article from the Stage 05 index and canonical roadmap, and updated Stage 05 publication progress to 6/14.
+- The signing payloads are conceptual examples; no transaction was signed, submitted, or executed.
