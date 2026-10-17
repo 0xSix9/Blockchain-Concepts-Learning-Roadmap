@@ -47,7 +47,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [Error Selectors](../concepts/02-abi-contract-interaction/15-error-selectors.md) — article published
 - [ ] [Precompiled Contracts](../concepts/02-abi-contract-interaction/16-precompiled-contracts.md) — article published
 
-## Stage 03 — Storage and Data Layout
+## ✅ Stage 03 — Storage and Data Layout
 
 **Priority 1** · ✅ **Article progress: 13/13 published — complete** · [Stage index](../concepts/03-storage-data-layout/README.md)
 
