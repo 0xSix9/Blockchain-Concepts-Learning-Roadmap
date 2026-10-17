@@ -306,3 +306,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the Internal and External Calls article, covering internal function dispatch, external message-call frames, `this.function()`, call context, static calls, revert handling, `try/catch`, gas considerations, and reentrancy.
 - Added a dedicated call-flow diagram and linked the article from the Stage 04 checklist and canonical roadmap.
 - Updated Stage 04 publication progress to 4/17. The study checkbox remains unchecked until the learner reviews the concept.
+
+## 2026-10-17
+
+- Published the Proxy Contracts article, explaining proxy forwarding, DELEGATECALL execution context, implementation address resolution, initialization, upgradeability distinctions, and security concerns.
+- Added a dedicated proxy architecture SVG diagram and linked the article from the Stage 04 index and canonical roadmap.
+- Updated the root README and Stage 04 publication progress to 5/17; unchecked topic boxes remain personal study checklists.
