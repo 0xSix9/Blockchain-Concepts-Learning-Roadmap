@@ -7,7 +7,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [Priority 3 — Stages 07–08](learning-priorities.md#priority-3--stages-07-to-08)
 - [Priority 4 — Stages 09–10](learning-priorities.md#priority-4--stages-09-to-10)
 
-> **Stage status:** ✅ Stage 01 content is complete — all 12 articles are published and reviewed. ✅ Stage 02 content is complete — all 16 articles are published. ✅ Stage 03 content is complete — all 13 articles are published. ✅ Stage 04 — Smart Contract Architecture content is complete — all 17 articles are published. ✅ Stage 05 — Advanced Transactions and Gas content is complete — all 14 articles are published. 🔄 Stage 06 — Application Connectivity is underway — JSON-RPC is the first of 17 concept articles to be published. A check beside a stage tracks publication progress; the individual unchecked boxes track study progress and are not automatically checked when an article is published.
+> **Stage status:** ✅ Stage 01 content is complete — all 12 articles are published and reviewed. ✅ Stage 02 content is complete — all 16 articles are published. ✅ Stage 03 content is complete — all 13 articles are published. ✅ Stage 04 — Smart Contract Architecture content is complete — all 17 articles are published. ✅ Stage 05 — Advanced Transactions and Gas content is complete — all 14 articles are published. ✅ Stage 06 — Application Connectivity content is complete — all 17 articles are published. A check beside a stage tracks publication progress; the individual unchecked boxes track study progress and are not automatically checked when an article is published.
 
 ## ✅ Stage 01 — EVM Execution
 
@@ -106,27 +106,27 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [Transaction Replacement](../concepts/05-advanced-transactions-gas/13-transaction-replacement.md) — article published
 - [ ] [Gas Refunds](../concepts/05-advanced-transactions-gas/14-gas-refunds.md) — article published
 
-## Stage 06 — Application Connectivity
+## ✅ Stage 06 — Application Connectivity
 
-**Priority 2** · 🔄 **Article progress: 1/17 published** · [Stage index](../concepts/06-application-connectivity/README.md)
+**Priority 2** · ✅ **Content complete: 17/17 articles published** · [Stage index](../concepts/06-application-connectivity/README.md)
 
 - [ ] [JSON-RPC](../concepts/06-application-connectivity/01-json-rpc.md) — article published
-- [ ] Ethereum RPC Methods
-- [ ] Reading Blockchain State
-- [ ] Sending Transactions
-- [ ] Transaction Signing
-- [ ] eth_call
-- [ ] eth_estimateGas
-- [ ] eth_sendRawTransaction
-- [ ] Log and Event Filtering
-- [ ] WebSocket Subscriptions
-- [ ] Execution Clients
-- [ ] Archive Nodes
-- [ ] Full Nodes
-- [ ] Light Clients
-- [ ] Execution API
-- [ ] Consensus API
-- [ ] Engine API
+- [ ] [Ethereum RPC Methods](../concepts/06-application-connectivity/02-ethereum-rpc-methods.md) — article published
+- [ ] [Reading Blockchain State](../concepts/06-application-connectivity/03-reading-blockchain-state.md) — article published
+- [ ] [Sending Transactions](../concepts/06-application-connectivity/04-sending-transactions.md) — article published
+- [ ] [Transaction Signing](../concepts/06-application-connectivity/05-transaction-signing.md) — article published
+- [ ] [eth_call](../concepts/06-application-connectivity/06-eth-call.md) — article published
+- [ ] [eth_estimateGas](../concepts/06-application-connectivity/07-eth-estimategas.md) — article published
+- [ ] [eth_sendRawTransaction](../concepts/06-application-connectivity/08-eth-sendrawtransaction.md) — article published
+- [ ] [Log and Event Filtering](../concepts/06-application-connectivity/09-log-and-event-filtering.md) — article published
+- [ ] [WebSocket Subscriptions](../concepts/06-application-connectivity/10-websocket-subscriptions.md) — article published
+- [ ] [Execution Clients](../concepts/06-application-connectivity/11-execution-clients.md) — article published
+- [ ] [Archive Nodes](../concepts/06-application-connectivity/12-archive-nodes.md) — article published
+- [ ] [Full Nodes](../concepts/06-application-connectivity/13-full-nodes.md) — article published
+- [ ] [Light Clients](../concepts/06-application-connectivity/14-light-clients.md) — article published
+- [ ] [Execution API](../concepts/06-application-connectivity/15-execution-api.md) — article published
+- [ ] [Consensus API](../concepts/06-application-connectivity/16-consensus-api.md) — article published
+- [ ] [Engine API](../concepts/06-application-connectivity/17-engine-api.md) — article published
 
 ## Stage 07 — Advanced Layer 2 and Cross-Chain
 
