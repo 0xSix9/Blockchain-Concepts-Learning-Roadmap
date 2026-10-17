@@ -72,7 +72,7 @@ Simulation remains conditional on the state, endpoint, and call parameters. It i
 6. Confusing an RPC execution error with a mined transaction receipt.
 7. Ignoring provider gas caps, timeouts, and data-access policies.
 
-## Developer Review Checklist
+## 8. Developer Review Checklist
 
 - [ ] Explain why `eth_call` simulates execution without committing on-chain state.
 - [ ] Identify the call fields and block reference that can affect execution.
@@ -81,7 +81,7 @@ Simulation remains conditional on the state, endpoint, and call parameters. It i
 - [ ] Explain why a successful simulation does not guarantee a later transaction will succeed.
 - [ ] Consider provider gas caps, timeouts, and trust assumptions.
 
-## Key Takeaways
+## 9. Key Takeaways
 
 - `eth_call` executes code in a simulation context; it does not submit an on-chain transaction.
 - The result depends on call context and the selected state.
