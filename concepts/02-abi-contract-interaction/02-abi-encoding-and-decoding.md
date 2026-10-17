@@ -238,9 +238,10 @@ Important differences:
 
 For example, packed encoding can produce the same concatenated bytes for two different pairs:
 
-    abi.encodePacked("a", "bc") == abi.encodePacked("ab", "c")
+    keccak256(abi.encodePacked("a", "bc")) ==
+        keccak256(abi.encodePacked("ab", "c"))
 
-Both sides produce the bytes for abc. If such bytes are hashed and treated as a unique commitment to the original pair, the inputs are ambiguous.
+Both sides pack into the same bytes for abc, so their hashes are equal as well. If such a hash is treated as a unique commitment to the original pair, the inputs are ambiguous.
 
 **Security rule:** avoid keccak256(abi.encodePacked(a, b)) when multiple dynamic values can be supplied unless the encoding is made unambiguous by a sound design. Standard abi.encode is generally the safer default for hashing a tuple of values because its encoding preserves the distinction between the components. The exact suitability depends on the application and the types involved.
 
