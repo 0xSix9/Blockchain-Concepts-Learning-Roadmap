@@ -229,3 +229,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the Transient Storage (EIP-1153) article for Stage 03, covering TLOAD/TSTORE, transaction lifetime, execution-context ownership, revert semantics, static-call restrictions, Solidity value-type transient variables, and security considerations.
 - Added a dedicated transient-storage diagram and linked the article from the Stage 03 index and canonical roadmap.
 - Updated Stage 03 publication progress to 7/13; individual learning checkboxes remain unchecked.
+
+## 2026-10-17
+
+- Published the Storage Context article for Stage 03, explaining account-scoped storage, CALL/STATICCALL/DELEGATECALL context selection, proxy state, layout compatibility, initialization, and security considerations.
+- Added a dedicated CALL-versus-DELEGATECALL storage-context diagram and linked the article from the Stage 03 index and canonical roadmap.
+- Updated Stage 03 publication progress to 8/13; individual learning checkboxes remain unchecked.
