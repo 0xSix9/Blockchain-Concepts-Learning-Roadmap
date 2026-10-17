@@ -468,3 +468,11 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Added a dedicated SVG diagram contrasting top-level OOG, child-call OOG, normal REVERT, and validation failure due to insufficient intrinsic gas.
 - Linked the article from the Stage 05 index and canonical roadmap, and updated Stage 05 publication progress to 10/14.
 - Protocol behavior was researched against official EIP and Ethereum documentation; no transaction was executed on a live network.
+
+## 2026-10-17 — Transaction Receipts
+
+- Published the Transaction Receipts article covering the JSON-RPC receipt fields, execution status, gas usage, logs and bloom filters, contract creation results, typed receipt encoding, and inclusion versus finality.
+- Distinguished the receipt's consensus payload from additional RPC metadata and documented `gasUsed` versus `cumulativeGasUsed`, blob-fee fields, pre-Byzantium root receipts, and receipt availability for pending transactions.
+- Added a dedicated SVG diagram outlining how a processed transaction produces a receipt and which key information it exposes.
+- Linked the article from the Stage 05 index and canonical roadmap, and updated Stage 05 publication progress to 11/14.
+- JSON-RPC data is illustrative; no live transaction receipt was queried as part of the article's preparation.
