@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Out-of-Gas in the EVM</title>
+  <desc id="desc">Compares top-level out-of-gas, child-call out-of-gas, normal REVERT, and insufficient intrinsic gas, showing state rollback and how each frame's remaining gas is handled.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.title{font:700 29px Arial,sans-serif;fill:#0f172a}.subtitle{font:16px Arial,sans-serif;fill:#475569}.label{font:700 19px Arial,sans-serif;fill:#0f172a}.body{font:15px Arial,sans-serif;fill:#334155}.small{font:13px Arial,sans-serif;fill:#475569}.mono{font:700 15px ui-monospace,Menlo,monospace;fill:#0f172a}.blue{fill:#dbeafe;stroke:#60a5fa;stroke-width:2}.teal{fill:#ccfbf1;stroke:#2dd4bf;stroke-width:2}.purple{fill:#ede9fe;stroke:#a78bfa;stroke-width:2}.amber{fill:#fef3c7;stroke:#f59e0b;stroke-width:2}.red{fill:#fee2e2;stroke:#f87171;stroke-width:2}.line{stroke:#64748b;stroke-width:2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="900" rx="22"/>
+  <text class="title" x="600" y="46" text-anchor="middle">Out-of-Gas — What Happens When a Frame Runs Out?</text>
+  <text class="subtitle" x="600" y="75" text-anchor="middle">The failing frame loses its remaining gas; the caller may or may not survive</text>
+
+  <rect class="panel" x="45" y="103" width="1110" height="156" rx="16"/>
+  <text class="label" x="72" y="137">Execution budget in the current EVM frame</text>
+  <rect class="blue" x="72" y="157" width="315" height="63" rx="10"/>
+  <text class="mono" x="229" y="184" text-anchor="middle">remaining gas = 80</text>
+  <text class="small" x="229" y="204" text-anchor="middle">available in this frame</text>
+  <text class="title" x="420" y="197" text-anchor="middle">→</text>
+  <rect class="red" x="454" y="157" width="305" height="63" rx="10"/>
+  <text class="mono" x="606" y="184" text-anchor="middle">next operation = 100</text>
+  <text class="small" x="606" y="204" text-anchor="middle">required charge exceeds budget</text>
+  <path class="line" d="M759 188 L809 188"/>
+  <rect class="red" x="819" y="157" width="305" height="63" rx="10"/>
+  <text class="label" x="972" y="184" text-anchor="middle">OUT OF GAS</text>
+  <text class="small" x="972" y="204" text-anchor="middle">exceptional halt</text>
+
+  <path class="line" d="M600 259 L600 286"/>
+  <rect class="red" x="45" y="294" width="535" height="190" rx="16"/>
+  <text class="label" x="72" y="329">Top-level OOG</text>
+  <text class="body" x="72" y="359">• Entire top-level execution fails.</text>
+  <text class="body" x="72" y="385">• State changes and logs roll back.</text>
+  <text class="body" x="72" y="411">• Remaining execution budget is exhausted.</text>
+  <text class="body" x="72" y="437">• Receipt normally has status 0x0.</text>
+  <text class="small" x="72" y="464">Gas used commonly reaches the transaction limit.</text>
+
+  <rect class="amber" x="620" y="294" width="535" height="190" rx="16"/>
+  <text class="label" x="647" y="329">Child-call OOG</text>
+  <text class="body" x="647" y="359">• Child frame halts; its state rolls back.</text>
+  <text class="body" x="647" y="385">• Child frame's remaining gas is not returned.</text>
+  <text class="body" x="647" y="411">• Parent keeps gas not forwarded to the child.</text>
+  <text class="body" x="647" y="437">• Parent may handle failure or propagate it.</text>
+  <text class="small" x="647" y="464">EIP-150 usually limits forwarded gas to all but 1/64.</text>
+
+  <path class="line" d="M600 484 L600 513"/>
+  <rect class="teal" x="45" y="521" width="535" height="171" rx="16"/>
+  <text class="label" x="72" y="556">Normal REVERT</text>
+  <text class="body" x="72" y="587">• Frame's state changes are rolled back.</text>
+  <text class="body" x="72" y="613">• Remaining gas is returned to the caller.</text>
+  <text class="body" x="72" y="639">• Gas already consumed is still charged.</text>
+  <text class="small" x="72" y="667">Failure does not necessarily spend the full limit.</text>
+
+  <rect class="purple" x="620" y="521" width="535" height="171" rx="16"/>
+  <text class="label" x="647" y="556">Insufficient intrinsic gas</text>
+  <text class="body" x="647" y="587">• The transaction cannot cover required minimums.</text>
+  <text class="body" x="647" y="613">• It is invalid before normal EVM execution.</text>
+  <text class="body" x="647" y="639">• No included OOG receipt is produced.</text>
+  <text class="small" x="647" y="667">This is transaction validation, not execution OOG.</text>
+
+  <rect x="45" y="726" width="1110" height="129" rx="16" fill="#0f172a"/>
+  <text x="600" y="759" text-anchor="middle" style="font:700 18px Arial,sans-serif;fill:#fff">Gas refunds do not prevent OOG</text>
+  <text x="600" y="788" text-anchor="middle" style="font:15px Arial,sans-serif;fill:#cbd5e1">Refunds change final accounting after execution; they are not extra gas available</text>
+  <text x="600" y="813" text-anchor="middle" style="font:15px Arial,sans-serif;fill:#cbd5e1">for the next opcode. Included failures can still consume gas and charge fees.</text>
+</svg>
