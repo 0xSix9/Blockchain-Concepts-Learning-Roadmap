@@ -175,7 +175,7 @@ Before relying on a precompile in an application, ask:
 - [EIP-4844: Shard Blob Transactions](https://eips.ethereum.org/EIPS/eip-4844) — defines the KZG point-evaluation precompile.
 - [EIP-2537: Precompile for BLS12-381 curve operations](https://eips.ethereum.org/EIPS/eip-2537).
 - [EIP-7951: Precompile for secp256r1 curve support](https://eips.ethereum.org/EIPS/eip-7951).
-- [Solidity documentation: built-in functions](https://docs.solidity.org/en/latest/units-and-global-variables.html#block-and-transaction-properties) — see `ecrecover`, `sha256`, and `ripemd160`.
+- [Solidity documentation: built-in functions](https://docs.solidity.org/en/latest/units-and-global-variables.html#mathematical-and-cryptographic-functions) — see `ecrecover`, `sha256`, and `ripemd160`.
 
 ---
 
