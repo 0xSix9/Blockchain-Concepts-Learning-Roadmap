@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+<title id="title">Function dispatch flow in an EVM contract</title>
+<desc id="desc">Input calldata enters a contract's bytecode. If at least four bytes exist, the dispatcher reads a selector and checks for a match. A match leads to ABI argument decoding and function execution, while an unknown selector goes to fallback or reverts. Empty calldata can enter receive, and short non-empty calldata follows a fallback or revert path.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#080D19"/><stop offset="1" stop-color="#14213B"/></linearGradient>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#8CA8D6"/></marker>
+</defs>
+<rect width="1200" height="760" rx="22" fill="url(#bg)"/>
+<text x="44" y="42" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="2.4" fill="#74C0FC">EVM · FUNCTION DISPATCH</text>
+<text x="44" y="82" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#F8FAFC">From incoming calldata to a code path</text>
+<g font-family="Arial,sans-serif">
+  <rect x="405" y="110" width="390" height="58" rx="12" fill="#18263C" stroke="#6EA8FE" stroke-width="1.5"/>
+  <text x="600" y="135" text-anchor="middle" font-size="15" font-weight="700" fill="#F8FAFC">Incoming message-call calldata</text>
+  <text x="600" y="154" text-anchor="middle" font-size="11" fill="#C4D2E7">Bytes provided to the contract's code</text>
+  <path d="M600 168 V194" stroke="#8CA8D6" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M600 197 L720 248 L600 299 L480 248 Z" fill="#202B40" stroke="#B197FC" stroke-width="1.5"/>
+  <text x="600" y="242" text-anchor="middle" font-size="14" font-weight="700" fill="#F8FAFC">Is calldata ≥ 4 bytes?</text>
+  <text x="600" y="261" text-anchor="middle" font-size="11" fill="#D4C5FF">Can a full selector be read?</text>
+  <path d="M480 248 H296 V323" stroke="#8CA8D6" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="386" y="236" text-anchor="middle" font-size="12" font-weight="700" fill="#FDE68A">NO</text>
+  <rect x="75" y="328" width="442" height="80" rx="12" fill="#182F36" stroke="#34D399" stroke-width="1.5"/>
+  <text x="96" y="357" font-size="14" font-weight="700" fill="#A7F3D0">Short / empty calldata path</text>
+  <text x="96" y="380" font-size="12" fill="#C4D2E7">Empty + receive exists → receive()</text>
+  <text x="96" y="397" font-size="12" fill="#C4D2E7">Otherwise → fallback if available, else revert</text>
+  <path d="M720 248 H902 V323" stroke="#8CA8D6" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="807" y="236" text-anchor="middle" font-size="12" font-weight="700" fill="#A7F3D0">YES</text>
+  <rect x="685" y="328" width="442" height="80" rx="12" fill="#18263C" stroke="#6EA8FE" stroke-width="1.5"/>
+  <text x="706" y="357" font-size="14" font-weight="700" fill="#F8FAFC">Read selector + compare dispatch table</text>
+  <text x="706" y="381" font-size="12" fill="#C4D2E7">Compare first 4 bytes against supported selectors</text>
+  <text x="706" y="398" font-size="11" fill="#91A8C7">Routing is implemented by the contract's bytecode</text>
+  <path d="M906 408 V439 H600 V462" stroke="#8CA8D6" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M600 464 L720 512 L600 560 L480 512 Z" fill="#202B40" stroke="#FBBF24" stroke-width="1.5"/>
+  <text x="600" y="507" text-anchor="middle" font-size="14" font-weight="700" fill="#F8FAFC">Selector match?</text>
+  <text x="600" y="526" text-anchor="middle" font-size="11" fill="#FDE68A">Known external function</text>
+  <path d="M480 512 H300 V581" stroke="#8CA8D6" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="387" y="500" text-anchor="middle" font-size="12" font-weight="700" fill="#FDE68A">NO</text>
+  <rect x="75" y="586" width="442" height="92" rx="12" fill="#301F28" stroke="#F87171" stroke-width="1.5"/>
+  <text x="96" y="615" font-size="14" font-weight="700" fill="#FCA5A5">Fallback / revert</text>
+  <text x="96" y="639" font-size="12" fill="#C4D2E7">Unknown selector → fallback, if available</text>
+  <text x="96" y="658" font-size="12" fill="#C4D2E7">No handler or failed checks → revert</text>
+  <path d="M720 512 H902 V581" stroke="#8CA8D6" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="810" y="500" text-anchor="middle" font-size="12" font-weight="700" fill="#A7F3D0">YES</text>
+  <rect x="685" y="586" width="442" height="92" rx="12" fill="#182F36" stroke="#34D399" stroke-width="1.5"/>
+  <text x="706" y="615" font-size="14" font-weight="700" fill="#A7F3D0">Decode arguments → execute function</text>
+  <text x="706" y="639" font-size="12" fill="#C4D2E7">ABI decoding, call-value and modifier checks</text>
+  <text x="706" y="658" font-size="12" fill="#C4D2E7">Function can return data or revert during execution</text>
+  <text x="44" y="716" font-size="11" fill="#91A8C7">Conceptual flow only: compiler versions and custom proxy/router designs may use different control flow.</text>
+  <text x="44" y="738" font-size="11" fill="#91A8C7">The EVM runs bytecode; it does not look up Solidity function names or read the JSON ABI.</text>
+</g>
+</svg>
