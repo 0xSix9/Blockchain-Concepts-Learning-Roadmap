@@ -20,7 +20,7 @@ The roadmap starts with EVM execution and contract interaction, then moves throu
 
 This repository is designed as both a **learning checklist** and a **growing technical reference**. Every stage has its own index, and the complete roadmap keeps all concepts in one place.
 
-> **Publication progress:** ✅ **Stage 01 — EVM Execution is content-complete:** all 12 concept articles are published and reviewed. **Stage 02 — ABI and Contract Interaction is in progress:** the Application Binary Interface (ABI), ABI Encoding and Decoding, Function Selectors, Function Dispatch, and External Function Calls articles are published, and the remaining topics will be documented incrementally.
+> **Publication progress:** ✅ **Stage 01 — EVM Execution is content-complete:** all 12 concept articles are published and reviewed. **Stage 02 — ABI and Contract Interaction is in progress:** the Application Binary Interface (ABI), ABI Encoding and Decoding, Function Selectors, Function Dispatch, External Function Calls, and Constructors articles are published, and the remaining topics will be documented incrementally.
 
 ## Start here
 
@@ -31,6 +31,7 @@ This repository is designed as both a **learning checklist** and a **growing tec
 - **[Function Selectors](concepts/02-abi-contract-interaction/03-function-selectors.md)** — canonical signatures, Keccak-256, calldata dispatch, overloads, and collision risks.
 - **[Function Dispatch](concepts/02-abi-contract-interaction/04-function-dispatch.md)** — how contract bytecode routes calldata, handles unmatched selectors, and distinguishes fallback from receive.
 - **[External Function Calls](concepts/02-abi-contract-interaction/05-external-function-calls.md)** — cross-contract calls, CALL/STATICCALL/DELEGATECALL, return and revert data, gas, and reentrancy.
+- **[Constructors](concepts/02-abi-contract-interaction/06-constructors.md)** — one-time initialization, constructor arguments, inheritance, immutables, proxy initialization, and deployment risks.
 - **[Learning priorities](roadmap/learning-priorities.md)** — understand the four-stage groups and suggested order.
 - **[Concept article template](templates/concept-template.md)** — a starting structure for writing each article later.
 - **[Sources and research policy](references/sources.md)** — recommended primary sources and documentation rules.
@@ -42,7 +43,7 @@ This repository is designed as both a **learning checklist** and a **growing tec
 | Stage | Focus | Concepts | Priority | Article publication |
 |---|---|---:|:---:|---|
 | [✅ Stage 01 — EVM Execution](concepts/01-evm-execution/README.md) | EVM execution fundamentals | 12 | P1 | ✅ Complete — 12/12 published |
-| [Stage 02 — ABI and Contract Interaction](concepts/02-abi-contract-interaction/README.md) | ABI, selectors, calls, events, errors | 16 | P1 | In progress — 5/16 published |
+| [Stage 02 — ABI and Contract Interaction](concepts/02-abi-contract-interaction/README.md) | ABI, selectors, calls, events, errors | 16 | P1 | In progress — 6/16 published |
 | [Stage 03 — Storage and Data Layout](concepts/03-storage-data-layout/README.md) | Storage slots, packing, mappings, proofs | 13 | P1 | Checklist only |
 | [Stage 04 — Smart Contract Architecture](concepts/04-smart-contract-architecture/README.md) | Composition, proxies, upgradeability | 17 | P1 | Checklist only |
 | [Stage 05 — Advanced Transactions and Gas](concepts/05-advanced-transactions-gas/README.md) | Transaction mechanics and gas accounting | 14 | P2 | Checklist only |
