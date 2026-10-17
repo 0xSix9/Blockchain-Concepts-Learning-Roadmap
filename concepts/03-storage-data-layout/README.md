@@ -2,11 +2,11 @@
 
 **Priority:** 1  
 **Topics:** 13  
-**Article status:** In progress — 11/13 concept articles published.
+**Article status:** In progress — 12/13 concept articles published.
 
 ## About this stage
 
-This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The Storage Layout, Storage Slots, Storage Packing, Mappings and Dynamic Arrays in Storage, Memory Layout, Calldata Layout, Transient Storage (EIP-1153), Storage Context, Storage Collisions, Recursive Length Prefix (RLP) Encoding, and Merkle Proofs articles are published; the remaining concept articles will be added one by one as they are researched.
+This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The Storage Layout, Storage Slots, Storage Packing, Mappings and Dynamic Arrays in Storage, Memory Layout, Calldata Layout, Transient Storage (EIP-1153), Storage Context, Storage Collisions, Recursive Length Prefix (RLP) Encoding, Merkle Proofs, and Account Proofs articles are published; the remaining concept articles will be added one by one as they are researched.
 
 ## Concept checklist
 
@@ -21,7 +21,7 @@ This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the
 - [ ] [Storage Collisions](09-storage-collisions.md) — article published
 - [ ] [Recursive Length Prefix (RLP) Encoding](10-recursive-length-prefix-rlp-encoding.md) — article published
 - [ ] [Merkle Proofs](11-merkle-proofs.md) — article published
-- [ ] Account Proofs
+- [ ] [Account Proofs](12-account-proofs.md) — article published
 - [ ] Storage Proofs
 
 ## Suggested workflow
