@@ -223,3 +223,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the Calldata Layout article for Stage 03, covering execution-frame input bytes, ABI selectors and head/tail layout, dynamic offsets, calldata opcodes, Solidity's `calldata` data location, gas considerations, and validation/security concerns.
 - Added a dedicated calldata layout diagram and linked the article from the Stage 03 index and canonical roadmap.
 - Updated Stage 03 publication progress to 6/13; individual learning checkboxes remain unchecked.
+
+## 2026-10-17
+
+- Published the Transient Storage (EIP-1153) article for Stage 03, covering TLOAD/TSTORE, transaction lifetime, execution-context ownership, revert semantics, static-call restrictions, Solidity value-type transient variables, and security considerations.
+- Added a dedicated transient-storage diagram and linked the article from the Stage 03 index and canonical roadmap.
+- Updated Stage 03 publication progress to 7/13; individual learning checkboxes remain unchecked.
