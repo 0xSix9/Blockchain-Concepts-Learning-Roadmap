@@ -76,7 +76,7 @@ If the application's historical query load is small, a hosted archive provider m
 5. Forgetting to record block hash and chain context for historical results.
 6. Operating archive infrastructure without planning for disk growth, backups, and sync time.
 
-## Developer Review Checklist
+## 8. Developer Review Checklist
 
 - [ ] Distinguish historical block/receipt retention from historical state retention.
 - [ ] Explain when an old-state RPC query may require an archive configuration.
@@ -85,7 +85,7 @@ If the application's historical query load is small, a hosted archive provider m
 - [ ] Compare self-hosted and hosted archive access in cost, trust, and query-limit terms.
 - [ ] Consider storage growth, sync time, backups, and disk I/O before operating an archive node.
 
-## Key Takeaways
+## 9. Key Takeaways
 
 - Archive nodes retain historical execution states for direct old-state queries.
 - A node may serve old blocks and receipts without retaining every old state.
