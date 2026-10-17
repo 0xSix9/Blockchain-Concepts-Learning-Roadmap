@@ -2,11 +2,11 @@
 
 **Priority:** 1  
 **Topics:** 17  
-**Article status:** In progress — 16/17 concept articles published.
+**Article status:** ✅ Content complete — 17/17 concept articles published.
 
 ## About this stage
 
-This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The Contract Composition, Inheritance, Interfaces and Libraries, Internal and External Calls, Proxy Contracts, Transparent Proxies, UUPS Proxies, Beacon Proxies, Minimal Proxies (Clones), Delegatecall-Based Proxy Architecture, Contract Upgradeability, Storage Compatibility, Initializers, Storage Collisions in Proxies, Diamond Pattern (EIP-2535), and Deterministic Contract Deployment articles are published; the remaining article will be added when reviewed. The checkboxes track personal study progress, not publication status.
+This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. All 17 concept articles in Smart Contract Architecture are published. Use the checklist below to track personal study progress; the unchecked boxes are not publication indicators and should be marked only after reviewing each topic.
 
 ## Study checklist
 
@@ -26,7 +26,7 @@ This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the
 - [ ] [Storage Collisions in Proxies](14-storage-collisions-in-proxies.md) — article published
 - [ ] [Diamond Pattern (EIP-2535)](15-diamond-pattern-eip-2535.md) — article published
 - [ ] [Deterministic Contract Deployment](16-deterministic-contract-deployment.md) — article published
-- [ ] CREATE2 Address Derivation
+- [ ] [CREATE2 Address Derivation](17-create2-address-derivation.md) — article published
 
 ## Suggested workflow
 
