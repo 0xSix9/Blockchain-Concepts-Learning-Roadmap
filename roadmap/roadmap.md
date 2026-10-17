@@ -89,7 +89,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 
 ## Stage 05 — Advanced Transactions and Gas
 
-**Priority 2** · 🔄 **Article progress: 12/14 published** · [Stage index](../concepts/05-advanced-transactions-gas/README.md)
+**Priority 2** · 🔄 **Article progress: 13/14 published** · [Stage index](../concepts/05-advanced-transactions-gas/README.md)
 
 - [ ] [Transaction Lifecycle](../concepts/05-advanced-transactions-gas/01-transaction-lifecycle.md) — article published
 - [ ] [Transaction Nonce](../concepts/05-advanced-transactions-gas/02-transaction-nonce.md) — article published
@@ -103,7 +103,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [Out-of-Gas](../concepts/05-advanced-transactions-gas/10-out-of-gas.md) — article published
 - [ ] [Transaction Receipts](../concepts/05-advanced-transactions-gas/11-transaction-receipts.md) — article published
 - [ ] [Transaction Reverts](../concepts/05-advanced-transactions-gas/12-transaction-reverts.md) — article published
-- [ ] Transaction Replacement
+- [ ] [Transaction Replacement](../concepts/05-advanced-transactions-gas/13-transaction-replacement.md) — article published
 - [ ] Gas Refunds
 
 ## Stage 06 — Application Connectivity
