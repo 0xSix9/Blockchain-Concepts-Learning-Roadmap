@@ -89,7 +89,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 
 ## Stage 05 — Advanced Transactions and Gas
 
-**Priority 2** · 🔄 **Article progress: 7/14 published** · [Stage index](../concepts/05-advanced-transactions-gas/README.md)
+**Priority 2** · 🔄 **Article progress: 8/14 published** · [Stage index](../concepts/05-advanced-transactions-gas/README.md)
 
 - [ ] [Transaction Lifecycle](../concepts/05-advanced-transactions-gas/01-transaction-lifecycle.md) — article published
 - [ ] [Transaction Nonce](../concepts/05-advanced-transactions-gas/02-transaction-nonce.md) — article published
@@ -98,7 +98,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [Set Code Transactions (EIP-7702)](../concepts/05-advanced-transactions-gas/05-set-code-transactions-eip-7702.md) — article published
 - [ ] [Chain ID and Replay Protection](../concepts/05-advanced-transactions-gas/06-chain-id-and-replay-protection.md) — article published
 - [ ] [Intrinsic Gas](../concepts/05-advanced-transactions-gas/07-intrinsic-gas.md) — article published
-- [ ] Gas Accounting
+- [ ] [Gas Accounting](../concepts/05-advanced-transactions-gas/08-gas-accounting.md) — article published
 - [ ] Gas Limit and Gas Used
 - [ ] Out-of-Gas
 - [ ] Transaction Receipts
