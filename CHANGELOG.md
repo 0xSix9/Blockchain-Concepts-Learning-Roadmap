@@ -460,3 +460,11 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Added a dedicated SVG diagram comparing declared budget, actual gas used, unused gas, cumulative block usage, and block-level limits.
 - Linked the article from the Stage 05 index and canonical roadmap, and updated Stage 05 publication progress to 9/14.
 - Receipt values are illustrative; no live transaction was queried or submitted.
+
+## 2026-10-17 — Out-of-Gas
+
+- Published the Out-of-Gas article explaining exceptional halts, the difference between top-level and child-call gas exhaustion, and the distinct behavior of `REVERT` and insufficient intrinsic gas.
+- Covered the EIP-150 63/64 gas-forwarding rule, state rollback and gas handling in nested calls, refund timing, top-level failed receipts, and practical debugging guidance.
+- Added a dedicated SVG diagram contrasting top-level OOG, child-call OOG, normal REVERT, and validation failure due to insufficient intrinsic gas.
+- Linked the article from the Stage 05 index and canonical roadmap, and updated Stage 05 publication progress to 10/14.
+- Protocol behavior was researched against official EIP and Ethereum documentation; no transaction was executed on a live network.
