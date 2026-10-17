@@ -82,6 +82,22 @@ Investigate calldata, ABI encoding, sender permissions, balances, allowance, exp
 6. Assuming every node or provider uses the same estimation algorithm.
 7. Forgetting protocol-level requirements such as intrinsic costs and applicable calldata-floor rules.
 
+## Developer Review Checklist
+
+- [ ] Distinguish the estimated gas limit from gas price and final receipt `gasUsed`.
+- [ ] Use the same sender, value, calldata, and meaningful transaction context as the intended transaction.
+- [ ] Explain why state changes can make a prior estimate stale.
+- [ ] Distinguish an estimation revert from a transaction that was included and reverted.
+- [ ] Choose a limit with a reasoned margin and account for active network rules.
+- [ ] Choose fee fields separately from gas estimation.
+
+## Key Takeaways
+
+- `eth_estimateGas` estimates a gas budget; it does not calculate the execution fee price.
+- An estimate is contextual and may differ from actual gas use.
+- A failed estimate can expose execution problems without submitting a transaction.
+- Increasing the limit does not fix logical reverts, invalid fields, or insufficient balance.
+
 ## References
 
 - 1. [Ethereum.org — JSON-RPC API](https://ethereum.org/developers/docs/apis/json-rpc/) — `eth_estimateGas` schema and caveats.
