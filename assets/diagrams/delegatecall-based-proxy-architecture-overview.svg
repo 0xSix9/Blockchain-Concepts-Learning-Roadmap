@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850" role="img" aria-labelledby="title desc">
+  <title id="title">Delegatecall-Based Proxy Architecture</title>
+  <desc id="desc">A caller submits calldata to a proxy. The proxy resolves the implementation address, copies calldata, and executes DELEGATECALL. The implementation code runs in the proxy storage context. The proxy propagates return or revert data to the original caller.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}
+      .blue{fill:#eff6ff;stroke:#60a5fa;stroke-width:2}.teal{fill:#ecfeff;stroke:#22d3ee;stroke-width:2}
+      .gold{fill:#fffbeb;stroke:#f59e0b;stroke-width:2}.purple{fill:#f5f3ff;stroke:#a78bfa;stroke-width:2}
+      .red{fill:#fef2f2;stroke:#f87171;stroke-width:2}
+      .ink{fill:#0f172a;font-family:Inter,Arial,sans-serif}.muted{fill:#475569;font-family:Inter,Arial,sans-serif}
+      .title{font-size:30px;font-weight:700}.head{font-size:19px;font-weight:700}.body{font-size:15px}.small{font-size:13px}
+      .mono{fill:#0f172a;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;font-weight:600}
+      .arrow{stroke:#2563eb;stroke-width:2.8;fill:none}.return{stroke:#0f766e;stroke-width:2.6;fill:none}
+      .dash{stroke:#64748b;stroke-width:2;stroke-dasharray:6 6;fill:none}
+    </style>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2563eb"/></marker>
+    <marker id="return" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#0f766e"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="850" rx="24"/>
+  <text class="ink title" x="42" y="54">Delegatecall-Based Proxy Architecture</text>
+  <text class="muted body" x="44" y="84">Implementation bytecode executes using the proxy's storage and account context.</text>
+
+  <rect class="panel" x="35" y="112" width="1130" height="440" rx="20"/>
+  <rect class="purple" x="65" y="230" width="200" height="100" rx="13"/>
+  <text class="ink head" x="165" y="266" text-anchor="middle">Caller</text>
+  <text class="muted body" x="165" y="293" text-anchor="middle">user / contract</text>
+  <text class="muted small" x="165" y="312" text-anchor="middle">calldata</text>
+
+  <rect class="blue" x="345" y="158" width="340" height="270" rx="16"/>
+  <text class="ink head" x="515" y="194" text-anchor="middle">Proxy</text>
+  <rect class="gold" x="375" y="215" width="280" height="60" rx="10"/>
+  <text class="ink mono" x="515" y="240" text-anchor="middle">resolve implementation</text>
+  <text class="muted small" x="515" y="259" text-anchor="middle">slot / immutable / beacon</text>
+  <rect class="panel" x="375" y="293" width="280" height="60" rx="10"/>
+  <text class="ink mono" x="515" y="318" text-anchor="middle">fallback + calldata copy</text>
+  <text class="muted small" x="515" y="337" text-anchor="middle">forward raw input bytes</text>
+  <text class="muted body" x="515" y="386" text-anchor="middle">return or revert result bytes</text>
+
+  <rect class="teal" x="780" y="183" width="330" height="220" rx="16"/>
+  <text class="ink head" x="945" y="219" text-anchor="middle">Implementation</text>
+  <rect class="panel" x="810" y="239" width="270" height="57" rx="10"/>
+  <text class="ink mono" x="945" y="263" text-anchor="middle">business logic</text>
+  <text class="muted small" x="945" y="282" text-anchor="middle">bytecode from target address</text>
+  <rect class="gold" x="810" y="313" width="270" height="61" rx="10"/>
+  <text class="ink head" x="945" y="338" text-anchor="middle">Proxy context</text>
+  <text class="muted small" x="945" y="359" text-anchor="middle">storage · balance · address(this)</text>
+
+  <path class="arrow" d="M265 280 L337 280" marker-end="url(#arrow)"/>
+  <text class="muted small" x="301" y="260" text-anchor="middle">CALL</text>
+  <path class="arrow" d="M685 323 L772 323" marker-end="url(#arrow)"/>
+  <text class="ink mono" x="729" y="298" text-anchor="middle">DELEGATECALL</text>
+  <path class="return" d="M780 383 L693 383" marker-end="url(#return)"/>
+  <text class="muted small" x="737" y="406" text-anchor="middle">raw result</text>
+
+  <rect class="gold" x="65" y="459" width="1045" height="65" rx="12"/>
+  <text class="ink head" x="587" y="487" text-anchor="middle">Execution context belongs to the proxy</text>
+  <text class="muted body" x="587" y="510" text-anchor="middle">Implementation code reads and writes proxy storage; emitted logs use the proxy address.</text>
+
+  <rect class="panel" x="35" y="578" width="1130" height="234" rx="20"/>
+  <text class="ink head" x="65" y="616">Low-level forwarding lifecycle</text>
+  <rect class="purple" x="65" y="646" width="235" height="105" rx="12"/>
+  <text class="ink head" x="182" y="680" text-anchor="middle">1. Copy calldata</text>
+  <text class="muted small" x="182" y="704" text-anchor="middle">calldatacopy</text>
+  <text class="muted small" x="182" y="727" text-anchor="middle">preserve input bytes</text>
+
+  <rect class="blue" x="350" y="646" width="235" height="105" rx="12"/>
+  <text class="ink head" x="467" y="680" text-anchor="middle">2. Delegate</text>
+  <text class="muted small" x="467" y="704" text-anchor="middle">delegatecall</text>
+  <text class="muted small" x="467" y="727" text-anchor="middle">execute target code</text>
+
+  <rect class="teal" x="635" y="646" width="235" height="105" rx="12"/>
+  <text class="ink head" x="752" y="680" text-anchor="middle">3. Copy returndata</text>
+  <text class="muted small" x="752" y="704" text-anchor="middle">returndatacopy</text>
+  <text class="muted small" x="752" y="727" text-anchor="middle">success bytes or errors</text>
+
+  <rect class="gold" x="920" y="646" width="205" height="105" rx="12"/>
+  <text class="ink head" x="1022" y="680" text-anchor="middle">4. Propagate</text>
+  <text class="muted small" x="1022" y="704" text-anchor="middle">return / revert</text>
+  <text class="muted small" x="1022" y="727" text-anchor="middle">back to caller</text>
+
+  <path class="arrow" d="M300 698 L342 698" marker-end="url(#arrow)"/>
+  <path class="arrow" d="M585 698 L627 698" marker-end="url(#arrow)"/>
+  <path class="arrow" d="M870 698 L912 698" marker-end="url(#arrow)"/>
+  <text class="muted body" x="65" y="785">Security depends on correct target resolution, storage layout, authorization, and fallback routing.</text>
+</svg>
