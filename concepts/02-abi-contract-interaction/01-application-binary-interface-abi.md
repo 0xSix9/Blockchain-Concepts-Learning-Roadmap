@@ -1,4 +1,4 @@
-# Application Binary Interface (ABI): The Contract Interaction Contract
+# Application Binary Interface (ABI): How Ethereum Contracts Communicate
 
 > **Stage:** 02 — ABI and Contract Interaction  
 > **Priority:** 1  
