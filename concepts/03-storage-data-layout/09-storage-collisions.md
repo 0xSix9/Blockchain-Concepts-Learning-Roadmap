@@ -18,7 +18,7 @@ Storage collisions are not all the same. Important cases include:
 - **Conflicting modules or Diamond facets:** independently written modules use the same slots for unrelated state in one shared storage context.
 - **Namespace or custom-slot collisions:** two modules choose the same manually derived storage location for different structures.
 
-This article focuses on persistent storage collisions and their prevention. The same context discipline also matters for transient storage, but transient and persistent storage use separate layouts.
+This article focuses on persistent storage collisions and their prevention. The same context discipline also matters for [Transient Storage (EIP-1153)](07-transient-storage-eip-1153.md), but transient and persistent storage use separate layouts.
 
 ![Diagram showing two modules using the same storage slot for different meanings, overwriting state, contrasted with isolated namespaces](../../assets/diagrams/storage-collisions-overview.svg)
 
