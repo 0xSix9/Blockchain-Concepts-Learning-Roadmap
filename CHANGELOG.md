@@ -492,3 +492,12 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Added a dedicated SVG diagram showing the original and replacement competing for the same nonce, txpool price-bump checks, and canonical inclusion consequences.
 - Linked the article from the Stage 05 index and canonical roadmap, and updated Stage 05 publication progress to 13/14.
 - Replacement behavior is explained from official client policy documentation; no transaction was broadcast or tested on a live node.
+
+## 2026-10-17 — Gas Refunds
+
+- Published the Gas Refunds article explaining the EIP-2200 storage refund counter and how original, current, and new slot values affect net refund accounting.
+- Covered EIP-3529's one-fifth refund cap, the 4,800-gas storage-clear schedule under the referenced EIP-2929 / EIP-2930 parameters, and removal of the `SELFDESTRUCT` refund.
+- Documented frame-level rollback of refund adjustments, why refunds are applied after execution, and the interaction with the EIP-7623 calldata floor and final fee calculation.
+- Added a dedicated SVG diagram showing execution-time counter adjustments and end-of-transaction settlement.
+- Linked the article from the Stage 05 index and canonical roadmap; Stage 05 is now content-complete at 14/14 published articles.
+- Examples are explanatory only; no contract was compiled, and no live transaction or gas profiler was used.
