@@ -17,7 +17,9 @@ For a standard non-anonymous event:
 
 A standard log can therefore have up to four topics total. An <code>anonymous</code> event does not automatically include the signature hash, so it can use up to four indexed parameters.
 
-![Diagram showing a standard event log with topic 0 for the event signature hash, indexed arguments in subsequent topics, and non-indexed arguments ABI-encoded in the data field, followed by topic filtering with eth_getLogs](../../assets/diagrams/topics-and-indexed-parameters.svg)
+![Diagram showing a standard event log with topic 0 for the event signature hash, indexed arguments in subsequent topics, and non-indexed arguments ABI-encoded in the data field, followed by topic filtering with eth_getLogs](https://raw.githubusercontent.com/0xSix9/Blockchain-Concepts-Learning-Roadmap/main/assets/diagrams/topics-and-indexed-parameters.svg?sanitize=true)
+
+[Open the Topics and Indexed Parameters diagram directly](https://github.com/0xSix9/Blockchain-Concepts-Learning-Roadmap/blob/main/assets/diagrams/topics-and-indexed-parameters.svg)
 
 This design introduces an important trade-off: indexing a value makes it easier to filter logs by that value, but certain dynamic or complex values are stored as hashes and cannot be recovered from the topic alone.
 
