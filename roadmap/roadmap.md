@@ -7,7 +7,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [Priority 3 — Stages 07–08](learning-priorities.md#priority-3--stages-07-to-08)
 - [Priority 4 — Stages 09–10](learning-priorities.md#priority-4--stages-09-to-10)
 
-> **Stage status:** ✅ Stage 01 content is complete — all 12 articles are published and reviewed. A check beside a stage tracks publication progress; the individual unchecked boxes track study progress and are not automatically checked when an article is published.
+> **Stage status:** ✅ Stage 01 content is complete — all 12 articles are published and reviewed. ✅ Stage 02 content is complete — all 16 articles are published. A check beside a stage tracks publication progress; the individual unchecked boxes track study progress and are not automatically checked when an article is published.
 
 ## ✅ Stage 01 — EVM Execution
 
@@ -26,9 +26,9 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [Contract Creation and Initialization](../concepts/01-evm-execution/11-contract-creation-and-initialization.md) — article published
 - [ ] [State Transition Function](../concepts/01-evm-execution/12-state-transition-function.md) — article published
 
-## Stage 02 — ABI and Contract Interaction
+## ✅ Stage 02 — ABI and Contract Interaction
 
-**Priority 1** · [Stage index](../concepts/02-abi-contract-interaction/README.md)
+**Priority 1** · ✅ **Content complete: 16/16 articles published** · [Stage index](../concepts/02-abi-contract-interaction/README.md)
 
 - [ ] [Application Binary Interface (ABI)](../concepts/02-abi-contract-interaction/01-application-binary-interface-abi.md) — article published
 - [ ] [ABI Encoding and Decoding](../concepts/02-abi-contract-interaction/02-abi-encoding-and-decoding.md) — article published
@@ -45,7 +45,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [Topics and Indexed Parameters](../concepts/02-abi-contract-interaction/13-topics-and-indexed-parameters.md) — article published
 - [ ] [Custom Errors](../concepts/02-abi-contract-interaction/14-custom-errors.md) — article published
 - [ ] [Error Selectors](../concepts/02-abi-contract-interaction/15-error-selectors.md) — article published
-- [ ] Precompiled Contracts
+- [ ] [Precompiled Contracts](../concepts/02-abi-contract-interaction/16-precompiled-contracts.md) — article published
 
 ## Stage 03 — Storage and Data Layout
 
