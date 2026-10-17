@@ -23,7 +23,7 @@ A practical transaction pipeline has distinct stages:
 6. **Track the transaction.** Record the returned hash, query for the transaction and receipt, inspect status and logs, and handle reorgs.
 7. **Apply a confirmation policy.** Decide whether inclusion, additional confirmations, a safe block, or finality is required before the application treats the operation as complete.
 
-![Transaction workflow from network selection and building through simulation, signing, raw submission, receipt inspection, and confirmation](../../assets/diagrams/sending-transactions.svg)
+
 
 ## 3. Constructing the Transaction
 
