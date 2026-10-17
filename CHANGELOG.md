@@ -82,3 +82,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Completed a technical consistency review of all 12 Stage 01 concept articles against official Ethereum/Solidity documentation and selected core EIPs; checked local Markdown/SVG links and basic SVG structure.
 - Standardized review metadata for articles 07–12 and refreshed obsolete “article not published yet” navigation notes.
 - Clarified the CREATE nonce wording, made the DELEGATECALL proxy example's receive path consistent, and improved the explanation of cumulative receipt gas accounting.
+
+
+## 2026-10-17
+
+- Marked Stage 01 as content-complete (12/12 concept articles published) in the stage index, canonical roadmap, root README roadmap table, and overview SVG.
+- Clarified that the stage-level checkmark tracks article publication, while individual concept checkboxes remain for personal study progress.
