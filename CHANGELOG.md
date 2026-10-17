@@ -106,3 +106,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 
 - Published the Function Selectors article explaining canonical signatures, Keccak-256 selector derivation, calldata layout, overloads, compiler-generated dispatch, selector collisions, and security boundaries.
 - Added a custom selector-flow diagram and linked the article from the Stage 02 index, canonical roadmap, and root README; updated Stage 02 publication progress to 3/16.
+
+
+## 2026-10-17
+
+- Published the Function Dispatch article describing Solidity-generated selector routing, argument decoding, unmatched-selector behavior, receive versus fallback paths, internal calls, proxies, and custom routers.
+- Added a custom dispatch-flow diagram and linked the article from the Stage 02 index, canonical roadmap, and root README; updated Stage 02 publication progress to 4/16.
