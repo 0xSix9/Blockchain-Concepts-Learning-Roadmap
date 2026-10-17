@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
+  <title id="title">Merkle Proofs: From a Leaf to a Trusted Root</title>
+  <desc id="desc">The left panel illustrates a simplified binary Merkle tree and the sibling hashes needed to prove leaf C. The right panel explains that Ethereum uses a Modified Merkle-Patricia Trie with RLP-encoded proof nodes checked against the appropriate block header root.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}
+      .blue{fill:#eff6ff;stroke:#60a5fa;stroke-width:2}.teal{fill:#ecfeff;stroke:#22d3ee;stroke-width:2}
+      .gold{fill:#fffbeb;stroke:#f59e0b;stroke-width:2}.purple{fill:#f5f3ff;stroke:#a78bfa;stroke-width:2}
+      .ink{fill:#0f172a;font-family:Inter,Arial,sans-serif}.muted{fill:#475569;font-family:Inter,Arial,sans-serif}
+      .title{font-size:30px;font-weight:700}.head{font-size:19px;font-weight:700}.body{font-size:15px}.small{font-size:13px}
+      .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;font-weight:600}
+      .line{stroke:#94a3b8;stroke-width:2.2;fill:none}.proofline{stroke:#2563eb;stroke-width:3;fill:none}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="780" rx="24"/>
+  <text class="ink title" x="44" y="54">Merkle Proofs: Verify a Value Without the Whole Tree</text>
+  <text class="muted body" x="46" y="84">A proof reconstructs a commitment and compares it with a root that the verifier already trusts.</text>
+
+  <rect class="panel" x="36" y="112" width="700" height="510" rx="18"/>
+  <text class="ink head" x="60" y="148">1. Simplified binary Merkle tree</text>
+  <text class="muted small" x="61" y="171">Illustrative hash rules only; real formats define their own structure.</text>
+
+  <rect class="purple" x="268" y="194" width="220" height="48" rx="12"/>
+  <text class="ink mono" x="378" y="223" text-anchor="middle">Root = H(H_AB || H_CD)</text>
+
+  <path class="line" d="M330 242 L220 282 M430 242 L548 282"/>
+  <rect class="blue" x="112" y="282" width="215" height="48" rx="12"/>
+  <text class="ink mono" x="219" y="311" text-anchor="middle">H_AB</text>
+  <rect class="teal" x="441" y="282" width="215" height="48" rx="12"/>
+  <text class="ink mono" x="548" y="311" text-anchor="middle">H_CD = H(H_C || H_D)</text>
+
+  <path class="line" d="M164 330 L126 373 M274 330 L312 373 M492 330 L454 373 M600 330 L638 373"/>
+  <rect class="panel" x="73" y="373" width="106" height="44" rx="9"/>
+  <text class="ink mono" x="126" y="400" text-anchor="middle">H_A</text>
+  <rect class="panel" x="259" y="373" width="106" height="44" rx="9"/>
+  <text class="ink mono" x="312" y="400" text-anchor="middle">H_B</text>
+  <rect class="gold" x="401" y="373" width="106" height="44" rx="9"/>
+  <text class="ink mono" x="454" y="400" text-anchor="middle">H_C</text>
+  <rect class="teal" x="585" y="373" width="106" height="44" rx="9"/>
+  <text class="ink mono" x="638" y="400" text-anchor="middle">H_D</text>
+
+  <path class="proofline" d="M454 418 L454 438 L638 438 L638 418"/>
+  <rect class="gold" x="390" y="444" width="260" height="47" rx="10"/>
+  <text class="ink body" x="520" y="464" text-anchor="middle">Proof for C supplies H_D</text>
+  <text class="muted small" x="520" y="482" text-anchor="middle">to reconstruct H_CD</text>
+  <path class="proofline" d="M520 491 L520 510 L548 510 L548 330"/>
+  <text class="muted small" x="60" y="530">Then combine H_CD with sibling H_AB in the correct order to recompute the root.</text>
+  <text class="ink body" x="60" y="560">Accept only if computed root = trusted root.</text>
+  <text class="muted small" x="60" y="586">Binary-tree example: proof size is typically logarithmic in the number of leaves.</text>
+
+  <rect class="panel" x="760" y="112" width="404" height="510" rx="18"/>
+  <text class="ink head" x="784" y="148">2. Ethereum execution layer</text>
+  <rect class="purple" x="784" y="174" width="356" height="76" rx="12"/>
+  <text class="ink head" x="802" y="200">Authenticated block header</text>
+  <text class="muted small" x="802" y="222">stateRoot / transactionsRoot / receiptsRoot</text>
+  <text class="muted small" x="802" y="240">Choose the root for the data being checked.</text>
+
+  <path class="line" d="M962 250 L962 274"/>
+  <rect class="blue" x="784" y="274" width="356" height="82" rx="12"/>
+  <text class="ink head" x="802" y="300">RLP-encoded MPT nodes</text>
+  <text class="muted body" x="802" y="323">Branch, extension, or leaf nodes</text>
+  <text class="muted small" x="802" y="342">Proof follows a key path through the trie.</text>
+
+  <path class="line" d="M962 356 L962 380"/>
+  <rect class="teal" x="784" y="380" width="356" height="72" rx="12"/>
+  <text class="ink head" x="802" y="406">Verify path and encoded values</text>
+  <text class="muted body" x="802" y="430">Apply trie rules and cryptographic hashes.</text>
+
+  <path class="line" d="M962 452 L962 476"/>
+  <rect class="gold" x="784" y="476" width="356" height="70" rx="12"/>
+  <text class="ink head" x="802" y="503">Compare with the selected root</text>
+  <text class="muted small" x="802" y="526">Proof validity alone does not authenticate the header.</text>
+  <text class="muted small" x="784" y="575">eth_getProof can return accountProof and storageProof.</text>
+  <text class="muted small" x="784" y="595">Returned proof material must still be verified.</text>
+
+  <rect class="panel" x="36" y="644" width="1128" height="104" rx="16"/>
+  <text class="ink head" x="60" y="678">Remember</text>
+  <text class="muted body" x="60" y="704">Merkle proof = evidence of consistency with a root.</text>
+  <text class="muted body" x="60" y="728">Trust in the root, chain finality, data freshness, and correct interpretation are separate checks.</text>
+</svg>
