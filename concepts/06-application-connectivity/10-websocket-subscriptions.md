@@ -73,6 +73,22 @@ Protect WebSocket endpoints and API keys. A publicly exposed endpoint can be abu
 6. Opening subscriptions over a transport that does not support them.
 7. Failing to unsubscribe or enforce connection limits.
 
+## Developer Review Checklist
+
+- [ ] Create subscriptions over a supported persistent transport and store the returned subscription ID.
+- [ ] Explain the differences between `newHeads`, `logs`, and pending-transaction notifications.
+- [ ] Implement reconnect and subscription recreation after connection loss.
+- [ ] Backfill missed blocks/logs and deduplicate repeated notifications.
+- [ ] Handle removed logs, reorgs, and a suitable confirmation/finality policy.
+- [ ] Apply connection limits, timeouts, backoff, and endpoint credential protection.
+
+## Key Takeaways
+
+- WebSocket subscriptions provide live notifications, not a durable exactly-once queue.
+- Provider mempool visibility and subscription behavior can differ.
+- Disconnects require recovery and backfill.
+- Logs and heads must be treated as reorganization-aware until the application's required confidence level is reached.
+
 ## References
 
 - 1. [Ethereum.org — JSON-RPC API](https://ethereum.org/developers/docs/apis/json-rpc/) — subscription methods and filter data.
