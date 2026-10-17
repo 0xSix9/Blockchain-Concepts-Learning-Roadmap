@@ -76,6 +76,22 @@ If the application's historical query load is small, a hosted archive provider m
 5. Forgetting to record block hash and chain context for historical results.
 6. Operating archive infrastructure without planning for disk growth, backups, and sync time.
 
+## Developer Review Checklist
+
+- [ ] Distinguish historical block/receipt retention from historical state retention.
+- [ ] Explain when an old-state RPC query may require an archive configuration.
+- [ ] Record chain and block context for reproducible historical queries.
+- [ ] Distinguish archive access from transaction tracing and custom indexing.
+- [ ] Compare self-hosted and hosted archive access in cost, trust, and query-limit terms.
+- [ ] Consider storage growth, sync time, backups, and disk I/O before operating an archive node.
+
+## Key Takeaways
+
+- Archive nodes retain historical execution states for direct old-state queries.
+- A node may serve old blocks and receipts without retaining every old state.
+- Historical RPC availability depends on client configuration and provider policy.
+- Archive state is not a substitute for every trace, index, or analytics service.
+
 ## References
 
 - 1. [Ethereum.org — Archive Nodes](https://ethereum.org/developers/docs/nodes-and-clients/archive-nodes) — historical-state retention and use cases.
