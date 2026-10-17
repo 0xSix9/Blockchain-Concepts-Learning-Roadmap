@@ -116,11 +116,9 @@ Each word is encoded independently:
 The encoded children total eight bytes. The list prefix is `0xc0 + 8 = 0xc8`.
 
 ```text
-RLP output:
-c8 83 63 61 74 83 64 6f 67
-\_/ 
- |
- +-- List prefix: 8 bytes of encoded children
+RLP output: c8 83 63 61 74 83 64 6f 67
+
+The first byte, `c8`, is the list prefix: eight bytes of encoded children follow.
 ```
 
 The decoder sees `c8`, reads exactly eight bytes of list payload, then decodes two child strings inside that boundary.
