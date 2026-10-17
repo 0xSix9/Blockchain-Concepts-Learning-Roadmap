@@ -321,9 +321,9 @@ These are starting points rather than automatic rules. The appropriate visibilit
 
 ## Review Checklist
 
-- [x] Distinguishes the four function visibility specifiers.
-- [x] Explains the three state-variable visibility options and automatic public getters.
-- [x] Covers internal calls versus \`this.f()\` external message calls.
-- [x] Explains the inheritance difference between internal and private members.
-- [x] Separates visibility, ABI exposure, authorization, and privacy.
-- [x] Links official Solidity documentation and related roadmap concepts.
+- [ ] Explain the difference between `external`, `public`, `internal`, and `private` functions.
+- [ ] Describe the visibility options available for state variables and how public getters work.
+- [ ] Explain the difference between an internal call and `this.f()`.
+- [ ] Explain how `internal` and `private` affect inheritance.
+- [ ] Distinguish visibility, ABI exposure, authorization, and privacy.
+- [ ] Review the official Solidity documentation and related roadmap concepts.
