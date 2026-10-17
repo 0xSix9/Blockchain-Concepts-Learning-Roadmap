@@ -66,7 +66,7 @@ A standard API does not guarantee that a remote provider is honest, available, o
 
 Node operators should expose only the methods necessary for their consumers. Privileged namespaces and the Engine API should not be treated as ordinary public dApp endpoints.
 
-## Developer Review Checklist
+## 8. Developer Review Checklist
 
 - [ ] Explain the difference between JSON-RPC's envelope and the Execution API's method schemas.
 - [ ] Group methods by state reads, blocks/transactions, simulation, submission, and logs.
@@ -75,7 +75,7 @@ Node operators should expose only the methods necessary for their consumers. Pri
 - [ ] Pin related state reads to a consistent block reference when needed.
 - [ ] Avoid exposing privileged or debug methods as public application endpoints.
 
-## Key Takeaways
+## 9. Key Takeaways
 
 - The Execution API standardizes Ethereum execution-layer methods and their schemas.
 - JSON-RPC carries the request; the Execution API defines the method's meaning.
