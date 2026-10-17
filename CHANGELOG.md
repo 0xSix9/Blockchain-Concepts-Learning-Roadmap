@@ -392,3 +392,10 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Clarified EIP-2535's requirement to include immutable function selectors as additions in the `DiamondCut` event and report them through loupe functions.
 - Connected the Deterministic Contract Deployment and CREATE2 Address Derivation articles and made the full-roadmap status note consistently include Stage 03 completion.
 - Source-code examples were reviewed editorially but were not compiled or executed as part of this pass.
+
+## 2026-10-17 — Transaction Lifecycle
+
+- Published the Transaction Lifecycle article covering transaction preparation, signing, submission, propagation, transaction pools, block inclusion, EVM execution, receipts, confirmations, and finality.
+- Added a dedicated SVG diagram separating RPC submission, inclusion, execution success/revert, and finality.
+- Linked the article from the Stage 05 index and canonical roadmap, and updated publication progress to 1/14 for Stage 05.
+- The transaction lifecycle example is a JSON-RPC receipt request; no Solidity code was compiled or executed as part of this article.
