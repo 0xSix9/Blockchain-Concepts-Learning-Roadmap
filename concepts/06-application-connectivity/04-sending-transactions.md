@@ -81,7 +81,7 @@ After inclusion, inspect the receipt's status, gas usage, and logs. If a reorgan
 6. Storing private keys in app logs, environment dumps, source code, or RPC payloads.
 7. Reporting success before checking receipt status and the application's confirmation policy.
 
-## Developer Review Checklist
+## 8. Developer Review Checklist
 
 - [ ] Separate building, simulation, signing, submission, inclusion, execution outcome, and finality.
 - [ ] Verify Chain ID, sender nonce, destination, value, calldata, transaction type, and fee fields before signing.
@@ -90,7 +90,7 @@ After inclusion, inspect the receipt's status, gas usage, and logs. If a reorgan
 - [ ] Handle timeouts by tracking the same raw transaction/hash before creating a replacement.
 - [ ] Inspect receipt status, logs, and the application's confirmation/finality policy before reporting success.
 
-## Key Takeaways
+## 9. Key Takeaways
 
 - Sending a transaction is a multi-step workflow; RPC acceptance is not on-chain success.
 - The exact signed fields are immutable: changing a field requires a new signature.
