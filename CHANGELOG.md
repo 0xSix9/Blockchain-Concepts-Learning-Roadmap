@@ -508,3 +508,12 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Corrected the hexadecimal `cumulativeGasUsed` example in Gas Limit and Gas Used and Transaction Receipts so `0x1dc90` matches 122,000 gas.
 - Clarified the EIP-7623 calldata-floor formula in Gas Refunds and distinguished the still-proposed EIP-7976 parameter change from active protocol rules.
 - Removed a duplicated sentence from the Stage 05 index. Stage 05 remains content-complete at 14/14 published articles.
+
+## 2026-10-17 — JSON-RPC
+
+- Published the Stage 06 JSON-RPC article, introducing JSON-RPC request/response structure and its separation from Ethereum's Execution API method definitions.
+- Covered request IDs, result versus error responses, standard JSON-RPC error codes, Ethereum `QUANTITY` versus `DATA` encoding, block identifiers, and HTTP / WebSocket / IPC transports.
+- Added practical `curl` and JSON examples, batch-request and notification caveats, and security guidance for endpoint exposure, credentials, provider trust, retries, and transaction submission.
+- Added a custom SVG diagram showing an application sending a JSON-RPC request through a transport to an Ethereum execution client and receiving a result or error.
+- Linked the article from the Stage 06 index and canonical roadmap, and updated Stage 06 publication progress to 1/17.
+- Examples are illustrative; the placeholder endpoint was not contacted and no live RPC request or transaction was submitted.
