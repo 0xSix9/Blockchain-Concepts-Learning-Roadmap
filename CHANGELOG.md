@@ -249,3 +249,10 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the Recursive Length Prefix (RLP) Encoding article, covering the five prefix cases, byte-string and list encoding, canonical integer conventions, decoding boundaries, Ethereum execution-layer usage, and security considerations.
 - Added an RLP encoding overview diagram and linked the article from the Stage 03 checklist and canonical roadmap.
 - Updated Stage 03 publication progress to 10/13; the concept checklist remains unchecked for study tracking.
+
+
+## 2026-10-17
+
+- Published the Merkle Proofs article, explaining inclusion and non-inclusion proofs, trusted roots, proof verification, Ethereum's Modified Merkle-Patricia Trie, the block header roots, and `eth_getProof`.
+- Added a dedicated Merkle proof overview diagram and linked the article from the Stage 03 checklist and canonical roadmap.
+- Updated Stage 03 publication progress to 11/13; the concept checklist remains unchecked for study tracking.
