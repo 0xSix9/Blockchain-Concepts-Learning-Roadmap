@@ -89,9 +89,9 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 
 ## Stage 05 — Advanced Transactions and Gas
 
-**Priority 2** · [Stage index](../concepts/05-advanced-transactions-gas/README.md)
+**Priority 2** · 🔄 **Article progress: 1/14 published** · [Stage index](../concepts/05-advanced-transactions-gas/README.md)
 
-- [ ] Transaction Lifecycle
+- [ ] [Transaction Lifecycle](../concepts/05-advanced-transactions-gas/01-transaction-lifecycle.md) — article published
 - [ ] Transaction Nonce
 - [ ] Transaction Types (EIP-2718)
 - [ ] Access List Transactions (EIP-2930)
