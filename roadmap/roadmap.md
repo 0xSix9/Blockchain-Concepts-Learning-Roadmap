@@ -67,7 +67,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 
 ## Stage 04 — Smart Contract Architecture
 
-**Priority 1** · 🔄 **Article progress: 15/17 published** · [Stage index](../concepts/04-smart-contract-architecture/README.md)
+**Priority 1** · 🔄 **Article progress: 16/17 published** · [Stage index](../concepts/04-smart-contract-architecture/README.md)
 
 - [ ] [Contract Composition](../concepts/04-smart-contract-architecture/01-contract-composition.md) — article published
 - [ ] [Inheritance](../concepts/04-smart-contract-architecture/02-inheritance.md) — article published
@@ -84,7 +84,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [Initializers](../concepts/04-smart-contract-architecture/13-initializers.md) — article published
 - [ ] [Storage Collisions in Proxies](../concepts/04-smart-contract-architecture/14-storage-collisions-in-proxies.md) — article published
 - [ ] [Diamond Pattern (EIP-2535)](../concepts/04-smart-contract-architecture/15-diamond-pattern-eip-2535.md) — article published
-- [ ] Deterministic Contract Deployment
+- [ ] [Deterministic Contract Deployment](../concepts/04-smart-contract-architecture/16-deterministic-contract-deployment.md) — article published
 - [ ] CREATE2 Address Derivation
 
 ## Stage 05 — Advanced Transactions and Gas
