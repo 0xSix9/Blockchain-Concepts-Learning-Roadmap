@@ -235,3 +235,10 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the Storage Context article for Stage 03, explaining account-scoped storage, CALL/STATICCALL/DELEGATECALL context selection, proxy state, layout compatibility, initialization, and security considerations.
 - Added a dedicated CALL-versus-DELEGATECALL storage-context diagram and linked the article from the Stage 03 index and canonical roadmap.
 - Updated Stage 03 publication progress to 8/13; individual learning checkboxes remain unchecked.
+
+## 2026-10-17
+
+- Published the Storage Collisions article for Stage 03, explaining proxy metadata conflicts, incompatible upgrade layouts, Diamond facet collisions, custom slot collisions, and safe storage separation patterns.
+- Added a dedicated collision-versus-namespaced-storage diagram and linked the article from the Stage 03 index and canonical roadmap.
+- Included current references for EIP-1967, ERC-7201, ERC-8042, and ERC-2535.
+- Updated Stage 03 publication progress to 9/13; individual learning checkboxes remain unchecked.
