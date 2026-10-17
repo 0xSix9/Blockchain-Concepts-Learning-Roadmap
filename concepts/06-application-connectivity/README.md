@@ -2,15 +2,15 @@
 
 **Priority:** 2  
 **Topics:** 17  
-**Article status:** Not started — this stage contains a checklist only.
+**Article status:** 🔄 In progress — 1/17 concept articles published.
 
 ## About this stage
 
-This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The individual articles are intentionally not created yet; they will be added one by one as the concepts are researched.
+This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The JSON-RPC article is published; the remaining concepts will be documented one by one as they are researched. The checkboxes track personal study progress, not publication status.
 
 ## Concept checklist
 
-- [ ] JSON-RPC
+- [ ] [JSON-RPC](01-json-rpc.md) — article published
 - [ ] Ethereum RPC Methods
 - [ ] Reading Blockchain State
 - [ ] Sending Transactions
