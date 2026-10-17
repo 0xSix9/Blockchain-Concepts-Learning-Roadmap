@@ -49,7 +49,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 
 ## Stage 03 — Storage and Data Layout
 
-**Priority 1** · 🔄 **Article progress: 6/13 published** · [Stage index](../concepts/03-storage-data-layout/README.md)
+**Priority 1** · 🔄 **Article progress: 7/13 published** · [Stage index](../concepts/03-storage-data-layout/README.md)
 
 - [ ] [Storage Layout](../concepts/03-storage-data-layout/01-storage-layout.md) — article published
 - [ ] [Storage Slots](../concepts/03-storage-data-layout/02-storage-slots.md) — article published
@@ -57,7 +57,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [Mappings and Dynamic Arrays in Storage](../concepts/03-storage-data-layout/04-mappings-and-dynamic-arrays-in-storage.md) — article published
 - [ ] [Memory Layout](../concepts/03-storage-data-layout/05-memory-layout.md) — article published
 - [ ] [Calldata Layout](../concepts/03-storage-data-layout/06-calldata-layout.md) — article published
-- [ ] Transient Storage (EIP-1153)
+- [ ] [Transient Storage (EIP-1153)](../concepts/03-storage-data-layout/07-transient-storage-eip-1153.md) — article published
 - [ ] Storage Context
 - [ ] Storage Collisions
 - [ ] Recursive Length Prefix (RLP) Encoding
