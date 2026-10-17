@@ -179,3 +179,11 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the Precompiled Contracts article, explaining how special addresses invoke client-implemented operations, the common post-Prague precompile set, fork-specific availability, low-level call handling, gas behavior, and security checks.
 - Added a custom Precompiled Contracts overview diagram and linked the article from the Stage 02 index, canonical roadmap, and project README.
 - Completed Stage 02 publication: all 16 of 16 concept articles are now published; the personal study checkboxes remain unchecked.
+
+
+## 2026-10-17
+
+- Audited all 16 Stage 02 articles for conceptual consistency, code-example plausibility, official references, diagrams, and navigation; checked 59 internal Markdown link instances across 28 unique local targets with no missing destinations.
+- Corrected the Precompiled Contracts article and diagram to include Ethereum mainnet's Osaka `P256VERIFY` precompile at `0x0100`, and clarified the roles of EIP-7910 and EIP-7951.
+- Clarified that low-level `call{value: ...}("")` is available on `address` and is not exclusive to `address payable`; tightened the Solidity 0.8.37 custom-error compiler-bug note to its actual trigger conditions.
+- Standardized all 16 article self-review checklists as unchecked learner progress items; stage/article publication status remains distinct from personal study progress.
