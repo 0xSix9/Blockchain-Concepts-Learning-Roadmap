@@ -56,13 +56,13 @@
   <text class="muted small" x="740" y="170">Each slot is 32 bytes (256 bits)</text>
   <rect class="blue" x="740" y="188" width="286" height="114" rx="10"/>
   <text class="ink label" x="758" y="212">Slot 0</text>
-  <rect x="758" y="226" width="135" height="28" rx="4" fill="#93c5fd" stroke="#3b82f6"/>
-  <rect x="893" y="226" width="67" height="28" rx="4" fill="#67e8f9" stroke="#0891b2"/>
-  <rect x="960" y="226" width="50" height="28" rx="4" fill="#fde68a" stroke="#d97706"/>
+  <rect x="758" y="226" width="126" height="28" rx="4" fill="#93c5fd" stroke="#3b82f6"/>
+  <rect x="884" y="226" width="63" height="28" rx="4" fill="#67e8f9" stroke="#0891b2"/>
+  <rect x="947" y="226" width="8" height="28" rx="2" fill="#fde68a" stroke="#d97706"/>
   <text class="ink small" x="768" y="245">credit</text>
-  <text class="ink small" x="900" y="245">nonce</text>
-  <text class="ink small" x="964" y="245">bool</text>
-  <text class="muted small" x="758" y="278">offsets: 0 · 16 · 24 bytes</text>
+  <text class="ink small" x="891" y="245">nonce</text>
+  
+  <text class="muted small" x="758" y="278">sizes: 16B · 8B · 1B · 7B free</text><text class="muted small" x="758" y="294">offsets: 0 · 16 · 24 bytes</text>
   <rect class="gold" x="740" y="316" width="286" height="52" rx="9"/>
   <text class="ink label" x="758" y="338">Slot 1</text>
   <text class="ink small" x="758" y="357">total · offset 0 · 32 bytes</text>
