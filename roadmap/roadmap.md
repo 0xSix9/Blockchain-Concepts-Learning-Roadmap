@@ -60,7 +60,6 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [Transient Storage (EIP-1153)](../concepts/03-storage-data-layout/07-transient-storage-eip-1153.md) — article published
 - [ ] [Storage Context](../concepts/03-storage-data-layout/08-storage-context.md) — article published
 - [ ] [Storage Collisions](../concepts/03-storage-data-layout/09-storage-collisions.md) — article published
-- [ ] [Recursive Length Prefix (RLP) Encoding](../concepts/03-storage-data-layout/10-recursive-length-prefix-rlp-encoding.md) — article published
 - [ ] Merkle Proofs
 - [ ] Account Proofs
 - [ ] Storage Proofs
