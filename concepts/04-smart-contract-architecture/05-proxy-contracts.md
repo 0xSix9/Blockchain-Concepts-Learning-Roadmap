@@ -148,7 +148,7 @@ Common upgradeable designs include:
 - **UUPS:** puts upgrade logic in the implementation, while the proxy provides the delegated execution path.
 - **Beacon Proxy:** resolves the implementation through a beacon that can be updated to affect multiple proxies.
 
-These patterns have different authorization and dispatch rules. They are covered separately in the next articles: [Transparent Proxies](06-transparent-proxies.md), [UUPS Proxies](07-uups-proxies.md), and [Beacon Proxies](08-beacon-proxies.md).
+These patterns have different authorization and dispatch rules. They are covered separately in the next articles: Transparent Proxies, UUPS Proxies, and Beacon Proxies.
 
 Minimal clones are a different use case: they reduce deployment cost by reusing implementation code, but ordinary ERC-1167 clones do not provide an upgrade mechanism by default.
 
