@@ -13,6 +13,8 @@ For example, the commonly used ERC-20 function signature **transfer(address,uint
 
 The selector is not the function's implementation, is not a permission, and is not a globally unique identifier. It is a compact dispatch value interpreted by the code at the target address.
 
+This regular selector convention applies to standard externally callable contract functions. Internal and private functions do not have regular external ABI selectors because they are not dispatched through the contract's external ABI. External library functions have additional library-specific calling-convention rules for types that the regular contract ABI does not support.
+
 ![Diagram showing canonical function signature hashed with Keccak-256, first four bytes extracted as the selector, selector prefixed to ABI-encoded arguments, and contract dispatch checking calldata](../../assets/diagrams/function-selectors-flow.svg)
 
 ## 2. Why Function Selectors Matter
