@@ -62,6 +62,22 @@ A self-run node is not automatically infallible. It can be misconfigured, behind
 5. Exposing RPC, debug, or Engine API endpoints without appropriate access controls.
 6. Ignoring hardware, updates, synchronization, and monitoring needs.
 
+## Developer Review Checklist
+
+- [ ] Explain the difference between execution and consensus components of a post-Merge node.
+- [ ] Distinguish a full node from a validator, RPC provider, and archive node.
+- [ ] Explain how sync strategy affects which historical data was verified or retained.
+- [ ] Describe why a full node can still be stale, misconfigured, or unavailable.
+- [ ] Identify operational tasks: upgrades, sync monitoring, storage, peers, and API protection.
+- [ ] Restrict debug, administrative, and Engine API access appropriately.
+
+## Key Takeaways
+
+- A full node validates and serves chain data according to its mode and configuration.
+- A full node is not automatically a validator or an archive node.
+- Post-Merge execution and consensus roles are separate but coordinated.
+- Self-hosting can reduce provider dependence, but it also creates operational and security responsibilities.
+
 ## References
 
 - 1. [Ethereum.org — Nodes and Clients](https://ethereum.org/developers/docs/nodes-and-clients) — node modes and sync behavior.
