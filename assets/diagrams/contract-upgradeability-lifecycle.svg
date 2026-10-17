@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850" role="img" aria-labelledby="title desc">
+  <title id="title">Contract Upgradeability Lifecycle</title>
+  <desc id="desc">An upgrade candidate goes through code review, testing, storage compatibility validation, and governance authorization before its implementation is changed through a proxy or beacon. Post-upgrade verification and monitoring follow.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}
+      .blue{fill:#eff6ff;stroke:#60a5fa;stroke-width:2}.teal{fill:#ecfeff;stroke:#22d3ee;stroke-width:2}
+      .gold{fill:#fffbeb;stroke:#f59e0b;stroke-width:2}.purple{fill:#f5f3ff;stroke:#a78bfa;stroke-width:2}
+      .red{fill:#fef2f2;stroke:#f87171;stroke-width:2}
+      .ink{fill:#0f172a;font-family:Inter,Arial,sans-serif}.muted{fill:#475569;font-family:Inter,Arial,sans-serif}
+      .title{font-size:30px;font-weight:700}.head{font-size:18px;font-weight:700}.body{font-size:15px}.small{font-size:13px}
+      .arrow{stroke:#2563eb;stroke-width:2.8;fill:none}.ok{stroke:#0f766e;stroke-width:2.6;fill:none}.dash{stroke:#64748b;stroke-width:2;stroke-dasharray:6 6;fill:none}
+    </style>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2563eb"/></marker>
+    <marker id="ok" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#0f766e"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="850" rx="24"/>
+  <text class="ink title" x="42" y="54">Contract Upgradeability — Safe Change Lifecycle</text>
+  <text class="muted body" x="44" y="84">A code change is not complete until state, authorization, and post-upgrade behavior are validated.</text>
+
+  <rect class="panel" x="35" y="112" width="1130" height="430" rx="20"/>
+  <rect class="purple" x="65" y="157" width="235" height="105" rx="13"/>
+  <text class="ink head" x="182" y="190" text-anchor="middle">1. Proposed change</text>
+  <text class="muted body" x="182" y="215" text-anchor="middle">new implementation</text>
+  <text class="muted small" x="182" y="238" text-anchor="middle">documented code diff</text>
+
+  <rect class="blue" x="350" y="157" width="235" height="105" rx="13"/>
+  <text class="ink head" x="467" y="190" text-anchor="middle">2. Review + tests</text>
+  <text class="muted body" x="467" y="215" text-anchor="middle">unit / integration</text>
+  <text class="muted small" x="467" y="238" text-anchor="middle">invariants + regression</text>
+
+  <rect class="teal" x="635" y="157" width="235" height="105" rx="13"/>
+  <text class="ink head" x="752" y="190" text-anchor="middle">3. Validate state</text>
+  <text class="muted body" x="752" y="215" text-anchor="middle">storage compatibility</text>
+  <text class="muted small" x="752" y="238" text-anchor="middle">initializer / migration</text>
+
+  <rect class="gold" x="920" y="157" width="210" height="105" rx="13"/>
+  <text class="ink head" x="1025" y="190" text-anchor="middle">4. Authorize</text>
+  <text class="muted body" x="1025" y="215" text-anchor="middle">multisig / timelock</text>
+  <text class="muted small" x="1025" y="238" text-anchor="middle">verify target + params</text>
+
+  <path class="arrow" d="M300 209 L342 209" marker-end="url(#arrow)"/>
+  <path class="arrow" d="M585 209 L627 209" marker-end="url(#arrow)"/>
+  <path class="arrow" d="M870 209 L912 209" marker-end="url(#arrow)"/>
+
+  <path class="dash" d="M1025 262 L1025 301 L182 301 L182 326"/>
+  <text class="muted small" x="603" y="291" text-anchor="middle">Only proceed after reviews and checks pass</text>
+
+  <rect class="purple" x="65" y="326" width="235" height="95" rx="13"/>
+  <text class="ink head" x="182" y="359" text-anchor="middle">5. Execute upgrade</text>
+  <text class="muted body" x="182" y="384" text-anchor="middle">proxy or beacon path</text>
+  <text class="muted small" x="182" y="403" text-anchor="middle">authorized transaction</text>
+
+  <rect class="teal" x="350" y="326" width="235" height="95" rx="13"/>
+  <text class="ink head" x="467" y="359" text-anchor="middle">6. Initialize changes</text>
+  <text class="muted body" x="467" y="384" text-anchor="middle">if required</text>
+  <text class="muted small" x="467" y="403" text-anchor="middle">proxy storage context</text>
+
+  <rect class="blue" x="635" y="326" width="235" height="95" rx="13"/>
+  <text class="ink head" x="752" y="359" text-anchor="middle">7. Verify state</text>
+  <text class="muted body" x="752" y="384" text-anchor="middle">active implementation</text>
+  <text class="muted small" x="752" y="403" text-anchor="middle">events + key invariants</text>
+
+  <rect class="gold" x="920" y="326" width="210" height="95" rx="13"/>
+  <text class="ink head" x="1025" y="359" text-anchor="middle">8. Monitor</text>
+  <text class="muted body" x="1025" y="384" text-anchor="middle">integrations + reverts</text>
+  <text class="muted small" x="1025" y="403" text-anchor="middle">incident plan</text>
+
+  <path class="arrow" d="M300 373 L342 373" marker-end="url(#arrow)"/>
+  <path class="arrow" d="M585 373 L627 373" marker-end="url(#arrow)"/>
+  <path class="arrow" d="M870 373 L912 373" marker-end="url(#arrow)"/>
+
+  <rect class="red" x="65" y="455" width="1065" height="56" rx="11"/>
+  <text class="ink head" x="597" y="480" text-anchor="middle">A successful upgrade transaction is not proof of a safe upgrade</text>
+  <text class="muted small" x="597" y="500" text-anchor="middle">Incorrect storage layout, authorization, or initialization can still compromise the application.</text>
+
+  <rect class="panel" x="35" y="568" width="1130" height="242" rx="20"/>
+  <text class="ink head" x="65" y="608">The three questions every upgrade review must answer</text>
+
+  <rect class="blue" x="65" y="635" width="320" height="132" rx="13"/>
+  <text class="ink head" x="225" y="670" text-anchor="middle">Who can upgrade?</text>
+  <text class="muted body" x="225" y="700" text-anchor="middle">Admin, UUPS authorization,</text>
+  <text class="muted body" x="225" y="722" text-anchor="middle">beacon owner, or governance</text>
+  <text class="muted small" x="225" y="747" text-anchor="middle">privilege and trust model</text>
+
+  <rect class="teal" x="440" y="635" width="320" height="132" rx="13"/>
+  <text class="ink head" x="600" y="670" text-anchor="middle">What state is preserved?</text>
+  <text class="muted body" x="600" y="700" text-anchor="middle">Storage layout, initializer,</text>
+  <text class="muted body" x="600" y="722" text-anchor="middle">migration and invariants</text>
+  <text class="muted small" x="600" y="747" text-anchor="middle">compatibility validation</text>
+
+  <rect class="gold" x="815" y="635" width="315" height="132" rx="13"/>
+  <text class="ink head" x="972" y="670" text-anchor="middle">Can users verify the change?</text>
+  <text class="muted body" x="972" y="700" text-anchor="middle">Implementation address,</text>
+  <text class="muted body" x="972" y="722" text-anchor="middle">events, source and approvals</text>
+  <text class="muted small" x="972" y="747" text-anchor="middle">monitoring and transparency</text>
+</svg>
