@@ -91,6 +91,14 @@ Archive nodes retain historical states for low-latency historical queries; ordin
 - [ ] Explain why historical state availability differs from historical block availability.
 - [ ] Know when `eth_getProof` or a different data source is necessary.
 
+## Key Takeaways
+
+- Account reads return state in a specific block context; “latest” may change between calls.
+- Balance and nonce values are hexadecimal quantities, while code and storage values are byte data.
+- Historical block/receipt availability does not guarantee historical state availability.
+- A plain RPC response is not automatically a cryptographic proof.
+- Use a consistent block reference and verify proof material when your threat model requires it.
+
 ## References
 
 - 1. [Ethereum.org — JSON-RPC API](https://ethereum.org/developers/docs/apis/json-rpc/) — state-query methods and block parameters.
