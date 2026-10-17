@@ -256,3 +256,10 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the Merkle Proofs article, explaining inclusion and non-inclusion proofs, trusted roots, proof verification, Ethereum's Modified Merkle-Patricia Trie, the block header roots, and `eth_getProof`.
 - Added a dedicated Merkle proof overview diagram and linked the article from the Stage 03 checklist and canonical roadmap.
 - Updated Stage 03 publication progress to 11/13; the concept checklist remains unchecked for study tracking.
+
+
+## 2026-10-17
+
+- Published the Account Proofs article, covering the Ethereum account record, `keccak256(address)` trie-key derivation, verification against a block's `stateRoot`, `eth_getProof`, inclusion and non-inclusion, and the relationship to storage proofs.
+- Added a dedicated account-proof verification diagram and linked the article from the Stage 03 checklist and canonical roadmap.
+- Updated Stage 03 publication progress to 12/13; the concept checklist remains unchecked for study tracking.
