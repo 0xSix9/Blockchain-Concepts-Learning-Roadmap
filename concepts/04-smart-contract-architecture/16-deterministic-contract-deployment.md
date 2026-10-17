@@ -139,7 +139,7 @@ Both mechanisms can be deterministic when their inputs are known. The key differ
 ## References
 
 1. **[EIP-1014 — Skinny CREATE2](https://eips.ethereum.org/EIPS/eip-1014)** — specification, address formula, motivation, init-code hashing, and creation collisions.
-2. **[Solidity documentation — Salted contract creations / CREATE2](https://docs.soliditylang.org/en/latest/control-structures.html#salted-contract-creations-create2)** — how Solidity uses salts and init code to create contracts.
+2. **[Solidity documentation — Salted contract creations / CREATE2](https://docs.solidity.org/en/latest/control-structures.html#salted-contract-creations-create2)** — how Solidity uses salts and init code to create contracts.
 3. **[Ethereum.org — Ethereum accounts](https://ethereum.org/en/developers/docs/accounts/)** — overview of contract address creation with `CREATE` and `CREATE2`.
 4. **[OpenZeppelin Contracts — Create2](https://docs.openzeppelin.com/contracts/5.x/api/utils#Create2)** — helper utilities for predicting and deploying contracts using `CREATE2`.
 5. **[CREATE2 Address Derivation](17-create2-address-derivation.md)** — the companion article focused on the exact formula and address calculation.
