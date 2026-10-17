@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1060" viewBox="0 0 1200 1060" role="img" aria-labelledby="title desc">
+  <title id="title">EVM Return Data and Revert Data Flow</title>
+  <desc id="desc">A caller executes a call-like opcode. The success flag and the full returned or revert bytes become available to the caller's return-data buffer. RETURNDATASIZE reads the length, RETURNDATACOPY copies bytes to memory, and the caller can return them, inspect them, or bubble a revert. A subsequent call clears the old buffer.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker>
+    <marker id="blueArrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/></marker>
+    <style>
+      .bg{fill:#f8fafc}.title{font:700 30px Arial,sans-serif;fill:#0f172a}.sub{font:16px Arial,sans-serif;fill:#475569}
+      .box{fill:#fff;stroke:#94a3b8;stroke-width:2;rx:14}.blue{fill:#eff6ff;stroke:#2563eb;stroke-width:2;rx:14}
+      .green{fill:#ecfdf5;stroke:#059669;stroke-width:2;rx:14}.red{fill:#fff1f2;stroke:#e11d48;stroke-width:2;rx:14}
+      .purple{fill:#f5f3ff;stroke:#7c3aed;stroke-width:2;rx:14}.label{font:700 18px Arial,sans-serif;fill:#0f172a}
+      .body{font:15px Arial,sans-serif;fill:#334155}.small{font:13px Arial,sans-serif;fill:#475569}
+      .line{stroke:#475569;stroke-width:2.5;fill:none;marker-end:url(#arrow)}.blueLine{stroke:#2563eb;stroke-width:2.5;fill:none;marker-end:url(#blueArrow)}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="1060" rx="22"/>
+  <text class="title" x="600" y="48" text-anchor="middle">Return data and revert data</text>
+  <text class="sub" x="600" y="78" text-anchor="middle">One byte buffer carries either successful output or failure payload</text>
+
+  <rect class="blue" x="75" y="115" width="1050" height="105" rx="16"/>
+  <text class="label" x="600" y="148" text-anchor="middle">1 · Caller executes a call-like opcode</text>
+  <text class="body" x="600" y="178" text-anchor="middle">CALL · DELEGATECALL · STATICCALL · CREATE · CREATE2</text>
+  <text class="small" x="600" y="202" text-anchor="middle">The caller's previous return-data buffer is cleared</text>
+
+  <path class="line" d="M600 220 L600 252"/>
+  <rect class="box" x="75" y="260" width="1050" height="112" rx="16"/>
+  <text class="label" x="600" y="293" text-anchor="middle">2 · Child operation completes</text>
+  <text class="body" x="335" y="328" text-anchor="middle">SUCCESS</text>
+  <text class="body" x="865" y="328" text-anchor="middle">FAILURE</text>
+  <text class="small" x="335" y="351" text-anchor="middle">RETURN bytes (possibly empty)</text>
+  <text class="small" x="865" y="351" text-anchor="middle">REVERT/error bytes (possibly empty)</text>
+
+  <path class="line" d="M335 372 L335 404 L600 404 L600 425"/>
+  <path class="line" d="M865 372 L865 404 L600 404"/>
+  <rect class="purple" x="190" y="433" width="820" height="114" rx="16"/>
+  <text class="label" x="600" y="466" text-anchor="middle">3 · Caller return-data buffer (EIP-211)</text>
+  <text class="body" x="600" y="496" text-anchor="middle">Contains the complete output/failure bytes from the latest call-like operation</text>
+  <text class="small" x="600" y="523" text-anchor="middle">CREATE / CREATE2 success leaves it empty; failed creation may expose failure bytes</text>
+
+  <path class="blueLine" d="M600 547 L600 579"/>
+  <rect class="blue" x="80" y="587" width="500" height="106" rx="16"/>
+  <text class="label" x="330" y="620" text-anchor="middle">4a · RETURNDATASIZE (0x3d)</text>
+  <text class="body" x="330" y="650" text-anchor="middle">Read the current buffer length in bytes</text>
+  <text class="small" x="330" y="674" text-anchor="middle">Useful when output length is unknown</text>
+
+  <rect class="blue" x="620" y="587" width="500" height="106" rx="16"/>
+  <text class="label" x="870" y="620" text-anchor="middle">4b · RETURNDATACOPY (0x3e)</text>
+  <text class="body" x="870" y="650" text-anchor="middle">Copy a chosen range into EVM memory</text>
+  <text class="small" x="870" y="674" text-anchor="middle">Out-of-bounds source ranges fail exceptionally</text>
+
+  <path class="line" d="M330 693 L330 725 L600 725 L600 747"/>
+  <path class="line" d="M870 693 L870 725 L600 725"/>
+  <rect class="box" x="190" y="755" width="820" height="92" rx="16"/>
+  <text class="label" x="600" y="789" text-anchor="middle">5 · Caller decides what to do with the bytes</text>
+  <text class="body" x="600" y="818" text-anchor="middle">Decode · inspect · return · bubble revert · catch and recover</text>
+
+  <path class="line" d="M600 847 L600 876"/>
+  <rect class="green" x="60" y="884" width="520" height="96" rx="16"/>
+  <text class="label" x="320" y="917" text-anchor="middle">Successful path</text>
+  <text class="body" x="320" y="947" text-anchor="middle">Return decoded or raw output bytes</text>
+
+  <rect class="red" x="620" y="884" width="520" height="96" rx="16"/>
+  <text class="label" x="880" y="917" text-anchor="middle">Failure path</text>
+  <text class="body" x="880" y="947" text-anchor="middle">Propagate failure, bubble bytes, or recover safely</text>
+
+  <text class="small" x="600" y="1012" text-anchor="middle">Revert data is untrusted: any contract can construct bytes that resemble a known error.</text>
+  <text class="small" x="600" y="1035" text-anchor="middle">A subsequent call-like opcode clears the previous buffer; save bytes before making another call.</text>
+</svg>
