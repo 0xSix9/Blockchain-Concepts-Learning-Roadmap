@@ -49,7 +49,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 
 ## Stage 03 — Storage and Data Layout
 
-**Priority 1** · 🔄 **Article progress: 12/13 published** · [Stage index](../concepts/03-storage-data-layout/README.md)
+**Priority 1** · ✅ **Article progress: 13/13 published — complete** · [Stage index](../concepts/03-storage-data-layout/README.md)
 
 - [ ] [Storage Layout](../concepts/03-storage-data-layout/01-storage-layout.md) — article published
 - [ ] [Storage Slots](../concepts/03-storage-data-layout/02-storage-slots.md) — article published
@@ -63,7 +63,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [Recursive Length Prefix (RLP) Encoding](../concepts/03-storage-data-layout/10-recursive-length-prefix-rlp-encoding.md) — article published
 - [ ] [Merkle Proofs](../concepts/03-storage-data-layout/11-merkle-proofs.md) — article published
 - [ ] [Account Proofs](../concepts/03-storage-data-layout/12-account-proofs.md) — article published
-- [ ] Storage Proofs
+- [ ] [Storage Proofs](../concepts/03-storage-data-layout/13-storage-proofs.md) — article published
 
 ## Stage 04 — Smart Contract Architecture
 
