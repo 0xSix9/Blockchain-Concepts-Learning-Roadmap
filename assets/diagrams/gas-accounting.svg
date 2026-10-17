@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Gas Accounting in Ethereum</title>
+  <desc id="desc">Three layers of gas accounting: EVM execution metering, final transaction gas usage after refunds and calldata floor, and fee calculation using effective gas price under EIP-1559.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.title{font:700 29px Arial,sans-serif;fill:#0f172a}.subtitle{font:16px Arial,sans-serif;fill:#475569}.label{font:700 19px Arial,sans-serif;fill:#0f172a}.body{font:15px Arial,sans-serif;fill:#334155}.small{font:13px Arial,sans-serif;fill:#475569}.mono{font:700 15px ui-monospace,Menlo,monospace;fill:#0f172a}.blue{fill:#dbeafe;stroke:#60a5fa;stroke-width:2}.teal{fill:#ccfbf1;stroke:#2dd4bf;stroke-width:2}.purple{fill:#ede9fe;stroke:#a78bfa;stroke-width:2}.amber{fill:#fef3c7;stroke:#f59e0b;stroke-width:2}.red{fill:#fee2e2;stroke:#f87171;stroke-width:2}.line{stroke:#64748b;stroke-width:2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="900" rx="22"/>
+  <text class="title" x="600" y="45" text-anchor="middle">Gas Accounting — From EVM Work to ETH Fee</text>
+  <text class="subtitle" x="600" y="74" text-anchor="middle">Gas is the unit of work; the effective gas price determines the ETH amount paid</text>
+
+  <rect class="panel" x="45" y="103" width="1110" height="220" rx="16"/>
+  <text class="label" x="72" y="138">1. EVM execution metering</text>
+  <rect class="blue" x="72" y="159" width="250" height="69" rx="10"/>
+  <text class="label" x="197" y="186" text-anchor="middle">Opcodes</text>
+  <text class="small" x="197" y="208" text-anchor="middle">static + dynamic costs</text>
+  <rect class="teal" x="347" y="159" width="250" height="69" rx="10"/>
+  <text class="label" x="472" y="186" text-anchor="middle">Memory</text>
+  <text class="small" x="472" y="208" text-anchor="middle">expansion cost</text>
+  <rect class="purple" x="622" y="159" width="250" height="69" rx="10"/>
+  <text class="label" x="747" y="186" text-anchor="middle">Storage / calls</text>
+  <text class="small" x="747" y="208" text-anchor="middle">state + warm/cold access</text>
+  <rect class="amber" x="897" y="159" width="230" height="69" rx="10"/>
+  <text class="label" x="1012" y="186" text-anchor="middle">Gas remaining</text>
+  <text class="small" x="1012" y="208" text-anchor="middle">budget can run out</text>
+  <text class="body" x="72" y="272">Execution follows the actual bytecode path; state and memory can change costs.</text>
+  <text class="small" x="72" y="297">A child call may fail while the caller continues; already consumed gas remains accounted for.</text>
+
+  <path class="line" d="M600 323 L600 351"/>
+  <rect class="panel" x="45" y="359" width="1110" height="239" rx="16"/>
+  <text class="label" x="72" y="394">2. Transaction gas accounting</text>
+  <rect class="blue" x="72" y="416" width="240" height="62" rx="10"/>
+  <text class="label" x="192" y="441" text-anchor="middle">Intrinsic gas</text>
+  <text class="small" x="192" y="462" text-anchor="middle">base + data + lists</text>
+  <path class="line" d="M312 447 L345 447"/>
+  <rect class="teal" x="355" y="416" width="240" height="62" rx="10"/>
+  <text class="label" x="475" y="441" text-anchor="middle">Execution used</text>
+  <text class="small" x="475" y="462" text-anchor="middle">opcodes + memory + state</text>
+  <path class="line" d="M595 447 L628 447"/>
+  <rect class="amber" x="638" y="416" width="210" height="62" rx="10"/>
+  <text class="label" x="743" y="441" text-anchor="middle">Refund cap</text>
+  <text class="small" x="743" y="462" text-anchor="middle">max 1/5 pre-refund use</text>
+  <path class="line" d="M848 447 L881 447"/>
+  <rect class="purple" x="891" y="416" width="236" height="62" rx="10"/>
+  <text class="label" x="1009" y="441" text-anchor="middle">Final gasUsed</text>
+  <text class="small" x="1009" y="462" text-anchor="middle">includes active rules</text>
+  <text class="body" x="72" y="520">Normal REVERT: state changes roll back, consumed gas remains; unused frame gas can return.</text>
+  <text class="body" x="72" y="548">Out of gas: exceptional halt; remaining gas for that frame is not returned normally.</text>
+  <text class="small" x="72" y="576">EIP-7623 calldata floor may influence final gas accounting for data-heavy transactions.</text>
+
+  <path class="line" d="M600 598 L600 626"/>
+  <rect class="panel" x="45" y="634" width="1110" height="207" rx="16"/>
+  <text class="label" x="72" y="669">3. Fee accounting under EIP-1559</text>
+  <rect class="blue" x="72" y="691" width="300" height="70" rx="10"/>
+  <text class="label" x="222" y="718" text-anchor="middle">Final gasUsed</text>
+  <text class="small" x="222" y="740" text-anchor="middle">units of work charged</text>
+  <text class="title" x="401" y="731" text-anchor="middle">×</text>
+  <rect class="purple" x="430" y="691" width="300" height="70" rx="10"/>
+  <text class="label" x="580" y="718" text-anchor="middle">Effective gas price</text>
+  <text class="small" x="580" y="740" text-anchor="middle">base fee + priority fee</text>
+  <text class="title" x="758" y="731" text-anchor="middle">=</text>
+  <rect class="teal" x="788" y="691" width="338" height="70" rx="10"/>
+  <text class="label" x="957" y="718" text-anchor="middle">Execution transaction fee</text>
+  <text class="small" x="957" y="740" text-anchor="middle">paid in ETH</text>
+  <text class="body" x="72" y="793">Base fee → burned</text>
+  <text class="body" x="430" y="793">Priority fee → block proposer</text>
+  <text class="body" x="788" y="793">Blob gas fee → separate accounting</text>
+
+  <text class="small" x="600" y="874" text-anchor="middle">Gas limit ≠ gasUsed ≠ ETH fee. Each represents a different part of transaction processing.</text>
+</svg>
