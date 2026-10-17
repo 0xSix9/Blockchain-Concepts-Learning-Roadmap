@@ -100,7 +100,7 @@ A possible response shape is:
 
 The result above is illustrative; it is not a claim about the current balance of that address. `eth_getBalance` returns a balance as a hexadecimal quantity denominated in **wei**, not a decimal ETH string.
 
-These examples demonstrate the raw interface before using a library. Later concepts in this stage will cover individual RPC methods and operations such as reading state, calling contracts, estimating gas, and submitting signed transactions in greater depth.
+These examples demonstrate the raw interface before using a library. The next concepts in this stage cover individual RPC methods and operations such as reading state, calling contracts, estimating gas, and submitting signed transactions in greater depth.
 
 ## 5. A Response Contains Either a Result or an Error
 
@@ -301,7 +301,7 @@ These precautions are especially important when an application can submit transa
 3. **[JSON-RPC 2.0 Specification](https://www.jsonrpc.org/specification)** — request objects, response objects, errors, IDs, notifications, and batch requests.
 4. **[Geth — JSON-RPC server](https://geth.ethereum.org/docs/interacting-with-geth/rpc)** — HTTP, WebSocket, and IPC transports; namespace and endpoint configuration.
 5. **[Execution API documentation](https://ethereum.github.io/execution-apis/)** — reference documentation for standard Ethereum execution RPC methods.
-6. **[Ethereum RPC methods checklist](../06-application-connectivity/02-ethereum-rpc-methods.md)** — the next concept in this stage, once that article is published.
+6. Ethereum RPC methods — the next concept in this stage, to be documented in a separate article.
 
 ---
 
