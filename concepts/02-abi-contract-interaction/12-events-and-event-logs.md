@@ -28,7 +28,7 @@ Events are commonly used to communicate activity such as token transfers, deposi
 
 The declaration defines the event's name and parameters. The statement with <code>emit</code> writes a log entry containing the event's encoded arguments, along with metadata such as the emitting contract's address.
 
-![Diagram showing a Solidity contract declaring and emitting an event, creating a log with an address, topics, and data in a transaction receipt, which an off-chain indexer queries and decodes](https://raw.githubusercontent.com/0xSix9/Blockchain-Concepts-Learning-Roadmap/main/assets/diagrams/events-and-event-logs-flow.svg)
+![Diagram showing a Solidity contract declaring and emitting an event, creating a log with an address, topics, and data in a transaction receipt, which an off-chain indexer queries and decodes](https://raw.githubusercontent.com/0xSix9/Blockchain-Concepts-Learning-Roadmap/main/assets/diagrams/events-and-event-logs-flow.svg?sanitize=true)
 
 [Open the Events and Event Logs diagram directly](https://github.com/0xSix9/Blockchain-Concepts-Learning-Roadmap/blob/main/assets/diagrams/events-and-event-logs-flow.svg)
 
