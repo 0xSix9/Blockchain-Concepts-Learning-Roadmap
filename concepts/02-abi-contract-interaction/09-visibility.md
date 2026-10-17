@@ -148,7 +148,7 @@ contract PrivateBase {
 
 contract PrivateChild is PrivateBase {
     function recordViaBase(uint256 amount) external {
-        record(amount); // Calls an inherited external function through its interface.
+        this.record(amount); // Calls the inherited external function through this contract's interface.
         // _updateAccounting(amount); // Not allowed: it is private in PrivateBase.
         // _internalAccountingDetail = amount; // Not allowed for the same reason.
     }
