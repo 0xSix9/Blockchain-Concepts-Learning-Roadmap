@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc">
+  <title id="title">Solidity Storage Layout Overview</title>
+  <desc id="desc">Source declarations are mapped by compiler storage-layout rules to 32-byte storage slots and offsets. A compiler report exposes the slot, offset, and type for each state variable.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .panel { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.6; }
+      .blue { fill: #eff6ff; stroke: #60a5fa; stroke-width: 1.8; }
+      .teal { fill: #ecfeff; stroke: #22d3ee; stroke-width: 1.8; }
+      .gold { fill: #fffbeb; stroke: #fbbf24; stroke-width: 1.8; }
+      .ink { fill: #0f172a; font-family: Inter, Arial, sans-serif; }
+      .muted { fill: #475569; font-family: Inter, Arial, sans-serif; }
+      .heading { font-size: 22px; font-weight: 700; }
+      .label { font-size: 16px; font-weight: 700; }
+      .body { font-size: 15px; }
+      .small { font-size: 13px; }
+      .mono { font-size: 14px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+      .line { fill: none; stroke: #64748b; stroke-width: 2.2; }
+      .dash { fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-dasharray: 5 5; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1100" height="760" rx="24"/>
+  <text class="ink heading" x="52" y="52">Storage Layout: From Solidity Declarations to Slots</text>
+  <text class="muted body" x="52" y="80">The compiler assigns locations; runtime state determines the current values stored there.</text>
+
+  <rect class="panel" x="48" y="112" width="318" height="272" rx="16"/>
+  <text class="ink label" x="72" y="146">1. Source declarations</text>
+  <text class="muted small" x="72" y="170">Example contract</text>
+  <rect class="blue" x="70" y="190" width="274" height="42" rx="9"/>
+  <text class="ink mono" x="86" y="216">uint128 credit;</text>
+  <rect class="teal" x="70" y="242" width="274" height="42" rx="9"/>
+  <text class="ink mono" x="86" y="268">uint64 nonce;</text>
+  <rect class="teal" x="70" y="294" width="274" height="42" rx="9"/>
+  <text class="ink mono" x="86" y="320">bool enabled;</text>
+  <rect class="gold" x="70" y="346" width="274" height="27" rx="7"/>
+  <text class="ink mono" x="86" y="365">uint256 total;</text>
+
+  <path class="line" d="M366 248 L405 248" marker-end="url(#arrow)"/>
+  <rect class="panel" x="416" y="112" width="250" height="272" rx="16"/>
+  <text class="ink label" x="438" y="146">2. Layout rules</text>
+  <text class="muted body" x="438" y="178">• Declaration order</text>
+  <text class="muted body" x="438" y="207">• Inheritance order</text>
+  <text class="muted body" x="438" y="236">• Type size and packing</text>
+  <text class="muted body" x="438" y="265">• Special type rules</text>
+  <path class="dash" d="M438 284 L642 284"/>
+  <text class="muted small" x="438" y="309">Mappings and dynamic arrays</text>
+  <text class="muted small" x="438" y="329">use hash-derived locations.</text>
+  <text class="muted small" x="438" y="356">Custom bases may shift layout.</text>
+
+  <path class="line" d="M666 248 L705 248" marker-end="url(#arrow)"/>
+  <rect class="panel" x="716" y="112" width="336" height="272" rx="16"/>
+  <text class="ink label" x="740" y="146">3. Persistent storage</text>
+  <text class="muted small" x="740" y="170">Each slot is 32 bytes (256 bits)</text>
+  <rect class="blue" x="740" y="188" width="286" height="114" rx="10"/>
+  <text class="ink label" x="758" y="212">Slot 0</text>
+  <rect x="758" y="226" width="135" height="28" rx="4" fill="#93c5fd" stroke="#3b82f6"/>
+  <rect x="893" y="226" width="67" height="28" rx="4" fill="#67e8f9" stroke="#0891b2"/>
+  <rect x="960" y="226" width="50" height="28" rx="4" fill="#fde68a" stroke="#d97706"/>
+  <text class="ink small" x="768" y="245">credit</text>
+  <text class="ink small" x="900" y="245">nonce</text>
+  <text class="ink small" x="964" y="245">bool</text>
+  <text class="muted small" x="758" y="278">offsets: 0 · 16 · 24 bytes</text>
+  <rect class="gold" x="740" y="316" width="286" height="52" rx="9"/>
+  <text class="ink label" x="758" y="338">Slot 1</text>
+  <text class="ink small" x="758" y="357">total · offset 0 · 32 bytes</text>
+
+  <rect class="panel" x="48" y="414" width="1004" height="144" rx="16"/>
+  <text class="ink label" x="72" y="448">4. Compiler layout report</text>
+  <text class="muted body" x="72" y="474">For each variable, inspect its label, slot, byte offset, and type metadata.</text>
+  <rect x="72" y="492" width="956" height="42" rx="8" fill="#0f172a"/>
+  <text x="92" y="518" fill="#e2e8f0" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14">label: "credit"     slot: "0"     offset: 0     type: "uint128"</text>
+
+  <rect class="blue" x="48" y="584" width="484" height="124" rx="16"/>
+  <text class="ink label" x="72" y="617">Storage layout answers</text>
+  <text class="muted body" x="72" y="644">Where does this declaration live?</text>
+  <text class="muted body" x="72" y="670">Which slot and offset should code interpret?</text>
+  <rect class="gold" x="568" y="584" width="484" height="124" rx="16"/>
+  <text class="ink label" x="592" y="617">Storage state answers</text>
+  <text class="muted body" x="592" y="644">What value is currently stored there?</text>
+  <text class="muted body" x="592" y="670">A layout report alone is not a storage proof.</text>
+
+  <text class="muted small" x="52" y="738">Conceptual illustration only. Confirm actual layouts with the compiler for the exact source and settings.</text>
+</svg>
