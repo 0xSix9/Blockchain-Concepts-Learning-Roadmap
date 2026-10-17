@@ -150,7 +150,7 @@ This leads to three practical distinctions:
 - **Byte offset:** identifies where a packed field is located within that word, according to Solidity's storage-layout rules.
 - **Field value:** the logical value represented by the relevant bits or bytes, after applying the correct type and offset.
 
-Reading a packed slot with `eth_getStorageAt` returns the full word, not a separately decoded `bool`, `uint64`, or `uint128`. Use the compiler's storage-layout output or a trusted tool to interpret individual fields. See [Storage Layout](01-storage-layout.md) and the upcoming [Storage Packing](03-storage-packing.md) article.
+Reading a packed slot with `eth_getStorageAt` returns the full word, not a separately decoded `bool`, `uint64`, or `uint128`. Use the compiler's storage-layout output or a trusted tool to interpret individual fields. See [Storage Layout](01-storage-layout.md) and the separate Storage Packing topic.
 
 ## 7. Mappings, Dynamic Arrays, and Non-Sequential Locations
 
@@ -160,7 +160,7 @@ That means a mapping entry such as `balances[user]` is not necessarily stored di
 
 The same is true for dynamic arrays: the declaration slot participates in locating the array's data, but the elements are not simply placed immediately after that base slot. Packed elements and nested structures add more rules.
 
-Do not hand-calculate these positions from memory. Use the official Solidity layout rules and verify the calculation with a small reproducible example. The dedicated [Mappings and Dynamic Arrays in Storage](04-mappings-and-dynamic-arrays-in-storage.md) article will cover those derivations step by step.
+Do not hand-calculate these positions from memory. Use the official Solidity layout rules and verify the calculation with a small reproducible example. The separate Mappings and Dynamic Arrays in Storage topic will cover those derivations step by step.
 
 ## 8. Persistent Storage Is Not Transient Storage
 
