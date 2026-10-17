@@ -2,15 +2,15 @@
 
 **Priority:** 1  
 **Topics:** 16  
-**Article status:** Not started — this stage contains a checklist only.
+**Article status:** In progress — 1 of 16 concept articles published.
 
 ## About this stage
 
-This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The individual articles are intentionally not created yet; they will be added one by one as the concepts are researched.
+This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. Concept articles are being added incrementally as each topic is researched and reviewed. The study checklist is separate from publication status: an unchecked box means the concept has not been marked as studied.
 
 ## Concept checklist
 
-- [ ] Application Binary Interface (ABI)
+- [ ] [Application Binary Interface (ABI)](01-application-binary-interface-abi.md) — article published
 - [ ] ABI Encoding and Decoding
 - [ ] Function Selectors
 - [ ] Function Dispatch
