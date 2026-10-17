@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="790" viewBox="0 0 1200 790" role="img" aria-labelledby="title desc">
+  <title id="title">Solidity state mutability</title>
+  <desc id="desc">A matrix comparing pure, view, nonpayable, and payable functions by whether they may read state, modify state, or accept Ether with a call.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#14243a"/>
+    </linearGradient>
+    <linearGradient id="pure" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1d4ed8"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="view" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f766e"/>
+      <stop offset="1" stop-color="#0d9488"/>
+    </linearGradient>
+    <linearGradient id="nonpay" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6d28d9"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="pay" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b45309"/>
+      <stop offset="1" stop-color="#d97706"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#020617" flood-opacity=".35"/>
+    </filter>
+    <style>
+      .h1{font:700 34px system-ui,-apple-system,Segoe UI,sans-serif;fill:#f8fafc}
+      .sub{font:400 16px system-ui,-apple-system,Segoe UI,sans-serif;fill:#b6c4d8}
+      .ct{font:700 23px system-ui,-apple-system,Segoe UI,sans-serif;fill:#fff}
+      .body{font:400 15px system-ui,-apple-system,Segoe UI,sans-serif;fill:#d7e0ec}
+      .mono{font:700 15px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#fff}
+      .tablehead{font:650 15px system-ui,-apple-system,Segoe UI,sans-serif;fill:#e2e8f0}
+      .yes{font:700 17px system-ui,-apple-system,Segoe UI,sans-serif;fill:#86efac}
+      .no{font:700 17px system-ui,-apple-system,Segoe UI,sans-serif;fill:#fca5a5}
+      .note{font:600 15px system-ui,-apple-system,Segoe UI,sans-serif;fill:#f8fafc}
+    </style>
+  </defs>
+  <rect width="1200" height="790" rx="26" fill="url(#bg)"/>
+  <circle cx="1090" cy="105" r="160" fill="#2563eb" opacity=".07"/>
+  <circle cx="80" cy="700" r="150" fill="#14b8a6" opacity=".06"/>
+  <text x="60" y="70" class="h1">Solidity State Mutability</text>
+  <text x="60" y="103" class="sub">Three separate questions: Can it read state? Can it change state? Can the call carry Ether?</text>
+
+  <g filter="url(#shadow)">
+    <rect x="60" y="140" width="255" height="188" rx="18" fill="#17263d" stroke="#334155"/>
+    <rect x="60" y="140" width="255" height="7" rx="3" fill="url(#pure)"/>
+    <text x="84" y="182" class="ct">pure</text>
+    <text x="84" y="210" class="body">Inputs + local logic</text>
+    <text x="84" y="244" class="yes">✓ No state reads</text>
+    <text x="84" y="270" class="yes">✓ No state writes</text>
+    <text x="84" y="296" class="no">× No Ether value</text>
+
+    <rect x="330" y="140" width="255" height="188" rx="18" fill="#17263d" stroke="#334155"/>
+    <rect x="330" y="140" width="255" height="7" rx="3" fill="url(#view)"/>
+    <text x="354" y="182" class="ct">view</text>
+    <text x="354" y="210" class="body">Reads state/context</text>
+    <text x="354" y="244" class="yes">✓ May read state</text>
+    <text x="354" y="270" class="yes">✓ No state writes</text>
+    <text x="354" y="296" class="no">× No Ether value</text>
+
+    <rect x="600" y="140" width="255" height="188" rx="18" fill="#17263d" stroke="#334155"/>
+    <rect x="600" y="140" width="255" height="7" rx="3" fill="url(#nonpay)"/>
+    <text x="624" y="182" class="ct">nonpayable</text>
+    <text x="624" y="210" class="body">Default when omitted</text>
+    <text x="624" y="244" class="yes">✓ May read state</text>
+    <text x="624" y="270" class="yes">✓ May write state</text>
+    <text x="624" y="296" class="no">× Rejects nonzero ETH</text>
+
+    <rect x="870" y="140" width="270" height="188" rx="18" fill="#17263d" stroke="#334155"/>
+    <rect x="870" y="140" width="270" height="7" rx="3" fill="url(#pay)"/>
+    <text x="894" y="182" class="ct">payable</text>
+    <text x="894" y="210" class="body">Call may attach Ether</text>
+    <text x="894" y="244" class="yes">✓ May read state</text>
+    <text x="894" y="270" class="yes">✓ May write state</text>
+    <text x="894" y="296" class="yes">✓ Accepts Ether</text>
+  </g>
+
+  <text x="60" y="378" class="ct">Capability matrix</text>
+  <text x="60" y="404" class="sub">“May” describes what the declaration permits, not what every function actually does.</text>
+  <rect x="60" y="427" width="1080" height="210" rx="16" fill="#0f1b2d" stroke="#334155"/>
+  <rect x="60" y="427" width="1080" height="44" rx="16" fill="#23334a"/>
+  <rect x="60" y="455" width="1080" height="16" fill="#23334a"/>
+  <text x="88" y="455" class="tablehead">Mutability</text>
+  <text x="370" y="455" class="tablehead">Read state</text>
+  <text x="555" y="455" class="tablehead">Modify state</text>
+  <text x="770" y="455" class="tablehead">Accept nonzero Ether</text>
+  <text x="990" y="455" class="tablehead">Common purpose</text>
+  <line x1="80" y1="512" x2="1120" y2="512" stroke="#334155"/>
+  <line x1="80" y1="553" x2="1120" y2="553" stroke="#334155"/>
+  <line x1="80" y1="594" x2="1120" y2="594" stroke="#334155"/>
+  <text x="88" y="498" class="mono">pure</text>
+  <text x="390" y="498" class="no">No</text>
+  <text x="590" y="498" class="no">No</text>
+  <text x="835" y="498" class="no">No</text>
+  <text x="990" y="498" class="body">Calculations</text>
+  <text x="88" y="539" class="mono">view</text>
+  <text x="390" y="539" class="yes">Yes</text>
+  <text x="590" y="539" class="no">No</text>
+  <text x="835" y="539" class="no">No</text>
+  <text x="990" y="539" class="body">Read queries</text>
+  <text x="88" y="580" class="mono">nonpayable</text>
+  <text x="390" y="580" class="yes">Yes</text>
+  <text x="590" y="580" class="yes">Yes</text>
+  <text x="835" y="580" class="no">No</text>
+  <text x="990" y="580" class="body">State updates</text>
+  <text x="88" y="621" class="mono">payable</text>
+  <text x="390" y="621" class="yes">Yes</text>
+  <text x="590" y="621" class="yes">Yes</text>
+  <text x="835" y="621" class="yes">Yes</text>
+  <text x="990" y="621" class="body">Deposits / payments</text>
+
+  <rect x="60" y="661" width="1080" height="88" rx="16" fill="#1e293b" stroke="#475569"/>
+  <text x="84" y="689" class="note">EVM note: external view calls can use STATICCALL, which prevents writes in static execution.</text>
+  <text x="84" y="715" class="body">STATICCALL does not generally prevent state reads; Solidity checks pure functions more strictly.</text>
+  <text x="84" y="738" class="body">ABI values are pure, view, nonpayable, and payable; no keyword in source means nonpayable.</text>
+</svg>
