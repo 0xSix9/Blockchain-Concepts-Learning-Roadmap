@@ -2,11 +2,11 @@
 
 **Priority:** 2  
 **Topics:** 14  
-**Article status:** In progress — 8/14 concept articles published.
+**Article status:** In progress — 9/14 concept articles published.
 
 ## About this stage
 
-This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The Transaction Lifecycle, Transaction Nonce, Transaction Types (EIP-2718), Access List Transactions (EIP-2930), Set Code Transactions (EIP-7702), Chain ID and Replay Protection, Intrinsic Gas, and Gas Accounting articles are published; the remaining concepts will be added one by one as they are researched. The checkboxes track personal study progress, not publication status.
+This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The Transaction Lifecycle, Transaction Nonce, Transaction Types (EIP-2718), Access List Transactions (EIP-2930), Set Code Transactions (EIP-7702), Chain ID and Replay Protection, Intrinsic Gas, Gas Accounting, and Gas Limit and Gas Used articles are published; the remaining concepts will be added one by one as they are researched. The checkboxes track personal study progress, not publication status.
 
 ## Concept checklist
 
@@ -18,7 +18,7 @@ This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the
 - [ ] [Chain ID and Replay Protection](06-chain-id-and-replay-protection.md) — article published
 - [ ] [Intrinsic Gas](07-intrinsic-gas.md) — article published
 - [ ] [Gas Accounting](08-gas-accounting.md) — article published
-- [ ] Gas Limit and Gas Used
+- [ ] [Gas Limit and Gas Used](09-gas-limit-and-gas-used.md) — article published
 - [ ] Out-of-Gas
 - [ ] Transaction Receipts
 - [ ] Transaction Reverts
