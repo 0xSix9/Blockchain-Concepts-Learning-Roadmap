@@ -129,15 +129,26 @@ Practical consequences:
 
 EIP-7623 introduced a calldata-based floor for transaction gas accounting. Where this floor applies, the final charged gas amount cannot be pushed below the required floor merely because a transaction accrued refunds.
 
-Conceptually, settlement includes both the allowed refund and the floor condition. In a simplified representation:
+EIP-7623's formula is more specific than taking the maximum of a generic post-refund total and an undefined “floor cost.” Define:
 
 ```text
-appliedRefund = min(refundCounter, gasUsedBeforeRefund // 5)
-afterRefund   = gasUsedBeforeRefund - appliedRefund
-finalGasUsed  = max(afterRefund, calldataFloorGasCost)
+tokens = zero_bytes + 4 * nonzero_bytes
+standardCalldataCost = 4 * tokens
+calldataFloorCost = 10 * tokens
+executionGasUsed = EVM execution gas after the applied refund
+creationCost = 32000 + 2 * words(calldata), for top-level creation
 ```
 
-This is a conceptual summary, not a replacement for the exact fork-specific execution specification. The floor's applicability and amount depend on the transaction and active protocol rules.
+Then, conceptually for the execution-gas part of transaction accounting:
+
+```text
+finalGasUsed = 21000 + max(
+    standardCalldataCost + executionGasUsed + creationCost,
+    calldataFloorCost
+)
+```
+
+For a non-creation transaction, `creationCost` is zero. The applied refund is still constrained by EIP-3529's one-fifth cap, computed from gas used before the refund; `executionGasUsed` here means execution gas after that allowed refund. This formula is a readable summary of EIP-7623's accounting, not a replacement for the complete fork-specific state-transition specification or all transaction-type rules.
 
 This matters for transactions with substantial calldata: the refund counter may be nonzero, but the final gas charge can still be bounded by the calldata floor. See [Intrinsic Gas](07-intrinsic-gas.md) and [Gas Accounting](08-gas-accounting.md).
 
