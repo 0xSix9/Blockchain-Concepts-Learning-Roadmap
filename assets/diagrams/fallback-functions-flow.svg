@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="740" viewBox="0 0 1200 740" role="img" aria-labelledby="title desc">
+<title id="title">Solidity fallback function dispatch behavior</title>
+<desc id="desc">Incoming call data is checked against regular external functions. A matching selector enters the regular function path. If no selector matches, fallback handles unmatched data if defined. Empty calldata enters receive if defined; otherwise a fallback can handle it. Ether sent into a non-payable fallback causes a revert.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#080D19"/><stop offset="1" stop-color="#14213B"/></linearGradient>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#8CA8D6"/></marker>
+</defs>
+<rect width="1200" height="740" rx="22" fill="url(#bg)"/>
+<text x="44" y="42" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="2.4" fill="#74C0FC">SOLIDITY · FALLBACK FUNCTIONS</text>
+<text x="44" y="82" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#F8FAFC">Where does an incoming call go?</text>
+<g font-family="Arial,sans-serif">
+  <rect x="400" y="110" width="400" height="68" rx="12" fill="#18263C" stroke="#6EA8FE" stroke-width="1.5"/>
+  <text x="600" y="139" text-anchor="middle" font-size="15" font-weight="700" fill="#F8FAFC">Incoming message call</text>
+  <text x="600" y="160" text-anchor="middle" font-size="12" fill="#C4D2E7">Calldata + optional Ether value</text>
+  <path d="M600 178 V203" stroke="#8CA8D6" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M600 205 L755 260 L600 315 L445 260 Z" fill="#202B40" stroke="#B197FC" stroke-width="1.5"/>
+  <text x="600" y="253" text-anchor="middle" font-size="14" font-weight="700" fill="#F8FAFC">Does a regular</text>
+  <text x="600" y="273" text-anchor="middle" font-size="14" font-weight="700" fill="#F8FAFC">function selector match?</text>
+  <path d="M445 260 H224 V338" stroke="#8CA8D6" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="337" y="248" text-anchor="middle" font-size="12" font-weight="700" fill="#A7F3D0">YES</text>
+  <rect x="44" y="344" width="360" height="86" rx="12" fill="#182F36" stroke="#34D399" stroke-width="1.5"/>
+  <text x="66" y="375" font-size="15" font-weight="700" fill="#A7F3D0">Regular external function</text>
+  <text x="66" y="399" font-size="12" fill="#C4D2E7">Decode declared arguments and execute</text>
+  <text x="66" y="417" font-size="11" fill="#91A8C7">Bad arguments may revert during decoding</text>
+  <path d="M755 260 H979 V338" stroke="#8CA8D6" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="866" y="248" text-anchor="middle" font-size="12" font-weight="700" fill="#FDE68A">NO MATCH</text>
+  <rect x="796" y="344" width="360" height="86" rx="12" fill="#302523" stroke="#FBBF24" stroke-width="1.5"/>
+  <text x="818" y="375" font-size="15" font-weight="700" fill="#FDE68A">fallback()</text>
+  <text x="818" y="399" font-size="12" fill="#C4D2E7">Handles unknown/non-matching calldata</text>
+  <text x="818" y="417" font-size="11" fill="#91A8C7">Needs payable to accept call value</text>
+  <path d="M979 430 V466" stroke="#8CA8D6" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M979 468 L1085 507 L979 546 L873 507 Z" fill="#202B40" stroke="#F87171" stroke-width="1.5"/>
+  <text x="979" y="502" text-anchor="middle" font-size="13" font-weight="700" fill="#F8FAFC">Empty calldata</text>
+  <text x="979" y="519" text-anchor="middle" font-size="11" fill="#FCA5A5">and receive exists?</text>
+  <path d="M873 507 H754 V575" stroke="#8CA8D6" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="813" y="495" text-anchor="middle" font-size="11" font-weight="700" fill="#A7F3D0">YES</text>
+  <rect x="578" y="581" width="352" height="72" rx="12" fill="#182F36" stroke="#34D399" stroke-width="1.5"/>
+  <text x="600" y="610" font-size="15" font-weight="700" fill="#A7F3D0">receive() external payable</text>
+  <text x="600" y="633" font-size="12" fill="#C4D2E7">Selected for empty calldata</text>
+  <path d="M979 546 V575" stroke="#8CA8D6" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="997" y="565" font-size="11" font-weight="700" fill="#FDE68A">NO</text>
+  <rect x="946" y="581" width="210" height="72" rx="12" fill="#18263C" stroke="#6EA8FE" stroke-width="1.5"/>
+  <text x="1051" y="610" text-anchor="middle" font-size="13" font-weight="700" fill="#F8FAFC">Fallback path</text>
+  <text x="1051" y="633" text-anchor="middle" font-size="11" fill="#C4D2E7">If defined / payable</text>
+  <rect x="44" y="474" width="472" height="179" rx="14" fill="#101B2D" stroke="#405775"/>
+  <text x="66" y="506" font-size="15" font-weight="700" fill="#F8FAFC">Important distinctions</text>
+  <text x="66" y="534" font-size="12" fill="#C4D2E7">• Fallback is not a regular function selector.</text>
+  <text x="66" y="557" font-size="12" fill="#C4D2E7">• Empty calldata and unknown selectors differ.</text>
+  <text x="66" y="580" font-size="12" fill="#C4D2E7">• Non-payable fallback rejects value transfer.</text>
+  <text x="66" y="603" font-size="12" fill="#C4D2E7">• Special bytes return form returns raw bytes.</text>
+  <text x="66" y="631" font-size="11" fill="#91A8C7">A matched selector with invalid arguments may revert.</text>
+  <text x="44" y="693" font-size="11" fill="#91A8C7">Simplified routing diagram. Exact behavior follows Solidity's fallback/receive rules and the deployed bytecode.</text>
+  <text x="44" y="715" font-size="11" fill="#91A8C7">Source: docs.solidity.org/en/latest/contracts.html#fallback-function</text>
+</g>
+</svg>
