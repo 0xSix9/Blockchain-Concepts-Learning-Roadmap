@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850" role="img" aria-labelledby="title desc">
+  <title id="title">Beacon Proxy Shared Upgrade Architecture</title>
+  <desc id="desc">Three separate proxy instances use a shared beacon to resolve one implementation. Each proxy has independent storage. An authorized beacon owner upgrades the implementation once and all connected proxies use the new code for later calls.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}
+      .blue{fill:#eff6ff;stroke:#60a5fa;stroke-width:2}.teal{fill:#ecfeff;stroke:#22d3ee;stroke-width:2}
+      .gold{fill:#fffbeb;stroke:#f59e0b;stroke-width:2}.purple{fill:#f5f3ff;stroke:#a78bfa;stroke-width:2}
+      .red{fill:#fef2f2;stroke:#f87171;stroke-width:2}
+      .ink{fill:#0f172a;font-family:Inter,Arial,sans-serif}.muted{fill:#475569;font-family:Inter,Arial,sans-serif}
+      .title{font-size:30px;font-weight:700}.head{font-size:19px;font-weight:700}.body{font-size:15px}.small{font-size:13px}
+      .mono{fill:#0f172a;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;font-weight:600}
+      .arrow{stroke:#2563eb;stroke-width:2.8;fill:none}.shared{stroke:#0f766e;stroke-width:2.8;fill:none}
+      .dash{stroke:#64748b;stroke-width:2;stroke-dasharray:7 6;fill:none}
+    </style>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2563eb"/></marker>
+    <marker id="shared" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#0f766e"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="850" rx="24"/>
+  <text class="ink title" x="42" y="52">Beacon Proxies — Shared Implementation, Separate State</text>
+  <text class="muted body" x="44" y="82">One beacon upgrade changes the logic used by every connected proxy.</text>
+
+  <rect class="panel" x="34" y="108" width="1132" height="500" rx="20"/>
+  <rect class="purple" x="70" y="142" width="290" height="84" rx="12"/>
+  <text class="ink head" x="215" y="175" text-anchor="middle">Proxy A</text>
+  <text class="muted body" x="215" y="201" text-anchor="middle">storage A · address A</text>
+  <rect class="purple" x="70" y="264" width="290" height="84" rx="12"/>
+  <text class="ink head" x="215" y="297" text-anchor="middle">Proxy B</text>
+  <text class="muted body" x="215" y="323" text-anchor="middle">storage B · address B</text>
+  <rect class="purple" x="70" y="386" width="290" height="84" rx="12"/>
+  <text class="ink head" x="215" y="419" text-anchor="middle">Proxy C</text>
+  <text class="muted body" x="215" y="445" text-anchor="middle">storage C · address C</text>
+
+  <rect class="teal" x="454" y="235" width="300" height="170" rx="16"/>
+  <text class="ink head" x="604" y="271" text-anchor="middle">Beacon Contract</text>
+  <rect class="panel" x="485" y="291" width="238" height="56" rx="10"/>
+  <text class="ink mono" x="604" y="315" text-anchor="middle">implementation()</text>
+  <text class="muted small" x="604" y="336" text-anchor="middle">returns current code address</text>
+  <text class="muted body" x="604" y="375" text-anchor="middle">owner controls upgradeTo()</text>
+
+  <rect class="blue" x="854" y="235" width="270" height="170" rx="16"/>
+  <text class="ink head" x="989" y="271" text-anchor="middle">Implementation</text>
+  <rect class="panel" x="882" y="291" width="214" height="56" rx="10"/>
+  <text class="ink mono" x="989" y="315" text-anchor="middle">shared logic code</text>
+  <text class="muted small" x="989" y="336" text-anchor="middle">no shared proxy storage</text>
+  <text class="muted body" x="989" y="375" text-anchor="middle">executed via DELEGATECALL</text>
+
+  <path class="arrow" d="M360 184 C400 184 410 252 446 270" marker-end="url(#arrow)"/>
+  <path class="arrow" d="M360 306 L446 306" marker-end="url(#arrow)"/>
+  <path class="arrow" d="M360 428 C400 428 410 365 446 348" marker-end="url(#arrow)"/>
+  <text class="muted small" x="403" y="236" text-anchor="middle">lookup</text>
+  <path class="shared" d="M754 320 L846 320" marker-end="url(#shared)"/>
+  <text class="muted small" x="800" y="300" text-anchor="middle">target</text>
+
+  <rect class="gold" x="70" y="508" width="1054" height="70" rx="12"/>
+  <text class="ink head" x="597" y="538" text-anchor="middle">Each proxy runs the same logic in its own storage context</text>
+  <text class="muted body" x="597" y="561" text-anchor="middle">Code is shared by routing; balances, owners and application state remain per proxy.</text>
+
+  <rect class="panel" x="34" y="632" width="1132" height="180" rx="20"/>
+  <text class="ink head" x="62" y="670">One beacon upgrade → all connected proxies use the new target</text>
+  <rect class="gold" x="70" y="698" width="255" height="82" rx="12"/>
+  <text class="ink head" x="197" y="730" text-anchor="middle">Beacon owner</text>
+  <text class="muted small" x="197" y="754" text-anchor="middle">authorized upgradeTo()</text>
+  <path class="arrow" d="M325 738 L412 738" marker-end="url(#arrow)"/>
+  <rect class="teal" x="420" y="698" width="300" height="82" rx="12"/>
+  <text class="ink head" x="570" y="730" text-anchor="middle">Beacon implementation</text>
+  <text class="muted small" x="570" y="754" text-anchor="middle">reference changes once</text>
+  <path class="shared" d="M720 738 L807 738" marker-end="url(#shared)"/>
+  <rect class="blue" x="815" y="698" width="309" height="82" rx="12"/>
+  <text class="ink head" x="969" y="730" text-anchor="middle">Proxy A, B, C, ...</text>
+  <text class="muted small" x="969" y="754" text-anchor="middle">new code on later calls</text>
+</svg>
