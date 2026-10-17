@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="790" viewBox="0 0 1200 790" role="img" aria-labelledby="title desc">
+  <title id="title">Solidity visibility scope</title>
+  <desc id="desc">A diagram comparing public, external, internal and private visibility for functions and state variables. External and public functions are callable externally; public and internal can be used by the declaring contract; internal members are available in child contracts; private members stay within the declaring contract. Public variables get compiler-generated getters.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#111f36"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1d4ed8"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f766e"/>
+      <stop offset="1" stop-color="#0d9488"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6d28d9"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="gray" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#334155"/>
+      <stop offset="1" stop-color="#475569"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#020617" flood-opacity=".32"/>
+    </filter>
+    <style>
+      .h1{font:700 34px system-ui,-apple-system,Segoe UI,sans-serif;fill:#f8fafc}
+      .sub{font:400 16px system-ui,-apple-system,Segoe UI,sans-serif;fill:#b6c4d8}
+      .cardtitle{font:700 24px system-ui,-apple-system,Segoe UI,sans-serif;fill:#fff}
+      .label{font:600 15px system-ui,-apple-system,Segoe UI,sans-serif;fill:#e2e8f0}
+      .body{font:400 15px system-ui,-apple-system,Segoe UI,sans-serif;fill:#cbd5e1}
+      .mono{font:600 14px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#f8fafc}
+      .note{font:600 16px system-ui,-apple-system,Segoe UI,sans-serif;fill:#f8fafc}
+      .line{stroke:#64748b;stroke-width:2;stroke-linecap:round}
+      .bullet{fill:#93c5fd}
+    </style>
+  </defs>
+  <rect width="1200" height="790" rx="26" fill="url(#bg)"/>
+  <circle cx="1082" cy="94" r="155" fill="#2563eb" opacity=".08"/>
+  <circle cx="94" cy="700" r="190" fill="#14b8a6" opacity=".06"/>
+  <text x="60" y="70" class="h1">Solidity Visibility</text>
+  <text x="60" y="103" class="sub">Access scope depends on the declaration and the caller's relationship to the contract.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="60" y="145" width="520" height="245" rx="20" fill="#17263d" stroke="#334155"/>
+    <rect x="60" y="145" width="520" height="8" rx="4" fill="url(#blue)"/>
+    <text x="88" y="188" class="cardtitle">External interface</text>
+    <text x="88" y="215" class="body">Callable by transactions and other contracts</text>
+    <rect x="88" y="239" width="214" height="58" rx="12" fill="url(#blue)"/>
+    <text x="108" y="263" class="mono">external</text>
+    <text x="108" y="283" class="body" fill="#dbeafe">Outside calls</text>
+    <rect x="320" y="239" width="232" height="58" rx="12" fill="url(#teal)"/>
+    <text x="340" y="263" class="mono">public</text>
+    <text x="340" y="283" class="body">Outside + inside</text>
+    <circle cx="94" cy="326" r="4" class="bullet"/>
+    <text x="109" y="331" class="body">Public functions can also be called internally.</text>
+    <circle cx="94" cy="353" r="4" class="bullet"/>
+    <text x="109" y="358" class="body">Public state variables generate external getters.</text>
+    <text x="88" y="377" class="body">State variables cannot be declared external.</text>
+
+    <rect x="620" y="145" width="520" height="245" rx="20" fill="#17263d" stroke="#334155"/>
+    <rect x="620" y="145" width="520" height="8" rx="4" fill="url(#purple)"/>
+    <text x="648" y="188" class="cardtitle">Internal implementation</text>
+    <text x="648" y="215" class="body">Not directly exposed as callable ABI functions</text>
+    <rect x="648" y="239" width="214" height="58" rx="12" fill="url(#purple)"/>
+    <text x="668" y="263" class="mono">internal</text>
+    <text x="668" y="283" class="body">This + child</text>
+    <rect x="880" y="239" width="232" height="58" rx="12" fill="url(#gray)"/>
+    <text x="900" y="263" class="mono">private</text>
+    <text x="900" y="283" class="body">Declaring contract</text>
+    <circle cx="654" cy="326" r="4" class="bullet"/>
+    <text x="669" y="331" class="body">Internal members are available to derived contracts.</text>
+    <circle cx="654" cy="353" r="4" class="bullet"/>
+    <text x="669" y="358" class="body">Private members are not directly accessible by children.</text>
+    <text x="648" y="377" class="body">Internal/private code can still appear in bytecode.</text>
+  </g>
+
+  <text x="60" y="438" class="cardtitle">Scope at a glance</text>
+  <text x="60" y="465" class="sub">✓ allowed · — not directly allowed · “external” is for functions only</text>
+  <rect x="60" y="490" width="1080" height="205" rx="16" fill="#0f1b2d" stroke="#334155"/>
+  <rect x="60" y="490" width="1080" height="43" rx="16" fill="#23334a"/>
+  <rect x="60" y="517" width="1080" height="16" fill="#23334a"/>
+  <text x="84" y="517" class="label">Specifier</text>
+  <text x="360" y="517" class="label">Outside caller</text>
+  <text x="560" y="517" class="label">Declaring contract</text>
+  <text x="825" y="517" class="label">Derived contract</text>
+  <text x="1012" y="517" class="label">Variable option?</text>
+  <line x1="80" y1="574" x2="1120" y2="574" stroke="#334155"/>
+  <line x1="80" y1="615" x2="1120" y2="615" stroke="#334155"/>
+  <line x1="80" y1="656" x2="1120" y2="656" stroke="#334155"/>
+  <text x="84" y="560" class="mono">public</text>
+  <text x="390" y="560" class="label" fill="#86efac">✓</text>
+  <text x="630" y="560" class="label" fill="#86efac">✓</text>
+  <text x="875" y="560" class="label" fill="#86efac">✓</text>
+  <text x="1020" y="560" class="label">Yes</text>
+  <text x="84" y="601" class="mono">external</text>
+  <text x="390" y="601" class="label" fill="#86efac">✓</text>
+  <text x="630" y="601" class="label" fill="#fca5a5">— direct internal call</text>
+  <text x="875" y="601" class="label" fill="#fca5a5">— direct internal call</text>
+  <text x="1020" y="601" class="label">No</text>
+  <text x="84" y="642" class="mono">internal</text>
+  <text x="390" y="642" class="label" fill="#fca5a5">—</text>
+  <text x="630" y="642" class="label" fill="#86efac">✓</text>
+  <text x="875" y="642" class="label" fill="#86efac">✓</text>
+  <text x="1020" y="642" class="label">Yes</text>
+  <text x="84" y="683" class="mono">private</text>
+  <text x="390" y="683" class="label" fill="#fca5a5">—</text>
+  <text x="630" y="683" class="label" fill="#86efac">✓</text>
+  <text x="875" y="683" class="label" fill="#fca5a5">—</text>
+  <text x="1020" y="683" class="label">Yes</text>
+
+  <rect x="60" y="720" width="1080" height="42" rx="12" fill="#1e293b" stroke="#475569"/>
+  <text x="82" y="746" class="note">Remember: visibility is not access control, and “private” does not make on-chain data secret.</text>
+</svg>
