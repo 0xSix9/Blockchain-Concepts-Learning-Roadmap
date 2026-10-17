@@ -42,7 +42,7 @@ For deterministic deployment, identify exactly which values determine the result
 
 The address is computed before init code runs. That means the predicted address depends on the initialization code bytes, but not directly on the runtime code that the constructor will eventually return. A constructor can inspect external state, so identical init code does not necessarily guarantee identical resulting runtime behavior across networks or at different times.
 
-The `CREATE2` address formula is described in detail in [EIP-1014](https://eips.ethereum.org/EIPS/eip-1014). The next topic, [CREATE2 Address Derivation](17-create2-address-derivation.md), focuses on the exact byte layout and address calculation.
+The `CREATE2` address formula is described in detail in [EIP-1014](https://eips.ethereum.org/EIPS/eip-1014). A separate concept, CREATE2 Address Derivation, focuses on the exact byte layout and address calculation.
 
 ## 4. A Typical Deterministic Deployment Flow
 
@@ -134,7 +134,7 @@ Both mechanisms can be deterministic when their inputs are known. The key differ
 - A common use case is deploying corresponding contracts to the same address across chains, provided the relevant inputs—including the deployer address—match.
 - The `CREATE2` address formula does not include chain ID, but identical addresses do not guarantee identical runtime behavior or state.
 - Prediction does not reserve the address or authorize a deployment. Factories still need correct access control, initialization, collision handling, and verification.
-- Exact `CREATE2` byte-level address derivation is covered in [CREATE2 Address Derivation](17-create2-address-derivation.md).
+- The next Stage 04 concept will focus on exact `CREATE2` byte-level address derivation.
 
 ## References
 
@@ -142,4 +142,4 @@ Both mechanisms can be deterministic when their inputs are known. The key differ
 2. **[Solidity documentation — Salted contract creations / CREATE2](https://docs.soliditylang.org/en/latest/control-structures.html#salted-contract-creations-create2)** — how Solidity uses salts and init code to create contracts.
 3. **[Ethereum.org — Ethereum accounts](https://ethereum.org/en/developers/docs/accounts/)** — overview of contract address creation with `CREATE` and `CREATE2`.
 4. **[OpenZeppelin Contracts — Create2](https://docs.openzeppelin.com/contracts/5.x/api/utils#Create2)** — helper utilities for predicting and deploying contracts using `CREATE2`.
-5. **[CREATE2 Address Derivation](17-create2-address-derivation.md)** — the next concept in this stage, focused on the exact formula and address calculation.
+5. **CREATE2 Address Derivation** — the next concept in this stage, focused on the exact formula and address calculation.
