@@ -44,7 +44,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [Events and Event Logs](../concepts/02-abi-contract-interaction/12-events-and-event-logs.md) — article published
 - [ ] [Topics and Indexed Parameters](../concepts/02-abi-contract-interaction/13-topics-and-indexed-parameters.md) — article published
 - [ ] [Custom Errors](../concepts/02-abi-contract-interaction/14-custom-errors.md) — article published
-- [ ] Error Selectors
+- [ ] [Error Selectors](../concepts/02-abi-contract-interaction/15-error-selectors.md) — article published
 - [ ] Precompiled Contracts
 
 ## Stage 03 — Storage and Data Layout
