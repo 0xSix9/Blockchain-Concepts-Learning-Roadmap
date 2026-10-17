@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850" role="img" aria-labelledby="title desc">
+  <title id="title">Storage Compatibility During Proxy Upgrades</title>
+  <desc id="desc">A comparison of an old storage layout and an unsafe new layout where inserting a variable shifts an existing balance slot, contrasted with an append-only update and a final validation stage.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}
+      .blue{fill:#eff6ff;stroke:#60a5fa;stroke-width:2}.teal{fill:#ecfeff;stroke:#22d3ee;stroke-width:2}
+      .gold{fill:#fffbeb;stroke:#f59e0b;stroke-width:2}.purple{fill:#f5f3ff;stroke:#a78bfa;stroke-width:2}
+      .red{fill:#fef2f2;stroke:#f87171;stroke-width:2}
+      .ink{fill:#0f172a;font-family:Inter,Arial,sans-serif}.muted{fill:#475569;font-family:Inter,Arial,sans-serif}
+      .title{font-size:30px;font-weight:700}.head{font-size:18px;font-weight:700}.body{font-size:15px}.small{font-size:13px}
+      .mono{fill:#0f172a;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;font-weight:600}
+      .arrow{stroke:#2563eb;stroke-width:2.6;fill:none}.ok{stroke:#0f766e;stroke-width:2.6;fill:none}.bad{stroke:#dc2626;stroke-width:2.6;fill:none}
+    </style>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2563eb"/></marker>
+    <marker id="ok" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#0f766e"/></marker>
+    <marker id="bad" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#dc2626"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="850" rx="24"/>
+  <text class="ink title" x="42" y="54">Storage Compatibility — Preserve Existing Slots</text>
+  <text class="muted body" x="44" y="84">A new implementation must interpret the proxy's existing storage in the same way.</text>
+
+  <rect class="panel" x="35" y="112" width="1130" height="370" rx="20"/>
+  <text class="ink head" x="65" y="150">V1 — Deployed layout</text>
+  <rect class="purple" x="70" y="174" width="300" height="60" rx="10"/>
+  <text class="ink mono" x="92" y="200">slot 0</text>
+  <text class="muted body" x="175" y="211">owner</text>
+  <rect class="blue" x="70" y="246" width="300" height="60" rx="10"/>
+  <text class="ink mono" x="92" y="272">slot 1</text>
+  <text class="muted body" x="175" y="283">balance</text>
+  <text class="muted small" x="70" y="330">These bytes already exist at the proxy address.</text>
+
+  <rect class="red" x="440" y="174" width="310" height="132" rx="12"/>
+  <text class="ink head" x="595" y="202" text-anchor="middle">Unsafe V2 insertion</text>
+  <text class="mono" x="465" y="232">slot 0 → owner</text>
+  <text class="mono" x="465" y="257">slot 1 → paused</text>
+  <text class="mono" x="465" y="282">slot 2 → balance</text>
+  <text class="muted small" x="440" y="330">Old balance in slot 1 is misread as paused.</text>
+  <path class="bad" d="M370 276 L432 276" marker-end="url(#bad)"/>
+
+  <rect class="teal" x="810" y="174" width="310" height="132" rx="12"/>
+  <text class="ink head" x="965" y="202" text-anchor="middle">Compatible append</text>
+  <text class="mono" x="835" y="232">slot 0 → owner</text>
+  <text class="mono" x="835" y="257">slot 1 → balance</text>
+  <text class="mono" x="835" y="282">slot 2 → paused</text>
+  <text class="muted small" x="810" y="330">Existing variable positions remain unchanged.</text>
+  <path class="ok" d="M750 240 L802 240" marker-end="url(#ok)"/>
+
+  <rect class="gold" x="70" y="365" width="1050" height="82" rx="12"/>
+  <text class="ink head" x="595" y="397" text-anchor="middle">Do not rely on source code alone</text>
+  <text class="muted body" x="595" y="422" text-anchor="middle">Compare compiler-reported slots, byte offsets, types, inheritance, structs, mappings and arrays.</text>
+
+  <rect class="panel" x="35" y="508" width="1130" height="300" rx="20"/>
+  <text class="ink head" x="65" y="548">Storage compatibility workflow</text>
+  <rect class="purple" x="65" y="579" width="225" height="112" rx="12"/>
+  <text class="ink head" x="177" y="612" text-anchor="middle">1. Keep V1</text>
+  <text class="muted body" x="177" y="638" text-anchor="middle">source + build info</text>
+  <text class="muted small" x="177" y="663" text-anchor="middle">reference layout</text>
+
+  <rect class="blue" x="335" y="579" width="225" height="112" rx="12"/>
+  <text class="ink head" x="447" y="612" text-anchor="middle">2. Compile V2</text>
+  <text class="muted body" x="447" y="638" text-anchor="middle">same toolchain</text>
+  <text class="muted small" x="447" y="663" text-anchor="middle">export storage layout</text>
+
+  <rect class="teal" x="605" y="579" width="225" height="112" rx="12"/>
+  <text class="ink head" x="717" y="612" text-anchor="middle">3. Validate</text>
+  <text class="muted body" x="717" y="638" text-anchor="middle">layout + upgrade tools</text>
+  <text class="muted small" x="717" y="663" text-anchor="middle">review all warnings</text>
+
+  <rect class="gold" x="875" y="579" width="250" height="112" rx="12"/>
+  <text class="ink head" x="1000" y="612" text-anchor="middle">4. Test upgrade</text>
+  <text class="muted body" x="1000" y="638" text-anchor="middle">realistic V1 state</text>
+  <text class="muted small" x="1000" y="663" text-anchor="middle">proxy + invariants</text>
+
+  <path class="arrow" d="M290 635 L327 635" marker-end="url(#arrow)"/>
+  <path class="arrow" d="M560 635 L597 635" marker-end="url(#arrow)"/>
+  <path class="arrow" d="M830 635 L867 635" marker-end="url(#arrow)"/>
+
+  <text class="muted body" x="65" y="739">Storage gaps and ERC-7201 namespaced storage are additional techniques—not a replacement for validation.</text>
+  <text class="muted small" x="65" y="769">Storage compatibility is necessary, but behavior, authorization and protocol invariants must also be tested.</text>
+</svg>
