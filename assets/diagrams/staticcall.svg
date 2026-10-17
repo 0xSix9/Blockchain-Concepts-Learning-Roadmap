@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+<title id="title">How EVM STATICCALL works</title>
+<desc id="desc">A caller invokes a target with STATICCALL. The target can read state and return data, but state-changing operations are blocked throughout the nested call tree. The caller receives a success or failure status and return data.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#070B16"/><stop offset="1" stop-color="#14213B"/></linearGradient>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#9CB5D8"/></marker>
+</defs>
+<rect width="1200" height="650" rx="24" fill="url(#bg)"/>
+<g font-family="Arial,sans-serif">
+<text x="40" y="45" font-size="12" font-weight="700" letter-spacing="2.4" fill="#74C0FC">STAGE 01 · EVM EXECUTION</text>
+<text x="40" y="84" font-size="30" font-weight="700" fill="#F8FAFC">STATICCALL: execute code, forbid state changes</text>
+<text x="40" y="111" font-size="15" fill="#C0CDE0">The target can read and compute, but the static flag follows nested calls.</text>
+<rect x="45" y="150" width="300" height="145" rx="14" fill="#112C2A" stroke="#63E6BE" stroke-width="1.5"/>
+<text x="68" y="184" font-size="19" font-weight="700" fill="#D8FFF2">Caller Contract</text><text x="68" y="212" font-size="13" fill="#C0E9E0">Prepares target + input bytes</text><text x="68" y="235" font-size="13" fill="#C0E9E0">Requests gas + output range</text><text x="68" y="265" font-size="12" fill="#95C9BE">No ETH value parameter</text>
+<rect x="450" y="150" width="300" height="145" rx="14" fill="#202845" stroke="#74C0FC" stroke-width="1.5"/>
+<text x="473" y="184" font-size="19" font-weight="700" fill="#E3F2FF">STATICCALL</text><text x="473" y="212" font-size="13" fill="#C5D8ED">Opcode 0xFA</text><text x="473" y="235" font-size="13" fill="#C5D8ED">Six stack parameters</text><text x="473" y="265" font-size="12" fill="#9FC5E9">Sets static flag in child frame</text>
+<rect x="855" y="150" width="300" height="145" rx="14" fill="#302448" stroke="#B197FC" stroke-width="1.5"/>
+<text x="878" y="184" font-size="19" font-weight="700" fill="#F1E8FF">Target Contract</text><text x="878" y="212" font-size="13" fill="#E2D7F2">Executes in target context</text><text x="878" y="235" font-size="13" fill="#E2D7F2">msg.value = 0</text><text x="878" y="265" font-size="12" fill="#C9B8E8">Own stack and memory</text>
+<path d="M345 221 H438" stroke="#9CB5D8" stroke-width="2.2" marker-end="url(#arrow)"/><path d="M750 221 H843" stroke="#9CB5D8" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="45" y="340" width="1110" height="205" rx="16" fill="#111B2D" stroke="#40516C"/>
+<text x="68" y="374" font-size="17" font-weight="700" fill="#F8FAFC">What is allowed under the static flag?</text>
+<rect x="68" y="393" width="490" height="124" rx="12" fill="#112F2A" stroke="#63E6BE"/><text x="90" y="423" font-size="15" font-weight="700" fill="#D8FFF2">Allowed</text><text x="90" y="450" font-size="13" fill="#C1E3D8">• Read storage and balances</text><text x="90" y="473" font-size="13" fill="#C1E3D8">• Compute values and return data</text><text x="90" y="496" font-size="13" fill="#C1E3D8">• Make nested calls that stay static</text>
+<rect x="582" y="393" width="549" height="124" rx="12" fill="#341F2A" stroke="#FF8787"/><text x="604" y="423" font-size="15" font-weight="700" fill="#FFC9C9">Blocked (execution fails)</text><text x="604" y="450" font-size="13" fill="#EBD0D5">• SSTORE / TSTORE and event LOG opcodes</text><text x="604" y="473" font-size="13" fill="#EBD0D5">• CREATE / CREATE2 / SELFDESTRUCT</text><text x="604" y="496" font-size="13" fill="#EBD0D5">• CALL with a nonzero ETH value</text>
+<path d="M1005 295 V318 H600 V331" fill="none" stroke="#9CB5D8" stroke-width="1.7" stroke-dasharray="5 5" marker-end="url(#arrow)"/>
+<rect x="45" y="570" width="1110" height="45" rx="10" fill="#17243A" stroke="#4A5C77"/><text x="65" y="598" font-size="13" font-weight="700" fill="#F8FAFC">Result:</text><text x="123" y="598" font-size="13" fill="#C6D4E8">success = 1 or 0</text><text x="292" y="598" font-size="13" fill="#C6D4E8">Return data is separate</text><text x="522" y="598" font-size="13" fill="#C6D4E8">A static call can still consume gas, revert, or return invalid data.</text>
+</g>
+</svg>

@@ -18,7 +18,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [Execution Context](../concepts/01-evm-execution/03-execution-context.md) — article published
 - [ ] [CALL](../concepts/01-evm-execution/04-call.md) — article published
 - [ ] [DELEGATECALL](../concepts/01-evm-execution/05-delegatecall.md) — article published
-- [ ] STATICCALL
+- [ ] [STATICCALL](../concepts/01-evm-execution/06-staticcall.md) — article published
 - [ ] CREATE
 - [ ] CREATE2
 - [ ] Call Stack and Call Depth

@@ -2,7 +2,7 @@
 
 **Priority:** 1  
 **Topics:** 12  
-**Article status:** 5 of 12 articles published; use this file as the learning checklist.
+**Article status:** 6 of 12 articles published; use this file as the learning checklist.
 
 ## About this stage
 
@@ -15,7 +15,7 @@ This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the
 - [ ] [Execution Context](./03-execution-context.md) — article published
 - [ ] [CALL](./04-call.md) — article published
 - [ ] [DELEGATECALL](./05-delegatecall.md) — article published
-- [ ] STATICCALL
+- [ ] [STATICCALL](./06-staticcall.md) — article published
 - [ ] CREATE
 - [ ] CREATE2
 - [ ] Call Stack and Call Depth

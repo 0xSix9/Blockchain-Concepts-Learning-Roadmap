@@ -30,3 +30,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 
 - Published the DELEGATECALL article with a custom proxy-context diagram.
 - Linked DELEGATECALL from the Stage 01 index, full roadmap, and project README.
+
+
+## 2026-10-17
+
+- Published the STATICCALL article, covering EIP-214 static execution, Solidity view calls, and STATICCALL versus eth_call.
+- Added a custom static-context diagram and linked the article from the Stage 01 index, full roadmap, and project README.
