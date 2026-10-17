@@ -156,3 +156,8 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 
 - Published the Events and Event Logs article, covering event declarations, emit, log address/topics/data, signature topics, ABI decoding, filtering, reverted execution, and reorganization-aware consumers.
 - Added a custom event-log flow diagram and linked the article from the Stage 02 index, canonical roadmap, and project README; updated Stage 02 publication progress to 12/16.
+
+## 2026-10-17
+
+- Published the Topics and Indexed Parameters article, explaining standard event topic layout, dynamic indexed-value hashing, topic-position matching, wildcards, OR alternatives, and eth_getLogs filtering.
+- Added a dedicated topic-layout and filtering diagram, linked the article throughout Stage 02 navigation, and updated Stage 02 publication progress to 13/16.
