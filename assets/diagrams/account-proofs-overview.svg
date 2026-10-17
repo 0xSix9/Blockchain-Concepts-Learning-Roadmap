@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
+  <title id="title">Ethereum Account Proof Verification</title>
+  <desc id="desc">The verifier takes an authenticated execution block header stateRoot, derives keccak256 of the account address, processes RLP-encoded trie proof nodes, and recovers the account record containing nonce, balance, storageRoot and codeHash. A later storage proof uses the proven storageRoot.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}
+      .blue{fill:#eff6ff;stroke:#60a5fa;stroke-width:2}.teal{fill:#ecfeff;stroke:#22d3ee;stroke-width:2}
+      .gold{fill:#fffbeb;stroke:#f59e0b;stroke-width:2}.purple{fill:#f5f3ff;stroke:#a78bfa;stroke-width:2}
+      .ink{fill:#0f172a;font-family:Inter,Arial,sans-serif}.muted{fill:#475569;font-family:Inter,Arial,sans-serif}
+      .title{font-size:29px;font-weight:700}.head{font-size:18px;font-weight:700}.body{font-size:15px}.small{font-size:13px}
+      .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;font-weight:600}
+      .line{stroke:#94a3b8;stroke-width:2.2;fill:none}
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#94a3b8"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="780" rx="24"/>
+  <text class="ink title" x="42" y="52">Account Proofs: From Address to Verified State</text>
+  <text class="muted body" x="44" y="82">Verify account data against the stateRoot from the correct, authenticated block header.</text>
+
+  <rect class="panel" x="34" y="108" width="714" height="516" rx="18"/>
+  <text class="ink head" x="58" y="145">Proof verification flow</text>
+
+  <rect class="purple" x="60" y="166" width="660" height="64" rx="12"/>
+  <text class="ink head" x="82" y="192">1. Trusted execution block header</text>
+  <text class="muted body" x="82" y="214">stateRoot authenticates the global account-state trie</text>
+
+  <path class="line" d="M390 230 L390 252" marker-end="url(#arrow)"/>
+  <rect class="blue" x="60" y="256" width="316" height="73" rx="12"/>
+  <text class="ink head" x="78" y="282">2. Account address</text>
+  <text class="ink mono" x="78" y="307">20-byte address</text>
+  <rect class="teal" x="404" y="256" width="316" height="73" rx="12"/>
+  <text class="ink head" x="422" y="282">3. Derive trie key</text>
+  <text class="ink mono" x="422" y="307">keccak256(address)</text>
+  <path class="line" d="M376 293 L400 293" marker-end="url(#arrow)"/>
+
+  <path class="line" d="M562 329 L562 352" marker-end="url(#arrow)"/>
+  <rect class="gold" x="60" y="357" width="660" height="75" rx="12"/>
+  <text class="ink head" x="80" y="384">4. Traverse proof nodes</text>
+  <text class="muted body" x="80" y="407">Decode RLP nodes and validate MPT references, path, and hashes</text>
+
+  <path class="line" d="M390 432 L390 455" marker-end="url(#arrow)"/>
+  <rect class="teal" x="60" y="460" width="660" height="90" rx="12"/>
+  <text class="ink head" x="80" y="486">5. Recover account record</text>
+  <text class="ink mono" x="80" y="511">[nonce, balance, storageRoot, codeHash]</text>
+  <text class="muted small" x="80" y="533">Confirm inclusion—or a valid trie path proving absence.</text>
+
+  <text class="muted small" x="60" y="583">The RPC response's displayed fields are claims; derive and compare them from the proof.</text>
+  <text class="muted small" x="60" y="603">Proof correctness does not by itself authenticate the header or prove finality.</text>
+
+  <rect class="panel" x="770" y="108" width="396" height="516" rx="18"/>
+  <text class="ink head" x="794" y="145">What's in the account leaf?</text>
+  <rect class="blue" x="794" y="171" width="348" height="60" rx="10"/>
+  <text class="ink mono" x="814" y="196">nonce</text>
+  <text class="muted small" x="814" y="217">Transaction / contract-creation counter</text>
+  <rect class="blue" x="794" y="243" width="348" height="60" rx="10"/>
+  <text class="ink mono" x="814" y="268">balance</text>
+  <text class="muted small" x="814" y="289">Ether balance as an integer</text>
+  <rect class="gold" x="794" y="315" width="348" height="72" rx="10"/>
+  <text class="ink mono" x="814" y="341">storageRoot</text>
+  <text class="muted small" x="814" y="362">Root of this account's separate storage trie</text>
+  <text class="muted small" x="814" y="379">Can anchor a later storage proof</text>
+  <rect class="teal" x="794" y="399" width="348" height="72" rx="10"/>
+  <text class="ink mono" x="814" y="425">codeHash</text>
+  <text class="muted small" x="814" y="446">Commitment to the associated EVM code</text>
+  <text class="muted small" x="814" y="463">Fetch and hash code separately if needed</text>
+  <rect class="purple" x="794" y="488" width="348" height="105" rx="10"/>
+  <text class="ink head" x="814" y="516">eth_getProof</text>
+  <text class="muted body" x="814" y="540">accountProof: RLP-encoded trie nodes</text>
+  <text class="muted body" x="814" y="562">storageProof: optional per-slot proofs</text>
+  <text class="muted small" x="814" y="581">Verify against the corresponding roots.</text>
+
+  <rect class="panel" x="34" y="644" width="1132" height="104" rx="16"/>
+  <text class="ink head" x="58" y="678">Two linked proof layers</text>
+  <text class="muted body" x="58" y="704">Account proof: stateRoot → account record → storageRoot</text>
+  <text class="muted body" x="58" y="728">Storage proof: proven storageRoot → specific storage slot and value</text>
+</svg>
