@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Payable functions and Ether flow</title>
+  <desc id="desc">Diagram of a caller attaching Ether to a payable function call, validating msg.value, updating accounting and emitting an event, with notes that contract balance is distinct from recorded user deposits and outgoing calls require checks-effects-interactions.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#13243a"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1d4ed8"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f766e"/>
+      <stop offset="1" stop-color="#0d9488"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6d28d9"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b45309"/>
+      <stop offset="1" stop-color="#d97706"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#020617" flood-opacity=".34"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#7dd3fc"/>
+    </marker>
+    <style>
+      .h1{font:700 34px system-ui,-apple-system,Segoe UI,sans-serif;fill:#f8fafc}
+      .sub{font:400 16px system-ui,-apple-system,Segoe UI,sans-serif;fill:#b6c4d8}
+      .ct{font:700 22px system-ui,-apple-system,Segoe UI,sans-serif;fill:#fff}
+      .body{font:400 15px system-ui,-apple-system,Segoe UI,sans-serif;fill:#d7e0ec}
+      .mono{font:700 14px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#fff}
+      .small{font:400 13px system-ui,-apple-system,Segoe UI,sans-serif;fill:#bfccdd}
+      .line{fill:none;stroke:#7dd3fc;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+      .yes{font:700 15px system-ui,-apple-system,Segoe UI,sans-serif;fill:#86efac}
+      .warn{font:700 15px system-ui,-apple-system,Segoe UI,sans-serif;fill:#fcd34d}
+    </style>
+  </defs>
+  <rect width="1200" height="800" rx="26" fill="url(#bg)"/>
+  <circle cx="1075" cy="85" r="165" fill="#2563eb" opacity=".08"/>
+  <circle cx="80" cy="720" r="165" fill="#14b8a6" opacity=".06"/>
+  <text x="60" y="69" class="h1">Payable Functions</text>
+  <text x="60" y="101" class="sub">Accept Ether with a call, validate its value, and account for it deliberately.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="60" y="143" width="205" height="155" rx="18" fill="#17263d" stroke="#334155"/>
+    <rect x="60" y="143" width="205" height="7" rx="3" fill="url(#blue)"/>
+    <text x="84" y="184" class="ct">Caller</text>
+    <text x="84" y="212" class="body">Transaction / call</text>
+    <text x="84" y="242" class="mono">value: 0.1 ETH</text>
+    <text x="84" y="269" class="small">Calldata selects function</text>
+
+    <rect x="330" y="143" width="220" height="155" rx="18" fill="#17263d" stroke="#334155"/>
+    <rect x="330" y="143" width="220" height="7" rx="3" fill="url(#teal)"/>
+    <text x="354" y="184" class="ct">Payable entry</text>
+    <text x="354" y="214" class="mono">deposit() payable</text>
+    <text x="354" y="244" class="body">Receives call value</text>
+    <text x="354" y="269" class="small">msg.value = 0.1 ETH</text>
+
+    <rect x="615" y="143" width="220" height="155" rx="18" fill="#17263d" stroke="#334155"/>
+    <rect x="615" y="143" width="220" height="7" rx="3" fill="url(#purple)"/>
+    <text x="639" y="184" class="ct">Validate</text>
+    <text x="639" y="214" class="mono">require(msg.value &gt; 0)</text>
+    <text x="639" y="244" class="body">Check price / limits</text>
+    <text x="639" y="269" class="small">Reject invalid payment</text>
+
+    <rect x="900" y="143" width="240" height="155" rx="18" fill="#17263d" stroke="#334155"/>
+    <rect x="900" y="143" width="240" height="7" rx="3" fill="url(#amber)"/>
+    <text x="924" y="184" class="ct">Account</text>
+    <text x="924" y="214" class="mono">credits[user] += value</text>
+    <text x="924" y="244" class="body">Update state + event</text>
+    <text x="924" y="269" class="small">Apply protocol rules</text>
+  </g>
+  <path d="M265 220 L323 220" class="line"/>
+  <path d="M550 220 L608 220" class="line"/>
+  <path d="M835 220 L893 220" class="line"/>
+
+  <text x="60" y="352" class="ct">Three amounts / records to keep distinct</text>
+  <g>
+    <rect x="60" y="376" width="340" height="113" rx="16" fill="#0f1b2d" stroke="#334155"/>
+    <text x="84" y="408" class="mono">msg.value</text>
+    <text x="84" y="436" class="body">Value attached to this particular call</text>
+    <text x="84" y="462" class="small">Measured in wei</text>
+
+    <rect x="430" y="376" width="340" height="113" rx="16" fill="#0f1b2d" stroke="#334155"/>
+    <text x="454" y="408" class="mono">address(this).balance</text>
+    <text x="454" y="436" class="body">Actual Ether balance held by contract</text>
+    <text x="454" y="462" class="small">May include unaccounted / forced ETH</text>
+
+    <rect x="800" y="376" width="340" height="113" rx="16" fill="#0f1b2d" stroke="#334155"/>
+    <text x="824" y="408" class="mono">deposits[user]</text>
+    <text x="824" y="436" class="body">Application's recorded credit for user</text>
+    <text x="824" y="462" class="small">Updated only by contract logic</text>
+  </g>
+
+  <rect x="60" y="520" width="515" height="126" rx="18" fill="#17263d" stroke="#334155"/>
+  <text x="84" y="553" class="ct">Receiving paths</text>
+  <text x="84" y="581" class="body">Named payable function: calldata selects a function.</text>
+  <text x="84" y="606" class="body">receive(): empty calldata; payable fallback: unmatched calldata.</text>
+  <text x="84" y="629" class="small">These are different dispatch paths, not synonyms.</text>
+
+  <rect x="605" y="520" width="535" height="126" rx="18" fill="#17263d" stroke="#334155"/>
+  <text x="629" y="553" class="ct">Sending Ether safely</text>
+  <text x="629" y="581" class="body">Checks → Effects → Interactions</text>
+  <text x="629" y="606" class="body">Update accounting before calling the recipient.</text>
+  <text x="629" y="629" class="small">Check call success; consider reentrancy and failure modes.</text>
+
+  <rect x="60" y="674" width="1080" height="75" rx="16" fill="#1e293b" stroke="#475569"/>
+  <text x="84" y="703" class="warn">Important</text>
+  <text x="190" y="703" class="body">Payable permits Ether with a call; it does not require a positive payment.</text>
+  <text x="84" y="731" class="body">Events help off-chain indexing but do not replace on-chain accounting or authorization checks.</text>
+</svg>
