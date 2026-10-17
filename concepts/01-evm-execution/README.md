@@ -1,12 +1,12 @@
-# Stage 01 — EVM Execution
+# ✅ Stage 01 — EVM Execution
 
 **Priority:** 1  
 **Topics:** 12  
-**Article status:** 12 of 12 articles published; use this file as the learning checklist.
+**Article publication status:** ✅ Complete — all 12 concept articles are published and reviewed.
 
 ## About this stage
 
-This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track your study progress. An article being available does not mean the concept has been marked as learned.
+This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. The checkmark above means the documentation for this stage is complete; it does not mean every reader has completed the learning. Use the unchecked boxes below to track study progress, and mark each concept only after reviewing it.
 
 ## Concept checklist
 
