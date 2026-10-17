@@ -237,4 +237,4 @@ A migration plan should identify how partial failures are handled, whether the o
 8. **[Transparent Proxies](06-transparent-proxies.md)** — caller-based proxy administration.
 9. **[UUPS Proxies](07-uups-proxies.md)** — implementation-resident upgrade logic.
 10. **[Beacon Proxies](08-beacon-proxies.md)** — shared implementation resolution for groups of proxies.
-11. **[Diamond Pattern (EIP-2535)](14-diamond-pattern-eip-2535.md)** — modular contract architecture using facets, discussed separately.
+11. **Diamond Pattern (EIP-2535)** — modular contract architecture using facets, discussed separately.
