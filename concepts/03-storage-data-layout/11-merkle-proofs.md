@@ -54,7 +54,7 @@ To prove that **C** belongs to the tree, the prover does not need to send A, B, 
 
 The verifier hashes C, combines it with the supplied sibling hashes in the correct order, and compares the result to the trusted root. It is not enough for the prover merely to provide a list of hashes; the verifier must recompute the path.
 
-For a balanced binary tree with (N) leaves, a proof generally needs (O(\log N)) sibling hashes. Proof length and verification details depend on the tree construction.
+For a balanced binary tree with N leaves, a proof generally needs O(log N) sibling hashes. Proof length and verification details depend on the tree construction.
 
 ## 4. Inclusion Proof Verification
 
@@ -84,6 +84,8 @@ Absence proofs are structure-specific. An arbitrary collection of sibling hashes
 Ethereum's execution layer uses a Modified Merkle-Patricia Trie. This is not the same structure as the binary tree shown in the simplified example above.
 
 MPT nodes are structured objects, including branch, extension, and leaf nodes. They are serialized using RLP, and nodes are connected through references determined by the trie rules—commonly Keccak-256 hashes of RLP-encoded nodes, with compact-node rules for shorter encodings. A proof therefore commonly consists of RLP-encoded trie nodes along the searched path, rather than just a sequence of sibling hashes.
+
+**Protocol-evolution note (reviewed 2026-10-17):** This article describes Ethereum's current execution-layer MPT proof model. Verkle Trees are being developed as a potential replacement that could substantially reduce state-witness sizes. The [Ethereum.org Verkle Trees roadmap](https://ethereum.org/roadmap/verkle-trees/) page, last updated 2026-06-24, reported that Verkle testnets were running while substantial client updates remained outstanding. Do not treat Verkle proofs as interchangeable with today's MPT proofs; check the current protocol status and specification before implementing a production verifier.
 
 Three roots in an execution block header are especially relevant:
 
