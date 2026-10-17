@@ -2,31 +2,31 @@
 
 **Priority:** 2  
 **Topics:** 17  
-**Article status:** 🔄 In progress — 1/17 concept articles published.
+**Article status:** ✅ Complete — all 17/17 concept articles published.
 
 ## About this stage
 
-This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The JSON-RPC article is published; the remaining concepts will be documented one by one as they are researched. The checkboxes track personal study progress, not publication status.
+This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. All 17 concept articles in this stage are published. The checkboxes track personal study progress, not publication status.
 
 ## Concept checklist
 
 - [ ] [JSON-RPC](01-json-rpc.md) — article published
-- [ ] Ethereum RPC Methods
-- [ ] Reading Blockchain State
-- [ ] Sending Transactions
-- [ ] Transaction Signing
-- [ ] eth_call
-- [ ] eth_estimateGas
-- [ ] eth_sendRawTransaction
-- [ ] Log and Event Filtering
-- [ ] WebSocket Subscriptions
-- [ ] Execution Clients
-- [ ] Archive Nodes
-- [ ] Full Nodes
-- [ ] Light Clients
-- [ ] Execution API
-- [ ] Consensus API
-- [ ] Engine API
+- [ ] [Ethereum RPC Methods](02-ethereum-rpc-methods.md) — article published
+- [ ] [Reading Blockchain State](03-reading-blockchain-state.md) — article published
+- [ ] [Sending Transactions](04-sending-transactions.md) — article published
+- [ ] [Transaction Signing](05-transaction-signing.md) — article published
+- [ ] [eth_call](06-eth-call.md) — article published
+- [ ] [eth_estimateGas](07-eth-estimategas.md) — article published
+- [ ] [eth_sendRawTransaction](08-eth-sendrawtransaction.md) — article published
+- [ ] [Log and Event Filtering](09-log-and-event-filtering.md) — article published
+- [ ] [WebSocket Subscriptions](10-websocket-subscriptions.md) — article published
+- [ ] [Execution Clients](11-execution-clients.md) — article published
+- [ ] [Archive Nodes](12-archive-nodes.md) — article published
+- [ ] [Full Nodes](13-full-nodes.md) — article published
+- [ ] [Light Clients](14-light-clients.md) — article published
+- [ ] [Execution API](15-execution-api.md) — article published
+- [ ] [Consensus API](16-consensus-api.md) — article published
+- [ ] [Engine API](17-engine-api.md) — article published
 
 ## Suggested workflow
 
