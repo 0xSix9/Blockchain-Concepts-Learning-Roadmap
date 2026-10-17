@@ -336,3 +336,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the Minimal Proxies (Clones) article covering ERC-1167 forwarding bytecode, fixed implementation targets, clone-specific storage and initialization, OpenZeppelin `Clones`, CREATE2 address prediction, and security considerations.
 - Added a dedicated SVG diagram showing one shared implementation serving multiple clones with independent storage, plus the deterministic deployment flow.
 - Linked the article from the Stage 04 index and canonical roadmap, and updated publication progress to 9/17. The study checkbox remains unchecked until the learner reviews the topic.
+
+## 2026-10-17 — Delegatecall-Based Proxy Architecture
+
+- Published the Delegatecall-Based Proxy Architecture article covering CALL versus DELEGATECALL context, fallback dispatch, calldata and returndata forwarding, storage and event context, implementation resolution, and security boundaries.
+- Added a custom SVG diagram showing the end-to-end forwarding lifecycle and proxy execution context.
+- Linked the article from the Stage 04 index and canonical roadmap, and updated publication progress to 10/17. The study checkbox remains unchecked until the learner reviews the topic.
