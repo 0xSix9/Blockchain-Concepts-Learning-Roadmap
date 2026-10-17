@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Ethereum Transaction Replacement</title>
+  <desc id="desc">Two signed transactions from the same sender and nonce compete in the transaction pool. A replacement with higher fees may be accepted by a node's policy, but cancellation is not guaranteed until one transaction is included and consumes the nonce on the canonical chain.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.title{font:700 29px Arial,sans-serif;fill:#0f172a}.subtitle{font:16px Arial,sans-serif;fill:#475569}.label{font:700 19px Arial,sans-serif;fill:#0f172a}.body{font:15px Arial,sans-serif;fill:#334155}.small{font:13px Arial,sans-serif;fill:#475569}.mono{font:700 15px ui-monospace,Menlo,monospace;fill:#0f172a}.blue{fill:#dbeafe;stroke:#60a5fa;stroke-width:2}.teal{fill:#ccfbf1;stroke:#2dd4bf;stroke-width:2}.purple{fill:#ede9fe;stroke:#a78bfa;stroke-width:2}.amber{fill:#fef3c7;stroke:#f59e0b;stroke-width:2}.red{fill:#fee2e2;stroke:#f87171;stroke-width:2}.line{stroke:#64748b;stroke-width:2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="900" rx="22"/>
+  <text class="title" x="600" y="46" text-anchor="middle">Transaction Replacement — Same Nonce, New Signature</text>
+  <text class="subtitle" x="600" y="75" text-anchor="middle">A txpool may accept a replacement if its local fee-bump policy is satisfied</text>
+
+  <rect class="panel" x="45" y="103" width="1110" height="134" rx="16"/>
+  <text class="label" x="72" y="138">Original pending transaction</text>
+  <rect class="blue" x="72" y="157" width="480" height="56" rx="10"/>
+  <text class="mono" x="312" y="179" text-anchor="middle">sender = A · nonce = 7</text>
+  <text class="small" x="312" y="200" text-anchor="middle">Signed hash H₁ · lower fee parameters</text>
+  <text class="label" x="647" y="138">Replacement candidate</text>
+  <rect class="teal" x="647" y="157" width="480" height="56" rx="10"/>
+  <text class="mono" x="887" y="179" text-anchor="middle">sender = A · nonce = 7</text>
+  <text class="small" x="887" y="200" text-anchor="middle">Signed hash H₂ · higher eligible fee parameters</text>
+
+  <path class="line" d="M312 237 L312 268"/>
+  <path class="line" d="M887 237 L887 268"/>
+  <rect class="panel" x="45" y="276" width="535" height="170" rx="16"/>
+  <text class="label" x="72" y="311">Node transaction pool</text>
+  <text class="body" x="72" y="343">• Same sender + nonce creates a conflict.</text>
+  <text class="body" x="72" y="370">• Node checks its own replacement price policy.</text>
+  <text class="body" x="72" y="397">• Underpriced replacement can be rejected.</text>
+  <text class="small" x="72" y="425">Replacement policy is client/network dependent.</text>
+
+  <rect class="amber" x="620" y="276" width="535" height="170" rx="16"/>
+  <text class="label" x="647" y="311">Fee fields depend on transaction type</text>
+  <text class="body" x="647" y="343">Legacy / type 1: gasPrice</text>
+  <text class="body" x="647" y="370">Type 2: maxFeePerGas + maxPriorityFeePerGas</text>
+  <text class="body" x="647" y="397">Blob tx: also consider maxFeePerBlobGas</text>
+  <text class="small" x="647" y="425">Geth's regular txpool default bump is 10%, not a consensus rule.</text>
+
+  <path class="line" d="M600 446 L600 477"/>
+  <rect class="panel" x="45" y="485" width="1110" height="145" rx="16"/>
+  <text class="label" x="72" y="520">Speed Up vs Cancel</text>
+  <rect class="teal" x="72" y="538" width="485" height="69" rx="10"/>
+  <text class="label" x="314" y="565" text-anchor="middle">Speed Up</text>
+  <text class="small" x="314" y="588" text-anchor="middle">Keep intended call/value/data; increase fee fields</text>
+  <rect class="red" x="643" y="538" width="484" height="69" rx="10"/>
+  <text class="label" x="885" y="565" text-anchor="middle">Cancel attempt</text>
+  <text class="small" x="885" y="588" text-anchor="middle">Submit different payload at the same nonce</text>
+
+  <path class="line" d="M600 630 L600 660"/>
+  <rect class="blue" x="45" y="668" width="535" height="145" rx="16"/>
+  <text class="label" x="72" y="703">One version gets included first</text>
+  <text class="body" x="72" y="733">Its nonce is consumed in canonical state.</text>
+  <text class="body" x="72" y="759">The competing same-nonce version is normally</text>
+  <text class="body" x="72" y="785">invalid against the updated account nonce.</text>
+
+  <rect class="red" x="620" y="668" width="535" height="145" rx="16"/>
+  <text class="label" x="647" y="703">Why "Cancel" is not guaranteed</text>
+  <text class="body" x="647" y="733">Different peers may hold different candidates.</text>
+  <text class="body" x="647" y="759">The original can still be included first, and a</text>
+  <text class="body" x="647" y="785">reorg can change the canonical result.</text>
+
+  <text class="small" x="600" y="853" text-anchor="middle">Track both hashes. A node accepting a replacement does not prove global removal or block inclusion.</text>
+</svg>
