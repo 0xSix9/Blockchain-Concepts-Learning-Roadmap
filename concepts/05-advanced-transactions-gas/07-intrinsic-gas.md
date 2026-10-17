@@ -182,7 +182,7 @@ Those two cases should not be confused. Intrinsic gas is a precondition for tran
 
 The `gas` field in a transaction is a limit, not a request to spend exactly that amount. Unused gas is not charged as if it had been consumed, although fee caps, refunds, and other protocol details determine the final payment.
 
-See [Gas Limit and Gas Used](#) — future Stage 05 topic — for the separate distinction between a declared gas limit and actual gas used.
+See the upcoming Stage 05 concept on Gas Limit and Gas Used for a deeper treatment of the distinction between a declared gas limit and actual gas used.
 
 ## 7. What Intrinsic Gas Does Not Include
 
