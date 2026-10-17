@@ -41,7 +41,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [Visibility](../concepts/02-abi-contract-interaction/09-visibility.md) — article published
 - [ ] [Mutability](../concepts/02-abi-contract-interaction/10-mutability.md) — article published
 - [ ] [Payable Functions](../concepts/02-abi-contract-interaction/11-payable-functions.md) — article published
-- [ ] Events and Event Logs
+- [ ] [Events and Event Logs](../concepts/02-abi-contract-interaction/12-events-and-event-logs.md) — article published
 - [ ] Topics and Indexed Parameters
 - [ ] Custom Errors
 - [ ] Error Selectors
