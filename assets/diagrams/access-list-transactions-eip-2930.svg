@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">EIP-2930 Access List Transaction</title>
+  <desc id="desc">Shows the type 0x01 transaction envelope, access list entries of addresses and storage keys, upfront gas charges, and how predeclared state entries are warm while unlisted accesses remain allowed with cold-access pricing.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.title{font:700 29px Arial,sans-serif;fill:#0f172a}.subtitle{font:16px Arial,sans-serif;fill:#475569}.label{font:700 18px Arial,sans-serif;fill:#0f172a}.body{font:15px Arial,sans-serif;fill:#334155}.small{font:13px Arial,sans-serif;fill:#475569}.mono{font:700 16px ui-monospace,Menlo,monospace;fill:#0f172a}.blue{fill:#dbeafe;stroke:#60a5fa;stroke-width:2}.teal{fill:#ccfbf1;stroke:#2dd4bf;stroke-width:2}.purple{fill:#ede9fe;stroke:#a78bfa;stroke-width:2}.amber{fill:#fef3c7;stroke:#f59e0b;stroke-width:2}.red{fill:#fee2e2;stroke:#f87171;stroke-width:2}.line{stroke:#64748b;stroke-width:2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="820" rx="22"/>
+  <text class="title" x="600" y="48" text-anchor="middle">Access List Transactions — EIP-2930</text>
+  <text class="subtitle" x="600" y="76" text-anchor="middle">Type 0x01 · Declares expected state accesses for gas accounting</text>
+
+  <rect class="panel" x="50" y="105" width="1100" height="120" rx="16"/>
+  <text class="label" x="78" y="137">Typed transaction envelope</text>
+  <rect class="purple" x="80" y="155" width="110" height="44" rx="9"/>
+  <text class="mono" x="135" y="183" text-anchor="middle">0x01</text>
+  <text class="body" x="210" y="182">||</text>
+  <rect class="blue" x="248" y="155" width="865" height="44" rx="9"/>
+  <text class="mono" x="680" y="183" text-anchor="middle">RLP([chainId, nonce, gasPrice, gasLimit, to, value, data, accessList, signature…])</text>
+
+  <rect class="panel" x="50" y="252" width="535" height="285" rx="16"/>
+  <text class="label" x="78" y="286">Access list structure</text>
+  <text class="small" x="78" y="309">Each entry: one 20-byte address + zero or more 32-byte keys</text>
+  <rect class="blue" x="78" y="330" width="475" height="64" rx="10"/>
+  <text class="mono" x="98" y="356">Address A</text>
+  <text class="body" x="98" y="379">storageKeys: [slot 0x03, slot 0x07]</text>
+  <rect class="teal" x="78" y="410" width="475" height="58" rx="10"/>
+  <text class="mono" x="98" y="435">Address B</text>
+  <text class="body" x="98" y="456">storageKeys: []</text>
+  <text class="small" x="78" y="496">Entries are part of the signed payload.</text>
+  <text class="small" x="78" y="516">Duplicate entries are allowed, but charged again.</text>
+
+  <rect class="panel" x="615" y="252" width="535" height="285" rx="16"/>
+  <text class="label" x="643" y="286">Upfront access-list charges</text>
+  <rect class="amber" x="643" y="320" width="225" height="90" rx="12"/>
+  <text class="small" x="755" y="347" text-anchor="middle">Per address entry</text>
+  <text class="title" x="755" y="382" text-anchor="middle">2,400 gas</text>
+  <rect class="purple" x="895" y="320" width="225" height="90" rx="12"/>
+  <text class="small" x="1007" y="347" text-anchor="middle">Per storage key</text>
+  <text class="title" x="1007" y="382" text-anchor="middle">1,900 gas</text>
+  <text class="body" x="643" y="445">List processing makes declared entries warm</text>
+  <text class="body" x="643" y="467">before EVM execution proceeds.</text>
+  <text class="small" x="643" y="502">A list is not automatically cheaper: actual savings</text>
+  <text class="small" x="643" y="520">depend on what would otherwise be cold and used.</text>
+
+  <path class="line" d="M317 538 L317 570"/>
+  <path class="line" d="M883 538 L883 570"/>
+  <rect class="teal" x="50" y="578" width="535" height="130" rx="16"/>
+  <text class="label" x="78" y="612">Listed / already-warm entry</text>
+  <text class="body" x="78" y="642">Predeclared address or key is warm.</text>
+  <text class="body" x="78" y="667">Examples: warm SLOAD = 100 gas.</text>
+  <text class="small" x="78" y="690">Relative to the applicable cold access charge.</text>
+  <rect class="red" x="615" y="578" width="535" height="130" rx="16"/>
+  <text class="label" x="643" y="612">Unlisted / cold entry</text>
+  <text class="body" x="643" y="642">Still accessible — it is not blocked.</text>
+  <text class="body" x="643" y="667">Examples: cold SLOAD = 2,100 gas.</text>
+  <text class="small" x="643" y="690">First access warms the item for later accesses.</text>
+
+  <rect x="50" y="735" width="1100" height="55" rx="12" fill="#0f172a"/>
+  <text x="600" y="758" text-anchor="middle" style="font:700 17px Arial,sans-serif;fill:#fff">Access list ≠ permission list</text>
+  <text x="600" y="779" text-anchor="middle" style="font:14px Arial,sans-serif;fill:#cbd5e1">EIP-2930 predeclares gas-accounted state accesses; it does not forbid unlisted addresses or slots.</text>
+</svg>
