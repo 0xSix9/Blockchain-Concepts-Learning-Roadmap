@@ -285,3 +285,10 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the Contract Composition article, including an interface-based fee-policy example, composition versus inheritance, dependency boundaries, and security/testing considerations.
 - Added a dedicated Contract Composition architecture diagram and linked the article from the Stage 04 checklist and canonical roadmap.
 - Updated Stage 04 publication progress to 1/17. The unchecked item remains a personal study checkbox.
+
+
+## 2026-10-17 — Inheritance
+
+- Published the Inheritance article covering visibility, `virtual`/`override`, `super`, base constructors, abstract contracts, multiple inheritance, C3 linearization, storage-layout implications, and security considerations.
+- Added a dedicated inheritance overview diagram and linked the article from the Stage 04 study checklist and canonical roadmap.
+- Updated Stage 04 publication progress to 2/17. The study checkbox remains unchecked until the concept is reviewed by the learner.
