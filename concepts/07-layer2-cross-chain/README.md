@@ -2,11 +2,11 @@
 
 **Priority:** 3  
 **Topics:** 19  
-**Article status:** In progress — 18/19 concept articles published.
+**Article status:** Complete — all 19 concept articles published.
 
 ## About this stage
 
-This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. Articles have been published for [Fraud Proofs](01-fraud-proofs.md), [Validity Proofs](02-validity-proofs.md), [Sequencers](03-sequencers.md), [Batch Submission](04-batch-submission.md), [State Commitments](05-state-commitments.md), [Settlement Layer](06-settlement-layer.md), [Challenge Periods](07-challenge-periods.md), [Forced Inclusion](08-forced-inclusion.md), [Forced Withdrawals](09-forced-withdrawals.md), [Rollup Bridges](10-rollup-bridges.md), [Blob Fee Market](11-blob-fee-market.md), [Data Availability Sampling](12-data-availability-sampling.md), [PeerDAS](13-peerdas.md), [Validiums](14-validiums.md), [Volitions](15-volitions.md), [Based Rollups](16-based-rollups.md), [Shared Sequencing](17-shared-sequencing.md), and [Cross-Chain Messaging](18-cross-chain-messaging.md). The remaining concepts will be written and reviewed one by one.
+This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. Articles have been published for [Fraud Proofs](01-fraud-proofs.md), [Validity Proofs](02-validity-proofs.md), [Sequencers](03-sequencers.md), [Batch Submission](04-batch-submission.md), [State Commitments](05-state-commitments.md), [Settlement Layer](06-settlement-layer.md), [Challenge Periods](07-challenge-periods.md), [Forced Inclusion](08-forced-inclusion.md), [Forced Withdrawals](09-forced-withdrawals.md), [Rollup Bridges](10-rollup-bridges.md), [Blob Fee Market](11-blob-fee-market.md), [Data Availability Sampling](12-data-availability-sampling.md), [PeerDAS](13-peerdas.md), [Validiums](14-validiums.md), [Volitions](15-volitions.md), [Based Rollups](16-based-rollups.md), [Shared Sequencing](17-shared-sequencing.md), and [Cross-Chain Messaging](18-cross-chain-messaging.md), and [Bridge Security Models](19-bridge-security-models.md). All 19 concept articles are now published; use the checkboxes below to track study progress.
 
 ## Concept checklist
 
@@ -28,7 +28,7 @@ This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the
 - [ ] [Based Rollups](16-based-rollups.md) — article published
 - [ ] [Shared Sequencing](17-shared-sequencing.md) — article published
 - [ ] [Cross-Chain Messaging](18-cross-chain-messaging.md) — article published
-- [ ] Bridge Security Models
+- [ ] [Bridge Security Models](19-bridge-security-models.md) — article published
 
 ## Suggested workflow
 
