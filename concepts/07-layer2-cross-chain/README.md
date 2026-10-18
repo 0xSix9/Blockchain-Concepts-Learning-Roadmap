@@ -2,17 +2,17 @@
 
 **Priority:** 3  
 **Topics:** 19  
-**Article status:** In progress — 2/19 concept articles published.
+**Article status:** In progress — 3/19 concept articles published.
 
 ## About this stage
 
-This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The [Fraud Proofs](01-fraud-proofs.md) and [Validity Proofs](02-validity-proofs.md) articles are published. The remaining concepts will be written and reviewed one by one.
+This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The [Fraud Proofs](01-fraud-proofs.md), [Validity Proofs](02-validity-proofs.md), and [Sequencers](03-sequencers.md) articles are published. The remaining concepts will be written and reviewed one by one.
 
 ## Concept checklist
 
 - [ ] [Fraud Proofs](01-fraud-proofs.md) — article published
 - [ ] [Validity Proofs](02-validity-proofs.md) — article published
-- [ ] Sequencers
+- [ ] [Sequencers](03-sequencers.md) — article published
 - [ ] Batch Submission
 - [ ] State Commitments
 - [ ] Settlement Layer
