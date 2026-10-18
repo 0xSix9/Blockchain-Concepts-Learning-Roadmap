@@ -587,3 +587,11 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Added withdrawal lifecycle, data-availability assumptions, governance and timeout risks, and a developer review checklist.
 - Referenced Ethereum.org and the official OP Stack withdrawal, configurability, and fault-proof specifications.
 - Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 7/19 Stage 07 articles published.
+
+## 2026-10-18 — Stage 07: Forced Inclusion
+
+- Published the Forced Inclusion article and a dedicated diagram showing the L1 inbox path, sequencer opportunity, eligibility window, fallback inclusion, and L2 processing.
+- Compared OP Stack L1-deposit/ sequencing-window rules with Arbitrum's Delayed Inbox and force-inclusion mechanism.
+- Documented ordering, chain-specific deadlines, forced-inclusion reorg effects on unposted soft-confirmed blocks, permissioning, and developer review checks.
+- Referenced Ethereum.org and the official OP Stack and Arbitrum specifications.
+- Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 8/19 Stage 07 articles published.
