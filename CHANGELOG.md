@@ -579,3 +579,11 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Added a bridge-focused example and developer checklist for trust assumptions, challenges, upgrade authority, L1 reorganizations, replay protection, and user-facing finality.
 - Referenced Ethereum.org, the OP Stack output-root and fault-proof specifications, and Arbitrum Nitro documentation.
 - Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 6/19 Stage 07 articles published.
+
+## 2026-10-18 — Stage 07: Challenge Periods
+
+- Published the Challenge Periods article with a custom diagram showing claim proposal, challenge paths, dispute resolution, protocol safety checks, and bridge finalization.
+- Distinguished claim challenge windows, dispute-game clocks, withdrawal proof-maturity delays, and Ethereum consensus finality; clarified that roughly seven days is a common example, not a universal duration.
+- Added withdrawal lifecycle, data-availability assumptions, governance and timeout risks, and a developer review checklist.
+- Referenced Ethereum.org and the official OP Stack withdrawal, configurability, and fault-proof specifications.
+- Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 7/19 Stage 07 articles published.
