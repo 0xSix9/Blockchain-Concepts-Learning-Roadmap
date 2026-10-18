@@ -672,3 +672,10 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Added security analysis for domain separation, message IDs, exactly-once/ordered delivery semantics, relayer failures, destination reverts, timeout races, and privileged payloads.
 - Used IBC packet semantics as a reference model while noting that protocol-specific guarantees differ; included references to IBC, LayerZero, Hyperlane, Optimism, and Ethereum.org.
 - Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 18/19 Stage 07 articles published.
+
+## 2026-10-18 — Stage 07 Complete: Bridge Security Models
+
+- Published the final Stage 07 article and dedicated diagram covering light-client and state-proof verification, external validator/multisig/MPC models, oracle and modular verifier policies, optimistic challenge windows, and liquidity/solver-based bridges.
+- Added a layered security review covering source finality, domain separation, replay prevention, asset backing, data availability, destination execution, upgrade authority, monitoring, and an actionable smart-contract audit checklist.
+- Referenced official Ethereum, Optimism, Arbitrum, Hyperlane, LayerZero, and IBC documentation, plus the L2BEAT bridge-risk framework.
+- Linked Bridge Security Models from the Stage 07 index and canonical roadmap, updated README and roadmap overview, and marked Stage 07 content-complete at 19/19 articles.
