@@ -42,4 +42,5 @@ Using L1 sequencing does not automatically solve rollup correctness, bridge secu
 ## 7. References
 
 - [Based Sequencing — Concepts and FAQ](https://www.basedsequencing.org/)
+- [Based Rollups — Superpowers from L1 Sequencing (Ethereum Research)](https://ethresear.ch/t/based-rollups-superpowers-from-l1-sequencing/15016/1)
 - [Ethereum.org — Optimistic Rollups](https://ethereum.org/developers/docs/scaling/optimistic-rollups/)
