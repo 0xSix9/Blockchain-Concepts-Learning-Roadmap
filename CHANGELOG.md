@@ -533,4 +533,3 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Added concept-specific developer review checklists and key takeaways where missing, and aligned the numbered section headings.
 - Clarified Beacon API content negotiation: JSON is the default, while SSZ request/response support is available only on endpoints that specify it.
 - Confirmed Stage 06 publication status remains complete at 17/17; no live RPC calls or transactions were performed as part of this review.
-
