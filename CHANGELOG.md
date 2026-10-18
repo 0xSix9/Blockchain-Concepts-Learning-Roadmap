@@ -548,3 +548,11 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Clarified the distinction between validity and zero knowledge, and between validity proofs, data availability, L1 consensus finality, and bridge finalization.
 - Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 2/19 Stage 07 articles published.
 - Kept the remaining Stage 07 concept files unchanged.
+
+
+## 2026-10-18 — Stage 07: Sequencers
+
+- Published the Sequencers concept article with a dedicated SVG diagram, the L2 transaction flow, role separation, censorship-resistance paths, MEV, and developer security review guidance.
+- Referenced Ethereum.org and Arbitrum's official sequencing and forced-transaction documentation.
+- Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 3/19 Stage 07 articles published.
+- Kept all remaining Stage 07 concept files unchanged.
