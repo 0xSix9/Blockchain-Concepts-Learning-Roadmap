@@ -641,3 +641,10 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Covered DAC threshold and independence assumptions, data withholding, withdrawals and escape hatches, differences from ZK-rollups and Optimiums, and the Volition model.
 - Added a developer security checklist and references to ethereum.org, StarkEx documentation, and L2BEAT's definitions and risk framework.
 - Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 14/19 Stage 07 articles published.
+
+## 2026-10-18 — Stage 07: Volitions
+
+- Published the Volitions concept article and a dedicated architecture diagram illustrating the rollup-mode on-chain data path and Validium-mode external data path in a shared L2 application.
+- Covered implementation-specific choice granularity, state-tree and vault mapping, cross-mode accounting, proof verification, DA committee assumptions, withdrawals, bridge controls, and potential privacy misconceptions.
+- Added a developer integration checklist and references to ethereum.org, StarkEx data availability documentation, StarkEx Volition release notes, and L2BEAT's DA risk framework.
+- Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 15/19 Stage 07 articles published.
