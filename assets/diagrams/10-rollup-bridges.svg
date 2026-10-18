@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="770" viewBox="0 0 1200 770" role="img" aria-labelledby="title desc">
+<title id="title">Rollup Bridges: Deposits, Withdrawals, and Cross-Domain Message Verification</title>
+<desc id="desc">Paired L1 and L2 bridge contracts communicate through an authenticated cross-domain messenger. Deposits escrow L1 assets and mint the mapped representation on L2. Withdrawals burn or account for the L2 representation, publish a message and state commitment, then require a proof and rollup-specific challenge or finality conditions before L1 assets are released. Security gates highlight counterpart authentication, token mapping, and replay protection.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111f"/><stop offset="1" stop-color="#111c35"/></linearGradient>
+ <linearGradient id="head" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1d4ed8"/><stop offset="1" stop-color="#0f766e"/></linearGradient>
+ <marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#91a4c3"/></marker>
+ <marker id="t" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#5eead4"/></marker>
+ <marker id="p" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#a78bfa"/></marker>
+ <style>
+ .h{font:700 27px Arial,sans-serif;fill:#f8fafc}.sub{font:14px Arial,sans-serif;fill:#b7c6dc}.l{font:700 15px Arial,sans-serif;fill:#f8fafc}.b{font:13px Arial,sans-serif;fill:#d6e0ee}.s{font:12px Arial,sans-serif;fill:#a9bad2}.tiny{font:11px Arial,sans-serif;fill:#9fb1ca}
+ .box{fill:#14233b;stroke:#3a5273;stroke-width:1.5}.blue{fill:#142d50;stroke:#60a5fa;stroke-width:1.5}.teal{fill:#123d43;stroke:#2dd4bf;stroke-width:1.5}.purple{fill:#2a244e;stroke:#a78bfa;stroke-width:1.5}.orange{fill:#442b19;stroke:#fb923c;stroke-width:1.5}
+ .line{fill:none;stroke:#91a4c3;stroke-width:2;marker-end:url(#a)}.tl{fill:none;stroke:#5eead4;stroke-width:2;marker-end:url(#t)}.pl{fill:none;stroke:#a78bfa;stroke-width:2;marker-end:url(#p)}
+ </style>
+</defs>
+<rect width="1200" height="770" rx="24" fill="url(#bg)"/><circle cx="1030" cy="80" r="270" fill="#1d4ed8" opacity=".08"/>
+<rect x="30" y="24" width="1140" height="88" rx="18" fill="url(#head)"/>
+<text x="58" y="58" class="h">ROLLUP BRIDGES</text><text x="58" y="85" class="sub">Paired contracts + authenticated messages + protocol-specific settlement checks</text>
+<rect x="950" y="45" width="185" height="40" rx="20" fill="#07111f" opacity=".45"/><text x="1042" y="70" text-anchor="middle" class="l">L1 ↔ L2</text>
+
+<!-- chain lanes -->
+<rect x="40" y="136" width="530" height="270" rx="16" fill="#0e1a2e" stroke="#355070" stroke-width="1.5"/>
+<rect x="630" y="136" width="530" height="270" rx="16" fill="#0e1a2e" stroke="#355070" stroke-width="1.5"/>
+<text x="62" y="166" class="l">ETHEREUM L1 · PARENT CHAIN</text><text x="652" y="166" class="l">ROLLUP L2 · CHILD CHAIN</text>
+
+<rect x="62" y="187" width="225" height="78" rx="12" class="blue"/>
+<text x="80" y="215" class="l">L1 bridge / gateway</text><text x="80" y="237" class="b">Escrow or release asset</text><text x="80" y="253" class="tiny">Authenticated counterpart only</text>
+<rect x="323" y="187" width="225" height="78" rx="12" class="box"/>
+<text x="341" y="215" class="l">L1 asset contract</text><text x="341" y="237" class="b">Original token held in escrow</text><text x="341" y="253" class="tiny">for lock-and-mint designs</text>
+<path d="M287 226 H319" class="line"/>
+
+<rect x="652" y="187" width="225" height="78" rx="12" class="teal"/>
+<text x="670" y="215" class="l">L2 bridge / gateway</text><text x="670" y="237" class="b">Mint / burn representation</text><text x="670" y="253" class="tiny">Check token mapping + caller</text>
+<rect x="913" y="187" width="225" height="78" rx="12" class="purple"/>
+<text x="931" y="215" class="l">Mapped L2 token</text><text x="931" y="237" class="b">Equivalent representation</text><text x="931" y="253" class="tiny">Not necessarily same contract</text>
+<path d="M877 226 H909" class="line"/>
+
+<!-- messenger in middle -->
+<rect x="425" y="300" width="350" height="84" rx="13" fill="#202242" stroke="#a78bfa" stroke-width="1.5"/>
+<text x="600" y="328" text-anchor="middle" class="l">Cross-domain messenger</text>
+<text x="600" y="350" text-anchor="middle" class="b">Carries message + authenticates source domain</text>
+<text x="600" y="370" text-anchor="middle" class="tiny">Not arbitrary calls from an untrusted address</text>
+<path d="M174 265 V278 H425 V321" class="tl"/>
+<path d="M764 321 H1000 V278 H764 V265" class="tl"/>
+<path d="M1024 265 V285 H775 V346" class="pl"/>
+<path d="M425 346 H398 V285 H174 V265" class="pl"/>
+
+<!-- flows -->
+<rect x="40" y="431" width="550" height="132" rx="14" class="blue"/>
+<text x="62" y="460" class="l">DEPOSIT · L1 → L2</text>
+<text x="62" y="484" class="b">1. User calls L1 bridge; source asset enters escrow.</text>
+<text x="62" y="506" class="b">2. An authenticated message is relayed to the L2 bridge.</text>
+<text x="62" y="528" class="b">3. L2 bridge mints / credits the mapped representation.</text>
+<text x="62" y="548" class="tiny">L1 tx included ≠ child-chain message already executed.</text>
+
+<rect x="610" y="431" width="550" height="132" rx="14" class="teal"/>
+<text x="632" y="460" class="l">WITHDRAWAL · L2 → L1</text>
+<text x="632" y="484" class="b">1. L2 token is burned or debited; a message is emitted.</text>
+<text x="632" y="506" class="b">2. Rollup publishes data and recognizes the output/message.</text>
+<text x="632" y="528" class="b">3. Proof + challenge/finality conditions are checked on L1.</text>
+<text x="632" y="548" class="tiny">L1 bridge releases escrow only after protocol checks pass.</text>
+
+<!-- bridge safety gates -->
+<rect x="40" y="586" width="1120" height="140" rx="14" fill="#0b1424" stroke="#283b58"/>
+<text x="62" y="615" class="l">SECURITY GATES — EACH MUST HOLD</text>
+<rect x="62" y="631" width="248" height="72" rx="9" fill="#142d50" stroke="#60a5fa"/>
+<text x="78" y="655" class="s">1 · Correct asset mapping</text><text x="78" y="677" class="tiny">Chain ID + contract address</text>
+<rect x="330" y="631" width="248" height="72" rx="9" fill="#202242" stroke="#a78bfa"/>
+<text x="346" y="655" class="s">2 · Authenticated sender</text><text x="346" y="677" class="tiny">Trusted messenger + paired bridge</text>
+<rect x="598" y="631" width="248" height="72" rx="9" fill="#123d43" stroke="#2dd4bf"/>
+<text x="614" y="655" class="s">3 · Valid withdrawal proof</text><text x="614" y="677" class="tiny">Recognized output + finality rules</text>
+<rect x="866" y="631" width="272" height="72" rx="9" fill="#442b19" stroke="#fb923c"/>
+<text x="882" y="655" class="s">4 · No replay / double release</text><text x="882" y="677" class="tiny">Consume message once; handle upgrades</text>
+</svg>
