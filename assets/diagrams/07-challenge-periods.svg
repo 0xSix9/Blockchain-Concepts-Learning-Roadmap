@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="690" viewBox="0 0 1200 690" role="img" aria-labelledby="title desc">
+<title id="title">Challenge Periods: From Output Proposal to Withdrawal Finalization</title>
+<desc id="desc">An L2 transaction executes, data is published, and an output claim is proposed. During the challenge window, participants inspect the data and can initiate a fault-proof dispute. After the outcome, separate maturity and L1 finality conditions must be satisfied before the bridge finalizes a withdrawal.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111f"/><stop offset="1" stop-color="#111c35"/></linearGradient>
+ <linearGradient id="head" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1d4ed8"/><stop offset="1" stop-color="#0f766e"/></linearGradient>
+ <marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#91a4c3"/></marker>
+ <marker id="t" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#5eead4"/></marker>
+ <style>
+ .h{font:700 27px Arial,sans-serif;fill:#f8fafc}.sub{font:14px Arial,sans-serif;fill:#b7c6dc}.l{font:700 15px Arial,sans-serif;fill:#f8fafc}.b{font:13px Arial,sans-serif;fill:#d6e0ee}.s{font:12px Arial,sans-serif;fill:#a9bad2}.tiny{font:11px Arial,sans-serif;fill:#9fb1ca}
+ .box{fill:#14233b;stroke:#3a5273;stroke-width:1.5}.blue{fill:#142d50;stroke:#60a5fa;stroke-width:1.5}.teal{fill:#123d43;stroke:#2dd4bf;stroke-width:1.5}.purple{fill:#2a244e;stroke:#a78bfa;stroke-width:1.5}.orange{fill:#442b19;stroke:#fb923c;stroke-width:1.5}.red{fill:#451f2a;stroke:#fb7185;stroke-width:1.5}
+ .line{fill:none;stroke:#91a4c3;stroke-width:2;marker-end:url(#a)}.tl{fill:none;stroke:#5eead4;stroke-width:2;marker-end:url(#t)}
+ </style>
+</defs>
+<rect width="1200" height="690" rx="24" fill="url(#bg)"/><circle cx="1060" cy="84" r="260" fill="#1d4ed8" opacity=".08"/>
+<rect x="30" y="24" width="1140" height="88" rx="18" fill="url(#head)"/>
+<text x="58" y="58" class="h">CHALLENGE PERIODS</text><text x="58" y="85" class="sub">Time to inspect and dispute a claim — not an automatic proof of correctness</text>
+<rect x="945" y="45" width="190" height="40" rx="20" fill="#07111f" opacity=".45"/><text x="1040" y="70" text-anchor="middle" class="l">OPTIMISTIC ROLLUPS</text>
+
+<rect x="40" y="140" width="190" height="98" rx="13" class="blue"/>
+<text x="56" y="169" class="l">1 · L2 execution</text><text x="56" y="193" class="b">Transactions run</text><text x="56" y="212" class="b">under L2 rules.</text>
+<path d="M230 189 H253" class="line"/>
+<rect x="257" y="140" width="190" height="98" rx="13" class="box"/>
+<text x="273" y="169" class="l">2 · Publish data</text><text x="273" y="193" class="b">Inputs are available</text><text x="273" y="212" class="b">for reconstruction.</text>
+<path d="M447 189 H470" class="line"/>
+<rect x="474" y="140" width="220" height="98" rx="13" class="purple"/>
+<text x="490" y="169" class="l">3 · Propose output</text><text x="490" y="193" class="b">Commitment claims</text><text x="490" y="212" class="b">a particular L2 state.</text>
+<path d="M694 189 H717" class="line"/>
+<rect x="721" y="140" width="439" height="98" rx="13" class="orange"/>
+<text x="741" y="169" class="l">4 · Challenge window</text><text x="741" y="193" class="b">Participants inspect the published data and can contest</text><text x="741" y="212" class="b">the claim using the protocol's dispute mechanism.</text>
+
+<path d="M940 238 V267 H320 V291" class="line"/><path d="M940 267 H880 V291" class="line"/>
+<text x="42" y="279" class="l">5 · Possible outcomes</text>
+<rect x="40" y="295" width="555" height="112" rx="13" class="teal"/>
+<text x="60" y="324" class="l">A · No successful challenge</text><text x="60" y="348" class="b">The claim survives the applicable challenge conditions.</text><text x="60" y="370" class="b">Separate maturity and finality checks may still apply.</text><text x="60" y="389" class="tiny">Time passing alone does not validate a state transition.</text>
+<rect x="615" y="295" width="545" height="112" rx="13" class="red"/>
+<text x="635" y="324" class="l">B · A challenge is raised</text><text x="635" y="348" class="b">The parties follow fault-proof / dispute-game rules.</text><text x="635" y="370" class="b">Deadlines and verification determine which claim wins.</text><text x="635" y="389" class="tiny">A successful challenge can invalidate the faulty claim.</text>
+
+<path d="M318 407 V430 H600 V452" class="tl"/><path d="M888 407 V430 H600" fill="none" stroke="#5eead4" stroke-width="2"/>
+<rect x="255" y="456" width="690" height="82" rx="13" class="box"/>
+<text x="279" y="485" class="l">6 · Protocol safety conditions</text><text x="279" y="509" class="b">Challenge result + configured maturity / game-finality rules</text><text x="279" y="527" class="tiny">The authoritative contract decides whether finalization is allowed.</text>
+<path d="M600 538 V558" class="tl"/>
+<rect x="255" y="562" width="690" height="60" rx="13" class="teal"/>
+<text x="279" y="588" class="l">7 · L1 bridge finalization (if all checks pass)</text><text x="279" y="608" class="b">Verify the correct output and message proof; prevent replay.</text>
+
+<rect x="40" y="640" width="1120" height="34" rx="9" fill="#0b1424" stroke="#283b58"/>
+<text x="58" y="661" class="s">Separate clocks: output challenge · game move deadline · withdrawal proof-maturity delay · Ethereum consensus finality</text>
+</svg>
