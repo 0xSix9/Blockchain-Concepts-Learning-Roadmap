@@ -151,6 +151,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] Shared Sequencing
 - [ ] Cross-Chain Messaging
 - [ ] Bridge Security Models
+
 ## Stage 08 — Mempool and MEV
 
 **Priority 3** · [Stage index](../concepts/08-mempool-mev/README.md)
