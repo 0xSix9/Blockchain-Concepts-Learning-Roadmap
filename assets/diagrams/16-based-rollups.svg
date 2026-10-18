@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+<title id="title">Based Rollups: Ethereum L1-Driven Sequencing</title>
+<desc id="desc">Users submit L2 transactions. Searchers and specialized builders construct a candidate L2 block or sequencing payload. An Ethereum L1 proposer may include that payload in an L1 block. L2 nodes derive and execute the rollup block, while data availability and validity or fraud-proof settlement mechanisms remain separate. The design reuses L1 sequencing but does not automatically provide instant finality, full censorship resistance, or cross-rollup atomicity.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111f"/><stop offset="1" stop-color="#18223a"/></linearGradient>
+ <linearGradient id="head" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1d4ed8"/><stop offset="1" stop-color="#0f766e"/></linearGradient>
+ <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#91a4c3"/></marker>
+ <marker id="garr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#5eead4"/></marker>
+ <marker id="parr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#c4b5fd"/></marker>
+ <style>
+ .title{font:700 28px Arial,sans-serif;fill:#f8fafc}.sub{font:14px Arial,sans-serif;fill:#c0cee2}.h{font:700 16px Arial,sans-serif;fill:#f8fafc}.b{font:13px Arial,sans-serif;fill:#d7e2f0}.s{font:12px Arial,sans-serif;fill:#a9bbd2}.tiny{font:11px Arial,sans-serif;fill:#9db0ca}
+ .panel{fill:#14243b;stroke:#3a5272;stroke-width:1.5}.blue{fill:#152e50;stroke:#60a5fa;stroke-width:1.5}.teal{fill:#103b3d;stroke:#2dd4bf;stroke-width:1.5}.purple{fill:#292448;stroke:#a78bfa;stroke-width:1.5}.amber{fill:#402c1b;stroke:#fb923c;stroke-width:1.5}.red{fill:#421f2c;stroke:#fb7185;stroke-width:1.5}
+ .line{fill:none;stroke:#91a4c3;stroke-width:2;marker-end:url(#arr)}.gline{fill:none;stroke:#5eead4;stroke-width:2;marker-end:url(#garr)}.pline{fill:none;stroke:#c4b5fd;stroke-width:2;marker-end:url(#parr)}
+ </style>
+</defs>
+<rect width="1200" height="820" rx="24" fill="url(#bg)"/><circle cx="1080" cy="95" r="235" fill="#2563eb" opacity=".07"/>
+<rect x="30" y="24" width="1140" height="88" rx="17" fill="url(#head)"/>
+<text x="56" y="60" class="title">BASED ROLLUPS · L1-DRIVEN SEQUENCING</text>
+<text x="56" y="86" class="sub">Reuse Ethereum's proposer and builder ecosystem for L2 transaction ordering</text>
+<rect x="968" y="47" width="168" height="36" rx="18" fill="#07111f" opacity=".42"/><text x="1052" y="70" text-anchor="middle" class="h">L1 SEQUENCING</text>
+
+<rect x="40" y="136" width="245" height="120" rx="14" class="blue"/>
+<text x="60" y="165" class="h">1 · L2 users</text>
+<text x="60" y="190" class="b">Transactions enter the</text><text x="60" y="210" class="b">rollup's transaction channels</text>
+<text x="60" y="237" class="tiny">Swap · transfer · contract call</text>
+<path d="M285 196 H320" class="line"/>
+
+<rect x="324" y="136" width="320" height="120" rx="14" class="purple"/>
+<text x="344" y="165" class="h">2 · Searchers and builders</text>
+<text x="344" y="190" class="b">Collect and order L2 transactions</text>
+<text x="344" y="212" class="b">Construct a candidate L2 block</text>
+<text x="344" y="237" class="tiny">Prepare the L1 submission / bundle</text>
+<path d="M644 196 H679" class="line"/>
+
+<rect x="683" y="136" width="477" height="120" rx="14" class="teal"/>
+<text x="705" y="165" class="h">3 · Ethereum L1 proposer</text>
+<text x="705" y="190" class="b">Can include the sequencing payload in an L1 block</text>
+<text x="705" y="212" class="b">Ordering is driven by the L1 block-production process</text>
+<text x="705" y="237" class="tiny">Not necessarily executing L2 transactions itself</text>
+
+<path d="M921 256 V283 H600 V305" class="gline"/>
+<rect x="235" y="309" width="730" height="105" rx="14" class="blue"/>
+<text x="260" y="340" class="h">4 · L1 block inclusion</text>
+<text x="260" y="365" class="b">Ethereum validators verify the L1 block; rollup nodes derive sequencing data.</text>
+<text x="260" y="389" class="b">L1 inclusion is a sequencing milestone, not automatically L2 settlement finality.</text>
+
+<path d="M600 414 V438 H300 V457" class="line"/>
+<path d="M600 438 H900 V457" class="line"/>
+<rect x="40" y="461" width="520" height="139" rx="14" class="purple"/>
+<text x="62" y="491" class="h">5A · L2 execution and state derivation</text>
+<text x="62" y="516" class="b">L2 nodes execute transactions under rollup rules.</text>
+<text x="62" y="538" class="b">Compute the new state and relevant commitments.</text>
+<rect x="62" y="553" width="218" height="30" rx="7" fill="#332a5a"/><text x="171" y="573" text-anchor="middle" class="s">Execution ≠ sequencing</text>
+<rect x="618" y="461" width="542" height="139" rx="14" class="teal"/>
+<text x="640" y="491" class="h">5B · Data availability + settlement</text>
+<text x="640" y="516" class="b">Publish required data (e.g. calldata / blobs or a defined DA layer).</text>
+<text x="640" y="538" class="b">Use validity proofs or fraud-proof rules as designed.</text>
+<rect x="640" y="553" width="244" height="30" rx="7" fill="#164e50"/><text x="762" y="573" text-anchor="middle" class="s">Independent security layers</text>
+
+<path d="M300 600 V624 H600 V642" class="line"/>
+<path d="M900 600 V624 H600" class="line"/>
+<rect x="235" y="646" width="730" height="93" rx="14" class="panel"/>
+<text x="260" y="676" class="h">6 · User status progresses</text>
+<text x="260" y="700" class="b">Preconfirmation → L1 inclusion → proof/challenge completion → finality</text>
+<text x="260" y="721" class="tiny">Exact milestones vary; they must not be presented as equivalent guarantees.</text>
+
+<rect x="40" y="758" width="542" height="47" rx="11" class="amber"/>
+<text x="58" y="778" class="h">Potential gains</text><text x="58" y="796" class="tiny">Less exclusive sequencer power · L1 alignment · simpler sequencer assumptions</text>
+<rect x="618" y="758" width="542" height="47" rx="11" class="red"/>
+<text x="636" y="778" class="h">Trade-offs</text><text x="636" y="796" class="tiny">L1 timing · builder/proposer censorship risk · MEV shifts · preconfirmation design</text>
+</svg>
