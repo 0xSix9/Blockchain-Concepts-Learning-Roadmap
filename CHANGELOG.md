@@ -656,3 +656,11 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Covered potential benefits and trade-offs involving L1-driven liveness, decentralization, proposer-builder infrastructure, MEV, censorship, reorgs, latency, preconfirmations, and developer integration checks.
 - Included references to Ethereum Research, Fabric docs, Taiko, ethereum.org PBS documentation, EIP-7732, and Ethereum Foundation L1/L2 research.
 - Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 16/19 Stage 07 articles published.
+
+## 2026-10-18 — Stage 07: Shared Sequencing
+
+- Published the Shared Sequencing article and an architecture diagram covering multi-rollup transaction intake, shared consensus ordering, data availability and retrieval, per-rollup filtering/execution, and settlement.
+- Distinguished shared sequencing from independent/decentralized sequencers, based rollups, and shared settlement.
+- Explained why atomic inclusion does not by itself guarantee atomic execution, and discussed DA dependencies, censorship, MEV, consensus failure, preconfirmations, finality mismatches, and cross-rollup recovery.
+- Added architecture examples and references to Astria, Espresso Systems, CRATE research, and shared-sequencing design commentary.
+- Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 17/19 Stage 07 articles published.
