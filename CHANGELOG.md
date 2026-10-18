@@ -664,3 +664,11 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Explained why atomic inclusion does not by itself guarantee atomic execution, and discussed DA dependencies, censorship, MEV, consensus failure, preconfirmations, finality mismatches, and cross-rollup recovery.
 - Added architecture examples and references to Astria, Espresso Systems, CRATE research, and shared-sequencing design commentary.
 - Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 17/19 Stage 07 articles published.
+
+## 2026-10-18 — Stage 07: Cross-Chain Messaging
+
+- Published a detailed Cross-Chain Messaging article and a dedicated lifecycle diagram covering source commitments, relayer transport, destination verification, replay protection, application execution, acknowledgements, and timeouts.
+- Explained light-client verification, validator or committee attestations, optimistic verification, proof/oracle models, source finality, and the distinction between transport liveness and message authenticity.
+- Added security analysis for domain separation, message IDs, exactly-once/ordered delivery semantics, relayer failures, destination reverts, timeout races, and privileged payloads.
+- Used IBC packet semantics as a reference model while noting that protocol-specific guarantees differ; included references to IBC, LayerZero, Hyperlane, Optimism, and Ethereum.org.
+- Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 18/19 Stage 07 articles published.
