@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+<title id="title">Volition Architecture: Rollup and Validium Data Availability Choices</title>
+<desc id="desc">A Volition combines on-chain rollup data and off-chain Validium data inside a shared L2 application. Transactions are executed by an operator and proven by a validity proof. Depending on the supported balance or vault mode, state data is either published to Ethereum or stored by a data availability committee or external DA network. The L1 contract verifies the proof and required availability checks, while withdrawal paths must resolve to the correct state representation.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111f"/><stop offset="1" stop-color="#18223a"/></linearGradient>
+ <linearGradient id="head" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1d4ed8"/><stop offset="1" stop-color="#0f766e"/></linearGradient>
+ <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#91a4c3"/></marker>
+ <marker id="garr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#5eead4"/></marker>
+ <marker id="parr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#c4b5fd"/></marker>
+ <style>
+ .title{font:700 28px Arial,sans-serif;fill:#f8fafc}.sub{font:14px Arial,sans-serif;fill:#c0cee2}.h{font:700 16px Arial,sans-serif;fill:#f8fafc}.b{font:13px Arial,sans-serif;fill:#d7e2f0}.s{font:12px Arial,sans-serif;fill:#a9bbd2}.tiny{font:11px Arial,sans-serif;fill:#9db0ca}
+ .panel{fill:#14243b;stroke:#3a5272;stroke-width:1.5}.blue{fill:#152e50;stroke:#60a5fa;stroke-width:1.5}.teal{fill:#103b3d;stroke:#2dd4bf;stroke-width:1.5}.purple{fill:#292448;stroke:#a78bfa;stroke-width:1.5}.amber{fill:#402c1b;stroke:#fb923c;stroke-width:1.5}.red{fill:#421f2c;stroke:#fb7185;stroke-width:1.5}
+ .line{fill:none;stroke:#91a4c3;stroke-width:2;marker-end:url(#arr)}.gline{fill:none;stroke:#5eead4;stroke-width:2;marker-end:url(#garr)}.pline{fill:none;stroke:#c4b5fd;stroke-width:2;marker-end:url(#parr)}
+ </style>
+</defs>
+<rect width="1200" height="820" rx="24" fill="url(#bg)"/><circle cx="1080" cy="95" r="235" fill="#2563eb" opacity=".07"/>
+<rect x="30" y="24" width="1140" height="88" rx="17" fill="url(#head)"/>
+<text x="56" y="60" class="title">VOLITIONS · TWO DATA-AVAILABILITY PATHS</text>
+<text x="56" y="86" class="sub">One application can combine Rollup-mode and Validium-mode state</text>
+<rect x="973" y="47" width="163" height="36" rx="18" fill="#07111f" opacity=".42"/><text x="1054" y="70" text-anchor="middle" class="h">USER CHOICE</text>
+
+<rect x="40" y="136" width="250" height="112" rx="14" class="blue"/>
+<text x="60" y="165" class="h">1 · User / application</text>
+<text x="60" y="190" class="b">Select a supported mode</text>
+<text x="60" y="212" class="s">For a vault, asset, or state unit*</text>
+<rect x="60" y="222" width="90" height="18" rx="5" fill="#1d4ed8"/><text x="105" y="235" text-anchor="middle" class="tiny">Rollup</text>
+<rect x="160" y="222" width="110" height="18" rx="5" fill="#0f766e"/><text x="215" y="235" text-anchor="middle" class="tiny">Validium</text>
+<path d="M290 192 H324" class="line"/>
+
+<rect x="328" y="136" width="280" height="112" rx="14" class="purple"/>
+<text x="348" y="165" class="h">2 · L2 execution</text>
+<text x="348" y="190" class="b">Operator processes transactions</text>
+<text x="348" y="212" class="b">Computes state changes</text>
+<text x="348" y="235" class="tiny">State transition + commitment</text>
+<path d="M608 192 H642" class="line"/>
+
+<rect x="646" y="136" width="514" height="112" rx="14" class="panel"/>
+<text x="668" y="165" class="h">3 · Validity proof</text>
+<text x="668" y="190" class="b">Prover proves the state transition obeys protocol rules.</text>
+<text x="668" y="213" class="b">The proof system can be shared by both availability paths.</text>
+<text x="668" y="235" class="tiny">A validity proof does not make off-chain data retrievable.</text>
+
+<path d="M788 248 V277 H304 V300" class="gline"/>
+<path d="M788 277 H895 V300" class="pline"/>
+<rect x="40" y="304" width="520" height="178" rx="15" class="blue"/>
+<text x="62" y="335" class="h">4A · Rollup mode — on-chain data</text>
+<text x="62" y="360" class="b">Relevant state differences are published to Ethereum.</text>
+<text x="62" y="384" class="b">Users can recover required data from L1 publication.</text>
+<rect x="62" y="406" width="216" height="48" rx="8" fill="#1e3a5f" stroke="#60a5fa"/>
+<text x="75" y="426" class="s">Higher L1 data cost</text><text x="75" y="444" class="tiny">L1 data availability model</text>
+<rect x="291" y="406" width="245" height="48" rx="8" fill="#123d3b" stroke="#2dd4bf"/>
+<text x="304" y="426" class="s">Independent recovery path</text><text x="304" y="444" class="tiny">Still needs correct escape logic</text>
+
+<rect x="640" y="304" width="520" height="178" rx="15" class="teal"/>
+<text x="662" y="335" class="h">4B · Validium mode — off-chain data</text>
+<text x="662" y="360" class="b">State data is stored by a DAC or external DA network.</text>
+<text x="662" y="384" class="b">Availability depends on that mechanism's assumptions.</text>
+<g transform="translate(662 406)">
+ <rect width="142" height="48" rx="8" fill="#164e50" stroke="#5eead4"/><text x="71" y="21" text-anchor="middle" class="s">DA member A</text><text x="71" y="38" text-anchor="middle" class="tiny">stores data</text>
+ <rect x="151" width="142" height="48" rx="8" fill="#164e50" stroke="#5eead4"/><text x="222" y="21" text-anchor="middle" class="s">DA member B</text><text x="222" y="38" text-anchor="middle" class="tiny">stores data</text>
+ <rect x="302" width="142" height="48" rx="8" fill="#164e50" stroke="#5eead4"/><text x="373" y="21" text-anchor="middle" class="s">DA network</text><text x="373" y="38" text-anchor="middle" class="tiny">alternate model</text>
+</g>
+
+<path d="M300 482 V508 H600 V527" class="line"/>
+<path d="M900 482 V508 H600" class="line"/>
+<rect x="230" y="531" width="740" height="107" rx="14" class="purple"/>
+<text x="254" y="562" class="h">5 · L1 state verification and accounting</text>
+<text x="254" y="586" class="b">Verify proof, enforce required DA approvals, and update correct state root(s).</text>
+<text x="254" y="610" class="b">Cross-mode transfers must debit and credit the correct representations.</text>
+
+<path d="M600 638 V663" class="line"/>
+<rect x="40" y="667" width="542" height="108" rx="14" class="blue"/>
+<text x="62" y="696" class="h">6A · Rollup-mode withdrawal</text>
+<text x="62" y="720" class="b">Use L1-published data to build the required exit proof.</text>
+<text x="62" y="744" class="s">Availability is tied to Ethereum's on-chain data path.</text>
+<rect x="618" y="667" width="542" height="108" rx="14" class="amber"/>
+<text x="640" y="696" class="h">6B · Validium-mode withdrawal</text>
+<text x="640" y="720" class="b">May require state data from the external DA providers.</text>
+<text x="640" y="744" class="s">A valid proof/root alone cannot reconstruct withheld data.</text>
+
+<rect x="40" y="785" width="1120" height="25" rx="8" fill="#0b1424" stroke="#283b58"/>
+<text x="58" y="802" class="tiny">* Choice granularity is implementation-specific; it is not necessarily a per-transaction toggle in every Volition.</text>
+</svg>
