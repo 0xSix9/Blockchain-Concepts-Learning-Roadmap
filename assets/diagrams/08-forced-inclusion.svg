@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+<title id="title">Forced Inclusion: An Alternate Route Around a Censoring Sequencer</title>
+<desc id="desc">A user submits an eligible message to an L1 inbox. The sequencer may include it normally. If the message remains pending beyond the chain-specific window, anyone permitted by the protocol can trigger the force-inclusion path. L2 nodes then derive and process the message in order. The diagram highlights that inclusion does not guarantee application success or finality.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111f"/><stop offset="1" stop-color="#111c35"/></linearGradient>
+ <linearGradient id="head" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1d4ed8"/><stop offset="1" stop-color="#0f766e"/></linearGradient>
+ <marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#91a4c3"/></marker>
+ <marker id="t" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#5eead4"/></marker>
+ <style>
+ .h{font:700 26px Arial,sans-serif;fill:#f8fafc}.sub{font:14px Arial,sans-serif;fill:#b7c6dc}.l{font:700 15px Arial,sans-serif;fill:#f8fafc}.b{font:13px Arial,sans-serif;fill:#d6e0ee}.s{font:12px Arial,sans-serif;fill:#a9bad2}.tiny{font:11px Arial,sans-serif;fill:#9fb1ca}
+ .box{fill:#14233b;stroke:#3a5273;stroke-width:1.5}.blue{fill:#142d50;stroke:#60a5fa;stroke-width:1.5}.teal{fill:#123d43;stroke:#2dd4bf;stroke-width:1.5}.purple{fill:#2a244e;stroke:#a78bfa;stroke-width:1.5}.orange{fill:#442b19;stroke:#fb923c;stroke-width:1.5}.red{fill:#451f2a;stroke:#fb7185;stroke-width:1.5}
+ .line{fill:none;stroke:#91a4c3;stroke-width:2;marker-end:url(#a)}.tl{fill:none;stroke:#5eead4;stroke-width:2;marker-end:url(#t)}
+ </style>
+</defs>
+<rect width="1200" height="720" rx="24" fill="url(#bg)"/><circle cx="1050" cy="78" r="260" fill="#1d4ed8" opacity=".08"/>
+<rect x="30" y="24" width="1140" height="88" rx="18" fill="url(#head)"/>
+<text x="58" y="58" class="h">FORCED INCLUSION</text><text x="58" y="85" class="sub">An L1-based fallback when the ordinary sequencer path is not cooperating</text>
+<rect x="925" y="45" width="210" height="40" rx="20" fill="#07111f" opacity=".45"/><text x="1030" y="70" text-anchor="middle" class="l">CENSORSHIP RESISTANCE</text>
+
+<rect x="40" y="145" width="205" height="106" rx="13" class="blue"/>
+<text x="58" y="174" class="l">1 · User message</text><text x="58" y="198" class="b">Eligible transaction,</text><text x="58" y="218" class="b">deposit, or L2 message</text>
+<path d="M245 198 H272" class="line"/>
+<rect x="276" y="145" width="226" height="106" rx="13" class="teal"/>
+<text x="294" y="174" class="l">2 · Parent-chain inbox</text><text x="294" y="198" class="b">L1 records message order</text><text x="294" y="218" class="b">and its origin block</text>
+<path d="M502 198 H529" class="line"/>
+<rect x="533" y="145" width="270" height="106" rx="13" class="box"/>
+<text x="551" y="174" class="l">3 · Sequencer opportunity</text><text x="551" y="198" class="b">Include the message normally</text><text x="551" y="218" class="b">or leave it in the queue</text>
+<path d="M803 198 H830" class="line"/>
+<rect x="834" y="145" width="326" height="106" rx="13" class="orange"/>
+<text x="854" y="174" class="l">4 · Inclusion window</text><text x="854" y="198" class="b">Wait for the chain-specific deadline</text><text x="854" y="218" class="b">while checking whether it was processed</text>
+
+<path d="M965 251 V278 H320 V302" class="line"/><path d="M965 278 H875 V302" class="line"/>
+<text x="42" y="291" class="l">5 · Branch by message status</text>
+<rect x="40" y="306" width="550" height="108" rx="13" class="purple"/>
+<text x="60" y="335" class="l">A · Included by sequencer</text><text x="60" y="359" class="b">Message enters the ordinary ordered input flow.</text><text x="60" y="381" class="b">A second force-inclusion attempt should be rejected.</text><text x="60" y="400" class="tiny">L2 execution and receipt checks still apply.</text>
+<rect x="610" y="306" width="550" height="108" rx="13" class="red"/>
+<text x="630" y="335" class="l">B · Still pending after eligibility</text><text x="630" y="359" class="b">Fallback can advance the queued message to the</text><text x="630" y="381" class="b">canonical input sequence, under the protocol rules.</text><text x="630" y="400" class="tiny">Queue ordering may bring earlier pending messages too.</text>
+
+<path d="M315 414 V440 H600 V463" class="line"/><path d="M885 414 V440 H600" fill="none" stroke="#91a4c3" stroke-width="2"/>
+<rect x="260" y="467" width="680" height="86" rx="13" class="teal"/>
+<text x="284" y="496" class="l">6 · L2 nodes derive and process message</text><text x="284" y="520" class="b">Apply ordering, protocol validation, gas and execution rules.</text><text x="284" y="540" class="tiny">Forced inclusion provides a path into processing—not a guaranteed successful call.</text>
+
+<rect x="40" y="581" width="1120" height="105" rx="13" fill="#0b1424" stroke="#283b58"/>
+<text x="62" y="610" class="l">Implementation differences matter</text>
+<rect x="62" y="624" width="500" height="43" rx="7" fill="#142d50" stroke="#60a5fa"/><text x="78" y="642" class="s">OP Stack</text><text x="78" y="659" class="tiny">L1 deposit derivation + sequencing-window fallback rules</text>
+<rect x="580" y="624" width="558" height="43" rx="7" fill="#123d43" stroke="#2dd4bf"/><text x="596" y="642" class="s">Arbitrum</text><text x="596" y="659" class="tiny">Delayed Inbox + force-inclusion call after its configured window</text>
+</svg>
