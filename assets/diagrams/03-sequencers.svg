@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+<title id="title">Sequencers: Ordering Transactions on an L2 Rollup</title>
+<desc id="desc">A user sends a signed transaction through an RPC endpoint to a sequencer that admits and orders it. The ordered input is executed by the L2 engine, then data is published to the parent chain and settlement rules determine later finality. A lower lane shows the censorship-resistance fallback to a parent-chain inbox.</desc>
+<defs>
+  <linearGradient id="header" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#101b33"/><stop offset="1" stop-color="#1e3a8a"/></linearGradient>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker>
+  <marker id="blueArrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/></marker>
+</defs>
+<rect width="1200" height="680" rx="22" fill="#f7f9fc"/>
+<rect width="1200" height="140" rx="22" fill="url(#header)"/>
+<rect x="0" y="118" width="1200" height="22" fill="#1e3a8a"/>
+<text x="42" y="42" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2.3" fill="#93c5fd">STAGE 07 · ADVANCED LAYER 2 AND CROSS-CHAIN</text>
+<text x="42" y="84" font-family="Inter,Arial,sans-serif" font-size="31" font-weight="750" fill="#ffffff">Sequencers</text>
+<text x="42" y="112" font-family="Inter,Arial,sans-serif" font-size="15" fill="#dbeafe">They select transaction order; execution and settlement have separate responsibilities.</text>
+
+<text x="42" y="181" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="750" fill="#172033">Normal transaction path</text>
+<text x="42" y="205" font-family="Inter,Arial,sans-serif" font-size="13" fill="#64748b">Illustrative architecture — some systems combine the sequencer, execution, and batching roles.</text>
+
+<rect x="42" y="235" width="194" height="144" rx="15" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="60" y="265" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="750" letter-spacing="1" fill="#64748b">01 · SUBMIT</text>
+<text x="60" y="294" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="700" fill="#172033">User / wallet</text>
+<text x="60" y="322" font-family="Inter,Arial,sans-serif" font-size="13" fill="#526078">Signs transaction</text>
+<text x="60" y="343" font-family="Inter,Arial,sans-serif" font-size="13" fill="#526078">Sends to L2 RPC</text>
+
+<path d="M236 306 H258" fill="none" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="268" y="235" width="194" height="144" rx="15" fill="#eaf2ff" stroke="#7aa5ec" stroke-width="2"/>
+<text x="286" y="265" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="750" letter-spacing="1" fill="#2857a4">02 · ADMIT</text>
+<text x="286" y="294" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="700" fill="#172033">Sequencer</text>
+<text x="286" y="322" font-family="Inter,Arial,sans-serif" font-size="13" fill="#334155">Checks and queues</text>
+<text x="286" y="343" font-family="Inter,Arial,sans-serif" font-size="13" fill="#334155">Chooses ordering</text>
+
+<path d="M462 306 H484" fill="none" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="494" y="235" width="194" height="144" rx="15" fill="#fff3dc" stroke="#e0ac49" stroke-width="2"/>
+<text x="512" y="265" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="750" letter-spacing="1" fill="#995c00">03 · EXECUTE</text>
+<text x="512" y="294" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="700" fill="#172033">L2 engine</text>
+<text x="512" y="322" font-family="Inter,Arial,sans-serif" font-size="13" fill="#334155">Runs ordered inputs</text>
+<text x="512" y="343" font-family="Inter,Arial,sans-serif" font-size="13" fill="#334155">Computes new state</text>
+
+<path d="M688 306 H710" fill="none" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="720" y="235" width="194" height="144" rx="15" fill="#f1eafe" stroke="#a88be8" stroke-width="2"/>
+<text x="738" y="265" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="750" letter-spacing="1" fill="#6741a5">04 · PUBLISH</text>
+<text x="738" y="294" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="700" fill="#172033">Batch poster</text>
+<text x="738" y="322" font-family="Inter,Arial,sans-serif" font-size="13" fill="#334155">Posts data / batch</text>
+<text x="738" y="343" font-family="Inter,Arial,sans-serif" font-size="13" fill="#334155">to parent chain / DA</text>
+
+<path d="M914 306 H936" fill="none" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="946" y="235" width="212" height="144" rx="15" fill="#e3f7ee" stroke="#5bbd92" stroke-width="2"/>
+<text x="964" y="265" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="750" letter-spacing="1" fill="#16744a">05 · SETTLE</text>
+<text x="964" y="294" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="700" fill="#172033">L1 + rollup rules</text>
+<text x="964" y="322" font-family="Inter,Arial,sans-serif" font-size="13" fill="#334155">Verify / dispute</text>
+<text x="964" y="343" font-family="Inter,Arial,sans-serif" font-size="13" fill="#334155">Finality follows rules</text>
+
+<rect x="268" y="399" width="420" height="40" rx="10" fill="#dbeafe" stroke="#7aa5ec"/>
+<text x="284" y="424" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700" fill="#2857a4">Soft confirmation ≠ L1 inclusion ≠ finality</text>
+<path d="M365 379 V394" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#blueArrow)"/>
+
+<text x="42" y="480" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="750" fill="#172033">If the sequencer censors or goes offline</text>
+<rect x="42" y="500" width="295" height="82" rx="13" fill="#ffffff" stroke="#d7dee9" stroke-width="1.5"/>
+<text x="60" y="530" font-family="Inter,Arial,sans-serif" font-size="16" font-weight="700" fill="#172033">User submits alternate input</text>
+<text x="60" y="553" font-family="Inter,Arial,sans-serif" font-size="13" fill="#526078">For example, a parent-chain inbox</text>
+<path d="M337 541 H371" fill="none" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="382" y="500" width="330" height="82" rx="13" fill="#fff3dc" stroke="#e0ac49" stroke-width="1.5"/>
+<text x="400" y="530" font-family="Inter,Arial,sans-serif" font-size="16" font-weight="700" fill="#172033">Protocol delay / force inclusion</text>
+<text x="400" y="553" font-family="Inter,Arial,sans-serif" font-size="13" fill="#526078">Only when the rollup supports it</text>
+<path d="M712 541 H746" fill="none" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="757" y="500" width="401" height="82" rx="13" fill="#e3f7ee" stroke="#5bbd92" stroke-width="1.5"/>
+<text x="775" y="530" font-family="Inter,Arial,sans-serif" font-size="16" font-weight="700" fill="#172033">L2 can derive and process input</text>
+<text x="775" y="553" font-family="Inter,Arial,sans-serif" font-size="13" fill="#526078">Subject to validity and chain-specific rules</text>
+
+<rect x="42" y="606" width="1116" height="45" rx="11" fill="#172033"/>
+<text x="62" y="634" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700" fill="#93c5fd">KEY RISKS</text>
+<text x="153" y="634" font-family="Inter,Arial,sans-serif" font-size="13" fill="#ffffff">Censorship · ordering / MEV · sequencer outage · unclear finality guarantees · privileged configuration</text>
+</svg>
