@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+<title id="title">Fraud Proofs: Challenging an Invalid Rollup State Claim</title>
+<desc id="desc">A proposer publishes an output claim, independent nodes replay the L2 inputs, a challenger opens a dispute, and an interactive game narrows the disagreement to a step that a verifier checks on Layer 1.</desc>
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker>
+</defs>
+<rect width="1200" height="650" rx="22" fill="#f7f9fc"/>
+<text x="44" y="47" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2.2" fill="#2563eb">STAGE 07 · ADVANCED LAYER 2 AND CROSS-CHAIN</text>
+<text x="44" y="88" font-family="Inter,Arial,sans-serif" font-size="30" font-weight="750" fill="#172033">Fraud Proofs / Fault Proofs</text>
+<text x="44" y="119" font-family="Inter,Arial,sans-serif" font-size="16" fill="#526078">Challenge an invalid state claim without replaying the entire computation on L1.</text>
+
+<rect x="44" y="157" width="258" height="157" rx="16" fill="#eaf2ff" stroke="#7aa5ec" stroke-width="2"/>
+<text x="64" y="190" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="750" letter-spacing="1.4" fill="#2857a4">01 · CLAIM</text>
+<text x="64" y="224" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="700" fill="#172033">Proposer</text>
+<text x="64" y="253" font-family="Inter,Arial,sans-serif" font-size="14" fill="#334155">Publishes batch inputs</text>
+<text x="64" y="275" font-family="Inter,Arial,sans-serif" font-size="14" fill="#334155">and a claimed output root R₁</text>
+
+<path d="M302 236 H326" fill="none" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="336" y="157" width="258" height="157" rx="16" fill="#e3f7ee" stroke="#5bbd92" stroke-width="2"/>
+<text x="356" y="190" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="750" letter-spacing="1.4" fill="#16744a">02 · REPLAY</text>
+<text x="356" y="224" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="700" fill="#172033">Independent node</text>
+<text x="356" y="253" font-family="Inter,Arial,sans-serif" font-size="14" fill="#334155">Re-executes the L2 inputs</text>
+<text x="356" y="275" font-family="Inter,Arial,sans-serif" font-size="14" fill="#334155">and derives expected root R₁′</text>
+
+<path d="M594 236 H618" fill="none" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="628" y="157" width="258" height="157" rx="16" fill="#fff3dc" stroke="#e0ac49" stroke-width="2"/>
+<text x="648" y="190" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="750" letter-spacing="1.4" fill="#995c00">03 · DISAGREEMENT</text>
+<text x="648" y="224" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="700" fill="#172033">Challenger</text>
+<text x="648" y="253" font-family="Inter,Arial,sans-serif" font-size="14" fill="#334155">Finds R₁′ ≠ R₁ and opens</text>
+<text x="648" y="275" font-family="Inter,Arial,sans-serif" font-size="14" fill="#334155">a dispute before the deadline</text>
+
+<path d="M886 236 H910" fill="none" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="920" y="157" width="236" height="157" rx="16" fill="#f1eafe" stroke="#a88be8" stroke-width="2"/>
+<text x="940" y="190" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="750" letter-spacing="1.4" fill="#6741a5">04 · RESOLVE</text>
+<text x="940" y="224" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="700" fill="#172033">L1 dispute game</text>
+<text x="940" y="253" font-family="Inter,Arial,sans-serif" font-size="14" fill="#334155">Contract resolves which</text>
+<text x="940" y="275" font-family="Inter,Arial,sans-serif" font-size="14" fill="#334155">claim follows protocol rules</text>
+
+<text x="44" y="365" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="750" fill="#172033">How an interactive fault-proof game narrows the dispute</text>
+<text x="44" y="391" font-family="Inter,Arial,sans-serif" font-size="14" fill="#526078">Conceptual example — exact moves, clocks, and verification rules vary by rollup.</text>
+
+<rect x="44" y="417" width="330" height="112" rx="14" fill="#ffffff" stroke="#d7dee9" stroke-width="1.5"/>
+<text x="64" y="448" font-family="Inter,Arial,sans-serif" font-size="16" font-weight="700" fill="#172033">A · Split the trace</text>
+<text x="64" y="476" font-family="Inter,Arial,sans-serif" font-size="14" fill="#526078">Challenger and defender identify</text>
+<text x="64" y="498" font-family="Inter,Arial,sans-serif" font-size="14" fill="#526078">the range where claims diverge.</text>
+<path d="M374 473 H407" fill="none" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+<rect x="418" y="417" width="330" height="112" rx="14" fill="#ffffff" stroke="#d7dee9" stroke-width="1.5"/>
+<text x="438" y="448" font-family="Inter,Arial,sans-serif" font-size="16" font-weight="700" fill="#172033">B · Narrow the disagreement</text>
+<text x="438" y="476" font-family="Inter,Arial,sans-serif" font-size="14" fill="#526078">Interactive moves bisect the trace</text>
+<text x="438" y="498" font-family="Inter,Arial,sans-serif" font-size="14" fill="#526078">until one step remains disputed.</text>
+<path d="M748 473 H781" fill="none" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+<rect x="792" y="417" width="364" height="112" rx="14" fill="#ffffff" stroke="#d7dee9" stroke-width="1.5"/>
+<text x="812" y="448" font-family="Inter,Arial,sans-serif" font-size="16" font-weight="700" fill="#172033">C · Verify one step</text>
+<text x="812" y="476" font-family="Inter,Arial,sans-serif" font-size="14" fill="#526078">The VM/verifier checks the base case</text>
+<text x="812" y="498" font-family="Inter,Arial,sans-serif" font-size="14" fill="#526078">using the required state and witness.</text>
+
+<rect x="44" y="553" width="1112" height="63" rx="13" fill="#172033"/>
+<text x="66" y="579" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="700" fill="#ffffff">Security boundary</text>
+<text x="66" y="600" font-family="Inter,Arial,sans-serif" font-size="13" fill="#dbeafe">A root mismatch prompts a dispute; data availability, timely challengers, correct verification logic, and finalization rules still matter.</text>
+</svg>
