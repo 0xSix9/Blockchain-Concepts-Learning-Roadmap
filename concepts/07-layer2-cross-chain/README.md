@@ -22,7 +22,6 @@ This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the
 - [ ] [Rollup Bridges](10-rollup-bridges.md) — article published
 - [ ] [Blob Fee Market](11-blob-fee-market.md) — article published
 - [ ] [Data Availability Sampling](12-data-availability-sampling.md) — article published
-- [ ] Data Availability Sampling
 - [ ] PeerDAS
 - [ ] Validiums
 - [ ] Volitions
