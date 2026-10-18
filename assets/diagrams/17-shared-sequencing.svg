@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+<title id="title">Shared Sequencing: Common Ordering Across Multiple Rollups</title>
+<desc id="desc">Users submit transactions tagged for different rollups to a shared sequencing network. Sequencer validators reach consensus on a common ordered stream. Data is published or exposed through a data availability path. Each rollup filters its own transactions, executes its own state machine, and settles through its own validity or fraud-proof mechanism. Shared ordering provides a coordination primitive, but atomic cross-rollup execution requires additional protocol logic.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111f"/><stop offset="1" stop-color="#18223a"/></linearGradient>
+ <linearGradient id="head" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1d4ed8"/><stop offset="1" stop-color="#0f766e"/></linearGradient>
+ <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#91a4c3"/></marker>
+ <marker id="garr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#5eead4"/></marker>
+ <marker id="parr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#c4b5fd"/></marker>
+ <style>
+ .title{font:700 28px Arial,sans-serif;fill:#f8fafc}.sub{font:14px Arial,sans-serif;fill:#c0cee2}.h{font:700 16px Arial,sans-serif;fill:#f8fafc}.b{font:13px Arial,sans-serif;fill:#d7e2f0}.s{font:12px Arial,sans-serif;fill:#a9bbd2}.tiny{font:11px Arial,sans-serif;fill:#9db0ca}
+ .panel{fill:#14243b;stroke:#3a5272;stroke-width:1.5}.blue{fill:#152e50;stroke:#60a5fa;stroke-width:1.5}.teal{fill:#103b3d;stroke:#2dd4bf;stroke-width:1.5}.purple{fill:#292448;stroke:#a78bfa;stroke-width:1.5}.amber{fill:#402c1b;stroke:#fb923c;stroke-width:1.5}.red{fill:#421f2c;stroke:#fb7185;stroke-width:1.5}
+ .line{fill:none;stroke:#91a4c3;stroke-width:2;marker-end:url(#arr)}.gline{fill:none;stroke:#5eead4;stroke-width:2;marker-end:url(#garr)}.pline{fill:none;stroke:#c4b5fd;stroke-width:2;marker-end:url(#parr)}
+ </style>
+</defs>
+<rect width="1200" height="820" rx="24" fill="url(#bg)"/><circle cx="1080" cy="95" r="235" fill="#2563eb" opacity=".07"/>
+<rect x="30" y="24" width="1140" height="88" rx="17" fill="url(#head)"/>
+<text x="56" y="60" class="title">SHARED SEQUENCING</text>
+<text x="56" y="86" class="sub">A common transaction order for multiple independent rollups</text>
+<rect x="932" y="47" width="204" height="36" rx="18" fill="#07111f" opacity=".42"/><text x="1034" y="70" text-anchor="middle" class="h">ORDER ≠ EXECUTION</text>
+
+<rect x="40" y="136" width="250" height="126" rx="14" class="blue"/>
+<text x="60" y="165" class="h">1 · Users / wallets</text>
+<text x="60" y="190" class="b">Submit transactions for</text><text x="60" y="212" class="b">Rollup A, B, and C</text>
+<rect x="60" y="228" width="60" height="20" rx="5" fill="#1d4ed8"/><text x="90" y="242" text-anchor="middle" class="tiny">A: tx</text>
+<rect x="128" y="228" width="60" height="20" rx="5" fill="#0f766e"/><text x="158" y="242" text-anchor="middle" class="tiny">B: tx</text>
+<rect x="196" y="228" width="60" height="20" rx="5" fill="#7c3aed"/><text x="226" y="242" text-anchor="middle" class="tiny">C: tx</text>
+<path d="M290 199 H324" class="line"/>
+
+<rect x="328" y="136" width="528" height="126" rx="14" class="purple"/>
+<text x="350" y="165" class="h">2 · Shared sequencer network</text>
+<text x="350" y="189" class="b">Ingests rollup-tagged transactions and builds a common sequence.</text>
+<g transform="translate(350 204)">
+ <rect width="126" height="35" rx="7" fill="#332a5a" stroke="#a78bfa"/><text x="63" y="22" text-anchor="middle" class="s">Validator 1</text>
+ <rect x="139" width="126" height="35" rx="7" fill="#332a5a" stroke="#a78bfa"/><text x="202" y="22" text-anchor="middle" class="s">Validator 2</text>
+ <rect x="278" width="126" height="35" rx="7" fill="#332a5a" stroke="#a78bfa"/><text x="341" y="22" text-anchor="middle" class="s">Validator N</text>
+ <rect x="417" width="68" height="35" rx="7" fill="#0f766e" stroke="#5eead4"/><text x="451" y="22" text-anchor="middle" class="tiny">BFT</text>
+</g>
+<path d="M856 199 H890" class="line"/>
+
+<rect x="894" y="136" width="266" height="126" rx="14" class="teal"/>
+<text x="914" y="165" class="h">3 · Common ordered stream</text>
+<text x="914" y="190" class="b">A1 → B1 → A2 → C1 → B2</text>
+<text x="914" y="215" class="s">Shared inclusion + order commitment</text>
+<text x="914" y="240" class="tiny">Not a global execution state</text>
+
+<path d="M1027 262 V286 H600 V307" class="gline"/>
+<rect x="235" y="311" width="730" height="95" rx="14" class="panel"/>
+<text x="260" y="342" class="h">4 · Data availability and retrieval</text>
+<text x="260" y="366" class="b">Data is distributed or published to the specified DA layer; rollup nodes</text>
+<text x="260" y="388" class="b">retrieve and verify the records required to derive their own input stream.</text>
+
+<path d="M600 406 V431 H205 V449" class="line"/>
+<path d="M600 431 V449" class="line"/>
+<path d="M600 431 H995 V449" class="line"/>
+
+<rect x="40" y="453" width="330" height="126" rx="14" class="blue"/>
+<text x="60" y="482" class="h">5A · Rollup A</text>
+<text x="60" y="506" class="b">Filter namespace A</text><text x="60" y="528" class="b">Execute its own state machine</text>
+<text x="60" y="554" class="tiny">Own state root / proof / settlement</text>
+
+<rect x="435" y="453" width="330" height="126" rx="14" class="blue"/>
+<text x="455" y="482" class="h">5B · Rollup B</text>
+<text x="455" y="506" class="b">Filter namespace B</text><text x="455" y="528" class="b">Execute its own state machine</text>
+<text x="455" y="554" class="tiny">Own state root / proof / settlement</text>
+
+<rect x="830" y="453" width="330" height="126" rx="14" class="blue"/>
+<text x="850" y="482" class="h">5C · Rollup C</text>
+<text x="850" y="506" class="b">Filter namespace C</text><text x="850" y="528" class="b">Execute its own state machine</text>
+<text x="850" y="554" class="tiny">Own state root / proof / settlement</text>
+
+<path d="M205 579 V605 H600 V622" class="pline"/>
+<path d="M600 579 V622" class="pline"/>
+<path d="M995 579 V605 H600" class="pline"/>
+<rect x="235" y="626" width="730" height="76" rx="14" class="purple"/>
+<text x="260" y="655" class="h">6 · Cross-rollup coordination</text>
+<text x="260" y="679" class="b">Shared ordering can aid coordination; atomic execution needs extra protocol logic.</text>
+
+<rect x="40" y="723" width="542" height="73" rx="12" class="teal"/>
+<text x="60" y="750" class="h">Potential benefits</text>
+<text x="60" y="774" class="s">Shared ordering · less duplicated sequencing · coordination opportunities</text>
+<rect x="618" y="723" width="542" height="73" rx="12" class="amber"/>
+<text x="638" y="750" class="h">Security boundaries</text>
+<text x="638" y="774" class="s">DA · rollup validity · L1 settlement · failure recovery remain separate</text>
+</svg>
