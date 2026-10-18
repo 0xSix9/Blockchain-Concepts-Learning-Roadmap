@@ -571,3 +571,11 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Added developer security checks for commitment construction, root context, proof verification, reorgs, replay protection, and output-format upgrades.
 - Referenced Ethereum.org, the OP Stack output-root and fault-proof specifications, and Arbitrum Nitro documentation.
 - Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 5/19 Stage 07 articles published.
+
+## 2026-10-18 — Stage 07: Settlement Layer
+
+- Published the Settlement Layer concept article and a custom architecture diagram showing L2 execution, data publication, L1 settlement contracts, validity-proof or fault-proof paths, Ethereum consensus finality, and bridge consumption.
+- Distinguished settlement from execution, sequencing, data availability, proof verification, and L1 consensus finality.
+- Added a bridge-focused example and developer checklist for trust assumptions, challenges, upgrade authority, L1 reorganizations, replay protection, and user-facing finality.
+- Referenced Ethereum.org, the OP Stack output-root and fault-proof specifications, and Arbitrum Nitro documentation.
+- Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 6/19 Stage 07 articles published.
