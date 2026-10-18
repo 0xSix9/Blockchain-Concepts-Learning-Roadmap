@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+<title id="title">PeerDAS: Cells, Columns, Sampling and Custody</title>
+<desc id="desc">Ethereum PeerDAS extends blob rows with erasure coding, splits them into authenticated cells, and groups cells of matching index into columns. Data column sidecars are gossiped across column subnets. Nodes sample columns, verify cell KZG proofs, and custody deterministic groups so peers can retrieve data and reconstruct the data matrix.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111f"/><stop offset="1" stop-color="#17213a"/></linearGradient>
+ <linearGradient id="hdr" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1d4ed8"/><stop offset="1" stop-color="#0f766e"/></linearGradient>
+ <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#93a8c5"/></marker>
+ <marker id="tealArr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#5eead4"/></marker>
+ <marker id="purArr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#c4b5fd"/></marker>
+ <style>
+ .title{font:700 28px Arial,sans-serif;fill:#f8fafc}.sub{font:14px Arial,sans-serif;fill:#c0cee2}.h{font:700 16px Arial,sans-serif;fill:#f8fafc}.b{font:13px Arial,sans-serif;fill:#d7e2f0}.s{font:12px Arial,sans-serif;fill:#a9bbd2}.tiny{font:11px Arial,sans-serif;fill:#9db0ca}
+ .panel{fill:#14243b;stroke:#3a5272;stroke-width:1.5}.blue{fill:#152e50;stroke:#60a5fa;stroke-width:1.5}.teal{fill:#103b3d;stroke:#2dd4bf;stroke-width:1.5}.purple{fill:#292448;stroke:#a78bfa;stroke-width:1.5}.amber{fill:#402c1b;stroke:#fb923c;stroke-width:1.5}
+ .line{fill:none;stroke:#93a8c5;stroke-width:2;marker-end:url(#arr)}.gline{fill:none;stroke:#5eead4;stroke-width:2;marker-end:url(#tealArr)}.pline{fill:none;stroke:#c4b5fd;stroke-width:2;marker-end:url(#purArr)}
+ </style>
+</defs>
+<rect width="1200" height="820" rx="24" fill="url(#bg)"/><circle cx="1080" cy="110" r="230" fill="#2563eb" opacity=".07"/>
+<rect x="30" y="24" width="1140" height="88" rx="17" fill="url(#hdr)"/>
+<text x="56" y="60" class="title">PeerDAS · PEER DATA AVAILABILITY SAMPLING</text>
+<text x="56" y="86" class="sub">Ethereum's blob availability protocol introduced with Fusaka</text>
+<rect x="960" y="47" width="176" height="36" rx="18" fill="#07111f" opacity=".42"/><text x="1048" y="70" text-anchor="middle" class="h">EIP-7594</text>
+
+<rect x="40" y="135" width="1120" height="74" rx="13" class="panel"/>
+<text x="60" y="163" class="h">1 · Blob payload + KZG commitment</text>
+<text x="60" y="187" class="b">EIP-4844 blob data enters the consensus data-availability pipeline.</text>
+<path d="M600 209 V230" class="line"/>
+
+<rect x="40" y="234" width="350" height="174" rx="14" class="blue"/>
+<text x="60" y="263" class="h">2 · Erasure extension</text>
+<text x="60" y="286" class="b">Extra evaluations add redundancy</text>
+<g transform="translate(60 301)">
+ <rect width="50" height="24" rx="4" fill="#1d4ed8"/><rect x="55" width="50" height="24" rx="4" fill="#1d4ed8"/><rect x="110" width="50" height="24" rx="4" fill="#1d4ed8"/><rect x="165" width="50" height="24" rx="4" fill="#6474c9"/><rect x="220" width="50" height="24" rx="4" fill="#6474c9"/>
+ <rect y="31" width="50" height="24" rx="4" fill="#1d4ed8"/><rect x="55" y="31" width="50" height="24" rx="4" fill="#1d4ed8"/><rect x="110" y="31" width="50" height="24" rx="4" fill="#6474c9"/><rect x="165" y="31" width="50" height="24" rx="4" fill="#6474c9"/><rect x="220" y="31" width="50" height="24" rx="4" fill="#6474c9"/>
+</g>
+<text x="60" y="386" class="tiny">Extended rows preserve recoverability.</text>
+
+<path d="M390 320 H421" class="line"/>
+<rect x="425" y="234" width="344" height="174" rx="14" class="purple"/>
+<text x="445" y="263" class="h">3 · Cells → columns</text>
+<text x="445" y="286" class="b">Cells are authenticated with cell KZG proofs.</text>
+<g transform="translate(452 304)">
+ <rect x="0" y="0" width="36" height="18" rx="3" fill="#7c3aed"/><rect x="40" y="0" width="36" height="18" rx="3" fill="#7c3aed"/><rect x="80" y="0" width="36" height="18" rx="3" fill="#7c3aed"/><rect x="120" y="0" width="36" height="18" rx="3" fill="#7c3aed"/><rect x="160" y="0" width="36" height="18" rx="3" fill="#7c3aed"/><rect x="200" y="0" width="36" height="18" rx="3" fill="#7c3aed"/><rect x="240" y="0" width="36" height="18" rx="3" fill="#7c3aed"/>
+ <rect x="0" y="23" width="36" height="18" rx="3" fill="#7c3aed"/><rect x="40" y="23" width="36" height="18" rx="3" fill="#7c3aed"/><rect x="80" y="23" width="36" height="18" rx="3" fill="#a78bfa"/><rect x="120" y="23" width="36" height="18" rx="3" fill="#a78bfa"/><rect x="160" y="23" width="36" height="18" rx="3" fill="#a78bfa"/><rect x="200" y="23" width="36" height="18" rx="3" fill="#7c3aed"/><rect x="240" y="23" width="36" height="18" rx="3" fill="#7c3aed"/>
+ <rect x="0" y="46" width="36" height="18" rx="3" fill="#7c3aed"/><rect x="40" y="46" width="36" height="18" rx="3" fill="#7c3aed"/><rect x="80" y="46" width="36" height="18" rx="3" fill="#a78bfa"/><rect x="120" y="46" width="36" height="18" rx="3" fill="#a78bfa"/><rect x="160" y="46" width="36" height="18" rx="3" fill="#a78bfa"/><rect x="200" y="46" width="36" height="18" rx="3" fill="#7c3aed"/><rect x="240" y="46" width="36" height="18" rx="3" fill="#7c3aed"/>
+</g>
+<text x="445" y="391" class="tiny">Same-index cells across blobs form a column.</text>
+
+<path d="M769 320 H800" class="line"/>
+<rect x="804" y="234" width="356" height="174" rx="14" class="teal"/>
+<text x="824" y="263" class="h">4 · Data column sidecars</text>
+<text x="824" y="286" class="b">Column + commitments + proofs + block context</text>
+<g fill="#164e50" stroke="#5eead4" stroke-width="1.5">
+ <circle cx="850" cy="326" r="15"/><circle cx="913" cy="326" r="15"/><circle cx="976" cy="326" r="15"/><circle cx="1039" cy="326" r="15"/><circle cx="1102" cy="326" r="15"/>
+</g>
+<g stroke="#99f6e4" stroke-width="2"><path d="M844 326 h12 M850 320 v12 M907 326 h12 M913 320 v12 M970 326 h12 M976 320 v12 M1033 326 h12 M1039 320 v12 M1096 326 h12 M1102 320 v12"/></g>
+<text x="824" y="374" class="tiny">Gossip over column-specific subnets</text>
+
+<path d="M982 408 V433 H318 V453" class="gline"/>
+<path d="M982 433 H882 V453" class="gline"/>
+<rect x="40" y="457" width="520" height="151" rx="14" class="blue"/>
+<text x="62" y="487" class="h">5A · Sample columns</text>
+<text x="62" y="511" class="b">Choose sample columns for the slot; request from peers.</text>
+<text x="62" y="535" class="b">Verify sidecar structure, inclusion proof, and cell KZG.</text>
+<rect x="62" y="552" width="218" height="32" rx="8" fill="#123d3b" stroke="#2dd4bf"/><text x="171" y="573" text-anchor="middle" class="s">Sampling → availability check</text>
+<rect x="294" y="552" width="242" height="32" rx="8" fill="#412631" stroke="#fb7185"/><text x="415" y="573" text-anchor="middle" class="s">Missing / invalid → handle failure</text>
+
+<rect x="640" y="457" width="520" height="151" rx="14" class="purple"/>
+<text x="662" y="487" class="h">5B · Custody assigned columns</text>
+<text x="662" y="511" class="b">Deterministic custody groups derive from node identity</text>
+<text x="662" y="535" class="b">and advertised custody size; nodes keep and serve them.</text>
+<rect x="662" y="552" width="218" height="32" rx="8" fill="#292448" stroke="#a78bfa"/><text x="771" y="573" text-anchor="middle" class="s">Custody ≠ sampling</text>
+<rect x="894" y="552" width="242" height="32" rx="8" fill="#123d3b" stroke="#2dd4bf"/><text x="1015" y="573" text-anchor="middle" class="s">Peer request / response</text>
+
+<path d="M300 608 V633 H600 V650" class="line"/>
+<path d="M900 608 V633 H600" class="line"/>
+<rect x="235" y="654" width="730" height="74" rx="14" class="panel"/>
+<text x="260" y="682" class="h">6 · Availability inference and recovery</text>
+<text x="260" y="705" class="b">Random sampling helps detect withholding; ≥ 50% of columns allows full matrix reconstruction.</text>
+
+<rect x="40" y="750" width="1120" height="46" rx="11" fill="#0b1424" stroke="#283b58"/>
+<text x="60" y="770" class="s">Current Fulu-spec snapshot: 128 columns · 8 minimum samples/slot · minimum custody requirement 4 groups.</text>
+<text x="60" y="787" class="tiny">Protocol parameters can change; sampling is probabilistic and does not equal full reconstruction or permanent archival.</text>
+</svg>
