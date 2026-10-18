@@ -634,3 +634,10 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Distinguished local sampling from custody and full data reconstruction; documented security assumptions and failure cases relevant to consensus-client implementers.
 - Included active Fulu consensus-spec snapshot values with a warning to verify parameters against the target fork, and linked EIP-7594, ethereum.org, and official consensus specifications.
 - Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 13/19 Stage 07 articles published.
+
+## 2026-10-18 — Stage 07: Validiums
+
+- Published a detailed Validiums article and architecture diagram separating the off-chain operator, validity prover, external data availability layer, committee attestations, and Ethereum settlement contracts.
+- Covered DAC threshold and independence assumptions, data withholding, withdrawals and escape hatches, differences from ZK-rollups and Optimiums, and the Volition model.
+- Added a developer security checklist and references to ethereum.org, StarkEx documentation, and L2BEAT's definitions and risk framework.
+- Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 14/19 Stage 07 articles published.
