@@ -23,7 +23,7 @@ Shared sequencing can make cross-rollup composability and coordinated execution 
 4. Each rollup verifies and incorporates the shared result according to its local rules and settlement framework.
 5. Applications may use a shared ordering guarantee to coordinate actions, but actual cross-chain execution still depends on destination-chain processing, finality, and failure handling.
 
-There is no single universal shared-sequencer protocol. Systems differ in validator sets, quorum rules, slashing, inclusion guarantees, DA architecture, and integration requirements.
+There is no single universal shared-sequencer protocol. For example, Astria documents a design in which a decentralized sequencer network uses CometBFT consensus to order transactions tagged with a rollup identifier, with rollup execution and data publication handled by separate components. Other designs make different choices. Shared sequencing should also be distinguished from a based rollup: a based rollup derives its sequence from the L1 proposer path, whereas a shared sequencer is a separate ordering system used by multiple participating rollups. Systems differ in validator sets, quorum rules, slashing, inclusion guarantees, DA architecture, and integration requirements.
 
 ## 4. Example or Experiment
 
@@ -41,6 +41,8 @@ A shared sequencer can become a cross-rollup failure domain: censorship, downtim
 
 ## 7. References
 
-- [Based Sequencing — Concepts and FAQ](https://www.basedsequencing.org/)
+- [Astria Docs — Introduction](https://docs.astria.org/overview/introduction)
+- [Astria Docs — Sequencing Layer](https://docs.astria.org/overview/components/the-astria-sequencing-layer)
 - [Ethereum.org — Bridges](https://ethereum.org/developers/docs/bridges/)
+- [Based Rollups — Superpowers from L1 Sequencing (Ethereum Research)](https://ethresear.ch/t/based-rollups-superpowers-from-l1-sequencing/15016/1)
 - [L2BEAT — Risk Analysis](https://l2beat.com/scaling/risk)
