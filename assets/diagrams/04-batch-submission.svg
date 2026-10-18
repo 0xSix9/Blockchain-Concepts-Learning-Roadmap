@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+<title id="title">Batch Submission: From L2 Sequencer Data to Parent-Chain Availability</title>
+<desc id="desc">Sequencer blocks are encoded and compressed into batches or channels, channels can be split into frames, a batcher submits data through calldata or blobs, and independent L2 nodes retrieve and derive the canonical chain. A lower strip distinguishes sequenced, submitted, included, available, and settled milestones.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111f"/><stop offset="1" stop-color="#111c35"/></linearGradient>
+  <linearGradient id="head" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1d4ed8"/><stop offset="1" stop-color="#0f766e"/></linearGradient>
+  <linearGradient id="publish" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#164e63"/><stop offset="1" stop-color="#155e75"/></linearGradient>
+  <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#91a4c3"/></marker>
+  <marker id="greenArrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#5eead4"/></marker>
+  <style>
+    .h1{font:700 27px Arial,sans-serif;fill:#f8fafc}.sub{font:14px Arial,sans-serif;fill:#b7c6dc}
+    .label{font:700 15px Arial,sans-serif;fill:#f8fafc}.body{font:13px Arial,sans-serif;fill:#d6e0ee}
+    .small{font:12px Arial,sans-serif;fill:#a9bad2}.tiny{font:11px Arial,sans-serif;fill:#9fb1ca}
+    .box{fill:#14233b;stroke:#3a5273;stroke-width:1.5}.blue{fill:#142d50;stroke:#60a5fa;stroke-width:1.5}
+    .teal{fill:#123d43;stroke:#2dd4bf;stroke-width:1.5}.purple{fill:#2a244e;stroke:#a78bfa;stroke-width:1.5}
+    .orange{fill:#442b19;stroke:#fb923c;stroke-width:1.5}.line{fill:none;stroke:#91a4c3;stroke-width:2;marker-end:url(#arrow)}
+    .gline{fill:none;stroke:#5eead4;stroke-width:2;marker-end:url(#greenArrow)}
+  </style>
+</defs>
+<rect width="1200" height="760" rx="24" fill="url(#bg)"/>
+<circle cx="1080" cy="95" r="250" fill="#1d4ed8" opacity=".08"/>
+<rect x="30" y="26" width="1140" height="92" rx="18" fill="url(#head)" opacity=".95"/>
+<text x="58" y="61" class="h1">BATCH SUBMISSION</text>
+<text x="58" y="88" class="sub">How rollup inputs are encoded, compressed, published, and reconstructed</text>
+<rect x="930" y="48" width="205" height="42" rx="21" fill="#07111f" opacity=".45"/>
+<text x="1032" y="74" text-anchor="middle" class="label">DATA AVAILABILITY PATH</text>
+
+<rect x="40" y="160" width="194" height="130" rx="14" class="blue"/>
+<text x="58" y="187" class="label">1 · Sequencer output</text>
+<text x="58" y="211" class="body">Ordered L2 blocks / inputs</text>
+<rect x="58" y="229" width="46" height="35" rx="6" fill="#2563eb" opacity=".85"/>
+<rect x="111" y="229" width="46" height="35" rx="6" fill="#2563eb" opacity=".65"/>
+<rect x="164" y="229" width="46" height="35" rx="6" fill="#2563eb" opacity=".45"/>
+<text x="81" y="251" text-anchor="middle" class="small">B1</text><text x="134" y="251" text-anchor="middle" class="small">B2</text><text x="187" y="251" text-anchor="middle" class="small">B3</text>
+<text x="58" y="279" class="tiny">Not yet parent-chain publication</text>
+
+<path d="M234 224 H260" class="line"/>
+<rect x="264" y="160" width="190" height="130" rx="14" class="purple"/>
+<text x="282" y="187" class="label">2 · Encode + compress</text>
+<text x="282" y="211" class="body">Canonical protocol format</text>
+<rect x="282" y="229" width="42" height="34" rx="5" fill="#7c3aed"/>
+<rect x="330" y="229" width="31" height="34" rx="5" fill="#8b5cf6"/>
+<rect x="367" y="229" width="20" height="34" rx="5" fill="#a78bfa"/>
+<rect x="393" y="229" width="43" height="34" rx="5" fill="#6d28d9"/>
+<text x="282" y="280" class="tiny">Fewer bytes; deterministic decoding</text>
+
+<path d="M454 224 H480" class="line"/>
+<rect x="484" y="145" width="245" height="160" rx="14" class="box"/>
+<text x="502" y="173" class="label">3 · Group and split</text>
+<text x="502" y="195" class="body">Illustrative OP Stack model</text>
+<rect x="502" y="211" width="207" height="32" rx="6" fill="#1e3a8a" stroke="#60a5fa"/>
+<text x="605" y="231" text-anchor="middle" class="small">Channel A · batches 1–3</text>
+<rect x="502" y="250" width="98" height="25" rx="5" fill="#155e75" stroke="#2dd4bf"/>
+<rect x="606" y="250" width="103" height="25" rx="5" fill="#155e75" stroke="#2dd4bf"/>
+<text x="551" y="267" text-anchor="middle" class="tiny">Frame A0</text>
+<text x="657" y="267" text-anchor="middle" class="tiny">Frame A1 (last)</text>
+<text x="502" y="292" class="tiny">Format varies by rollup implementation</text>
+
+<path d="M729 224 H755" class="line"/>
+<rect x="759" y="160" width="183" height="130" rx="14" class="teal"/>
+<text x="777" y="187" class="label">4 · Batcher</text>
+<text x="777" y="211" class="body">Packs frames into data txs</text>
+<rect x="777" y="229" width="147" height="35" rx="6" fill="#0f766e"/>
+<text x="850" y="250" text-anchor="middle" class="small">sign · fee · submit</text>
+<text x="777" y="280" class="tiny">Track retries and inclusion</text>
+
+<path d="M942 224 H968" class="gline"/>
+<rect x="972" y="145" width="188" height="160" rx="14" fill="url(#publish)" stroke="#5eead4" stroke-width="1.5"/>
+<text x="990" y="173" class="label">5 · Parent chain</text>
+<text x="990" y="195" class="body">Ethereum L1 (example)</text>
+<rect x="990" y="211" width="150" height="31" rx="6" fill="#0f172a" stroke="#38bdf8"/>
+<text x="1065" y="231" text-anchor="middle" class="small">Calldata</text>
+<text x="1065" y="251" text-anchor="middle" class="tiny">or</text>
+<rect x="990" y="259" width="150" height="27" rx="6" fill="#0f172a" stroke="#2dd4bf"/>
+<text x="1065" y="277" text-anchor="middle" class="small">Blob data</text>
+
+<path d="M1066 305 V345 H842 V374" class="gline"/>
+<rect x="660" y="374" width="500" height="108" rx="14" class="box"/>
+<text x="682" y="403" class="label">6 · Independent rollup nodes</text>
+<text x="682" y="427" class="body">Retrieve data → decode → validate → derive inputs</text>
+<text x="682" y="450" class="body">Execute the L2 state transition independently</text>
+<text x="682" y="470" class="tiny">Correct nodes should derive the same result from the same valid inputs</text>
+
+<rect x="40" y="357" width="570" height="125" rx="14" class="orange"/>
+<text x="60" y="386" class="label">Important: publication ≠ finality</text>
+<text x="60" y="411" class="body">A posted payload does not itself prove a state transition</text>
+<text x="60" y="432" class="body">correct or complete the rollup’s settlement process.</text>
+<text x="60" y="457" class="small">Proofs, challenges, L1 finality, and bridge rules still matter.</text>
+
+<text x="42" y="535" class="label">MILESTONES — TRACK THEM SEPARATELY</text>
+<path d="M86 588 H1110" stroke="#405475" stroke-width="3"/>
+<circle cx="100" cy="588" r="10" fill="#60a5fa"/><text x="100" y="564" text-anchor="middle" class="label">Sequenced</text><text x="100" y="614" text-anchor="middle" class="small">Fast L2 path</text>
+<circle cx="330" cy="588" r="10" fill="#a78bfa"/><text x="330" y="564" text-anchor="middle" class="label">Submitted</text><text x="330" y="614" text-anchor="middle" class="small">Tx broadcast</text>
+<circle cx="560" cy="588" r="10" fill="#fb923c"/><text x="560" y="564" text-anchor="middle" class="label">Included</text><text x="560" y="614" text-anchor="middle" class="small">In L1 block</text>
+<circle cx="790" cy="588" r="10" fill="#2dd4bf"/><text x="790" y="564" text-anchor="middle" class="label">Available</text><text x="790" y="614" text-anchor="middle" class="small">Can reconstruct</text>
+<circle cx="1080" cy="588" r="10" fill="#c4b5fd"/><text x="1080" y="564" text-anchor="middle" class="label">Settled</text><text x="1080" y="614" text-anchor="middle" class="small">Protocol rules met</text>
+<rect x="40" y="656" width="1120" height="66" rx="12" fill="#0b1424" stroke="#283b58"/>
+<text x="60" y="682" class="body">Design trade-off:</text>
+<text x="180" y="682" class="body">larger / less frequent batches → better amortization, potentially more delay</text>
+<text x="60" y="704" class="body">smaller / more frequent batches → faster publication, potentially more overhead</text>
+</svg>
