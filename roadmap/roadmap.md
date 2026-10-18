@@ -7,7 +7,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [Priority 3 — Stages 07–08](learning-priorities.md#priority-3--stages-07-to-08)
 - [Priority 4 — Stages 09–10](learning-priorities.md#priority-4--stages-09-to-10)
 
-> **Stage status:** ✅ Stage 01 content is complete — all 12 articles are published and reviewed. ✅ Stage 02 content is complete — all 16 articles are published. ✅ Stage 03 content is complete — all 13 articles are published. ✅ Stage 04 — Smart Contract Architecture content is complete — all 17 articles are published. ✅ Stage 05 — Advanced Transactions and Gas content is complete — all 14 articles are published. ✅ Stage 06 — Application Connectivity content is complete — all 17 articles are published. ✅ Stage 07 — Advanced Layer 2 and Cross-Chain content is complete — all 19 articles are published. A check beside a stage tracks publication progress; the individual unchecked boxes track study progress and are not automatically checked when an article is published.
+> **Stage status:** ✅ Stage 01 content is complete — all 12 articles are published and reviewed. ✅ Stage 02 content is complete — all 16 articles are published. ✅ Stage 03 content is complete — all 13 articles are published. ✅ Stage 04 — Smart Contract Architecture content is complete — all 17 articles are published. ✅ Stage 05 — Advanced Transactions and Gas content is complete — all 14 articles are published. ✅ Stage 06 — Application Connectivity content is complete — all 17 articles are published. A check beside a stage tracks publication progress; the individual unchecked boxes track study progress and are not automatically checked when an article is published.
 
 ## ✅ Stage 01 — EVM Execution
 
@@ -128,30 +128,29 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [Consensus API](../concepts/06-application-connectivity/16-consensus-api.md) — article published
 - [ ] [Engine API](../concepts/06-application-connectivity/17-engine-api.md) — article published
 
-## ✅ Stage 07 — Advanced Layer 2 and Cross-Chain
+## Stage 07 — Advanced Layer 2 and Cross-Chain
 
-**Priority 3** · ✅ **Content complete: 19/19 articles published** · [Stage index](../concepts/07-layer2-cross-chain/README.md)
+**Priority 3** · [Stage index](../concepts/07-layer2-cross-chain/README.md)
 
-- [ ] [Fraud Proofs](../concepts/07-layer2-cross-chain/01-fraud-proofs.md) — article published
-- [ ] [Validity Proofs](../concepts/07-layer2-cross-chain/02-validity-proofs.md) — article published
-- [ ] [Sequencers](../concepts/07-layer2-cross-chain/03-sequencers.md) — article published
-- [ ] [Batch Submission](../concepts/07-layer2-cross-chain/04-batch-submission.md) — article published
-- [ ] [State Commitments](../concepts/07-layer2-cross-chain/05-state-commitments.md) — article published
-- [ ] [Settlement Layer](../concepts/07-layer2-cross-chain/06-settlement-layer.md) — article published
-- [ ] [Challenge Periods](../concepts/07-layer2-cross-chain/07-challenge-periods.md) — article published
-- [ ] [Forced Inclusion](../concepts/07-layer2-cross-chain/08-forced-inclusion.md) — article published
-- [ ] [Forced Withdrawals](../concepts/07-layer2-cross-chain/09-forced-withdrawals.md) — article published
-- [ ] [Rollup Bridges](../concepts/07-layer2-cross-chain/10-rollup-bridges.md) — article published
-- [ ] [Blob Fee Market](../concepts/07-layer2-cross-chain/11-blob-fee-market.md) — article published
-- [ ] [Data Availability Sampling](../concepts/07-layer2-cross-chain/12-data-availability-sampling.md) — article published
-- [ ] [PeerDAS](../concepts/07-layer2-cross-chain/13-peerdas.md) — article published
-- [ ] [Validiums](../concepts/07-layer2-cross-chain/14-validiums.md) — article published
-- [ ] [Volitions](../concepts/07-layer2-cross-chain/15-volitions.md) — article published
-- [ ] [Based Rollups](../concepts/07-layer2-cross-chain/16-based-rollups.md) — article published
-- [ ] [Shared Sequencing](../concepts/07-layer2-cross-chain/17-shared-sequencing.md) — article published
-- [ ] [Cross-Chain Messaging](../concepts/07-layer2-cross-chain/18-cross-chain-messaging.md) — article published
-- [ ] [Bridge Security Models](../concepts/07-layer2-cross-chain/19-bridge-security-models.md) — article published
-
+- [ ] Fraud Proofs
+- [ ] Validity Proofs
+- [ ] Sequencers
+- [ ] Batch Submission
+- [ ] State Commitments
+- [ ] Settlement Layer
+- [ ] Challenge Periods
+- [ ] Forced Inclusion
+- [ ] Forced Withdrawals
+- [ ] Rollup Bridges
+- [ ] Blob Fee Market
+- [ ] Data Availability Sampling
+- [ ] PeerDAS
+- [ ] Validiums
+- [ ] Volitions
+- [ ] Based Rollups
+- [ ] Shared Sequencing
+- [ ] Cross-Chain Messaging
+- [ ] Bridge Security Models
 ## Stage 08 — Mempool and MEV
 
 **Priority 3** · [Stage index](../concepts/08-mempool-mev/README.md)
