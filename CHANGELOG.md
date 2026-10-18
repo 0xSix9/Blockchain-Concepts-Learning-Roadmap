@@ -684,4 +684,5 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 
 - Audited all 19 Stage 07 concept articles and their 19 SVG diagrams for file presence, metadata, diagram references, key takeaways, and reference sections.
 - Clarified the current status of EIP-7732 in the Based Rollups article: Last Call under Standards Track Core, with a November 1, 2026 deadline; noted that proposal status does not imply Mainnet deployment.
+- Clarified the PeerDAS custody snapshot: baseline custody groups for ordinary nodes versus the higher minimum for validator-attached nodes, and aligned the diagram footer with the current Fulu specification.
 - Standardized Stage 07's completed status marker in the repository README and canonical roadmap to match the other completed stages.
