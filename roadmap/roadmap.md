@@ -130,7 +130,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 
 ## Stage 07 — Advanced Layer 2 and Cross-Chain
 
-**Priority 3** · **Article progress: 3/19 published** · [Stage index](../concepts/07-layer2-cross-chain/README.md)
+**Priority 3** · **Article progress: 8/19 published** · [Stage index](../concepts/07-layer2-cross-chain/README.md)
 
 - [ ] [Fraud Proofs](../concepts/07-layer2-cross-chain/01-fraud-proofs.md) — article published
 - [ ] [Validity Proofs](../concepts/07-layer2-cross-chain/02-validity-proofs.md) — article published
@@ -139,7 +139,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [State Commitments](../concepts/07-layer2-cross-chain/05-state-commitments.md) — article published
 - [ ] [Settlement Layer](../concepts/07-layer2-cross-chain/06-settlement-layer.md) — article published
 - [ ] [Challenge Periods](../concepts/07-layer2-cross-chain/07-challenge-periods.md) — article published
-- [ ] Forced Inclusion
+- [ ] [Forced Inclusion](../concepts/07-layer2-cross-chain/08-forced-inclusion.md) — article published
 - [ ] Forced Withdrawals
 - [ ] Rollup Bridges
 - [ ] Blob Fee Market
