@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+<title id="title">State Commitments: From L2 State to an Authenticated Output</title>
+<desc id="desc">An L2 execution transition creates a new state root. The rollup combines it with protocol-specific context to make an output commitment, which is proposed on L1. Optimistic systems challenge claims through a fault-proof process; validity-proof systems verify a proof of the transition. Only after the protocol's acceptance and finality conditions can a bridge safely use a matching inclusion proof.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111f"/><stop offset="1" stop-color="#111c35"/></linearGradient>
+  <linearGradient id="head" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1d4ed8"/><stop offset="1" stop-color="#0f766e"/></linearGradient>
+  <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#91a4c3"/></marker>
+  <marker id="tealArrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#5eead4"/></marker>
+  <style>
+    .h1{font:700 27px Arial,sans-serif;fill:#f8fafc}.sub{font:14px Arial,sans-serif;fill:#b7c6dc}
+    .label{font:700 15px Arial,sans-serif;fill:#f8fafc}.body{font:13px Arial,sans-serif;fill:#d6e0ee}
+    .small{font:12px Arial,sans-serif;fill:#a9bad2}.tiny{font:11px Arial,sans-serif;fill:#9fb1ca}
+    .box{fill:#14233b;stroke:#3a5273;stroke-width:1.5}.blue{fill:#142d50;stroke:#60a5fa;stroke-width:1.5}
+    .teal{fill:#123d43;stroke:#2dd4bf;stroke-width:1.5}.purple{fill:#2a244e;stroke:#a78bfa;stroke-width:1.5}
+    .orange{fill:#442b19;stroke:#fb923c;stroke-width:1.5}.line{fill:none;stroke:#91a4c3;stroke-width:2;marker-end:url(#arrow)}
+    .tline{fill:none;stroke:#5eead4;stroke-width:2;marker-end:url(#tealArrow)}
+  </style>
+</defs>
+<rect width="1200" height="760" rx="24" fill="url(#bg)"/>
+<circle cx="1040" cy="88" r="270" fill="#1d4ed8" opacity=".08"/>
+<rect x="30" y="26" width="1140" height="92" rx="18" fill="url(#head)"/>
+<text x="58" y="61" class="h1">STATE COMMITMENTS</text>
+<text x="58" y="88" class="sub">A compact root is a reference to state—not proof that execution was correct</text>
+<rect x="945" y="48" width="188" height="42" rx="21" fill="#07111f" opacity=".45"/>
+<text x="1039" y="74" text-anchor="middle" class="label">ROLLUP → L1</text>
+
+<!-- first lane -->
+<rect x="40" y="152" width="245" height="142" rx="14" class="blue"/>
+<text x="60" y="181" class="label">1 · L2 execution</text>
+<text x="60" y="204" class="body">Previous state + canonical inputs</text>
+<rect x="60" y="222" width="92" height="42" rx="7" fill="#1d4ed8" opacity=".6"/>
+<rect x="163" y="222" width="102" height="42" rx="7" fill="#2563eb" opacity=".85"/>
+<text x="106" y="240" text-anchor="middle" class="tiny">State Si</text><text x="106" y="254" text-anchor="middle" class="tiny">Alice: 100</text>
+<text x="214" y="240" text-anchor="middle" class="tiny">State Si+1</text><text x="214" y="254" text-anchor="middle" class="tiny">Alice: 90</text>
+<text x="60" y="281" class="small">Apply transactions under L2 rules</text>
+
+<path d="M285 222 H316" class="line"/>
+<rect x="320" y="152" width="220" height="142" rx="14" class="purple"/>
+<text x="340" y="181" class="label">2 · Compute state root</text>
+<text x="340" y="204" class="body">Hash the resulting state tree</text>
+<rect x="340" y="221" width="180" height="36" rx="7" fill="#312e81" stroke="#a78bfa"/>
+<text x="430" y="244" text-anchor="middle" class="small">stateRoot = R(i+1)</text>
+<text x="340" y="281" class="tiny">Compact fingerprint of the state</text>
+
+<path d="M540 222 H571" class="line"/>
+<rect x="575" y="140" width="270" height="166" rx="14" class="box"/>
+<text x="595" y="168" class="label">3 · Build output commitment</text>
+<text x="595" y="192" class="body">State root + protocol context</text>
+<rect x="595" y="209" width="230" height="25" rx="5" fill="#1e3a8a" stroke="#60a5fa"/>
+<text x="710" y="226" text-anchor="middle" class="tiny">L2 state root</text>
+<rect x="595" y="239" width="230" height="25" rx="5" fill="#155e75" stroke="#2dd4bf"/>
+<text x="710" y="256" text-anchor="middle" class="tiny">Withdrawal root / message state</text>
+<rect x="595" y="269" width="230" height="25" rx="5" fill="#43315f" stroke="#a78bfa"/>
+<text x="710" y="286" text-anchor="middle" class="tiny">L2 block context + version</text>
+
+<path d="M845 222 H876" class="tline"/>
+<rect x="880" y="152" width="280" height="142" rx="14" class="teal"/>
+<text x="900" y="181" class="label">4 · Propose on L1</text>
+<text x="900" y="204" class="body">Store the commitment / claim</text>
+<rect x="900" y="221" width="240" height="35" rx="7" fill="#0f766e"/>
+<text x="1020" y="243" text-anchor="middle" class="small">Output root / assertion</text>
+<text x="900" y="280" class="tiny">Publication alone does not prove it true</text>
+
+<!-- verification branches -->
+<path d="M1020 294 V332 H337 V356" class="line"/>
+<path d="M1020 332 H865 V356" class="line"/>
+<text x="42" y="342" class="label">5 · Correctness mechanism (depends on the rollup)</text>
+<rect x="40" y="360" width="555" height="116" rx="14" class="orange"/>
+<text x="62" y="389" class="label">Optimistic rollup · fault-proof path</text>
+<text x="62" y="414" class="body">A proposal can be challenged; a dispute mechanism tests</text>
+<text x="62" y="434" class="body">whether the claimed state follows the protocol's execution.</text>
+<text x="62" y="458" class="tiny">The commitment is the claim, not the fault proof itself.</text>
+
+<rect x="615" y="360" width="545" height="116" rx="14" class="purple"/>
+<text x="637" y="389" class="label">Validity-proof rollup · proof verification</text>
+<text x="637" y="414" class="body">A verifier checks a proof that the transition satisfies</text>
+<text x="637" y="434" class="body">the protocol; accepted public inputs include the new root.</text>
+<text x="637" y="458" class="tiny">The proof and the state commitment serve different roles.</text>
+
+<!-- bridge -->
+<path d="M320 476 V513 H600 V532" class="tline"/>
+<path d="M885 476 V513 H600" fill="none" stroke="#5eead4" stroke-width="2"/>
+<rect x="260" y="532" width="680" height="94" rx="14" class="box"/>
+<text x="285" y="560" class="label">6 · Depend on an accepted, protocol-recognized commitment</text>
+<text x="285" y="584" class="body">A bridge checks the correct root + Merkle inclusion proof + L2 context</text>
+<text x="285" y="606" class="body">and enforces challenge/finality conditions and one-time message use.</text>
+
+<rect x="40" y="650" width="1120" height="76" rx="12" fill="#0b1424" stroke="#283b58"/>
+<text x="60" y="676" class="label">Remember</text>
+<text x="165" y="676" class="body">State commitment ≠ validity proof ≠ data availability ≠ finality</text>
+<text x="60" y="702" class="small">A valid-looking hash is not enough: authenticate the root and verify the exact statement it represents.</text>
+</svg>
