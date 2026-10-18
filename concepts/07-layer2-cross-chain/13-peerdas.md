@@ -7,7 +7,7 @@
 
 ## 1. Overview
 
-PeerDAS (Peer Data Availability Sampling) is an Ethereum protocol design specified by EIP-7594. It extends the blob data-availability system by organizing encoded blob data into cells and columns and distributing custody and sampling across peers. A node can check samples rather than downloading every blob in full while the network retains enough encoded data to reconstruct the payload.
+PeerDAS (Peer Data Availability Sampling), specified by EIP-7594, extends Ethereum's blob data-availability system by organizing encoded blob data into cells and columns and distributing custody and sampling across peers. A node can check samples rather than downloading every blob in full while the network retains enough encoded data to reconstruct the payload. PeerDAS went live on Ethereum Mainnet with the Fusaka upgrade on 2025-12-03.
 
 ![PeerDAS: Peer-Based Data Availability Sampling in Ethereum](../../assets/diagrams/13-peerdas.svg)
 
@@ -31,7 +31,7 @@ A node may custody only a subset of columns and sample additional columns from p
 
 ## 5. Common Mistakes and Security Considerations
 
-Do not confuse a protocol specification with a claim about every network or client version. Mainnet deployment status and active parameters must be checked against the relevant fork and consensus specifications. Correctness depends on erasure coding, proof verification, peer sampling, custody assignments, implementation diversity, and sufficient data being available. PeerDAS scales availability; it does not itself prove rollup execution validity.
+PeerDAS is active on Ethereum Mainnet, but deployment status can differ on other networks. Its availability mechanism is live as part of Fusaka; the blob target and maximum may change separately through BPO forks (EIP-7892), so exact parameters should be checked against the active network configuration. Correctness depends on erasure coding, proof verification, peer sampling, custody assignments, implementation diversity, and sufficient data being available. PeerDAS scales availability; it does not itself prove rollup execution validity.
 
 ## 6. Key Takeaways
 
@@ -44,3 +44,4 @@ Do not confuse a protocol specification with a claim about every network or clie
 - [EIP-7594 — PeerDAS](https://eips.ethereum.org/EIPS/eip-7594)
 - [Ethereum.org — PeerDAS](https://ethereum.org/roadmap/fusaka/peerdas/)
 - [EIP-4844 — Blob-carrying Transactions](https://eips.ethereum.org/EIPS/eip-4844)
+- [EIP-7892 — Blob Parameter Only Hardforks](https://eips.ethereum.org/EIPS/eip-7892)
