@@ -627,3 +627,10 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Distinguished the general DAS technique from Ethereum's PeerDAS implementation, including the limits of availability sampling and the difference between availability and validity.
 - Added security assumptions, a simplified sampling-probability model, developer evaluation questions, and references to Ethereum.org, EIP-7594, EIP-4844, and the Fusaka announcement.
 - Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 12/19 Stage 07 articles published.
+
+## 2026-10-18 — Stage 07: PeerDAS
+
+- Published a detailed PeerDAS article and a dedicated architecture diagram covering erasure-extended blobs, cells, columns, data column sidecars, cell KZG proofs, custody groups, gossip, peer requests, sampling, and reconstruction.
+- Distinguished local sampling from custody and full data reconstruction; documented security assumptions and failure cases relevant to consensus-client implementers.
+- Included active Fulu consensus-spec snapshot values with a warning to verify parameters against the target fork, and linked EIP-7594, ethereum.org, and official consensus specifications.
+- Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 13/19 Stage 07 articles published.
