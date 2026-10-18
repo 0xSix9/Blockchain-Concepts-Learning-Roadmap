@@ -541,3 +541,11 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Covered fraud proofs, validity proofs, sequencers, batch submission, state commitments, settlement, challenge periods, forced inclusion/withdrawals, rollup bridges, blob fee markets, data availability sampling, PeerDAS, validiums, volitions, based rollups, shared sequencing, cross-chain messaging, and bridge security models.
 - Updated the Stage 07 index, canonical roadmap, and root README to show 19/19 articles published; individual study checkboxes remain unchecked by design.
 - Clarified protocol-specific variation in challenge windows, forced-inclusion/exit mechanisms, DA guarantees, sequencer assumptions, and bridge verification models.
+
+
+## 2026-10-18 — Stage 07 Technical Review Follow-up
+
+- Rechecked all 19 article files and their SVG references; confirmed every article links to its corresponding diagram, has the expected section structure, and includes references.
+- Updated the Blob Fee Market article for Fusaka-era rules, including EIP-7918's execution-cost-linked reserve price and EIP-7892's Blob-Parameter-Only forks; clarified that active blob parameters are fork/network-dependent.
+- Clarified that PeerDAS went live on Ethereum Mainnet with Fusaka on 2025-12-03 and that later BPO forks can change blob parameters.
+- Replaced the tangential EIP-4844 citation in the Validity Proofs article with the Data Availability documentation; added primary implementation/research references for shared and based sequencing.
