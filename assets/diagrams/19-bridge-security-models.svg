@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="840" viewBox="0 0 1200 840" role="img" aria-labelledby="title desc">
+<title id="title">Bridge Security Models: Who Verifies the Source Event?</title>
+<desc id="desc">A source-chain event becomes a message commitment. Multiple security models can authenticate it: light-client or state proofs, validator multisig or MPC, oracle or modular verification, optimistic challenge mechanisms, and liquidity or solver settlement. The destination verifier and bridge application still require finality checks, replay protection, correct asset accounting, data availability, safe execution, and controlled upgrades.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111f"/><stop offset="1" stop-color="#18223a"/></linearGradient>
+ <linearGradient id="head" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1d4ed8"/><stop offset="1" stop-color="#0f766e"/></linearGradient>
+ <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#91a4c3"/></marker>
+ <marker id="garr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#5eead4"/></marker>
+ <marker id="parr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#c4b5fd"/></marker>
+ <style>
+ .title{font:700 28px Arial,sans-serif;fill:#f8fafc}.sub{font:14px Arial,sans-serif;fill:#c0cee2}.h{font:700 16px Arial,sans-serif;fill:#f8fafc}.b{font:13px Arial,sans-serif;fill:#d7e2f0}.s{font:12px Arial,sans-serif;fill:#a9bbd2}.tiny{font:11px Arial,sans-serif;fill:#9db0ca}
+ .panel{fill:#14243b;stroke:#3a5272;stroke-width:1.5}.blue{fill:#152e50;stroke:#60a5fa;stroke-width:1.5}.teal{fill:#103b3d;stroke:#2dd4bf;stroke-width:1.5}.purple{fill:#292448;stroke:#a78bfa;stroke-width:1.5}.amber{fill:#402c1b;stroke:#fb923c;stroke-width:1.5}.red{fill:#421f2c;stroke:#fb7185;stroke-width:1.5}
+ .line{fill:none;stroke:#91a4c3;stroke-width:2;marker-end:url(#arr)}.gline{fill:none;stroke:#5eead4;stroke-width:2;marker-end:url(#garr)}.pline{fill:none;stroke:#c4b5fd;stroke-width:2;marker-end:url(#parr)}
+ </style>
+</defs>
+<rect width="1200" height="840" rx="24" fill="url(#bg)"/><circle cx="1080" cy="95" r="235" fill="#2563eb" opacity=".07"/>
+<rect x="30" y="24" width="1140" height="88" rx="17" fill="url(#head)"/>
+<text x="56" y="60" class="title">BRIDGE SECURITY MODELS</text>
+<text x="56" y="86" class="sub">Who or what authorizes the destination to trust a source-chain claim?</text>
+<rect x="921" y="47" width="215" height="36" rx="18" fill="#07111f" opacity=".42"/><text x="1028" y="70" text-anchor="middle" class="h">VERIFY ≠ ACCOUNT</text>
+
+<rect x="40" y="136" width="250" height="84" rx="13" class="blue"/>
+<text x="60" y="166" class="h">1 · Source event</text>
+<text x="60" y="190" class="b">Lock / burn / message / state</text>
+<path d="M290 178 H320" class="line"/>
+<rect x="324" y="136" width="258" height="84" rx="13" class="panel"/>
+<text x="344" y="166" class="h">2 · Message commitment</text>
+<text x="344" y="190" class="b">Origin + payload + identifier</text>
+<path d="M582 178 H600 V241" class="line"/>
+
+<rect x="40" y="246" width="1120" height="306" rx="17" fill="#0d192a" stroke="#3a5272" stroke-width="1.5"/>
+<text x="62" y="275" class="h">3 · Authentication and finality models</text>
+<text x="62" y="296" class="s">Each model answers the source-authenticity question differently and carries its own assumptions.</text>
+<g transform="translate(60 315)">
+ <rect width="346" height="94" rx="12" class="teal"/>
+ <text x="18" y="27" class="h">A · Light client / state proof</text>
+ <text x="18" y="51" class="b">Destination verifies source state</text>
+ <text x="18" y="73" class="tiny">Trust: consensus + proof + client code</text>
+ <rect x="367" width="346" height="94" rx="12" class="purple"/>
+ <text x="385" y="27" class="h">B · Committee / multisig / MPC</text>
+ <text x="385" y="51" class="b">Threshold of authorized signers</text>
+ <text x="385" y="73" class="tiny">Trust: threshold, keys, independence</text>
+ <rect x="734" width="346" height="94" rx="12" class="blue"/>
+ <text x="752" y="27" class="h">C · Oracle / modular verifier</text>
+ <text x="752" y="51" class="b">Configured attestors or verifier policy</text>
+ <text x="752" y="73" class="tiny">Trust: live route configuration</text>
+ <rect y="109" width="526" height="94" rx="12" class="amber"/>
+ <text x="18" y="136" class="h">D · Optimistic challenge</text>
+ <text x="18" y="160" class="b">Claim can be disputed during a window</text>
+ <text x="18" y="183" class="tiny">Trust: watchers, evidence, response time</text>
+ <rect x="550" y="109" width="530" height="94" rx="12" class="red"/>
+ <text x="568" y="136" class="h">E · Liquidity provider / solver</text>
+ <text x="568" y="160" class="b">Fronts destination assets; settles later</text>
+ <text x="568" y="183" class="tiny">Trust: settlement rules, collateral, incentives</text>
+</g>
+
+<path d="M600 552 V576" class="gline"/>
+<rect x="220" y="580" width="760" height="77" rx="14" class="blue"/>
+<text x="244" y="610" class="h">4 · Destination verifier + bridge logic</text>
+<text x="244" y="634" class="b">Verify evidence, source finality, sender, destination, payload and unique message ID.</text>
+
+<path d="M600 657 V680" class="line"/>
+<rect x="40" y="684" width="1120" height="111" rx="14" class="panel"/>
+<text x="62" y="713" class="h">5 · Security controls every model still needs</text>
+<g transform="translate(62 731)">
+ <rect width="200" height="42" rx="7" fill="#123d3b" stroke="#2dd4bf"/><text x="100" y="17" text-anchor="middle" class="s">Replay protection</text><text x="100" y="33" text-anchor="middle" class="tiny">unique IDs / nonce</text>
+ <rect x="211" width="200" height="42" rx="7" fill="#123d3b" stroke="#2dd4bf"/><text x="311" y="17" text-anchor="middle" class="s">Asset accounting</text><text x="311" y="33" text-anchor="middle" class="tiny">escrow / mint / burn</text>
+ <rect x="422" width="200" height="42" rx="7" fill="#123d3b" stroke="#2dd4bf"/><text x="522" y="17" text-anchor="middle" class="s">Data availability</text><text x="522" y="33" text-anchor="middle" class="tiny">proofs / exits / watchers</text>
+ <rect x="633" width="200" height="42" rx="7" fill="#402c1b" stroke="#fb923c"/><text x="733" y="17" text-anchor="middle" class="s">Upgrade authority</text><text x="733" y="33" text-anchor="middle" class="tiny">keys / timelock / pause</text>
+ <rect x="844" width="200" height="42" rx="7" fill="#402c1b" stroke="#fb923c"/><text x="944" y="17" text-anchor="middle" class="s">Failure recovery</text><text x="944" y="33" text-anchor="middle" class="tiny">timeouts / monitoring</text>
+</g>
+<text x="40" y="822" class="tiny">Evaluate the actual verifier, threshold, live configuration, token mapping and withdrawal path—not just the bridge's name or audit count.</text>
+</svg>
