@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
+<title id="title">Blob Fee Market: Demand, Excess Blob Gas, and Reserve Pricing</title>
+<desc id="desc">Rollup batches are published in blob-carrying transactions that pay both execution gas and blob gas. Blob gas usage relative to target updates an excess-usage accumulator, which sets the blob base fee. Fusaka activated PeerDAS, BPO parameter scaling, and EIP-7918 reserve-price behavior linking a minimum blob-fee signal to execution cost.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111f"/><stop offset="1" stop-color="#111c35"/></linearGradient>
+ <linearGradient id="head" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1d4ed8"/><stop offset="1" stop-color="#0f766e"/></linearGradient>
+ <marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#91a4c3"/></marker>
+ <marker id="t" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#5eead4"/></marker>
+ <marker id="p" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#a78bfa"/></marker>
+ <style>
+ .h{font:700 27px Arial,sans-serif;fill:#f8fafc}.sub{font:14px Arial,sans-serif;fill:#b7c6dc}.l{font:700 15px Arial,sans-serif;fill:#f8fafc}.b{font:13px Arial,sans-serif;fill:#d6e0ee}.s{font:12px Arial,sans-serif;fill:#a9bad2}.tiny{font:11px Arial,sans-serif;fill:#9fb1ca}
+ .box{fill:#14233b;stroke:#3a5273;stroke-width:1.5}.blue{fill:#142d50;stroke:#60a5fa;stroke-width:1.5}.teal{fill:#123d43;stroke:#2dd4bf;stroke-width:1.5}.purple{fill:#2a244e;stroke:#a78bfa;stroke-width:1.5}.orange{fill:#442b19;stroke:#fb923c;stroke-width:1.5}
+ .line{fill:none;stroke:#91a4c3;stroke-width:2;marker-end:url(#a)}.tl{fill:none;stroke:#5eead4;stroke-width:2;marker-end:url(#t)}.pl{fill:none;stroke:#a78bfa;stroke-width:2;marker-end:url(#p)}
+ </style>
+</defs>
+<rect width="1200" height="780" rx="24" fill="url(#bg)"/><circle cx="1045" cy="76" r="260" fill="#1d4ed8" opacity=".08"/>
+<rect x="30" y="24" width="1140" height="90" rx="18" fill="url(#head)"/>
+<text x="58" y="59" class="h">BLOB FEE MARKET</text><text x="58" y="86" class="sub">A separate data-space price signal for rollup publishing</text>
+<rect x="944" y="45" width="192" height="42" rx="21" fill="#07111f" opacity=".45"/><text x="1040" y="70" text-anchor="middle" class="l">EIP-4844 → FUSAKA</text>
+
+<rect x="40" y="140" width="1120" height="107" rx="14" class="box"/>
+<text x="62" y="169" class="l">1 · Rollup batcher publishes data</text>
+<text x="62" y="193" class="b">Compressed L2 inputs are packaged into a type-3 blob-carrying transaction.</text>
+<rect x="62" y="206" width="498" height="26" rx="6" fill="#142d50" stroke="#60a5fa"/><text x="76" y="224" class="s">Execution gas · transaction processing / validation</text>
+<rect x="580" y="206" width="558" height="26" rx="6" fill="#123d43" stroke="#2dd4bf"/><text x="594" y="224" class="s">Blob gas · data-space resource priced in a separate fee market</text>
+
+<path d="M600 247 V269 H286 V294" class="line"/><path d="M600 269 H914 V294" class="line"/>
+<rect x="40" y="298" width="492" height="119" rx="14" class="blue"/>
+<text x="62" y="328" class="l">2A · Ordinary execution fee</text>
+<text x="62" y="352" class="b">Execution base fee + any priority fee</text>
+<text x="62" y="374" class="b">Depends on ordinary execution-gas usage</text>
+<text x="62" y="399" class="tiny">Can be high even when the blob base fee is low.</text>
+<rect x="668" y="298" width="492" height="119" rx="14" class="teal"/>
+<text x="690" y="328" class="l">2B · Blob fee market</text>
+<text x="690" y="352" class="b">Blob gas consumed × blob base fee</text>
+<text x="690" y="374" class="b">Price responds to sustained data-space demand</text>
+<text x="690" y="399" class="tiny">Blob fee and execution fee are separate charges.</text>
+
+<path d="M914 417 V440 H600 V458" class="tl"/>
+<rect x="245" y="462" width="710" height="101" rx="14" class="purple"/>
+<text x="269" y="491" class="l">3 · Excess blob gas accumulator</text>
+<text x="269" y="515" class="b">Usage above target builds pressure; sustained below-target usage lets</text>
+<text x="269" y="537" class="b">excess decline toward zero. The protocol computes the next blob base fee.</text>
+
+<path d="M600 563 V586" class="pl"/>
+<rect x="245" y="590" width="710" height="93" rx="14" class="orange"/>
+<text x="269" y="619" class="l">4 · Fusaka: PeerDAS + BPO + EIP-7918</text>
+<text x="269" y="643" class="b">PeerDAS supports higher data capacity; BPO forks adjust active blob parameters.</text>
+<text x="269" y="664" class="b">EIP-7918 adds a reserve-price relationship tied to execution costs.</text>
+
+<rect x="40" y="701" width="1120" height="51" rx="11" fill="#0b1424" stroke="#283b58"/>
+<text x="60" y="722" class="l">Rollup response</text><text x="195" y="722" class="s">compress data · batch efficiently · monitor the active schedule · preserve required DA</text>
+<text x="60" y="741" class="tiny">Target ≠ maximum. Blob pricing changes over time; do not hard-code old capacity or fee parameters.</text>
+</svg>
