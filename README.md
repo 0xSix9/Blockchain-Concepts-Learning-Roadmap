@@ -32,7 +32,7 @@ This repository is designed as both a **learning checklist** and a **growing tec
 | [✅ Stage 04 — Smart Contract Architecture](concepts/04-smart-contract-architecture/README.md) | Composition, proxies, upgradeability | 17 | P1 | ✅ Complete — 17/17 published |
 | [✅ Stage 05 — Advanced Transactions and Gas](concepts/05-advanced-transactions-gas/README.md) | Transaction mechanics and gas accounting | 14 | P2 | ✅ Complete — 14/14 published |
 | [✅ Stage 06 — Application Connectivity](concepts/06-application-connectivity/README.md) | RPC, clients, APIs, event subscriptions | 17 | P2 | ✅ Complete — 17/17 published |
-| [Stage 07 — Advanced Layer 2 and Cross-Chain](concepts/07-layer2-cross-chain/README.md) | Rollups, bridges, data availability | 19 | P3 | Complete — 19/19 published |
+| [✅ Stage 07 — Advanced Layer 2 and Cross-Chain](concepts/07-layer2-cross-chain/README.md) | Rollups, bridges, data availability | 19 | P3 | ✅ Complete — 19/19 published |
 | [Stage 08 — Mempool and MEV](concepts/08-mempool-mev/README.md) | Transaction ordering and MEV | 16 | P3 | Checklist only |
 | [Stage 09 — Advanced Ethereum Consensus](concepts/09-ethereum-consensus/README.md) | Validators, fork choice, finality | 18 | P4 | Checklist only |
 | [Stage 10 — Advanced Cryptography and Protocol Developments](concepts/10-advanced-cryptography-protocol/README.md) | Cryptography and future protocol designs | 15 | P4 | Checklist only |
