@@ -604,3 +604,11 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Covered state-root authentication, Merkle proofs, data availability, replay protection, denial-of-service costs, governance permissions, and complex DeFi position risks.
 - Referenced official StarkEx and OP Stack documentation, Ethereum.org, and research on rollup escape hatches.
 - Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 9/19 Stage 07 articles published.
+
+## 2026-10-18 — Stage 07: Rollup Bridges
+
+- Published the Rollup Bridges article and custom architecture diagram for paired L1/L2 bridge contracts, cross-domain messaging, deposits, withdrawals, token mapping, and security checks.
+- Distinguished canonical rollup bridges from third-party/liquidity bridges, and clarified how source-asset custody, mapped tokens, state commitments, proof/finality rules, and replay protection fit together.
+- Added an implementation review checklist for sender authentication, contract versions, token mappings, proof verification, upgrade roles, retries, and non-standard token behavior.
+- Referenced Ethereum.org, the OP Stack standard bridge and predeploy specifications, and official Arbitrum bridging documentation.
+- Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 10/19 Stage 07 articles published.
