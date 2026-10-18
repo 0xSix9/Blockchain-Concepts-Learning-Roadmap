@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+<title id="title">Data Availability Sampling: Encode, Distribute, Sample, Reconstruct</title>
+<desc id="desc">A producer commits to a dataset, erasure coding expands it into redundant pieces, peers distribute those pieces, and independent nodes request randomized authenticated samples. Withholding enough data makes encoded pieces unavailable and is likely to be detected. The diagram distinguishes the general DAS technique from Ethereum PeerDAS, a specific implementation.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111f"/><stop offset="1" stop-color="#17213a"/></linearGradient>
+ <linearGradient id="hdr" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1d4ed8"/><stop offset="1" stop-color="#0f766e"/></linearGradient>
+ <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#93a8c5"/></marker>
+ <marker id="greenArrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#5eead4"/></marker>
+ <marker id="purpleArrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#c4b5fd"/></marker>
+ <style>
+ .title{font:700 28px Arial,sans-serif;fill:#f8fafc}.sub{font:14px Arial,sans-serif;fill:#c0cee2}.h{font:700 16px Arial,sans-serif;fill:#f8fafc}.b{font:13px Arial,sans-serif;fill:#d7e2f0}.s{font:12px Arial,sans-serif;fill:#a9bbd2}.tiny{font:11px Arial,sans-serif;fill:#9db0ca}
+ .panel{fill:#14243b;stroke:#3a5272;stroke-width:1.5}.blue{fill:#152e50;stroke:#60a5fa;stroke-width:1.5}.teal{fill:#103b3d;stroke:#2dd4bf;stroke-width:1.5}.purple{fill:#292448;stroke:#a78bfa;stroke-width:1.5}.amber{fill:#402c1b;stroke:#fb923c;stroke-width:1.5}.red{fill:#421f2c;stroke:#fb7185;stroke-width:1.5}
+ .line{fill:none;stroke:#93a8c5;stroke-width:2;marker-end:url(#arrow)}.gline{fill:none;stroke:#5eead4;stroke-width:2;marker-end:url(#greenArrow)}.pline{fill:none;stroke:#c4b5fd;stroke-width:2;marker-end:url(#purpleArrow)}
+ </style>
+</defs>
+<rect width="1200" height="800" rx="22" fill="url(#bg)"/>
+<circle cx="1090" cy="100" r="220" fill="#2563eb" opacity=".07"/>
+<rect x="30" y="25" width="1140" height="86" rx="17" fill="url(#hdr)"/>
+<text x="55" y="60" class="title">DATA AVAILABILITY SAMPLING</text>
+<text x="55" y="86" class="sub">Check the dataset without making every node download every byte</text>
+<rect x="951" y="46" width="188" height="38" rx="19" fill="#07111f" opacity=".4"/>
+<text x="1045" y="70" text-anchor="middle" class="h">DAS ≠ PeerDAS</text>
+
+<rect x="38" y="134" width="250" height="138" rx="14" class="blue"/>
+<text x="58" y="163" class="h">1 · Producer</text>
+<rect x="58" y="180" width="58" height="48" rx="6" fill="#224a7a" stroke="#60a5fa"/>
+<path d="M68 192 H106 M68 201 H106 M68 210 H96" stroke="#bfdbfe" stroke-width="2"/>
+<text x="128" y="197" class="b">Original data</text><text x="128" y="216" class="b">+ commitment</text>
+<text x="58" y="250" class="s">Block / rollup batch payload</text>
+
+<path d="M288 203 H323" class="line"/>
+<rect x="327" y="134" width="254" height="138" rx="14" class="purple"/>
+<text x="347" y="163" class="h">2 · Erasure coding</text>
+<text x="347" y="187" class="b">Expand data with redundancy</text>
+<g transform="translate(349 200)">
+ <rect width="38" height="20" rx="3" fill="#5b4ca2"/><rect x="43" width="38" height="20" rx="3" fill="#5b4ca2"/><rect x="86" width="38" height="20" rx="3" fill="#5b4ca2"/><rect x="129" width="38" height="20" rx="3" fill="#a78bfa"/><rect x="172" width="38" height="20" rx="3" fill="#a78bfa"/>
+ <rect y="27" width="38" height="20" rx="3" fill="#5b4ca2"/><rect x="43" y="27" width="38" height="20" rx="3" fill="#5b4ca2"/><rect x="86" y="27" width="38" height="20" rx="3" fill="#a78bfa"/><rect x="129" y="27" width="38" height="20" rx="3" fill="#a78bfa"/><rect x="172" y="27" width="38" height="20" rx="3" fill="#a78bfa"/>
+</g>
+<path d="M581 203 H616" class="line"/>
+<rect x="620" y="134" width="542" height="138" rx="14" class="panel"/>
+<text x="642" y="163" class="h">3 · Distributed pieces</text>
+<text x="642" y="187" class="b">Peers make authenticated pieces available across the network</text>
+<g fill="#183a50" stroke="#5eead4" stroke-width="1.5">
+ <circle cx="681" cy="225" r="17"/><circle cx="768" cy="225" r="17"/><circle cx="855" cy="225" r="17"/><circle cx="942" cy="225" r="17"/><circle cx="1029" cy="225" r="17"/><circle cx="1110" cy="225" r="17"/>
+</g>
+<g stroke="#a7f3d0" stroke-width="2"><path d="M675 225 h12 M681 219 v12 M762 225 h12 M768 219 v12 M849 225 h12 M855 219 v12 M936 225 h12 M942 219 v12 M1023 225 h12 M1029 219 v12 M1104 225 h12 M1110 219 v12"/></g>
+<path d="M887 272 V303 H292 V327" class="line"/>
+<path d="M887 303 H902 V327" class="line"/>
+
+<rect x="38" y="331" width="508" height="166" rx="14" class="teal"/>
+<text x="60" y="361" class="h">4 · Independent sampling nodes</text>
+<text x="60" y="385" class="b">Choose randomized samples; request and authenticate them.</text>
+<g transform="translate(60 402)">
+ <rect width="95" height="47" rx="7" fill="#155e63" stroke="#5eead4"/><text x="47" y="19" text-anchor="middle" class="s">Node A</text><text x="47" y="36" text-anchor="middle" class="tiny">samples 3, 7</text>
+ <rect x="108" width="95" height="47" rx="7" fill="#155e63" stroke="#5eead4"/><text x="155" y="19" text-anchor="middle" class="s">Node B</text><text x="155" y="36" text-anchor="middle" class="tiny">samples 1, 6</text>
+ <rect x="216" width="95" height="47" rx="7" fill="#155e63" stroke="#5eead4"/><text x="263" y="19" text-anchor="middle" class="s">Node C</text><text x="263" y="36" text-anchor="middle" class="tiny">samples 2, 8</text>
+ <rect x="324" width="95" height="47" rx="7" fill="#155e63" stroke="#5eead4"/><text x="371" y="19" text-anchor="middle" class="s">Node D</text><text x="371" y="36" text-anchor="middle" class="tiny">samples 4, 5</text>
+</g>
+<text x="60" y="475" class="tiny">Illustrative only: real sample units and counts are protocol-specific.</text>
+
+<rect x="654" y="331" width="508" height="166" rx="14" class="purple"/>
+<text x="676" y="361" class="h">5 · Probabilistic availability check</text>
+<text x="676" y="385" class="b">If encoded pieces are withheld, random requests may fail.</text>
+<rect x="676" y="403" width="218" height="65" rx="9" fill="#123c39" stroke="#2dd4bf"/>
+<text x="692" y="427" class="h">Samples received</text><text x="692" y="449" class="s">Supports availability confidence</text>
+<rect x="908" y="403" width="232" height="65" rx="9" fill="#40212c" stroke="#fb7185"/>
+<text x="924" y="427" class="h">Sample unavailable</text><text x="924" y="449" class="s">Withholding may be detected</text>
+<path d="M546 414 H650" class="gline"/>
+
+<path d="M290 497 V528 H600 V548" class="gline"/>
+<path d="M906 497 V528 H600" class="pline"/>
+<rect x="235" y="552" width="730" height="98" rx="14" class="panel"/>
+<text x="260" y="581" class="h">6 · Network-level security intuition</text>
+<text x="260" y="605" class="b">Erasure coding spreads withholding across many pieces; diverse, unpredictable samples</text>
+<text x="260" y="627" class="b">make it likely that at least one honest participant detects missing data.</text>
+
+<rect x="38" y="676" width="548" height="91" rx="13" class="amber"/>
+<text x="58" y="704" class="h">What DAS establishes</text>
+<text x="58" y="728" class="b">Confidence that required data is currently retrievable</text>
+<text x="58" y="748" class="s">It does not by itself prove state-transition validity or permanent storage.</text>
+<rect x="614" y="676" width="548" height="91" rx="13" class="blue"/>
+<text x="634" y="704" class="h">Ethereum example: PeerDAS</text>
+<text x="634" y="728" class="b">EIP-7594 applies DAS to blobs using cells, columns,</text>
+<text x="634" y="748" class="s">peer custody and sample requests; it is one specific DAS design.</text>
+</svg>
