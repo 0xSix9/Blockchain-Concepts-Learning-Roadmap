@@ -533,3 +533,11 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Added concept-specific developer review checklists and key takeaways where missing, and aligned the numbered section headings.
 - Clarified Beacon API content negotiation: JSON is the default, while SSZ request/response support is available only on endpoints that specify it.
 - Confirmed Stage 06 publication status remains complete at 17/17; no live RPC calls or transactions were performed as part of this review.
+
+
+## 2026-10-18 — Stage 07: Advanced Layer 2 and Cross-Chain
+
+- Published and reviewed all 19 Stage 07 concept articles, each with a dedicated SVG diagram and primary references.
+- Covered fraud proofs, validity proofs, sequencers, batch submission, state commitments, settlement, challenge periods, forced inclusion/withdrawals, rollup bridges, blob fee markets, data availability sampling, PeerDAS, validiums, volitions, based rollups, shared sequencing, cross-chain messaging, and bridge security models.
+- Updated the Stage 07 index, canonical roadmap, and root README to show 19/19 articles published; individual study checkboxes remain unchecked by design.
+- Clarified protocol-specific variation in challenge windows, forced-inclusion/exit mechanisms, DA guarantees, sequencer assumptions, and bridge verification models.
