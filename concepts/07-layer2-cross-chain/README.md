@@ -2,15 +2,15 @@
 
 **Priority:** 3  
 **Topics:** 19  
-**Article status:** Not started — this stage contains a checklist only.
+**Article status:** In progress — 1/19 concept articles published.
 
 ## About this stage
 
-This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The individual articles are intentionally not created yet; they will be added one by one as the concepts are researched.
+This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The [Fraud Proofs](01-fraud-proofs.md) article is published. The remaining concepts will be written and reviewed one by one.
 
 ## Concept checklist
 
-- [ ] Fraud Proofs
+- [ ] [Fraud Proofs](01-fraud-proofs.md) — article published
 - [ ] Validity Proofs
 - [ ] Sequencers
 - [ ] Batch Submission
