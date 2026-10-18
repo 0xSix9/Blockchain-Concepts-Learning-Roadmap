@@ -620,3 +620,10 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Added post-Fusaka context for PeerDAS, BPO parameter changes, and EIP-7918's reserve-price relationship between blob fees and execution costs.
 - Included an operator/developer checklist and references to the relevant EIPs, Ethereum.org, and Ethereum Foundation upgrade notes.
 - Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 11/19 Stage 07 articles published.
+
+## 2026-10-18 — Stage 07: Data Availability Sampling
+
+- Published the Data Availability Sampling article with a dedicated diagram explaining erasure coding, randomized samples, peer distribution, and probabilistic withholding detection.
+- Distinguished the general DAS technique from Ethereum's PeerDAS implementation, including the limits of availability sampling and the difference between availability and validity.
+- Added security assumptions, a simplified sampling-probability model, developer evaluation questions, and references to Ethereum.org, EIP-7594, EIP-4844, and the Fusaka announcement.
+- Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 12/19 Stage 07 articles published.
