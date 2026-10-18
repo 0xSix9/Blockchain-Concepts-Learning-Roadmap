@@ -7,7 +7,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [Priority 3 — Stages 07–08](learning-priorities.md#priority-3--stages-07-to-08)
 - [Priority 4 — Stages 09–10](learning-priorities.md#priority-4--stages-09-to-10)
 
-> **Stage status:** ✅ Stage 01 content is complete — all 12 articles are published and reviewed. ✅ Stage 02 content is complete — all 16 articles are published. ✅ Stage 03 content is complete — all 13 articles are published. ✅ Stage 04 — Smart Contract Architecture content is complete — all 17 articles are published. ✅ Stage 05 — Advanced Transactions and Gas content is complete — all 14 articles are published. ✅ Stage 06 — Application Connectivity content is complete — all 17 articles are published. Stage 07 publication is in progress, with 16/19 concept articles published. A check beside a stage tracks publication progress; the individual unchecked boxes track study progress and are not automatically checked when an article is published.
+> **Stage status:** ✅ Stage 01 content is complete — all 12 articles are published and reviewed. ✅ Stage 02 content is complete — all 16 articles are published. ✅ Stage 03 content is complete — all 13 articles are published. ✅ Stage 04 — Smart Contract Architecture content is complete — all 17 articles are published. ✅ Stage 05 — Advanced Transactions and Gas content is complete — all 14 articles are published. ✅ Stage 06 — Application Connectivity content is complete — all 17 articles are published. Stage 07 publication is in progress, with 17/19 concept articles published. A check beside a stage tracks publication progress; the individual unchecked boxes track study progress and are not automatically checked when an article is published.
 
 ## ✅ Stage 01 — EVM Execution
 
@@ -130,7 +130,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 
 ## Stage 07 — Advanced Layer 2 and Cross-Chain
 
-**Priority 3** · **Article progress: 16/19 published** · [Stage index](../concepts/07-layer2-cross-chain/README.md)
+**Priority 3** · **Article progress: 17/19 published** · [Stage index](../concepts/07-layer2-cross-chain/README.md)
 
 - [ ] [Fraud Proofs](../concepts/07-layer2-cross-chain/01-fraud-proofs.md) — article published
 - [ ] [Validity Proofs](../concepts/07-layer2-cross-chain/02-validity-proofs.md) — article published
@@ -148,7 +148,7 @@ This is the canonical checklist for the learning plan. It follows the 10 stages 
 - [ ] [Validiums](../concepts/07-layer2-cross-chain/14-validiums.md) — article published
 - [ ] [Volitions](../concepts/07-layer2-cross-chain/15-volitions.md) — article published
 - [ ] [Based Rollups](../concepts/07-layer2-cross-chain/16-based-rollups.md) — article published
-- [ ] Shared Sequencing
+- [ ] [Shared Sequencing](../concepts/07-layer2-cross-chain/17-shared-sequencing.md) — article published
 - [ ] Cross-Chain Messaging
 - [ ] Bridge Security Models
 
