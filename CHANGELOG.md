@@ -595,3 +595,12 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Documented ordering, chain-specific deadlines, forced-inclusion reorg effects on unposted soft-confirmed blocks, permissioning, and developer review checks.
 - Referenced Ethereum.org and the official OP Stack and Arbitrum specifications.
 - Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 8/19 Stage 07 articles published.
+
+## 2026-10-18 — Stage 07: Forced Withdrawals
+
+- Published the Forced Withdrawals article and a custom escape-hatch diagram covering an L1 request, operator response window, freeze condition, state proof, and L1 exit.
+- Distinguished forced withdrawals from normal withdrawals and forced inclusion; explained request/serve, freeze-and-escape, and idle-proposer patterns.
+- Added a StarkEx Spot example with a warning that its documented grace period is implementation-specific, not a universal rollup parameter.
+- Covered state-root authentication, Merkle proofs, data availability, replay protection, denial-of-service costs, governance permissions, and complex DeFi position risks.
+- Referenced official StarkEx and OP Stack documentation, Ethereum.org, and research on rollup escape hatches.
+- Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 9/19 Stage 07 articles published.
