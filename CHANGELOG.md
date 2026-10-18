@@ -556,3 +556,10 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Referenced Ethereum.org and Arbitrum's official sequencing and forced-transaction documentation.
 - Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 3/19 Stage 07 articles published.
 - Kept all remaining Stage 07 concept files unchanged.
+
+## 2026-10-18 — Stage 07: Batch Submission
+
+- Published the Batch Submission concept article with a custom lifecycle diagram covering sequencing output, encoding/compression, channels and frames, parent-chain publication, and independent reconstruction.
+- Explained batching cost trade-offs, data-availability mechanisms, publication versus settlement milestones, and batcher security/reliability checks.
+- Referenced Ethereum.org, EIP-4844, the OP Stack batcher/derivation specifications, and official Arbitrum documentation.
+- Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 4/19 Stage 07 articles published.
