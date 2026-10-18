@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850" role="img" aria-labelledby="title desc">
+<title id="title">Cross-Chain Messaging: Commit, Relay, Verify, Execute</title>
+<desc id="desc">A source application creates a message through a source endpoint and records a message commitment. A relayer transports the payload with a proof or attestation to the destination chain. The destination verifier checks the evidence and message domain, replay protection marks the message as consumed, and the receiving application executes the authorized action. An authenticated acknowledgement or proven timeout can complete the packet lifecycle. Transport and authentication are separate security jobs.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111f"/><stop offset="1" stop-color="#18223a"/></linearGradient>
+ <linearGradient id="head" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1d4ed8"/><stop offset="1" stop-color="#0f766e"/></linearGradient>
+ <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#91a4c3"/></marker>
+ <marker id="garr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#5eead4"/></marker>
+ <marker id="parr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#c4b5fd"/></marker>
+ <style>
+ .title{font:700 28px Arial,sans-serif;fill:#f8fafc}.sub{font:14px Arial,sans-serif;fill:#c0cee2}.h{font:700 16px Arial,sans-serif;fill:#f8fafc}.b{font:13px Arial,sans-serif;fill:#d7e2f0}.s{font:12px Arial,sans-serif;fill:#a9bbd2}.tiny{font:11px Arial,sans-serif;fill:#9db0ca}
+ .panel{fill:#14243b;stroke:#3a5272;stroke-width:1.5}.blue{fill:#152e50;stroke:#60a5fa;stroke-width:1.5}.teal{fill:#103b3d;stroke:#2dd4bf;stroke-width:1.5}.purple{fill:#292448;stroke:#a78bfa;stroke-width:1.5}.amber{fill:#402c1b;stroke:#fb923c;stroke-width:1.5}.red{fill:#421f2c;stroke:#fb7185;stroke-width:1.5}
+ .line{fill:none;stroke:#91a4c3;stroke-width:2;marker-end:url(#arr)}.gline{fill:none;stroke:#5eead4;stroke-width:2;marker-end:url(#garr)}.pline{fill:none;stroke:#c4b5fd;stroke-width:2;marker-end:url(#parr)}
+ </style>
+</defs>
+<rect width="1200" height="850" rx="24" fill="url(#bg)"/><circle cx="1080" cy="95" r="235" fill="#2563eb" opacity=".07"/>
+<rect x="30" y="24" width="1140" height="88" rx="17" fill="url(#head)"/>
+<text x="56" y="60" class="title">CROSS-CHAIN MESSAGING</text>
+<text x="56" y="86" class="sub">A message is transported, authenticated, and executed across separate state machines</text>
+<rect x="925" y="47" width="211" height="36" rx="18" fill="#07111f" opacity=".42"/><text x="1030" y="70" text-anchor="middle" class="h">RELAY ≠ VERIFY</text>
+
+<rect x="40" y="136" width="520" height="74" rx="13" class="blue"/>
+<text x="60" y="165" class="h">1 · Source chain application</text>
+<text x="60" y="189" class="b">Authorize payload and call the source messaging endpoint.</text>
+<rect x="640" y="136" width="520" height="74" rx="13" class="teal"/>
+<text x="660" y="165" class="h">Destination chain application</text>
+<text x="660" y="189" class="b">Only acts after the destination verification and policy checks.</text>
+
+<path d="M300 210 V234" class="line"/>
+<rect x="40" y="238" width="520" height="104" rx="13" class="purple"/>
+<text x="60" y="268" class="h">2 · Source commitment / event</text>
+<text x="60" y="292" class="b">Unique message ID + source/destination domain + payload hash</text>
+<text x="60" y="316" class="s">Source-chain state binds the message to its origin and content.</text>
+
+<path d="M560 290 H590" class="gline"/>
+<rect x="594" y="238" width="566" height="104" rx="13" class="panel"/>
+<text x="616" y="268" class="h">3 · Relayer / transport network</text>
+<text x="616" y="292" class="b">Observe source finality, obtain payload and proof/attestation,</text>
+<text x="616" y="316" class="b">then pay destination gas and submit a relay transaction.</text>
+
+<path d="M877 342 V365 H870 V386" class="gline"/>
+<rect x="594" y="390" width="566" height="120" rx="13" class="teal"/>
+<text x="616" y="420" class="h">4 · Destination verifier</text>
+<text x="616" y="444" class="b">Check light-client proof, commitment, threshold attestation,</text>
+<text x="616" y="466" class="b">or the configured verification mechanism.</text>
+<text x="616" y="489" class="tiny">Security depends on the verifier's trust model and source finality.</text>
+
+<path d="M594 450 H565" class="line"/>
+<rect x="40" y="390" width="520" height="120" rx="13" class="blue"/>
+<text x="62" y="420" class="h">5 · Destination domain + replay protection</text>
+<text x="62" y="444" class="b">Validate origin, recipient, nonce/sequence, and payload.</text>
+<text x="62" y="466" class="b">Atomically mark the message consumed before privileged effects.</text>
+<text x="62" y="489" class="tiny">Reject duplicates, wrong-chain replays, and unauthorized senders.</text>
+
+<path d="M300 510 V535 H350 V556" class="line"/>
+<path d="M850 510 V535 H850 V556" class="gline"/>
+<rect x="40" y="560" width="520" height="99" rx="13" class="purple"/>
+<text x="62" y="590" class="h">6 · Destination execution</text>
+<text x="62" y="614" class="b">Run the receiving application handler or contract callback.</text>
+<text x="62" y="638" class="s">Authenticated origin does not make every payload safe.</text>
+<rect x="640" y="560" width="520" height="99" rx="13" class="panel"/>
+<text x="662" y="590" class="h">7 · Acknowledgement / status</text>
+<text x="662" y="614" class="b">Where supported, record the destination result and prove it</text>
+<text x="662" y="638" class="b">back to the source; status semantics are protocol-specific.</text>
+
+<path d="M300 659 V684 H600 V700" class="pline"/>
+<path d="M900 659 V684 H600" class="pline"/>
+<rect x="235" y="704" width="730" height="74" rx="13" class="amber"/>
+<text x="260" y="734" class="h">Timeout and recovery (where supported)</text>
+<text x="260" y="757" class="b">A proven timeout may unlock source-side recovery; it must exclude late execution.</text>
+
+<rect x="40" y="793" width="1120" height="39" rx="10" fill="#0b1424" stroke="#283b58"/>
+<text x="58" y="809" class="tiny">Review: source finality · verifier model · destination domain · replay state · acknowledgements/timeouts · upgrade authority</text>
+<text x="58" y="825" class="tiny">Messaging is a primitive; a token bridge adds asset accounting, mint/burn/lock/release and withdrawal rules.</text>
+</svg>
