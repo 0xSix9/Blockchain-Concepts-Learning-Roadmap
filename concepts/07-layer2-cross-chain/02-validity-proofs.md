@@ -42,4 +42,4 @@ A proof only establishes the statement that the circuit or VM actually encodes. 
 ## 7. References
 
 - [Ethereum.org — Zero-Knowledge Rollups](https://ethereum.org/developers/docs/scaling/zk-rollups/)
-- [EIP-4844 — Blob-carrying Transactions](https://eips.ethereum.org/EIPS/eip-4844)
+- [Ethereum.org — Data Availability](https://ethereum.org/developers/docs/data-availability/)
