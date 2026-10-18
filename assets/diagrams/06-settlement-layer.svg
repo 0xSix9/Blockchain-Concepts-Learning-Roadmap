@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
+<title id="title">Settlement Layer: Anchoring, Verifying, and Finalizing Rollup Claims</title>
+<desc id="desc">Layer 2 transactions are executed and sequenced. Batch data is published to a data-availability path, while an output commitment is submitted to the L1 settlement contracts. The settlement mechanism uses either validity-proof verification or a fault-proof challenge process. Ethereum consensus finality and the rollup protocol's accepted output conditions are both relevant before a bridge consumes the commitment.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111f"/><stop offset="1" stop-color="#111c35"/></linearGradient>
+  <linearGradient id="head" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1d4ed8"/><stop offset="1" stop-color="#0f766e"/></linearGradient>
+  <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#91a4c3"/></marker>
+  <marker id="tealArrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#5eead4"/></marker>
+  <style>
+    .h1{font:700 27px Arial,sans-serif;fill:#f8fafc}.sub{font:14px Arial,sans-serif;fill:#b7c6dc}
+    .label{font:700 15px Arial,sans-serif;fill:#f8fafc}.body{font:13px Arial,sans-serif;fill:#d6e0ee}
+    .small{font:12px Arial,sans-serif;fill:#a9bad2}.tiny{font:11px Arial,sans-serif;fill:#9fb1ca}
+    .box{fill:#14233b;stroke:#3a5273;stroke-width:1.5}.blue{fill:#142d50;stroke:#60a5fa;stroke-width:1.5}
+    .teal{fill:#123d43;stroke:#2dd4bf;stroke-width:1.5}.purple{fill:#2a244e;stroke:#a78bfa;stroke-width:1.5}
+    .orange{fill:#442b19;stroke:#fb923c;stroke-width:1.5}.line{fill:none;stroke:#91a4c3;stroke-width:2;marker-end:url(#arrow)}
+    .tline{fill:none;stroke:#5eead4;stroke-width:2;marker-end:url(#tealArrow)}
+  </style>
+</defs>
+<rect width="1200" height="780" rx="24" fill="url(#bg)"/>
+<circle cx="1050" cy="90" r="270" fill="#1d4ed8" opacity=".08"/>
+<rect x="30" y="26" width="1140" height="92" rx="18" fill="url(#head)"/>
+<text x="58" y="61" class="h1">SETTLEMENT LAYER</text>
+<text x="58" y="88" class="sub">The protocol path for accepting claims, resolving disputes, and enabling cross-layer actions</text>
+<rect x="948" y="48" width="185" height="42" rx="21" fill="#07111f" opacity=".45"/>
+<text x="1040" y="74" text-anchor="middle" class="label">L2 → L1</text>
+
+<!-- L2 -->
+<rect x="40" y="150" width="330" height="150" rx="14" class="blue"/>
+<text x="60" y="180" class="label">1 · Layer 2 execution</text>
+<text x="60" y="204" class="body">Sequencer orders inputs; L2 engine</text>
+<text x="60" y="224" class="body">executes transactions and computes state.</text>
+<rect x="60" y="244" width="135" height="36" rx="6" fill="#1d4ed8"/>
+<text x="127" y="267" text-anchor="middle" class="small">L2 block / state</text>
+<rect x="207" y="244" width="143" height="36" rx="6" fill="#155e75" stroke="#2dd4bf"/>
+<text x="278" y="267" text-anchor="middle" class="small">Output commitment</text>
+
+<!-- publication data path -->
+<path d="M205 300 V328 H201 V352" class="line"/>
+<rect x="40" y="356" width="330" height="104" rx="14" class="box"/>
+<text x="60" y="384" class="label">2 · Publish required data</text>
+<text x="60" y="408" class="body">Batcher submits data via calldata, blobs,</text>
+<text x="60" y="429" class="body">or the configured DA system.</text>
+<text x="60" y="448" class="tiny">Availability supports reconstruction and dispute.</text>
+
+<!-- commitment to settlement -->
+<path d="M350 262 H414 V212 H445" class="tline"/>
+<rect x="449" y="150" width="310" height="150" rx="14" class="teal"/>
+<text x="469" y="180" class="label">3 · L1 settlement contracts</text>
+<text x="469" y="204" class="body">Record the proposed output / assertion</text>
+<text x="469" y="224" class="body">and apply the rollup's protocol rules.</text>
+<rect x="469" y="244" width="270" height="36" rx="6" fill="#0f766e"/>
+<text x="604" y="267" text-anchor="middle" class="small">Authenticated claim + context</text>
+
+<!-- verify paths -->
+<path d="M604 300 V329 H595 V352" class="line"/>
+<text x="449" y="340" class="label">4 · Correctness mechanism</text>
+<rect x="449" y="356" width="310" height="104" rx="14" class="purple"/>
+<text x="469" y="383" class="label">Validity-proof system</text>
+<text x="469" y="406" class="body">Verifier checks proof and public inputs.</text>
+<text x="469" y="429" class="tiny">Accepted only when protocol conditions pass.</text>
+<rect x="449" y="476" width="310" height="104" rx="14" class="orange"/>
+<text x="469" y="503" class="label">Optimistic fault-proof system</text>
+<text x="469" y="526" class="body">Claim remains challengeable under rules.</text>
+<text x="469" y="549" class="tiny">Game outcome rejects or confirms the claim.</text>
+<path d="M604 460 V472" class="line"/>
+
+<!-- consensus -->
+<path d="M759 408 H790 V244 H819" class="tline"/>
+<path d="M759 528 H790 V244" fill="none" stroke="#5eead4" stroke-width="2"/>
+<rect x="823" y="150" width="337" height="150" rx="14" class="box"/>
+<text x="843" y="180" class="label">5 · Ethereum consensus finality</text>
+<text x="843" y="204" class="body">Relevant L1 records become finalized</text>
+<text x="843" y="224" class="body">under Ethereum proof-of-stake rules.</text>
+<rect x="843" y="244" width="297" height="36" rx="6" fill="#1e3a8a" stroke="#60a5fa"/>
+<text x="991" y="267" text-anchor="middle" class="small">L1 finality ≠ rollup proof status</text>
+
+<!-- bridge/action -->
+<path d="M991 300 V330 H989 V352" class="tline"/>
+<rect x="823" y="356" width="337" height="130" rx="14" class="teal"/>
+<text x="843" y="384" class="label">6 · Bridge / downstream application</text>
+<text x="843" y="408" class="body">Consume only a protocol-recognized output</text>
+<text x="843" y="429" class="body">and verify the correct inclusion proof.</text>
+<text x="843" y="450" class="body">Check chain context + replay protection.</text>
+<text x="843" y="472" class="tiny">Wait for the rollup's required safety conditions.</text>
+
+<!-- Bottom concepts -->
+<rect x="40" y="612" width="1120" height="122" rx="14" fill="#0b1424" stroke="#283b58"/>
+<text x="62" y="641" class="label">Don't collapse these into one status</text>
+<g>
+ <rect x="62" y="657" width="193" height="49" rx="8" fill="#142d50" stroke="#60a5fa"/><text x="158" y="677" text-anchor="middle" class="small">Sequenced / executed</text><text x="158" y="695" text-anchor="middle" class="tiny">Fast L2 path</text>
+ <rect x="270" y="657" width="193" height="49" rx="8" fill="#14233b" stroke="#91a4c3"/><text x="366" y="677" text-anchor="middle" class="small">Data published</text><text x="366" y="695" text-anchor="middle" class="tiny">Inputs can be retrieved</text>
+ <rect x="478" y="657" width="193" height="49" rx="8" fill="#2a244e" stroke="#a78bfa"/><text x="574" y="677" text-anchor="middle" class="small">Claim verified / resolved</text><text x="574" y="695" text-anchor="middle" class="tiny">Proof or challenge rules</text>
+ <rect x="686" y="657" width="193" height="49" rx="8" fill="#123d43" stroke="#2dd4bf"/><text x="782" y="677" text-anchor="middle" class="small">L1 record finalized</text><text x="782" y="695" text-anchor="middle" class="tiny">Consensus milestone</text>
+ <rect x="894" y="657" width="243" height="49" rx="8" fill="#442b19" stroke="#fb923c"/><text x="1015" y="677" text-anchor="middle" class="small">Bridge action permitted</text><text x="1015" y="695" text-anchor="middle" class="tiny">Protocol conditions all satisfied</text>
+</g>
+</svg>
