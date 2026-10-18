@@ -2,11 +2,11 @@
 
 **Priority:** 3  
 **Topics:** 19  
-**Article status:** In progress — 7/19 concept articles published.
+**Article status:** In progress — 8/19 concept articles published.
 
 ## About this stage
 
-This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The [Fraud Proofs](01-fraud-proofs.md), [Validity Proofs](02-validity-proofs.md), [Sequencers](03-sequencers.md), [Batch Submission](04-batch-submission.md), [State Commitments](05-state-commitments.md), [Settlement Layer](06-settlement-layer.md), and [Challenge Periods](07-challenge-periods.md) articles are published. The remaining concepts will be written and reviewed one by one.
+This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the checklist below to track study progress. The [Fraud Proofs](01-fraud-proofs.md), [Validity Proofs](02-validity-proofs.md), [Sequencers](03-sequencers.md), [Batch Submission](04-batch-submission.md), [State Commitments](05-state-commitments.md), [Settlement Layer](06-settlement-layer.md), and [Challenge Periods](07-challenge-periods.md), and [Forced Inclusion](08-forced-inclusion.md) articles are published. The remaining concepts will be written and reviewed one by one.
 
 ## Concept checklist
 
@@ -17,7 +17,7 @@ This stage is part of the 10-stage Blockchain Concepts Learning Roadmap. Use the
 - [ ] [State Commitments](05-state-commitments.md) — article published
 - [ ] [Settlement Layer](06-settlement-layer.md) — article published
 - [ ] [Challenge Periods](07-challenge-periods.md) — article published
-- [ ] Forced Inclusion
+- [ ] [Forced Inclusion](08-forced-inclusion.md) — article published
 - [ ] Forced Withdrawals
 - [ ] Rollup Bridges
 - [ ] Blob Fee Market
