@@ -648,3 +648,11 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Covered implementation-specific choice granularity, state-tree and vault mapping, cross-mode accounting, proof verification, DA committee assumptions, withdrawals, bridge controls, and potential privacy misconceptions.
 - Added a developer integration checklist and references to ethereum.org, StarkEx data availability documentation, StarkEx Volition release notes, and L2BEAT's DA risk framework.
 - Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 15/19 Stage 07 articles published.
+
+## 2026-10-18 — Stage 07: Based Rollups
+
+- Published the Based Rollups article and a dedicated sequencing diagram covering L2 transaction propagation, builder/searcher candidate construction, Ethereum L1 proposer inclusion, L2 derivation, and settlement.
+- Explained the boundaries between sequencing, execution, data availability, validity/fraud proofs, and final settlement.
+- Covered potential benefits and trade-offs involving L1-driven liveness, decentralization, proposer-builder infrastructure, MEV, censorship, reorgs, latency, preconfirmations, and developer integration checks.
+- Included references to Ethereum Research, Fabric docs, Taiko, ethereum.org PBS documentation, EIP-7732, and Ethereum Foundation L1/L2 research.
+- Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 16/19 Stage 07 articles published.
