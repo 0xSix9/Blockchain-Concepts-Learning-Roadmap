@@ -540,3 +540,11 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Published the Fraud Proofs concept article with a custom SVG diagram, developer-focused examples, security considerations, and references to Ethereum and OP Stack specifications.
 - Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show Stage 07 progress at 1/19 articles.
 - Kept the remaining 18 concept files and checklist entries unchanged.
+
+
+## 2026-10-18 — Stage 07: Validity Proofs
+
+- Published the Validity Proofs concept article with a dedicated SVG, a state-transition example, proof-system overview, security considerations, and official references.
+- Clarified the distinction between validity and zero knowledge, and between validity proofs, data availability, L1 consensus finality, and bridge finalization.
+- Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 2/19 Stage 07 articles published.
+- Kept the remaining Stage 07 concept files unchanged.
