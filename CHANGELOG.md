@@ -612,3 +612,11 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Added an implementation review checklist for sender authentication, contract versions, token mappings, proof verification, upgrade roles, retries, and non-standard token behavior.
 - Referenced Ethereum.org, the OP Stack standard bridge and predeploy specifications, and official Arbitrum bridging documentation.
 - Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 10/19 Stage 07 articles published.
+
+## 2026-10-18 — Stage 07: Blob Fee Market
+
+- Published the Blob Fee Market article with a dedicated diagram for execution gas versus blob gas, excess blob gas, and blob base-fee adjustment.
+- Covered EIP-4844 fee mechanics, target versus maximum capacity, active blob parameter schedules, and how the blob market affects rollup data-publication costs.
+- Added post-Fusaka context for PeerDAS, BPO parameter changes, and EIP-7918's reserve-price relationship between blob fees and execution costs.
+- Included an operator/developer checklist and references to the relevant EIPs, Ethereum.org, and Ethereum Foundation upgrade notes.
+- Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show 11/19 Stage 07 articles published.
