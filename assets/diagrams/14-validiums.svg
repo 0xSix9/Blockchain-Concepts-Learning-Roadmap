@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+<title id="title">Validium Architecture: Validity Proofs with Off-Chain Data</title>
+<desc id="desc">Users submit transactions to an off-chain operator, which executes batches and generates a new state commitment. State data is sent to an external data availability committee or DA network, which provides an availability attestation or its own security mechanism. A prover generates a validity proof. Ethereum checks the proof and required availability certificate and records the state commitment. Users can safely exit only if they can obtain the data needed to construct an exit proof and the L1 bridge permits it.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111f"/><stop offset="1" stop-color="#18223a"/></linearGradient>
+ <linearGradient id="head" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1d4ed8"/><stop offset="1" stop-color="#0f766e"/></linearGradient>
+ <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#91a4c3"/></marker>
+ <marker id="garr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#5eead4"/></marker>
+ <marker id="parr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#c4b5fd"/></marker>
+ <style>
+ .title{font:700 28px Arial,sans-serif;fill:#f8fafc}.sub{font:14px Arial,sans-serif;fill:#c0cee2}.h{font:700 16px Arial,sans-serif;fill:#f8fafc}.b{font:13px Arial,sans-serif;fill:#d7e2f0}.s{font:12px Arial,sans-serif;fill:#a9bbd2}.tiny{font:11px Arial,sans-serif;fill:#9db0ca}
+ .panel{fill:#14243b;stroke:#3a5272;stroke-width:1.5}.blue{fill:#152e50;stroke:#60a5fa;stroke-width:1.5}.teal{fill:#103b3d;stroke:#2dd4bf;stroke-width:1.5}.purple{fill:#292448;stroke:#a78bfa;stroke-width:1.5}.amber{fill:#402c1b;stroke:#fb923c;stroke-width:1.5}.red{fill:#421f2c;stroke:#fb7185;stroke-width:1.5}
+ .line{fill:none;stroke:#91a4c3;stroke-width:2;marker-end:url(#arr)}.gline{fill:none;stroke:#5eead4;stroke-width:2;marker-end:url(#garr)}.pline{fill:none;stroke:#c4b5fd;stroke-width:2;marker-end:url(#parr)}
+ </style>
+</defs>
+<rect width="1200" height="820" rx="24" fill="url(#bg)"/><circle cx="1075" cy="95" r="235" fill="#2563eb" opacity=".07"/>
+<rect x="30" y="24" width="1140" height="88" rx="17" fill="url(#head)"/>
+<text x="56" y="60" class="title">VALIDIUM ARCHITECTURE</text>
+<text x="56" y="86" class="sub">Validity is checked on Ethereum · state data is kept off-chain</text>
+<rect x="920" y="47" width="216" height="36" rx="18" fill="#07111f" opacity=".42"/><text x="1028" y="70" text-anchor="middle" class="h">PROOF ≠ DATA</text>
+
+<rect x="40" y="136" width="244" height="123" rx="14" class="blue"/>
+<text x="60" y="165" class="h">1 · L2 Users</text>
+<text x="60" y="190" class="b">Transfers, trades,</text><text x="60" y="210" class="b">and application actions</text>
+<rect x="60" y="225" width="201" height="22" rx="6" fill="#1e3a5f"/><text x="70" y="241" class="tiny">Submit transaction</text>
+<path d="M284 196 H318" class="line"/>
+
+<rect x="322" y="136" width="294" height="123" rx="14" class="purple"/>
+<text x="342" y="165" class="h">2 · Operator / sequencer</text>
+<text x="342" y="190" class="b">Orders and executes L2 txs</text><text x="342" y="210" class="b">Computes new state commitment</text>
+<text x="342" y="241" class="tiny">Batch + state transition</text>
+<path d="M616 196 H650" class="line"/>
+
+<rect x="654" y="136" width="506" height="123" rx="14" class="teal"/>
+<text x="676" y="165" class="h">3 · Data availability layer (off-chain)</text>
+<text x="676" y="190" class="b">State diffs / balance changes / reconstruction data</text>
+<g transform="translate(676 207)">
+ <rect width="134" height="32" rx="7" fill="#164e50" stroke="#5eead4"/><text x="67" y="21" text-anchor="middle" class="s">DAC member A</text>
+ <rect x="145" width="134" height="32" rx="7" fill="#164e50" stroke="#5eead4"/><text x="212" y="21" text-anchor="middle" class="s">DAC member B</text>
+ <rect x="290" width="134" height="32" rx="7" fill="#164e50" stroke="#5eead4"/><text x="357" y="21" text-anchor="middle" class="s">DAC / DA network</text>
+</g>
+
+<path d="M470 259 V287 H293 V311" class="pline"/>
+<path d="M470 287 H907 V311" class="gline"/>
+<rect x="40" y="315" width="506" height="133" rx="14" class="purple"/>
+<text x="62" y="344" class="h">4A · Prover</text>
+<text x="62" y="369" class="b">Generates a validity proof for the state transition</text>
+<text x="62" y="391" class="b">Binds the proof to required state roots and public inputs</text>
+<rect x="62" y="409" width="213" height="25" rx="6" fill="#332a5a"/><text x="72" y="426" class="tiny">Proof of correct transition</text>
+
+<rect x="654" y="315" width="506" height="133" rx="14" class="teal"/>
+<text x="676" y="344" class="h">4B · Availability attestation</text>
+<text x="676" y="369" class="b">Committee stores data and signs batch-specific claim</text>
+<text x="676" y="391" class="b">or external DA network supplies its own guarantee</text>
+<rect x="676" y="409" width="252" height="25" rx="6" fill="#164e50"/><text x="688" y="426" class="tiny">External availability assumption</text>
+
+<path d="M293 448 V474 H600 V493" class="pline"/>
+<path d="M907 448 V474 H600" class="gline"/>
+<rect x="235" y="497" width="730" height="126" rx="15" class="blue"/>
+<text x="260" y="528" class="h">5 · Ethereum L1 contracts</text>
+<rect x="260" y="546" width="300" height="49" rx="8" fill="#1e3a5f" stroke="#60a5fa"/><text x="275" y="566" class="b">Verify validity proof</text><text x="275" y="584" class="tiny">Reject invalid state transition</text>
+<rect x="580" y="546" width="360" height="49" rx="8" fill="#123d3b" stroke="#2dd4bf"/><text x="595" y="566" class="b">Check availability certificate (if used)</text><text x="595" y="584" class="tiny">Record / accept the new state commitment</text>
+
+<path d="M600 623 V647" class="line"/>
+<rect x="40" y="651" width="542" height="111" rx="14" class="amber"/>
+<text x="62" y="680" class="h">6A · Normal operation</text>
+<text x="62" y="704" class="b">Users trade and transfer against the accepted L2 state.</text>
+<text x="62" y="727" class="s">External data service must keep data retrievable.</text>
+<rect x="618" y="651" width="542" height="111" rx="14" class="red"/>
+<text x="640" y="680" class="h">6B · Operator / DA failure</text>
+<text x="640" y="704" class="b">Can users retrieve state data and create an exit proof?</text>
+<text x="640" y="727" class="s">A valid root alone cannot reconstruct withheld state data.</text>
+
+<rect x="40" y="776" width="1120" height="29" rx="8" fill="#0b1424" stroke="#283b58"/>
+<text x="58" y="795" class="s">Security review: proof soundness + data availability + bridge/exit path + upgrade authority.</text>
+</svg>
