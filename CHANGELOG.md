@@ -533,3 +533,10 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Added concept-specific developer review checklists and key takeaways where missing, and aligned the numbered section headings.
 - Clarified Beacon API content negotiation: JSON is the default, while SSZ request/response support is available only on endpoints that specify it.
 - Confirmed Stage 06 publication status remains complete at 17/17; no live RPC calls or transactions were performed as part of this review.
+
+
+## 2026-10-18 — Stage 07: Fraud Proofs
+
+- Published the Fraud Proofs concept article with a custom SVG diagram, developer-focused examples, security considerations, and references to Ethereum and OP Stack specifications.
+- Linked the article from the Stage 07 index and canonical roadmap; updated the root README and roadmap overview to show Stage 07 progress at 1/19 articles.
+- Kept the remaining 18 concept files and checklist entries unchanged.
