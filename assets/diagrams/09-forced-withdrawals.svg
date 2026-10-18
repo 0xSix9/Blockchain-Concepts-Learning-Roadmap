@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+<title id="title">Forced Withdrawals: Request, Freeze, Prove, Escape</title>
+<desc id="desc">A user submits a forced withdrawal request to an L1 contract. The operator has a grace period to serve the request or prove it invalid. If the request remains unserved, the application can enter a frozen state; the user then proves ownership of a balance against the frozen state root, registers an escape, and withdraws on L1. The diagram calls out state availability and replay protection.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111f"/><stop offset="1" stop-color="#111c35"/></linearGradient>
+ <linearGradient id="head" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1d4ed8"/><stop offset="1" stop-color="#0f766e"/></linearGradient>
+ <marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#91a4c3"/></marker>
+ <marker id="t" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#5eead4"/></marker>
+ <style>
+ .h{font:700 27px Arial,sans-serif;fill:#f8fafc}.sub{font:14px Arial,sans-serif;fill:#b7c6dc}.l{font:700 15px Arial,sans-serif;fill:#f8fafc}.b{font:13px Arial,sans-serif;fill:#d6e0ee}.s{font:12px Arial,sans-serif;fill:#a9bad2}.tiny{font:11px Arial,sans-serif;fill:#9fb1ca}
+ .box{fill:#14233b;stroke:#3a5273;stroke-width:1.5}.blue{fill:#142d50;stroke:#60a5fa;stroke-width:1.5}.teal{fill:#123d43;stroke:#2dd4bf;stroke-width:1.5}.purple{fill:#2a244e;stroke:#a78bfa;stroke-width:1.5}.orange{fill:#442b19;stroke:#fb923c;stroke-width:1.5}.red{fill:#451f2a;stroke:#fb7185;stroke-width:1.5}
+ .line{fill:none;stroke:#91a4c3;stroke-width:2;marker-end:url(#a)}.tl{fill:none;stroke:#5eead4;stroke-width:2;marker-end:url(#t)}
+ </style>
+</defs>
+<rect width="1200" height="760" rx="24" fill="url(#bg)"/><circle cx="1050" cy="82" r="270" fill="#1d4ed8" opacity=".08"/>
+<rect x="30" y="25" width="1140" height="90" rx="18" fill="url(#head)"/>
+<text x="58" y="59" class="h">FORCED WITHDRAWALS</text><text x="58" y="86" class="sub">An escape route when normal operator-controlled exits fail</text>
+<rect x="934" y="46" width="201" height="41" rx="20" fill="#07111f" opacity=".45"/><text x="1034" y="72" text-anchor="middle" class="l">ESCAPE HATCH</text>
+
+<rect x="40" y="145" width="235" height="107" rx="13" class="blue"/>
+<text x="58" y="174" class="l">1 · User request on L1</text><text x="58" y="198" class="b">Identify owner / vault,</text><text x="58" y="218" class="b">asset, and withdrawal.</text>
+<path d="M275 198 H304" class="line"/>
+<rect x="308" y="145" width="262" height="107" rx="13" class="teal"/>
+<text x="326" y="174" class="l">2 · L1 contract records it</text><text x="326" y="198" class="b">Request is pending and</text><text x="326" y="218" class="b">the grace-period clock starts.</text>
+<path d="M570 198 H599" class="line"/>
+<rect x="603" y="145" width="557" height="107" rx="13" class="orange"/>
+<text x="623" y="174" class="l">3 · Operator must respond</text><text x="623" y="198" class="b">Serve the valid forced operation, or prove the request is invalid</text><text x="623" y="218" class="b">within the configured grace period.</text>
+
+<path d="M880 252 V279 H318 V304" class="line"/><path d="M880 279 H881 V304" class="line"/>
+<text x="42" y="293" class="l">4 · Branch by response</text>
+<rect x="40" y="308" width="555" height="103" rx="13" class="purple"/>
+<text x="60" y="337" class="l">A · Request serviced</text><text x="60" y="361" class="b">Protocol validates the operation and updates the</text><text x="60" y="382" class="b">user's claim; ordinary onchain withdrawal continues.</text><text x="60" y="400" class="tiny">Exact steps depend on the application.</text>
+<rect x="615" y="308" width="545" height="103" rx="13" class="red"/>
+<text x="635" y="337" class="l">B · Request stays unserved</text><text x="635" y="361" class="b">After the grace period, the escape rule may let a user</text><text x="635" y="382" class="b">freeze the application and activate emergency exits.</text><text x="635" y="400" class="tiny">A freeze stops new state updates; this is an emergency path.</text>
+
+<path d="M318 411 V438 H600 V460" class="tl"/><path d="M881 411 V438 H600" fill="none" stroke="#5eead4" stroke-width="2"/>
+<rect x="260" y="464" width="680" height="88" rx="13" class="box"/>
+<text x="284" y="493" class="l">5 · Prove against the frozen, recognized state</text><text x="284" y="517" class="b">Get state data → build Merkle path → verify owner / vault / asset</text><text x="284" y="538" class="tiny">A root alone is not enough: proof data must be available.</text>
+<path d="M600 552 V574" class="tl"/>
+<rect x="260" y="578" width="680" height="74" rx="13" class="teal"/>
+<text x="284" y="607" class="l">6 · Register escape and withdraw on L1</text><text x="284" y="630" class="b">Consume the claim once; prevent replay and double-withdrawal.</text>
+
+<rect x="40" y="672" width="1120" height="58" rx="12" fill="#0b1424" stroke="#283b58"/>
+<text x="60" y="695" class="l">Key distinction</text><text x="185" y="695" class="s">Forced inclusion gets a message into L2; forced withdrawal preserves an exit route.</text>
+<text x="60" y="716" class="tiny">Some systems provide only one of these. Check the deployed contracts, state-root rules, and actual escape path.</text>
+</svg>
