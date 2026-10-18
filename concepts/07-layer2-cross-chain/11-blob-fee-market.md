@@ -7,7 +7,7 @@
 
 ## 1. Overview
 
-EIP-4844 introduced blob-carrying transactions and a separate pricing mechanism for blob gas. Blobs let rollups publish large data payloads whose contents are not directly accessible to EVM execution, while the transaction carries commitments and references needed by the protocol. The blob fee market is distinct from the execution-gas market used by normal EVM transactions.
+EIP-4844 introduced blob-carrying transactions and a separate pricing mechanism for blob gas. Blobs let rollups publish large data payloads whose contents are not directly accessible to EVM execution, while the transaction carries commitments and references needed by the protocol. The blob fee market is distinct from the execution-gas market used by normal EVM transactions. Ethereum's Fusaka upgrade (activated on Mainnet on 2025-12-03) also introduced PeerDAS and the EIP-7918 reserve-price adjustment; EIP-7892 allows blob target/maximum and fee-update parameters to change through Blob-Parameter-Only (BPO) forks.
 
 ![Blob Fee Market: Pricing Rollup Data on Ethereum](../../assets/diagrams/11-blob-fee-market.svg)
 
@@ -19,7 +19,7 @@ Rollups often pay significant costs to publish data on Ethereum. Understanding b
 
 1. A blob-carrying transaction includes execution-layer transaction data plus blob commitments and versioned hashes; the large blob payload is propagated through the protocol's data-availability path.
 2. The execution layer accounts for blob gas separately from ordinary execution gas.
-3. The blob base fee adjusts according to the protocol's excess-blob-gas accounting and fee-adjustment function, rather than being the same as the EIP-1559 execution base fee.
+3. Under EIP-4844, the blob base fee is calculated using excess blob gas and a fee-adjustment function; it is distinct from the EIP-1559 execution base fee. EIP-7918 adds a reserve-price mechanism linked to execution costs so the blob market does not lose its price signal when execution costs dominate. EIP-7892 defines how the active blob target, maximum, and fee-update fraction are changed through BPO forks.
 4. A rollup's batcher pays the applicable fees to publish its data. The rollup then allocates shared L1 costs across user transactions according to its own fee policy.
 5. Blob data has a protocol-defined availability/storage lifecycle and is not permanent, EVM-readable contract storage.
 
@@ -31,7 +31,7 @@ At a high level, a batch poster may submit compressed L2 transaction data in blo
 
 ## 5. Common Mistakes and Security Considerations
 
-Do not read blob contents from a Solidity contract as if they were calldata or storage. Do not use the execution base fee as a substitute for blob base fee. Blob capacity, target values, fee parameters, retention, and pricing may evolve through upgrades; production estimators should follow the active protocol rules and the rollup's own fee formula.
+Do not read blob contents from a Solidity contract as if they were calldata or storage. Do not use the execution base fee as a substitute for blob base fee. Blob capacity, target values, fee parameters, retention, and pricing may evolve through upgrades; production estimators should follow the active network/fork blob schedule and the rollup's own fee formula. In particular, do not hard-code the original EIP-4844 target/maximum as if those values were permanent.
 
 ## 6. Key Takeaways
 
@@ -43,3 +43,6 @@ Do not read blob contents from a Solidity contract as if they were calldata or s
 
 - [EIP-4844 — Blob-carrying Transactions](https://eips.ethereum.org/EIPS/eip-4844)
 - [Ethereum.org — Data Availability](https://ethereum.org/developers/docs/data-availability/)
+- [EIP-7918 — Blob Base Fee Bounded by Execution Cost](https://eips.ethereum.org/EIPS/eip-7918)
+- [EIP-7892 — Blob Parameter Only Hardforks](https://eips.ethereum.org/EIPS/eip-7892)
+- [Ethereum.org — Fusaka](https://ethereum.org/roadmap/fusaka/)
