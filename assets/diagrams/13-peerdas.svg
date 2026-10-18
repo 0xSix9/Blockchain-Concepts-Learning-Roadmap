@@ -77,6 +77,6 @@
 <text x="260" y="705" class="b">Random sampling helps detect withholding; ≥ 50% of columns allows full matrix reconstruction.</text>
 
 <rect x="40" y="750" width="1120" height="46" rx="11" fill="#0b1424" stroke="#283b58"/>
-<text x="60" y="770" class="s">Current Fulu-spec snapshot: 128 columns · 8 minimum samples/slot · minimum custody requirement 4 groups.</text>
+<text x="60" y="770" class="s">Fulu snapshot: 128 columns · 8 samples/slot · custody: 4 groups baseline; 8+ for validator-attached nodes.</text>
 <text x="60" y="787" class="tiny">Protocol parameters can change; sampling is probabilistic and does not equal full reconstruction or permanent archival.</text>
 </svg>
