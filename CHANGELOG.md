@@ -679,3 +679,9 @@ Concept articles are added incrementally; placeholders and checklists do not cou
 - Added a layered security review covering source finality, domain separation, replay prevention, asset backing, data availability, destination execution, upgrade authority, monitoring, and an actionable smart-contract audit checklist.
 - Referenced official Ethereum, Optimism, Arbitrum, Hyperlane, LayerZero, and IBC documentation, plus the L2BEAT bridge-risk framework.
 - Linked Bridge Security Models from the Stage 07 index and canonical roadmap, updated README and roadmap overview, and marked Stage 07 content-complete at 19/19 articles.
+
+## 2026-10-18 — Stage 07 Audit Follow-up
+
+- Audited all 19 Stage 07 concept articles and their 19 SVG diagrams for file presence, metadata, diagram references, key takeaways, and reference sections.
+- Clarified the current status of EIP-7732 in the Based Rollups article: Last Call under Standards Track Core, with a November 1, 2026 deadline; noted that proposal status does not imply Mainnet deployment.
+- Standardized Stage 07's completed status marker in the repository README and canonical roadmap to match the other completed stages.
