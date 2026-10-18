@@ -137,7 +137,7 @@ The rollup's validity or fraud-proof system adds another dimension. An L2 block 
 
 Based rollups can reuse the proposer-builder ecosystem: specialized builders and searchers can prepare an L2 sequencing payload while the L1 proposer determines which L1 block to propose. PBS-friendly pipelines may make this interaction more structured and reduce some coordination problems.
 
-However, based rollups do not require a single specific finalized PBS protocol as part of their definition. PBS designs are evolving, and the status of specific EIPs can change. EIP-7732 describes enshrined PBS and has been in standards-track review; it is useful background for understanding the separation of proposer and builder duties, but it should not be treated as synonymous with based rollups or as a mandatory dependency for every current implementation.
+However, based rollups do not require a single specific finalized PBS protocol as part of their definition. PBS designs are evolving, and the status of specific EIPs can change. As of 2026-10-18, EIP-7732 is in Last Call (Standards Track: Core), with a Last Call deadline of November 1, 2026. It describes enshrined PBS and is useful background for understanding the separation of proposer and builder duties, but it is not synonymous with based rollups, nor should its Last Call status be mistaken for deployment on Mainnet or as a mandatory dependency for every based-rollup implementation.
 
 An important distinction for smart-contract developers is that the builder generally prepares the payload and the proposer chooses whether to include it. The L1 proposer does not necessarily execute the L2 transactions itself. The rollup contracts, clients, and proof system still determine whether state updates are accepted.
 
